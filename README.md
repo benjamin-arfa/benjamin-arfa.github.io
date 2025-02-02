@@ -1,18 +1,60 @@
-# Quartz v4
+# Personal Website
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+This repository contains the source code for my personal website and portfolio built with Quartz. The site showcases my work as a Data Engineer & Software Developer, highlighting my projects and professional experience through a digital garden.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+## Tech Stack
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+The website is built with:
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+**Frontend:**
+- Quartz
+- Markdown
+- HTML5/CSS3
+- JavaScript
 
-## Sponsors
+**Backend:**
+- Node.js
+- Express
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+**Deployment:**
+- Docker
+- AWS
+
+## Features
+
+- Digital garden/notes structure
+- Project portfolio
+- Professional experience timeline
+- Blog section
+- Contact form
+- Graph view
+- Full-text search
+- Auto-generated backlinks
+
+## Running Locally
+
+1. Clone the repository
+```bash
+git clone https://github.com/benjaminarfa/personal-website.git
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start development server
+```bash
+npx quartz build --serve
+```
+
+4. Open http://localhost:8080 in your browser
+
+## Contact
+
+- 📫 Email: [benjamin.arfa.pro@gmail.com](mailto:benjamin.arfa.pro@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/moadhbenjaminarfa/](https://www.linkedin.com/in/moadhbenjaminarfa/)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
