@@ -35,7 +35,7 @@ The website is built with:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/benjaminarfa/personal-website.git
+git clone https://github.com/benjaminarfa/benjamin-arfa.github.io.git
 ```
 
 2. Install dependencies
