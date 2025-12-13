@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Benjamin Arfa - Open source tools, data applications, and software engineering work.">
+
+  <title>Projects | Benjamin Arfa</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">B.ARFA</a>
+
+      <ul class="nav__menu">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="services.html" class="nav__link">Services</a></li>
+        <li><a href="projects.html" class="nav__link nav__link--active">Projects</a></li>
+        <li><a href="involvement.html" class="nav__link">Involvement</a></li>
+        <li><a href="contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
+      </ul>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile-menu">
+      <a href="about.html" class="nav__link">About</a>
+      <a href="services.html" class="nav__link">Services</a>
+      <a href="projects.html" class="nav__link">Projects</a>
+      <a href="involvement.html" class="nav__link">Involvement</a>
+      <a href="contact.html" class="nav__link btn btn--primary">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <!-- Page Header -->
+      <header class="page__header">
+        <p class="section-header__eyebrow">What I've Built</p>
+        <h1 class="page__title"><span class="hero__title-highlight">Projects</span></h1>
+        <p class="page__subtitle" style="max-width: 700px;">
+          A collection of open source tools, data applications, and software engineering work spanning regulatory technology, healthcare, and more.
+        </p>
+      </header>
+
+      <!-- Current Projects -->
+      <section class="section" style="padding-top: 0;">
+        <h2 class="mb-xl"><span style="background: var(--color-accent-alt); padding: 0 var(--space-sm);">Current Projects</span></h2>
+
+        <div class="grid" style="gap: var(--space-xl);">
+
+          <!-- pybirdai -->
+          <div class="card card--primary" style="padding: var(--space-xl);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-md);">
+              <div>
+                <span class="tag tag--accent" style="margin-bottom: var(--space-sm);">Contributor</span>
+                <h3 style="font-size: var(--text-2xl); margin-bottom: var(--space-sm);">pybirdai</h3>
+                <p style="font-size: var(--text-lg); color: var(--color-text-muted); margin-bottom: var(--space-lg);">Tooling to democratize the use of BIRD as an open standard</p>
+              </div>
+            </div>
+
+            <p style="margin-bottom: var(--space-lg);">
+              The pybirdai project provides an open source toolkit to facilitate the use of the Banks' Integrated Reporting Dictionary (BIRD) standard for regulatory reporting. BIRD defines standardized reporting rules and templates that European banks use for providing data to supervisory bodies.
+            </p>
+
+            <h4 style="margin-bottom: var(--space-md);">Key Features</h4>
+            <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-sm); margin-bottom: var(--space-lg);">
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> GUI toolkit for BIRD dictionaries and mappings</li>
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> Docker containerization for portable deployment</li>
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> Tools to validate and transform BIRD models</li>
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> APIs for seamless integration</li>
+            </ul>
+
+            <div class="card__tags">
+              <span class="tag">Python</span>
+              <span class="tag">Docker</span>
+              <span class="tag">NLP</span>
+              <span class="tag">RegTech</span>
+            </div>
+
+            <div style="margin-top: var(--space-lg);">
+              <a href="https://github.com/eclipse-efbt/efbt" target="_blank" rel="noopener" class="btn btn--outline btn--sm">View on GitHub</a>
+            </div>
+          </div>
+
+          <!-- Page -->
+          <div class="card" style="background: var(--color-accent-alt); padding: var(--space-xl);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-md);">
+              <div>
+                <span class="tag tag--accent" style="margin-bottom: var(--space-sm);">Maintainer</span>
+                <h3 style="font-size: var(--text-2xl); margin-bottom: var(--space-sm);">Page</h3>
+                <p style="font-size: var(--text-lg); color: var(--color-text-muted); margin-bottom: var(--space-lg);">A Master Data Management solution for healthcare organizations</p>
+              </div>
+            </div>
+
+            <p style="margin-bottom: var(--space-lg);">
+              A master data management tool designed for medical professionals and practices. Like a steward, Page oversees your data, centralizing, organizing, and ensuring reliability of your information to optimize your processes and decisions.
+            </p>
+
+            <h4 style="margin-bottom: var(--space-md);">Key Benefits</h4>
+            <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-sm); margin-bottom: var(--space-lg);">
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> Centralizes reference data for medical professionals</li>
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> Ensures data reliability and quality</li>
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> User-friendly interface for data entry</li>
+              <li style="display: flex; gap: var(--space-sm);"><span>&#8226;</span> Secure and compliant data management</li>
+            </ul>
+
+            <div class="card__tags">
+              <span class="tag">Healthcare</span>
+              <span class="tag">MDM</span>
+              <span class="tag">Data Quality</span>
+              <span class="tag">Organization</span>
+            </div>
+
+            <div style="margin-top: var(--space-lg);">
+              <a href="https://vps-13d3e726.vps.ovh.net:2000/" target="_blank" rel="noopener" class="btn btn--outline btn--sm">View Demo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Archived Projects -->
+      <section class="section" style="background: var(--color-text); color: var(--color-surface); margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
+        <h2 class="mb-xl"><span style="background: var(--color-primary); color: var(--color-text); padding: 0 var(--space-sm);">Archived Projects</span></h2>
+
+        <div class="grid grid--4">
+
+          <!-- px-reader -->
+          <div class="card" style="display: flex; flex-direction: column;">
+            <span class="tag tag--secondary" style="align-self: flex-start; margin-bottom: var(--space-sm);">Maintainer</span>
+            <h3 class="card__title">px-reader</h3>
+            <p class="card__subtitle">Statistical data parser for BFS</p>
+            <p class="card__content" style="flex-grow: 1;">
+              A Python application for parsing px-cubes from the Swiss Federal Statistical Office. Converts to linked data format, importable into RDF triple stores.
+            </p>
+            <div class="card__tags">
+              <span class="tag">Python</span>
+              <span class="tag">RDF</span>
+              <span class="tag">Linked Data</span>
+            </div>
+          </div>
+
+          <!-- go-detective -->
+          <div class="card" style="display: flex; flex-direction: column;">
+            <span class="tag tag--secondary" style="align-self: flex-start; margin-bottom: var(--space-sm);">Maintainer</span>
+            <h3 class="card__title">go-detective</h3>
+            <p class="card__subtitle">Native Application for AML Sanction List checking</p>
+            <p class="card__content" style="flex-grow: 1;">
+              A native desktop application built with Go and Wails for Know Your Customer (KYC) checks, Anti-Money Laundering (AML) screening, and PEP/sanctions list verification. Uses Supabase for backend services.
+            </p>
+            <div class="card__tags">
+              <span class="tag">Go</span>
+              <span class="tag">Wails</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Native</span>
+            </div>
+          </div>
+
+          <!-- pyroids -->
+          <div class="card" style="display: flex; flex-direction: column;">
+            <span class="tag tag--secondary" style="align-self: flex-start; margin-bottom: var(--space-sm);">Maintainer</span>
+            <h3 class="card__title">pyroids</h3>
+            <p class="card__subtitle">Python implementation of classic Asteroids</p>
+            <p class="card__content" style="flex-grow: 1;">
+              A Python-based implementation of the classic Asteroids game using Pygame. Features physics-based movement, asteroid splitting mechanics, and dynamic difficulty scaling.
+            </p>
+            <div class="card__tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pygame</span>
+              <span class="tag">Game Dev</span>
+            </div>
+            <div style="margin-top: var(--space-md);">
+              <a href="https://github.com/benjamin-arfa/pyroids" target="_blank" rel="noopener" class="btn btn--outline btn--sm">View on GitHub</a>
+            </div>
+          </div>
+
+          <!-- static-gen -->
+          <div class="card" style="display: flex; flex-direction: column;">
+            <span class="tag tag--secondary" style="align-self: flex-start; margin-bottom: var(--space-sm);">Maintainer</span>
+            <h3 class="card__title">static-gen</h3>
+            <p class="card__subtitle">Python-based static site generator</p>
+            <p class="card__content" style="flex-grow: 1;">
+              A Python-based tool for transforming content into static HTML websites. Provides a streamlined workflow for content creators with custom templating and build automation.
+            </p>
+            <div class="card__tags">
+              <span class="tag">Python</span>
+              <span class="tag">Static Site</span>
+              <span class="tag">HTML</span>
+            </div>
+            <div style="margin-top: var(--space-md);">
+              <a href="https://github.com/benjamin-arfa/static-gen" target="_blank" rel="noopener" class="btn btn--outline btn--sm">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section text-center">
+        <h2 style="margin-bottom: var(--space-lg);">Interested in Collaborating?</h2>
+        <p style="font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-xl); color: var(--color-text-muted);">
+          I'm always open to discussing new projects, contributions to open source, or opportunities to collaborate.
+        </p>
+        <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+          <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener" class="btn btn--outline btn--lg">View GitHub</a>
+          <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>Benjamin Arfa</h4>
+          <p style="opacity: 0.8;">Data & Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p>
+        </div>
+
+        <div class="footer__section">
+          <h4>Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="involvement.html">Involvement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Legal</h4>
+          <ul class="footer__links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <div class="footer__social">
+            <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Arfa Digital Consulting. All rights reserved. | CHE-294.585.543</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
