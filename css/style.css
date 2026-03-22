@@ -1261,3 +1261,188 @@ strong {
 [data-theme="dark"] .marquee__item {
   color: var(--color-primary);
 }
+
+/* ===========================================
+   PRINT STYLESHEET
+   Clean printing without decorative elements
+   =========================================== */
+@media print {
+  /* Reset colors and backgrounds for ink-friendly output */
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #333 !important;
+  }
+
+  /* Use readable font sizes */
+  html {
+    font-size: 12pt;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  /* Hide non-essential UI elements */
+  .nav,
+  .nav__mobile-menu,
+  .progress-bar,
+  .theme-toggle,
+  .back-to-top,
+  .keyboard-hint,
+  .marquee,
+  .hero__cta,
+  .footer__social,
+  .btn,
+  .blob,
+  .deco-square,
+  .deco-circle,
+  .status-dot {
+    display: none !important;
+  }
+
+  /* Remove fixed positioning */
+  .nav {
+    position: static !important;
+  }
+
+  /* Remove top padding that compensated for fixed nav */
+  .hero {
+    min-height: auto !important;
+    padding-top: 0 !important;
+  }
+
+  .page {
+    padding-top: 0 !important;
+  }
+
+  /* Ensure content fills the page */
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .section {
+    padding: 1em 0 !important;
+  }
+
+  /* Cards: simple bordered boxes */
+  .card {
+    border: 1px solid #333 !important;
+    padding: 0.75em !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .card:hover {
+    transform: none !important;
+  }
+
+  /* Tags: simple inline labels */
+  .tag {
+    border: 1px solid #666 !important;
+    padding: 0.1em 0.4em !important;
+    font-size: 9pt !important;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 22pt !important; }
+  h2 { font-size: 18pt !important; }
+  h3 { font-size: 14pt !important; }
+  h4 { font-size: 12pt !important; }
+
+  .hero__title {
+    font-size: 24pt !important;
+  }
+
+  .hero__title-highlight {
+    background: none !important;
+    font-weight: 900 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+  }
+
+  /* Show URLs after links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    font-weight: 400;
+    word-break: break-all;
+  }
+
+  /* But not for nav or button links */
+  .nav__link::after,
+  .btn::after,
+  .footer__links a::after {
+    content: none !important;
+  }
+
+  /* Grid layout: stack on print */
+  .grid {
+    display: block !important;
+  }
+
+  .grid > * {
+    margin-bottom: 1em !important;
+  }
+
+  /* Footer: simplified */
+  .footer {
+    border-top: 2px solid #000 !important;
+    padding: 1em 0 !important;
+  }
+
+  .footer__content {
+    display: block !important;
+  }
+
+  .footer__section {
+    margin-bottom: 1em !important;
+  }
+
+  .footer__section h4 {
+    color: #000 !important;
+  }
+
+  /* Prevent page breaks inside important elements */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Disable all animations */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero__eyebrow,
+  .hero__title,
+  .hero__description,
+  .hero__cta,
+  .hero__status {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 2cm;
+  }
+}
