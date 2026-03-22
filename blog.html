@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog & Insights by Benjamin Arfa - Articles on healthcare interoperability, data engineering, RegTech, and digital consulting.">
+  <meta name="author" content="Moadh Benjamin Arfa">
+
+  <meta property="og:title" content="Blog & Insights | Benjamin Arfa">
+  <meta property="og:description" content="Articles on healthcare interoperability, data engineering, RegTech, and digital consulting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benjamin-arfa.github.io/blog.html">
+
+  <title>Blog & Insights | Benjamin Arfa</title>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog & Insights by Benjamin Arfa",
+    "description": "Articles on healthcare interoperability, data engineering, RegTech, and digital consulting.",
+    "url": "https://benjamin-arfa.github.io/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "Moadh Benjamin Arfa"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Benjamin Arfa's Blog" href="/feed.xml">
+  <script>var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+</head>
+<body>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">B.ARFA</a>
+
+      <ul class="nav__menu">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="services.html" class="nav__link">Services</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+        <li><a href="involvement.html" class="nav__link">Involvement</a></li>
+        <li><a href="contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
+      </ul>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu">
+      <a href="about.html" class="nav__link">About</a>
+      <a href="services.html" class="nav__link">Services</a>
+      <a href="projects.html" class="nav__link">Projects</a>
+      <a href="blog.html" class="nav__link">Blog</a>
+      <a href="involvement.html" class="nav__link">Involvement</a>
+      <a href="contact.html" class="nav__link btn btn--primary">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <!-- Hero Section -->
+      <header class="page__header">
+        <p class="section-header__eyebrow">Thoughts & Perspectives</p>
+        <h1 class="page__title"><span class="hero__title-highlight">Blog & Insights</span></h1>
+        <p class="page__subtitle" style="max-width: 700px;">
+          Writing about healthcare interoperability, data engineering, regulatory technology, and the journey from technical roles to digital consulting.
+        </p>
+      </header>
+
+      <!-- Filter Tabs -->
+      <section class="section" style="padding-top: 0;">
+        <div class="blog-filter mb-xl" style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+          <button class="btn btn--primary btn--sm blog-filter__btn active" data-filter="all">All</button>
+          <button class="btn btn--outline btn--sm blog-filter__btn" data-filter="tech">Tech</button>
+          <button class="btn btn--outline btn--sm blog-filter__btn" data-filter="healthcare">Healthcare</button>
+          <button class="btn btn--outline btn--sm blog-filter__btn" data-filter="career">Career</button>
+          <button class="btn btn--outline btn--sm blog-filter__btn" data-filter="community">Community</button>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="grid grid--3" id="blog-grid">
+
+          <!-- Post 1 -->
+          <article class="card blog-card" data-categories="tech healthcare">
+            <div class="blog-card__meta">
+              <time datetime="2026-03-15">March 15, 2026</time>
+              <span class="blog-card__read-time">5 min read</span>
+            </div>
+            <div class="blog-card__tags">
+              <span class="tag tag--primary">Tech</span>
+              <span class="tag tag--accent">Healthcare</span>
+            </div>
+            <h3 class="blog-card__title">
+              <a href="blog/healthcare-data-pipelines.html">Building Healthcare Data Pipelines with FHIR</a>
+            </h3>
+            <p class="blog-card__excerpt">
+              How HL7 FHIR transforms the way we build data pipelines in healthcare, enabling true interoperability while respecting the complexity of clinical data models.
+            </p>
+            <a href="blog/healthcare-data-pipelines.html" class="blog-card__link">Read More &rarr;</a>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="card blog-card" data-categories="tech">
+            <div class="blog-card__meta">
+              <time datetime="2026-03-08">March 8, 2026</time>
+              <span class="blog-card__read-time">4 min read</span>
+            </div>
+            <div class="blog-card__tags">
+              <span class="tag tag--primary">Tech</span>
+            </div>
+            <h3 class="blog-card__title">
+              <a href="blog/open-standards-regtech.html">Why Open Standards Matter in RegTech</a>
+            </h3>
+            <p class="blog-card__excerpt">
+              Open standards like BIRD and SDMX are reshaping regulatory reporting. Here is why they matter and how they reduce the compliance burden for financial institutions.
+            </p>
+            <a href="blog/open-standards-regtech.html" class="blog-card__link">Read More &rarr;</a>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="card blog-card" data-categories="career">
+            <div class="blog-card__meta">
+              <time datetime="2026-02-28">February 28, 2026</time>
+              <span class="blog-card__read-time">6 min read</span>
+            </div>
+            <div class="blog-card__tags">
+              <span class="tag tag--secondary">Career</span>
+            </div>
+            <h3 class="blog-card__title">
+              <a href="blog/data-engineering-to-consulting.html">From Data Engineering to Digital Consulting</a>
+            </h3>
+            <p class="blog-card__excerpt">
+              Reflections on transitioning from hands-on data engineering and ML research to leading digital consulting initiatives, and the skills that bridge both worlds.
+            </p>
+            <a href="blog/data-engineering-to-consulting.html" class="blog-card__link">Read More &rarr;</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Newsletter Signup -->
+      <section class="section" style="background: var(--color-primary); margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
+        <div class="newsletter" style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <h2 style="margin-bottom: var(--space-md);">Stay in the Loop</h2>
+          <p style="font-size: var(--text-lg); margin-bottom: var(--space-xl); color: var(--color-text);">
+            Get notified when I publish new articles on data engineering, healthcare interoperability, and tech consulting.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <div class="newsletter-form__row">
+              <input type="email" class="form-input newsletter-form__input" placeholder="your.email@example.com" required aria-label="Email address">
+              <button type="submit" class="btn btn--accent newsletter-form__btn">Subscribe</button>
+            </div>
+            <p class="newsletter-form__note" style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-sm);">
+              No spam. Unsubscribe anytime.
+            </p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>Benjamin Arfa</h4>
+          <p style="opacity: 0.8;">Data & Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p>
+        </div>
+
+        <div class="footer__section">
+          <h4>Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="involvement.html">Involvement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Legal</h4>
+          <ul class="footer__links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <div class="footer__social">
+            <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Arfa Digital Consulting. All rights reserved. | CHE-294.585.543</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Keyboard Hint -->
+  <div class="keyboard-hint" id="keyboard-hint">
+    Press <kbd>?</kbd> for shortcuts
+  </div>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">2191</button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
