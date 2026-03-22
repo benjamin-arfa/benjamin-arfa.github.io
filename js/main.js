@@ -201,6 +201,28 @@ document.addEventListener('DOMContentLoaded', function() {
   initTheme();
 
   // =============================================
+  // SCROLL INDICATOR (hero section)
+  // =============================================
+  var scrollIndicator = document.querySelector('.scroll-indicator');
+  if (scrollIndicator) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 150) {
+        scrollIndicator.classList.add('hidden');
+      } else {
+        scrollIndicator.classList.remove('hidden');
+      }
+    });
+
+    scrollIndicator.addEventListener('click', function() {
+      var hero = document.querySelector('.hero');
+      if (hero && hero.nextElementSibling) {
+        hero.nextElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+    scrollIndicator.style.cursor = 'pointer';
+  }
+
+  // =============================================
   // BACK TO TOP BUTTON
   // =============================================
   var backToTop = document.querySelector('.back-to-top');
