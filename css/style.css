@@ -135,7 +135,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ----- TYPOGRAPHY ----- */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Google Fonts loaded via <link> in HTML <head> for better performance (no render-blocking @import) */
 
 body {
   font-family: var(--font-body);
