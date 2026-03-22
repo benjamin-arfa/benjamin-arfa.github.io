@@ -112,7 +112,7 @@
       <section class="section">
         <h2 class="mb-xl"><span class="hero__title-highlight">Career Journey</span></h2>
 
-        <div class="grid" style="gap: var(--space-xl);">
+        <div class="grid timeline-connector" style="gap: var(--space-xl);">
           <div class="card" style="border-left: 6px solid var(--color-accent);">
             <p class="card__subtitle" style="font-family: var(--font-mono); color: var(--color-accent);">Oct 2025 - Present</p>
             <h3 class="card__title">Business Analyst</h3>
@@ -164,8 +164,16 @@
       <section class="section" style="background: var(--color-text); color: var(--color-surface); margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
         <h2 class="mb-xl" style="color: var(--color-primary);">Core Competencies</h2>
 
-        <div class="grid grid--3">
-          <div>
+        <!-- Filter Buttons -->
+        <div class="skills-filter mb-xl" style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+          <button class="btn btn--primary btn--sm skills-filter__btn active" data-filter="all">All</button>
+          <button class="btn btn--outline btn--sm skills-filter__btn" data-filter="data">Data & Analytics</button>
+          <button class="btn btn--outline btn--sm skills-filter__btn" data-filter="dev">Development</button>
+          <button class="btn btn--outline btn--sm skills-filter__btn" data-filter="health">Healthcare & Standards</button>
+        </div>
+
+        <div class="grid grid--3" id="skills-grid">
+          <div data-category="data">
             <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Data & Analytics</h3>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
               <li><span class="tag tag--primary">Data Integration</span></li>
@@ -176,7 +184,7 @@
             </ul>
           </div>
 
-          <div>
+          <div data-category="dev">
             <h3 style="color: var(--color-secondary); margin-bottom: var(--space-md);">Development</h3>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
               <li><span class="tag tag--secondary">Python</span></li>
@@ -187,7 +195,7 @@
             </ul>
           </div>
 
-          <div>
+          <div data-category="health">
             <h3 style="color: var(--color-accent-alt); margin-bottom: var(--space-md);">Healthcare & Standards</h3>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
               <li><span class="tag" style="background: var(--color-accent-alt);">HL7 FHIR</span></li>

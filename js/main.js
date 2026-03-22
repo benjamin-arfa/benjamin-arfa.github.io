@@ -242,6 +242,50 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =============================================
+  // SKILLS FILTER (About page)
+  // =============================================
+  var filterBtns = document.querySelectorAll('.skills-filter__btn');
+  var skillsGrid = document.getElementById('skills-grid');
+
+  if (filterBtns.length && skillsGrid) {
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+
+        // Update active button
+        filterBtns.forEach(function(b) {
+          b.classList.remove('active');
+          b.classList.remove('btn--primary');
+          b.classList.add('btn--outline');
+        });
+        btn.classList.add('active');
+        btn.classList.remove('btn--outline');
+        btn.classList.add('btn--primary');
+
+        // Filter items
+        var items = skillsGrid.children;
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = '';
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(10px)';
+            setTimeout((function(el) {
+              return function() {
+                el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+              };
+            })(item), 50);
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    });
+  }
+
+  // =============================================
   // DYNAMIC COPYRIGHT YEAR
   // =============================================
   var footerYear = document.querySelector('.footer__bottom p');

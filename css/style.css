@@ -1135,6 +1135,50 @@ strong {
   100% { transform: translateX(-50%); }
 }
 
+/* ----- SKILLS FILTER ----- */
+.skills-filter__btn.active {
+  transform: translate(-2px, -2px);
+}
+
+[data-theme="dark"] .skills-filter__btn {
+  color: #F5F5F5;
+  border-color: #F5F5F5;
+}
+
+[data-theme="dark"] .skills-filter__btn.active {
+  color: #1A1A1A;
+}
+
+/* ----- TIMELINE CONNECTOR ----- */
+.timeline-connector {
+  position: relative;
+  padding-left: var(--space-xl);
+}
+
+.timeline-connector::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-primary);
+}
+
+.timeline-connector .card {
+  position: relative;
+}
+
+.timeline-connector .card::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl));
+  top: 50%;
+  width: var(--space-lg);
+  height: 3px;
+  background: var(--color-primary);
+}
+
 [data-theme="dark"] .marquee {
   background: #333;
   color: var(--color-primary);
