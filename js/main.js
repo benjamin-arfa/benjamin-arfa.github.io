@@ -431,6 +431,51 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // GITHUB STARS BADGES
+  // =============================================
+  var starBadges = document.querySelectorAll('[data-github-repo]');
+  if (starBadges.length) {
+    var starSvg = '<svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>';
+    var starsCache = {};
+
+    // Try loading cached stars from sessionStorage
+    try {
+      var cached = sessionStorage.getItem('github-stars-cache');
+      if (cached) starsCache = JSON.parse(cached);
+    } catch (e) {}
+
+    starBadges.forEach(function(card) {
+      var repo = card.getAttribute('data-github-repo');
+      var badge = card.querySelector('.github-stars');
+      if (!badge || !repo) return;
+
+      // Use cache if available and fresh (< 10 min)
+      if (starsCache[repo] && (Date.now() - starsCache[repo].time < 600000)) {
+        badge.innerHTML = starSvg + ' ' + starsCache[repo].count;
+        badge.classList.add('loaded');
+        return;
+      }
+
+      fetch('https://api.github.com/repos/' + repo)
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (typeof data.stargazers_count === 'number') {
+            var count = data.stargazers_count;
+            badge.innerHTML = starSvg + ' ' + count;
+            badge.classList.add('loaded');
+            starsCache[repo] = { count: count, time: Date.now() };
+            try {
+              sessionStorage.setItem('github-stars-cache', JSON.stringify(starsCache));
+            } catch (e) {}
+          }
+        })
+        .catch(function() {
+          // Silently fail - badge stays hidden
+        });
+    });
+  }
+
+  // =============================================
   // SMOOTH PAGE TRANSITIONS
   // =============================================
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
