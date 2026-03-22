@@ -325,6 +325,75 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // READING PROGRESS BAR
+  // =============================================
+  var progressBar = document.querySelector('.progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    });
+  }
+
+  // =============================================
+  // KEYBOARD NAVIGATION
+  // =============================================
+  var keyboardHint = document.getElementById('keyboard-hint');
+  var shortcutsVisible = false;
+  var hintTimeout;
+
+  // Show hint briefly on page load
+  if (keyboardHint) {
+    setTimeout(function() {
+      keyboardHint.classList.add('visible');
+      hintTimeout = setTimeout(function() {
+        keyboardHint.classList.remove('visible');
+      }, 3000);
+    }, 2000);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    // Don't trigger when typing in inputs
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+
+    switch (e.key) {
+      case '?':
+        if (keyboardHint) {
+          shortcutsVisible = !shortcutsVisible;
+          if (shortcutsVisible) {
+            clearTimeout(hintTimeout);
+            keyboardHint.innerHTML = '<strong>Keyboard Shortcuts</strong><br>' +
+              '<kbd>H</kbd> Home &nbsp; <kbd>A</kbd> About &nbsp; <kbd>S</kbd> Services<br>' +
+              '<kbd>P</kbd> Projects &nbsp; <kbd>I</kbd> Involvement &nbsp; <kbd>C</kbd> Contact<br>' +
+              '<kbd>D</kbd> Toggle dark mode &nbsp; <kbd>T</kbd> Scroll to top';
+            keyboardHint.classList.add('visible');
+          } else {
+            keyboardHint.classList.remove('visible');
+          }
+        }
+        break;
+      case 'h': window.location.href = 'index.html'; break;
+      case 'a': window.location.href = 'about.html'; break;
+      case 's': window.location.href = 'services.html'; break;
+      case 'p': window.location.href = 'projects.html'; break;
+      case 'i': window.location.href = 'involvement.html'; break;
+      case 'c': window.location.href = 'contact.html'; break;
+      case 'd':
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        var newTheme = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon();
+        break;
+      case 't':
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        break;
+    }
+  });
+
+  // =============================================
   // DYNAMIC COPYRIGHT YEAR
   // =============================================
   var footerYear = document.querySelector('.footer__bottom p');
