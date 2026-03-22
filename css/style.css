@@ -887,6 +887,134 @@ strong {
   }
 }
 
+/* ----- MICRO-INTERACTIONS ----- */
+
+/* Button press: satisfying "push into surface" effect */
+.btn:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0 var(--color-border) !important;
+  transition: transform 0.05s ease, box-shadow 0.05s ease !important;
+}
+
+/* Card press/click feedback */
+.card:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--color-border);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Tag hover: subtle lift with color shift */
+.tag {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  cursor: default;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0 var(--color-border);
+}
+
+/* Nav logo: playful wiggle on hover */
+.nav__logo:hover {
+  animation: wiggle 0.4s ease;
+}
+
+@keyframes wiggle {
+  0% { transform: translate(-2px, -2px) rotate(0deg); }
+  25% { transform: translate(-2px, -2px) rotate(-2deg); }
+  50% { transform: translate(-2px, -2px) rotate(2deg); }
+  75% { transform: translate(-2px, -2px) rotate(-1deg); }
+  100% { transform: translate(-2px, -2px) rotate(0deg); }
+}
+
+/* Nav link: active press effect */
+.nav__link:active {
+  transform: translate(1px, 1px) !important;
+  box-shadow: none !important;
+  transition: transform 0.05s ease !important;
+}
+
+/* Social icons: rotate + scale on hover */
+.footer__social a:hover svg {
+  transform: scale(1.15) rotate(-8deg);
+  transition: transform 0.2s ease;
+}
+
+.footer__social a svg {
+  transition: transform 0.2s ease;
+}
+
+/* Theme toggle: bounce press */
+.theme-toggle:active {
+  transform: translate(0, 0) scale(0.9);
+  box-shadow: 2px 2px 0 var(--color-border);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Back-to-top: bounce press */
+.back-to-top:active {
+  transform: translate(0, 0) scale(0.9);
+  box-shadow: 2px 2px 0 var(--color-border);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Form inputs: subtle scale on focus */
+.form-input:focus,
+.form-textarea:focus {
+  transform: translate(-2px, -2px) scale(1.005);
+}
+
+/* Nav toggle: hamburger animation on press */
+.nav__toggle:active {
+  transform: scale(0.92);
+  transition: transform 0.08s ease;
+}
+
+/* Link hover: animated underline */
+a:not(.btn):not(.nav__link):not(.nav__logo):not(.footer__social a):not(.card) {
+  position: relative;
+  text-decoration: none;
+}
+
+main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card):hover {
+  text-decoration: none;
+}
+
+main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card)::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card):hover::after {
+  width: 100%;
+}
+
+/* Marquee items: scale on hover */
+.marquee__item {
+  transition: transform 0.2s ease;
+}
+
+.marquee__item:hover {
+  transform: scale(1.1);
+}
+
+/* Section header title: underline slide-in on hover */
+.section-header__title {
+  transition: box-shadow var(--transition-base);
+}
+
+/* Card title: slight weight shift on card hover */
+.card:hover .card__title {
+  letter-spacing: 0.01em;
+  transition: letter-spacing 0.3s ease;
+}
+
 /* ----- ANIMATIONS ----- */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -1484,5 +1612,23 @@ strong {
   /* Page margins */
   @page {
     margin: 2cm;
+  }
+}
+
+/* ----- REDUCED MOTION ----- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee__inner {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
