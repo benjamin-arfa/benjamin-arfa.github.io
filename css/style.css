@@ -1752,6 +1752,67 @@ body.page-transitioning {
   border-color: var(--color-border);
 }
 
+/* ----- TESTIMONIAL CARDS ----- */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.testimonial-card__quote {
+  position: relative;
+}
+
+.testimonial-card__icon {
+  display: block;
+  margin-bottom: var(--space-sm);
+  opacity: 0.6;
+}
+
+.testimonial-card__text {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: var(--border-thin);
+}
+
+.testimonial-card__avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  border: var(--border-thick);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+.testimonial-card__role {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
 /* ----- GITHUB STARS BADGE ----- */
 .github-stars {
   display: inline-flex;
