@@ -476,6 +476,57 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // COPY TO CLIPBOARD FOR CODE BLOCKS
+  // =============================================
+  var codeBlocks = document.querySelectorAll('pre');
+  codeBlocks.forEach(function(pre) {
+    var btn = document.createElement('button');
+    btn.className = 'code-copy-btn';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy code to clipboard');
+    btn.type = 'button';
+
+    btn.addEventListener('click', function() {
+      var code = pre.querySelector('code');
+      var text = code ? code.textContent : pre.textContent;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          btn.textContent = 'Copied!';
+          btn.classList.add('code-copy-btn--copied');
+          setTimeout(function() {
+            btn.textContent = 'Copy';
+            btn.classList.remove('code-copy-btn--copied');
+          }, 2000);
+        });
+      } else {
+        // Fallback for older browsers
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          btn.textContent = 'Copied!';
+          btn.classList.add('code-copy-btn--copied');
+          setTimeout(function() {
+            btn.textContent = 'Copy';
+            btn.classList.remove('code-copy-btn--copied');
+          }, 2000);
+        } catch (err) {
+          btn.textContent = 'Error';
+        }
+        document.body.removeChild(textarea);
+      }
+    });
+
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+
+  // =============================================
   // SMOOTH PAGE TRANSITIONS
   // =============================================
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
