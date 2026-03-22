@@ -90,24 +90,63 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Form validation (for contact page)
-  const contactForm = document.querySelector('.contact-form');
+  var contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      const email = contactForm.querySelector('input[type="email"]');
-      const message = contactForm.querySelector('textarea');
+    function showError(input, message) {
+      var error = input.parentElement.querySelector('.form-error');
+      input.classList.add('error');
+      input.classList.remove('valid');
+      if (error) error.textContent = message;
+    }
 
-      if (email && !email.value.includes('@')) {
-        e.preventDefault();
-        alert('Please enter a valid email address.');
-        email.focus();
-        return;
+    function showValid(input) {
+      var error = input.parentElement.querySelector('.form-error');
+      input.classList.remove('error');
+      input.classList.add('valid');
+      if (error) error.textContent = '';
+    }
+
+    function validateField(input) {
+      if (input.required && !input.value.trim()) {
+        showError(input, 'This field is required');
+        return false;
       }
+      if (input.type === 'email' && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+        showError(input, 'Please enter a valid email address');
+        return false;
+      }
+      if (input.tagName === 'TEXTAREA' && input.required && input.value.trim().length < 10) {
+        showError(input, 'Please enter at least 10 characters');
+        return false;
+      }
+      if (input.value.trim()) {
+        showValid(input);
+      }
+      return true;
+    }
 
-      if (message && message.value.trim().length < 10) {
+    // Live validation on blur
+    contactForm.querySelectorAll('.form-input, .form-textarea').forEach(function(input) {
+      input.addEventListener('blur', function() { validateField(input); });
+    });
+
+    // Character counter
+    var messageField = document.getElementById('message');
+    var charcount = document.getElementById('charcount');
+    if (messageField && charcount) {
+      messageField.addEventListener('input', function() {
+        charcount.textContent = messageField.value.length;
+      });
+    }
+
+    contactForm.addEventListener('submit', function(e) {
+      var valid = true;
+      contactForm.querySelectorAll('.form-input[required], .form-textarea[required]').forEach(function(input) {
+        if (!validateField(input)) valid = false;
+      });
+      if (!valid) {
         e.preventDefault();
-        alert('Please enter a message with at least 10 characters.');
-        message.focus();
-        return;
+        contactForm.querySelector('.error').focus();
       }
     });
   }
