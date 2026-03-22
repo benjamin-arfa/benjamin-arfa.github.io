@@ -204,6 +204,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // TYPEWRITER EFFECT
+  // =============================================
+  var typewriters = document.querySelectorAll('.typewriter');
+  typewriters.forEach(function(el) {
+    var texts = JSON.parse(el.getAttribute('data-texts'));
+    var textIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+    var delay = 100;
+
+    function type() {
+      var current = texts[textIndex];
+      if (isDeleting) {
+        el.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+        delay = 50;
+      } else {
+        el.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+        delay = 100;
+      }
+
+      if (!isDeleting && charIndex === current.length) {
+        delay = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        delay = 500;
+      }
+
+      setTimeout(type, delay);
+    }
+
+    type();
+  });
+
+  // =============================================
   // DYNAMIC COPYRIGHT YEAR
   // =============================================
   var footerYear = document.querySelector('.footer__bottom p');
