@@ -1632,3 +1632,44 @@ main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card):hover::after {
     transform: none;
   }
 }
+
+/* ===========================================
+   PAGE TRANSITIONS
+   =========================================== */
+body {
+  animation: pageFadeIn 0.4s ease-out;
+}
+
+body.page-transitioning {
+  animation: pageFadeOut 0.25s ease-in forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body.page-transitioning {
+    animation: none;
+  }
+}

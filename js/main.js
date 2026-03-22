@@ -401,4 +401,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentYear = new Date().getFullYear();
     footerYear.innerHTML = footerYear.innerHTML.replace(/\u00a9\s*\d{4}/, '\u00a9 ' + currentYear);
   }
+
+  // =============================================
+  // SMOOTH PAGE TRANSITIONS
+  // =============================================
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+
+      var href = link.getAttribute('href');
+      // Only intercept internal navigation links (not anchors, external, or special)
+      if (!href) return;
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (link.target === '_blank' || link.hasAttribute('download')) return;
+      if (link.origin && link.origin !== window.location.origin) return;
+
+      e.preventDefault();
+      document.body.classList.add('page-transitioning');
+
+      setTimeout(function() {
+        window.location.href = href;
+      }, 250);
+    });
+  }
 });
