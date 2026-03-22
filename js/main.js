@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Add scroll-based nav background opacity (optional enhancement)
+  // Add scroll-based nav background opacity
   const nav = document.querySelector('.nav');
   if (nav) {
     window.addEventListener('scroll', function() {
@@ -126,4 +126,89 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // =============================================
+  // DARK MODE TOGGLE
+  // =============================================
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    updateThemeIcon();
+  }
+
+  function updateThemeIcon() {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.textContent = isDark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  var themeBtn = document.querySelector('.theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function() {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var newTheme = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon();
+    });
+  }
+
+  initTheme();
+
+  // =============================================
+  // BACK TO TOP BUTTON
+  // =============================================
+  var backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // =============================================
+  // SCROLL REVEAL ANIMATIONS
+  // =============================================
+  var revealElements = document.querySelectorAll('.card, .section-header, .page__header, .grid > *');
+
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(function(el) {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+  }
+
+  // =============================================
+  // DYNAMIC COPYRIGHT YEAR
+  // =============================================
+  var footerYear = document.querySelector('.footer__bottom p');
+  if (footerYear) {
+    var currentYear = new Date().getFullYear();
+    footerYear.innerHTML = footerYear.innerHTML.replace(/\u00a9\s*\d{4}/, '\u00a9 ' + currentYear);
+  }
 });
