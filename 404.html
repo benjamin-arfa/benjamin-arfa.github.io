@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found - Benjamin Arfa">
+  <title>404 - Page Not Found | Benjamin Arfa</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+
+  <style>
+    .error-page {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xl);
+      text-align: center;
+    }
+
+    .error-page__content {
+      max-width: 600px;
+    }
+
+    .error-page__code {
+      font-family: var(--font-heading);
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-text);
+      position: relative;
+      display: inline-block;
+      margin-bottom: var(--space-lg);
+    }
+
+    .error-page__code span {
+      display: inline-block;
+      animation: bounce 0.6s ease infinite alternate;
+    }
+
+    .error-page__code span:nth-child(1) {
+      color: var(--color-secondary);
+      animation-delay: 0s;
+    }
+
+    .error-page__code span:nth-child(2) {
+      color: var(--color-primary);
+      animation-delay: 0.15s;
+    }
+
+    .error-page__code span:nth-child(3) {
+      color: var(--color-accent);
+      animation-delay: 0.3s;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-12px); }
+    }
+
+    .error-page__glitch {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      background: var(--color-text);
+      color: var(--color-background);
+      display: inline-block;
+      padding: var(--space-xs) var(--space-md);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--space-xl);
+      transform: rotate(-2deg);
+    }
+
+    .error-page__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .error-page__description {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-2xl);
+      line-height: 1.6;
+    }
+
+    .error-page__actions {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-page__card {
+      background: var(--color-surface);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+      transform: rotate(1deg);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .error-page__card:hover {
+      transform: rotate(0deg) translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .error-page__ascii {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      line-height: 1.2;
+      white-space: pre;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-lg);
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .error-page__ascii {
+        display: block;
+      }
+    }
+
+    .error-page__suggestion {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      background: var(--color-primary);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-md);
+      text-align: left;
+      margin-top: var(--space-2xl);
+      transform: rotate(-1deg);
+    }
+
+    .error-page__suggestion code {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">B.ARFA</a>
+
+      <ul class="nav__menu">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="services.html" class="nav__link">Services</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="involvement.html" class="nav__link">Involvement</a></li>
+        <li><a href="contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
+      </ul>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu">
+      <a href="about.html" class="nav__link">About</a>
+      <a href="services.html" class="nav__link">Services</a>
+      <a href="projects.html" class="nav__link">Projects</a>
+      <a href="involvement.html" class="nav__link">Involvement</a>
+      <a href="contact.html" class="nav__link btn btn--primary">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="error-page">
+      <div class="error-page__content">
+        <div class="error-page__code">
+          <span>4</span><span>0</span><span>4</span>
+        </div>
+
+        <div class="error-page__card">
+          <div class="error-page__ascii">  ¯\_(ツ)_/¯</div>
+
+          <h1 class="error-page__title">This page got lost in the data pipeline.</h1>
+          <p class="error-page__description">
+            Looks like this route returned <code>null</code>. The page you're looking for doesn't exist, was moved, or maybe never existed in the first place.
+          </p>
+
+          <div class="error-page__glitch">ERROR: ENOENT — no such file or directory</div>
+        </div>
+
+        <div class="error-page__actions">
+          <a href="index.html" class="btn btn--primary btn--lg">← Back Home</a>
+          <a href="projects.html" class="btn btn--outline btn--lg">View Projects</a>
+          <a href="contact.html" class="btn btn--outline btn--lg">Contact Me</a>
+        </div>
+
+        <div class="error-page__suggestion">
+          <code>$ git log --oneline</code><br>
+          Maybe try one of these pages instead:<br>
+          → <a href="about.html">about.html</a><br>
+          → <a href="services.html">services.html</a><br>
+          → <a href="projects.html">projects.html</a><br>
+          → <a href="involvement.html">involvement.html</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
