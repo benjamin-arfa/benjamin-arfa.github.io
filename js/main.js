@@ -1633,4 +1633,64 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // ----- ANIMATED STATS COUNTER -----
+  var statsNumbers = document.querySelectorAll('.stats-bar__number[data-count]');
+  if (statsNumbers.length > 0) {
+    var hasAnimated = false;
+
+    function animateCounter(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1200;
+      var start = performance.now();
+
+      function step(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(eased * target);
+        el.textContent = current + (progress >= 1 ? suffix : '');
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.classList.add('counted');
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    // Check for reduced motion preference
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      // Show final values immediately
+      statsNumbers.forEach(function(el) {
+        var target = el.getAttribute('data-count');
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = target + suffix;
+      });
+    } else {
+      var statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            statsNumbers.forEach(function(el, i) {
+              setTimeout(function() {
+                animateCounter(el);
+              }, i * 150);
+            });
+            statsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      var statsBar = document.querySelector('.stats-bar');
+      if (statsBar) {
+        statsObserver.observe(statsBar);
+      }
+    }
+  }
 });

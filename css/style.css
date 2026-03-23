@@ -4102,3 +4102,110 @@ a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):
     display: none;
   }
 }
+
+/* ----- STATS COUNTER BAR ----- */
+.stats-bar {
+  padding: var(--space-2xl) 0;
+  background: var(--color-text);
+  color: var(--color-surface);
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+  overflow: hidden;
+}
+
+.stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.stats-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  position: relative;
+}
+
+.stats-bar__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: calc(-1 * var(--space-lg) / 2);
+  top: 10%;
+  height: 80%;
+  width: 3px;
+  background: var(--color-primary);
+}
+
+.stats-bar__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-primary);
+  display: inline-block;
+  min-width: 2ch;
+  transition: transform 0.2s ease;
+}
+
+.stats-bar__number.counted {
+  animation: statsPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.stats-bar__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+@keyframes statsPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .stats-bar__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .stats-bar__item:not(:last-child)::after {
+    display: none;
+  }
+
+  .stats-bar__item:nth-child(1),
+  .stats-bar__item:nth-child(2) {
+    padding-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--color-primary);
+  }
+}
+
+@media (max-width: 400px) {
+  .stats-bar__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-bar__number.counted {
+    animation: none;
+  }
+}
+
+@media print {
+  .stats-bar {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+  .stats-bar__number,
+  .stats-bar__label {
+    color: #000;
+  }
+}
