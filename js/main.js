@@ -845,9 +845,30 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
-  // SMOOTH PAGE TRANSITIONS
+  // SMOOTH PAGE TRANSITIONS — neobrutalist stripe wipe
   // =============================================
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Create overlay with 4 color stripes
+    var overlay = document.createElement('div');
+    overlay.className = 'page-transition-overlay';
+    for (var si = 0; si < 4; si++) {
+      var stripe = document.createElement('div');
+      stripe.className = 'page-transition-overlay__stripe';
+      overlay.appendChild(stripe);
+    }
+    document.body.appendChild(overlay);
+
+    // Play entrance animation (stripes retract) if we came via a transition
+    if (sessionStorage.getItem('page-transition') === '1') {
+      sessionStorage.removeItem('page-transition');
+      overlay.classList.add('page-transition-overlay--enter');
+      // Remove overlay after animation completes
+      setTimeout(function() {
+        overlay.classList.remove('page-transition-overlay--enter');
+      }, 600);
+    }
+
+    // Intercept internal link clicks for exit transition
     document.addEventListener('click', function(e) {
       var link = e.target.closest('a');
       if (!link) return;
@@ -860,11 +881,13 @@ document.addEventListener('DOMContentLoaded', function() {
       if (link.origin && link.origin !== window.location.origin) return;
 
       e.preventDefault();
+      sessionStorage.setItem('page-transition', '1');
       document.body.classList.add('page-transitioning');
 
+      // Navigate after stripes finish covering the screen
       setTimeout(function() {
         window.location.href = href;
-      }, 250);
+      }, 400);
     });
   }
 });
