@@ -43,6 +43,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://benjamin-arfa.github.io/blog/healthcare-data-pipelines.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://benjamin-arfa.github.io/blog/open-standards-regtech.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://benjamin-arfa.github.io/blog/data-engineering-to-consulting.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://benjamin-arfa.github.io/impressum.html</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>yearly</changefreq>

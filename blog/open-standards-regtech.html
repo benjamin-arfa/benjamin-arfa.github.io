@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why open standards like BIRD and SDMX are reshaping regulatory reporting and reducing the compliance burden for financial institutions.">
+  <meta name="author" content="Moadh Benjamin Arfa">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Why Open Standards Matter in RegTech | Benjamin Arfa">
+  <meta property="og:description" content="Open standards like BIRD and SDMX are reshaping regulatory reporting and reducing compliance burden for financial institutions.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://benjamin-arfa.github.io/blog/open-standards-regtech.html">
+  <meta property="og:image" content="https://benjamin-arfa.github.io/og-image.svg">
+  <meta property="og:site_name" content="Benjamin Arfa">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-03-08">
+  <meta property="article:author" content="Moadh Benjamin Arfa">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Open Standards Matter in RegTech | Benjamin Arfa">
+  <meta name="twitter:description" content="Open standards like BIRD and SDMX are reshaping regulatory reporting and reducing compliance burden for financial institutions.">
+  <meta name="twitter:image" content="https://benjamin-arfa.github.io/og-image.svg">
+
+  <title>Why Open Standards Matter in RegTech | Benjamin Arfa</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why Open Standards Matter in RegTech",
+    "description": "Open standards like BIRD and SDMX are reshaping regulatory reporting and reducing the compliance burden for financial institutions.",
+    "datePublished": "2026-03-08",
+    "author": {
+      "@type": "Person",
+      "name": "Moadh Benjamin Arfa",
+      "url": "https://benjamin-arfa.github.io"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Moadh Benjamin Arfa"
+    },
+    "url": "https://benjamin-arfa.github.io/blog/open-standards-regtech.html",
+    "wordCount": 820
+  }
+  </script>
+
+  <!-- Performance: preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="dns-prefetch" href="https://github.com">
+  <script>var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+
+  <style>
+    .article {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .article__header {
+      margin-bottom: var(--space-2xl);
+    }
+    .article__meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    .article__reading-time {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-sm);
+      background: var(--color-primary);
+      border: var(--border-thin);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .article__tags {
+      display: flex;
+      gap: var(--space-xs);
+    }
+    .article__body h2 {
+      margin-top: var(--space-2xl);
+      margin-bottom: var(--space-md);
+    }
+    .article__body p {
+      margin-bottom: var(--space-lg);
+      font-size: var(--text-lg);
+      line-height: 1.8;
+    }
+    .article__body ul, .article__body ol {
+      margin-bottom: var(--space-lg);
+      padding-left: var(--space-xl);
+      font-size: var(--text-lg);
+      line-height: 1.8;
+    }
+    .article__body li {
+      margin-bottom: var(--space-sm);
+    }
+    .article__body code {
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      padding: 2px 6px;
+      background: var(--color-primary);
+      border: 1px solid var(--color-border);
+    }
+    .article__body blockquote {
+      margin: var(--space-xl) 0;
+      padding: var(--space-lg);
+      border-left: 6px solid var(--color-primary);
+      background: var(--color-surface);
+      border-top: var(--border-thin);
+      border-right: var(--border-thin);
+      border-bottom: var(--border-thin);
+      box-shadow: var(--shadow-sm);
+      font-style: italic;
+      font-size: var(--text-lg);
+    }
+    .article__nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--space-2xl);
+      padding-top: var(--space-xl);
+      border-top: var(--border-thick);
+    }
+    .article__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="../index.html" class="nav__logo">B.ARFA</a>
+
+      <ul class="nav__menu">
+        <li><a href="../about.html" class="nav__link">About</a></li>
+        <li><a href="../services.html" class="nav__link">Services</a></li>
+        <li><a href="../projects.html" class="nav__link">Projects</a></li>
+        <li><a href="../blog.html" class="nav__link nav__link--active">Blog</a></li>
+        <li><a href="../involvement.html" class="nav__link">Involvement</a></li>
+        <li><a href="../contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
+      </ul>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu">
+      <a href="../about.html" class="nav__link">About</a>
+      <a href="../services.html" class="nav__link">Services</a>
+      <a href="../projects.html" class="nav__link">Projects</a>
+      <a href="../blog.html" class="nav__link">Blog</a>
+      <a href="../involvement.html" class="nav__link">Involvement</a>
+      <a href="../contact.html" class="nav__link btn btn--primary">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page">
+    <div class="container">
+      <article class="article">
+        <header class="article__header">
+          <a href="../blog.html" class="article__back btn btn--outline btn--sm">&larr; Back to Blog</a>
+
+          <h1 class="page__title" style="margin-top: var(--space-lg);">
+            <span class="hero__title-highlight">Why Open Standards Matter in RegTech</span>
+          </h1>
+
+          <div class="article__meta">
+            <time datetime="2026-03-08">March 8, 2026</time>
+            <span class="article__reading-time" aria-label="Estimated reading time">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              4 min read
+            </span>
+          </div>
+
+          <div class="article__tags">
+            <span class="tag tag--primary">Tech</span>
+          </div>
+        </header>
+
+        <div class="article__body">
+          <p>
+            If you have ever spent weeks deciphering a regulator's reporting requirements only to discover that the format changed last quarter, you understand the pain of regulatory technology. The financial industry has been drowning in bespoke reporting formats for decades, and it is costing billions.
+          </p>
+
+          <p>
+            Open standards are the antidote. In my work at the Bank for International Settlements, I saw firsthand how standards like <strong>BIRD</strong> and <strong>SDMX</strong> can transform regulatory reporting from a compliance headache into a streamlined, automated process.
+          </p>
+
+          <h2>The Problem: A Tower of Babel</h2>
+
+          <p>
+            Every regulatory authority has its own reporting format. The ECB wants one thing, FINMA another, and the Fed something entirely different. Banks operating across jurisdictions maintain armies of developers just to keep up with format changes. This fragmentation creates three core problems:
+          </p>
+
+          <ul>
+            <li><strong>Redundant effort.</strong> Multiple teams build similar pipelines for similar data, just in different formats.</li>
+            <li><strong>Data quality gaps.</strong> When the same data is transformed through multiple paths, inconsistencies creep in.</li>
+            <li><strong>Slow adaptation.</strong> New regulations take months to implement because every format change cascades through the entire reporting stack.</li>
+          </ul>
+
+          <h2>BIRD: A Shared Data Dictionary</h2>
+
+          <p>
+            The <strong>Banks' Integrated Reporting Dictionary</strong> (BIRD) is an initiative by the ECB and European banking industry to create a shared input data model. Instead of each bank interpreting reporting requirements differently, BIRD provides a common language.
+          </p>
+
+          <blockquote>
+            BIRD does not tell banks how to build their systems. It tells them what data to collect and how to describe it, so that the output is consistent regardless of the underlying technology.
+          </blockquote>
+
+          <p>
+            The power of BIRD lies in its <em>transformation rules</em>. These are formal, machine-readable specifications that map input data to reporting templates. This means you can automate the entire reporting chain: from raw data to regulatory output, with no manual intervention.
+          </p>
+
+          <h2>SDMX: The Statistical Exchange Standard</h2>
+
+          <p>
+            <strong>SDMX</strong> (Statistical Data and Metadata eXchange) is the older sibling in this family. Originally developed for exchanging statistical data between central banks and international organizations, SDMX provides:
+          </p>
+
+          <ul>
+            <li><strong>Data Structure Definitions (DSDs)</strong> that formally describe the dimensions, attributes, and measures of a dataset.</li>
+            <li><strong>Content-Oriented Guidelines</strong> that standardize how economic and financial concepts are represented.</li>
+            <li><strong>REST APIs</strong> for querying and retrieving data programmatically.</li>
+          </ul>
+
+          <p>
+            At BIS, we used SDMX extensively for the <strong>Integrated Regulatory Reporting</strong> (IReF) initiative. The ability to define data structures formally and share them across institutions was transformative.
+          </p>
+
+          <h2>What This Means for Engineers</h2>
+
+          <p>
+            If you are a data engineer working in financial services, here is why you should care about these standards:
+          </p>
+
+          <ol>
+            <li><strong>Build once, report many.</strong> A single data pipeline can serve multiple regulatory outputs if it is built on a shared data model.</li>
+            <li><strong>Automate validation.</strong> Formal schemas and transformation rules mean you can validate reports programmatically before submission.</li>
+            <li><strong>Future-proof your architecture.</strong> Standards evolve slowly and predictably, unlike proprietary formats that can change without warning.</li>
+            <li><strong>Reduce vendor lock-in.</strong> Open standards mean you are not dependent on a single vendor's interpretation of regulatory requirements.</li>
+          </ol>
+
+          <h2>Looking Ahead</h2>
+
+          <p>
+            The trend is clear: regulators are moving toward standardized, machine-readable reporting. The EU's Digital Regulatory Reporting initiative, Switzerland's modernization efforts, and the global push for climate risk disclosures all point in the same direction.
+          </p>
+
+          <p>
+            Engineers who understand these standards will be uniquely positioned to build the next generation of RegTech platforms. The complexity is not going away, but standards give us the tools to manage it at scale.
+          </p>
+
+          <p>
+            Interested in discussing RegTech architecture or open standards? I would love to connect &mdash; <a href="../contact.html">drop me a line</a>.
+          </p>
+        </div>
+
+        <nav class="article__nav" aria-label="Article navigation">
+          <a href="healthcare-data-pipelines.html" class="btn btn--outline btn--sm">&larr; Previous Post</a>
+          <a href="data-engineering-to-consulting.html" class="btn btn--outline btn--sm">Next Post &rarr;</a>
+        </nav>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>Benjamin Arfa</h4>
+          <p style="opacity: 0.8;">Data & Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../involvement.html">Involvement</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Legal</h4>
+          <ul class="footer__links">
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <div class="footer__social">
+            <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://x.com/benjaminarfa" target="_blank" rel="noopener" aria-label="X (Twitter)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="mailto:benjamin.arfa.pro@gmail.com" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Arfa Digital Consulting. All rights reserved. | CHE-294.585.543</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-text">
+    <p class="cookie-banner__title">&#127850; Cookies &amp; Privacy</p>
+    <p class="cookie-banner__text" id="cookie-text">
+      This site uses essential cookies for functionality (theme preferences, etc.). No tracking or advertising cookies are used.
+      <a href="../impressum.html">Learn more</a>
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--primary btn--sm" id="cookie-accept">Accept</button>
+      <button class="btn btn--outline btn--sm" id="cookie-decline">Decline</button>
+    </div>
+  </div>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
