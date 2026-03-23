@@ -3404,7 +3404,8 @@ h3:hover .heading-anchor,
 }
 
 @media print {
-  .heading-anchor {
+  .heading-anchor,
+  .article-toc {
     display: none;
   }
 }

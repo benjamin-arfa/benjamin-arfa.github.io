@@ -1002,16 +1002,62 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // HEADING ANCHOR LINKS
+  // =============================================
+  (function() {
+    // Add anchor links to h2 and h3 headings inside main content
+    var main = document.getElementById('main-content');
+    if (!main) return;
+
+    var headings = main.querySelectorAll('h2, h3');
+    var usedIds = {};
+
+    headings.forEach(function(heading) {
+      // Skip headings inside nav, breadcrumb, or that already have anchors
+      if (heading.closest('.breadcrumb, nav, .article-toc')) return;
+      if (heading.querySelector('.heading-anchor')) return;
+
+      // Generate a slug from text content
+      var text = heading.textContent.trim();
+      var slug = text.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .substring(0, 60);
+
+      if (!slug) return;
+
+      // Ensure unique IDs
+      if (usedIds[slug]) {
+        usedIds[slug]++;
+        slug = slug + '-' + usedIds[slug];
+      } else {
+        usedIds[slug] = 1;
+      }
+
+      heading.id = slug;
+
+      var anchor = document.createElement('a');
+      anchor.className = 'heading-anchor';
+      anchor.href = '#' + slug;
+      anchor.setAttribute('aria-label', 'Link to section: ' + text);
+      anchor.textContent = '#';
+      heading.appendChild(anchor);
+    });
+  })();
+
+  // =============================================
   // AUTO-GENERATED TABLE OF CONTENTS (Blog Articles)
+  // Runs after heading anchors so we get proper slug-based IDs
   // =============================================
   (function() {
     var articleBody = document.querySelector('.article__body');
     if (!articleBody) return;
 
-    var headings = articleBody.querySelectorAll('h2');
+    var headings = articleBody.querySelectorAll('h2:not(.related-posts__title)');
     if (headings.length < 2) return; // Only show TOC for articles with 2+ sections
 
-    // Assign IDs to headings
+    // Fallback IDs if heading anchors didn't assign them
     headings.forEach(function(h, i) {
       if (!h.id) {
         h.id = 'section-' + (i + 1);
@@ -1040,7 +1086,11 @@ document.addEventListener('DOMContentLoaded', function() {
       a.className = 'article-toc__link';
       a.href = '#' + h.id;
       a.setAttribute('data-index', String(i + 1).padStart(2, '0'));
-      a.textContent = h.textContent;
+      // Strip the anchor '#' symbol appended by heading-anchor links
+      var anchorEl = h.querySelector('.heading-anchor');
+      a.textContent = anchorEl
+        ? h.textContent.replace(/\s*#$/, '').trim()
+        : h.textContent.trim();
       li.appendChild(a);
       list.appendChild(li);
     });
@@ -1048,13 +1098,10 @@ document.addEventListener('DOMContentLoaded', function() {
     toc.appendChild(toggleBtn);
     toc.appendChild(list);
 
-    // Insert TOC after article header
-    var articleHeader = document.querySelector('.article__header');
-    if (articleHeader && articleHeader.nextSibling) {
-      articleHeader.parentNode.insertBefore(toc, articleHeader.nextSibling);
-    }
+    // Insert TOC at the start of article body (before first paragraph)
+    articleBody.insertBefore(toc, articleBody.firstChild);
 
-    // Toggle collapse
+    // Toggle collapse/expand
     toggleBtn.addEventListener('click', function() {
       var isCollapsed = toc.classList.toggle('article-toc--collapsed');
       toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
@@ -1103,51 +1150,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 100);
     });
     updateActiveTocLink();
-  })();
-
-  // =============================================
-  // HEADING ANCHOR LINKS
-  // =============================================
-  (function() {
-    // Add anchor links to h2 and h3 headings inside main content
-    var main = document.getElementById('main-content');
-    if (!main) return;
-
-    var headings = main.querySelectorAll('h2, h3');
-    var usedIds = {};
-
-    headings.forEach(function(heading) {
-      // Skip headings inside nav, breadcrumb, or that already have anchors
-      if (heading.closest('.breadcrumb, nav, .article-toc')) return;
-      if (heading.querySelector('.heading-anchor')) return;
-
-      // Generate a slug from text content
-      var text = heading.textContent.trim();
-      var slug = text.toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .substring(0, 60);
-
-      if (!slug) return;
-
-      // Ensure unique IDs
-      if (usedIds[slug]) {
-        usedIds[slug]++;
-        slug = slug + '-' + usedIds[slug];
-      } else {
-        usedIds[slug] = 1;
-      }
-
-      heading.id = slug;
-
-      var anchor = document.createElement('a');
-      anchor.className = 'heading-anchor';
-      anchor.href = '#' + slug;
-      anchor.setAttribute('aria-label', 'Link to section: ' + text);
-      anchor.textContent = '#';
-      heading.appendChild(anchor);
-    });
   })();
 
   // =============================================
