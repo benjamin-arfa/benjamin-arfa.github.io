@@ -3550,3 +3550,40 @@ h3:hover .heading-anchor,
     border-width: 4px;
   }
 }
+
+/* ===========================================
+   EXTERNAL LINK INDICATORS
+   Show a bold ↗ arrow after links that leave
+   the site, neobrutalist style.
+   =========================================== */
+a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):not(.share-btn):not(.code-copy-btn)::after {
+  content: " ↗";
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 900;
+  line-height: 1;
+  vertical-align: super;
+  margin-left: 0.15em;
+  color: var(--color-accent, #FF5C5C);
+  transition: transform var(--transition-fast, 0.15s ease);
+}
+
+a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):not(.share-btn):not(.code-copy-btn):hover::after {
+  transform: translate(2px, -2px);
+}
+
+/* Suppress external indicator on footer social icons and icon-only links */
+.footer__social a::after,
+.tooltip-wrap a::after {
+  content: none !important;
+}
+
+/* Hide in print */
+@media print {
+  a[target="_blank"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #555 !important;
+  }
+}
