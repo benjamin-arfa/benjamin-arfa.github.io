@@ -3222,6 +3222,26 @@ h3:hover .heading-anchor,
 }
 
 /* =============================================
+   RENDERING PERFORMANCE — content-visibility
+   Skips layout/paint for off-screen sections,
+   significantly reducing initial render time.
+   ============================================= */
+.section:not(:first-of-type),
+.footer,
+.testimonials,
+.stats-section,
+.related-posts,
+.post-nav {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Cards inside grids benefit from containment */
+.card {
+  contain: layout style;
+}
+
+/* =============================================
    HIGH-CONTRAST MODE (prefers-contrast: more)
    Enhances borders, shadows, and text weight
    for users with high-contrast system settings.
