@@ -74,6 +74,13 @@ button:focus:not(:focus-visible),
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + var(--space-lg));
+}
+
+/* Ensure anchor-linked headings clear the fixed navbar */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id],
+#main-content, [id].section, [id].article-toc {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-lg));
 }
 
 body {
