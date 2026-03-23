@@ -906,6 +906,110 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // AUTO-GENERATED TABLE OF CONTENTS (Blog Articles)
+  // =============================================
+  (function() {
+    var articleBody = document.querySelector('.article__body');
+    if (!articleBody) return;
+
+    var headings = articleBody.querySelectorAll('h2');
+    if (headings.length < 2) return; // Only show TOC for articles with 2+ sections
+
+    // Assign IDs to headings
+    headings.forEach(function(h, i) {
+      if (!h.id) {
+        h.id = 'section-' + (i + 1);
+      }
+    });
+
+    // Build TOC element
+    var toc = document.createElement('nav');
+    toc.className = 'article-toc';
+    toc.setAttribute('aria-label', 'Table of contents');
+
+    var toggleBtn = document.createElement('button');
+    toggleBtn.className = 'article-toc__toggle';
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.innerHTML = '<span>Table of Contents</span>' +
+      '<svg class="article-toc__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square">' +
+      '<polyline points="6 9 12 15 18 9"/></svg>';
+
+    var list = document.createElement('ol');
+    list.className = 'article-toc__list';
+
+    headings.forEach(function(h, i) {
+      var li = document.createElement('li');
+      li.className = 'article-toc__item';
+      var a = document.createElement('a');
+      a.className = 'article-toc__link';
+      a.href = '#' + h.id;
+      a.setAttribute('data-index', String(i + 1).padStart(2, '0'));
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+
+    toc.appendChild(toggleBtn);
+    toc.appendChild(list);
+
+    // Insert TOC after article header
+    var articleHeader = document.querySelector('.article__header');
+    if (articleHeader && articleHeader.nextSibling) {
+      articleHeader.parentNode.insertBefore(toc, articleHeader.nextSibling);
+    }
+
+    // Toggle collapse
+    toggleBtn.addEventListener('click', function() {
+      var isCollapsed = toc.classList.toggle('article-toc--collapsed');
+      toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+    });
+
+    // Smooth scroll for TOC links
+    var tocLinks = list.querySelectorAll('.article-toc__link');
+    tocLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+          var y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Highlight active section on scroll
+    var tocLinkEls = Array.prototype.slice.call(tocLinks);
+    var headingEls = Array.prototype.slice.call(headings);
+
+    function updateActiveTocLink() {
+      var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+      var scrollPos = window.pageYOffset + navHeight + 60;
+      var activeIndex = 0;
+
+      for (var i = 0; i < headingEls.length; i++) {
+        if (headingEls[i].offsetTop <= scrollPos) {
+          activeIndex = i;
+        }
+      }
+
+      tocLinkEls.forEach(function(link, i) {
+        link.classList.toggle('article-toc__link--active', i === activeIndex);
+      });
+    }
+
+    var tocScrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (tocScrollTimeout) return;
+      tocScrollTimeout = setTimeout(function() {
+        tocScrollTimeout = null;
+        updateActiveTocLink();
+      }, 100);
+    });
+    updateActiveTocLink();
+  })();
+
+  // =============================================
   // AUTO-UPDATE COPYRIGHT YEAR
   // =============================================
   document.querySelectorAll('.copyright-year').forEach(function(el) {
