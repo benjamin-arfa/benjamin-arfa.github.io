@@ -3162,6 +3162,55 @@ body::after {
   box-shadow: 1px 1px 0 var(--color-primary);
 }
 
+/* ----- HEADING ANCHOR LINKS ----- */
+.heading-anchor {
+  display: inline-block;
+  margin-left: 0.3em;
+  color: var(--color-text-muted, #999);
+  text-decoration: none;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+  transform: translateX(-4px);
+  vertical-align: baseline;
+  font-size: 0.75em;
+  border: 2px solid transparent;
+  padding: 0 0.15em;
+  line-height: 1;
+}
+
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.heading-anchor:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+  background: var(--color-primary);
+  box-shadow: 2px 2px 0 var(--color-text);
+}
+
+.heading-anchor:active {
+  transform: translateX(1px) translateY(1px);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .heading-anchor:hover {
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: 2px 2px 0 var(--color-primary);
+}
+
+@media print {
+  .heading-anchor {
+    display: none;
+  }
+}
+
 /* Ensure noise overlay doesn't interfere with print */
 @media print {
   body::after {
