@@ -207,6 +207,50 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =============================================
+  // NAV LOGO TEXT SCRAMBLE EFFECT
+  // =============================================
+  var logo = document.querySelector('.nav__logo');
+  if (logo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var originalText = logo.textContent.trim();
+    var scrambleChars = '!@#$%&*<>{}[]=/\\|~^';
+    var isScrambling = false;
+
+    function scrambleLogo() {
+      if (isScrambling) return;
+      isScrambling = true;
+
+      var iterations = 0;
+      var maxIterations = originalText.length * 3;
+
+      var interval = setInterval(function() {
+        var result = '';
+        for (var i = 0; i < originalText.length; i++) {
+          if (originalText[i] === '.' || originalText[i] === ' ') {
+            result += originalText[i];
+          } else if (iterations >= i * 3) {
+            result += originalText[i];
+          } else {
+            result += '<span class="scramble-char scramble-char--active">' +
+              scrambleChars[Math.floor(Math.random() * scrambleChars.length)] +
+              '</span>';
+          }
+        }
+        logo.innerHTML = result;
+        iterations++;
+
+        if (iterations > maxIterations) {
+          clearInterval(interval);
+          logo.textContent = originalText;
+          isScrambling = false;
+        }
+      }, 35);
+    }
+
+    logo.addEventListener('mouseenter', scrambleLogo);
+    logo.addEventListener('focus', scrambleLogo);
+  }
+
+  // =============================================
   // DARK MODE TOGGLE
   // =============================================
   function initTheme() {

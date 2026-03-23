@@ -292,6 +292,20 @@ strong {
   text-decoration: none;
 }
 
+/* Text scramble effect on logo */
+.nav__logo--scrambling {
+  font-variant-ligatures: none;
+}
+
+.nav__logo .scramble-char {
+  display: inline-block;
+  min-width: 0.6ch;
+}
+
+.nav__logo .scramble-char--active {
+  color: var(--color-accent);
+}
+
 .nav__menu {
   display: none;
   list-style: none;
