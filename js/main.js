@@ -17,14 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
     navToggle.classList.add('active');
     navToggle.setAttribute('aria-expanded', 'true');
     mobileMenu.classList.add('active');
+    mobileMenu.setAttribute('aria-hidden', 'false');
     backdrop.classList.add('active');
     document.body.classList.add('menu-open');
+    // Focus first link in mobile menu for keyboard users
+    var firstLink = mobileMenu.querySelector('.nav__link');
+    if (firstLink) firstLink.focus();
   }
 
   function closeMobileMenu() {
     navToggle.classList.remove('active');
     navToggle.setAttribute('aria-expanded', 'false');
     mobileMenu.classList.remove('active');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     backdrop.classList.remove('active');
     document.body.classList.remove('menu-open');
   }
@@ -50,11 +55,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking backdrop
     backdrop.addEventListener('click', closeMobileMenu);
 
-    // Close mobile menu on Escape key
+    // Close mobile menu on Escape key + trap focus inside menu
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
         closeMobileMenu();
         navToggle.focus();
+      }
+
+      // Focus trap: keep Tab cycling within mobile menu when open
+      if (e.key === 'Tab' && mobileMenu.classList.contains('active')) {
+        var focusable = mobileMenu.querySelectorAll('a, button');
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     });
   }
@@ -67,8 +91,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('nav__link--active');
+      link.setAttribute('aria-current', 'page');
     }
   });
+
+  // Set aria-hidden on mobile menu when closed
+  if (mobileMenu) {
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.setAttribute('role', 'dialog');
+    mobileMenu.setAttribute('aria-label', 'Mobile navigation');
+  }
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
@@ -158,19 +190,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Card hover effects with keyboard support
+  // Card keyboard support: only make cards with links keyboard-interactive
   const cards = document.querySelectorAll('.card');
   cards.forEach(function(card) {
-    card.setAttribute('tabindex', '0');
-
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        const link = card.querySelector('a');
-        if (link) {
-          link.click();
+    var cardLink = card.querySelector('a');
+    if (cardLink) {
+      // Only cards with links get keyboard support
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'group');
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          cardLink.click();
         }
-      }
-    });
+      });
+    }
   });
 
   // =============================================
@@ -419,6 +452,21 @@ document.addEventListener('DOMContentLoaded', function() {
       case 't':
         window.scrollTo({ top: 0, behavior: 'smooth' });
         break;
+    }
+  });
+
+  // =============================================
+  // FOOTER ACCESSIBILITY
+  // =============================================
+  var footerSections = document.querySelectorAll('.footer__section');
+  footerSections.forEach(function(section) {
+    var heading = section.querySelector('h4');
+    if (heading && heading.textContent.trim() === 'Navigation') {
+      var list = section.querySelector('.footer__links');
+      if (list) {
+        list.setAttribute('role', 'list');
+        list.setAttribute('aria-label', 'Footer navigation');
+      }
     }
   });
 
