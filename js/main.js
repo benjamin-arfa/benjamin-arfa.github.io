@@ -276,9 +276,16 @@ document.addEventListener('DOMContentLoaded', function() {
     themeBtn.addEventListener('click', function() {
       var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       var newTheme = isDark ? 'light' : 'dark';
+
+      // Enable smooth color transition, then remove after animation
+      document.documentElement.classList.add('theme-transitioning');
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateThemeIcon();
+
+      setTimeout(function() {
+        document.documentElement.classList.remove('theme-transitioning');
+      }, 450);
     });
   }
 
@@ -552,9 +559,13 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'd':
         var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         var newTheme = isDark ? 'light' : 'dark';
+        document.documentElement.classList.add('theme-transitioning');
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon();
+        setTimeout(function() {
+          document.documentElement.classList.remove('theme-transitioning');
+        }, 450);
         break;
       case 't':
         window.scrollTo({ top: 0, behavior: 'smooth' });
