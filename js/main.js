@@ -470,20 +470,57 @@ document.addEventListener('DOMContentLoaded', function() {
           shortcutsVisible = !shortcutsVisible;
           if (shortcutsVisible) {
             clearTimeout(hintTimeout);
-            keyboardHint.innerHTML = '<strong>Keyboard Shortcuts</strong><br>' +
-              '<kbd>H</kbd> Home &nbsp; <kbd>A</kbd> About &nbsp; <kbd>S</kbd> Services<br>' +
-              '<kbd>P</kbd> Projects &nbsp; <kbd>I</kbd> Involvement &nbsp; <kbd>C</kbd> Contact<br>' +
-              '<kbd>D</kbd> Toggle dark mode &nbsp; <kbd>T</kbd> Scroll to top';
-            keyboardHint.classList.add('visible');
+            keyboardHint.innerHTML =
+              '<div class="shortcuts-modal">' +
+                '<div class="shortcuts-modal__header">' +
+                  '<strong>⌨ Keyboard Shortcuts</strong>' +
+                  '<span class="shortcuts-modal__close" role="button" tabindex="0" aria-label="Close shortcuts">&times;</span>' +
+                '</div>' +
+                '<div class="shortcuts-modal__grid">' +
+                  '<div class="shortcuts-modal__group">' +
+                    '<h4 class="shortcuts-modal__group-title">Navigation</h4>' +
+                    '<div class="shortcuts-modal__row"><kbd>H</kbd><span>Home</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>A</kbd><span>About</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>S</kbd><span>Services</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>P</kbd><span>Projects</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>B</kbd><span>Blog</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>I</kbd><span>Involvement</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>C</kbd><span>Contact</span></div>' +
+                  '</div>' +
+                  '<div class="shortcuts-modal__group">' +
+                    '<h4 class="shortcuts-modal__group-title">Actions</h4>' +
+                    '<div class="shortcuts-modal__row"><kbd>D</kbd><span>Toggle dark mode</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>T</kbd><span>Scroll to top</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>?</kbd><span>Toggle this panel</span></div>' +
+                    '<div class="shortcuts-modal__row"><kbd>Esc</kbd><span>Close panel</span></div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>';
+            keyboardHint.classList.add('visible', 'shortcuts-expanded');
+            // Close button handler
+            var closeBtn = keyboardHint.querySelector('.shortcuts-modal__close');
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function() {
+                shortcutsVisible = false;
+                keyboardHint.classList.remove('visible', 'shortcuts-expanded');
+              });
+            }
           } else {
-            keyboardHint.classList.remove('visible');
+            keyboardHint.classList.remove('visible', 'shortcuts-expanded');
           }
+        }
+        break;
+      case 'Escape':
+        if (shortcutsVisible && keyboardHint) {
+          shortcutsVisible = false;
+          keyboardHint.classList.remove('visible', 'shortcuts-expanded');
         }
         break;
       case 'h': window.location.href = 'index.html'; break;
       case 'a': window.location.href = 'about.html'; break;
       case 's': window.location.href = 'services.html'; break;
       case 'p': window.location.href = 'projects.html'; break;
+      case 'b': window.location.href = 'blog.html'; break;
       case 'i': window.location.href = 'involvement.html'; break;
       case 'c': window.location.href = 'contact.html'; break;
       case 'd':
