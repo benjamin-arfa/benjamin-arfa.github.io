@@ -283,6 +283,15 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('theme', newTheme);
       updateThemeIcon();
 
+      // Update theme-color meta tag to match current theme
+      var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+      if (!themeColorMeta) {
+        themeColorMeta = document.createElement('meta');
+        themeColorMeta.name = 'theme-color';
+        document.head.appendChild(themeColorMeta);
+      }
+      themeColorMeta.setAttribute('content', newTheme === 'dark' ? '#1A1A1A' : '#FFE500');
+
       setTimeout(function() {
         document.documentElement.classList.remove('theme-transitioning');
       }, 450);

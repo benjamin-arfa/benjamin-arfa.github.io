@@ -1,0 +1,20 @@
+{
+  "name": "Benjamin Arfa - Data & Software Engineering",
+  "short_name": "B.ARFA",
+  "description": "Data & Software Engineer specializing in data integration, governance, and healthcare interoperability.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#FFE500",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "portfolio"],
+  "lang": "en",
+  "orientation": "any"
+}
