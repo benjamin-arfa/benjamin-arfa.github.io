@@ -190,6 +190,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // =============================================
+  // BASEL LOCAL TIME (Contact Page)
+  // =============================================
+  var baselTimeEl = document.getElementById('basel-time');
+  if (baselTimeEl) {
+    function updateBaselTime() {
+      try {
+        var now = new Date();
+        var formatter = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Europe/Zurich',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+        var timeStr = formatter.format(now);
+        baselTimeEl.textContent = timeStr;
+
+        // Determine business hours (Mon-Fri 9:00-18:00 CET/CEST)
+        var dayFormatter = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'Europe/Zurich',
+          weekday: 'short'
+        });
+        var hourFormatter = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Europe/Zurich',
+          hour: 'numeric',
+          hour12: false
+        });
+        var day = dayFormatter.format(now);
+        var hour = parseInt(hourFormatter.format(now), 10);
+        var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(day) !== -1;
+        var isBusinessHours = isWeekday && hour >= 9 && hour < 18;
+
+        // Add or update status badge
+        var statusEl = baselTimeEl.parentElement.querySelector('.local-time__status');
+        if (!statusEl) {
+          statusEl = document.createElement('span');
+          statusEl.className = 'local-time__status';
+          baselTimeEl.parentElement.appendChild(statusEl);
+        }
+        if (isBusinessHours) {
+          statusEl.className = 'local-time__status local-time__status--available';
+          statusEl.textContent = '● Available';
+        } else {
+          statusEl.className = 'local-time__status local-time__status--off-hours';
+          statusEl.textContent = 'Off hours';
+        }
+      } catch (e) {
+        baselTimeEl.textContent = '--:--';
+      }
+    }
+
+    updateBaselTime();
+    setInterval(updateBaselTime, 30000); // Update every 30 seconds
+  }
+
   // Card keyboard support: only make cards with links keyboard-interactive
   const cards = document.querySelectorAll('.card');
   cards.forEach(function(card) {
