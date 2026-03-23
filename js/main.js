@@ -461,6 +461,70 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // BLOG POST FILTER (Blog page)
+  // =============================================
+  var blogFilterBtns = document.querySelectorAll('.blog-filter__btn');
+  var blogGrid = document.getElementById('blog-grid');
+
+  if (blogFilterBtns.length && blogGrid) {
+    blogFilterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.getAttribute('data-filter');
+
+        // Update active button
+        blogFilterBtns.forEach(function(b) {
+          b.classList.remove('active');
+          b.classList.remove('btn--primary');
+          b.classList.add('btn--outline');
+        });
+        btn.classList.add('active');
+        btn.classList.remove('btn--outline');
+        btn.classList.add('btn--primary');
+
+        // Filter blog cards
+        var cards = blogGrid.querySelectorAll('.blog-card');
+        var visibleCount = 0;
+
+        cards.forEach(function(card, index) {
+          var categories = (card.getAttribute('data-categories') || '').split(/\s+/);
+          var show = filter === 'all' || categories.indexOf(filter) !== -1;
+
+          if (show) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            setTimeout((function(el) {
+              return function() {
+                el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+              };
+            })(card), 50 + (visibleCount * 80));
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Show "no posts" message if nothing matches
+        var emptyMsg = blogGrid.querySelector('.blog-grid__empty');
+        if (visibleCount === 0) {
+          if (!emptyMsg) {
+            emptyMsg = document.createElement('p');
+            emptyMsg.className = 'blog-grid__empty';
+            emptyMsg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: var(--space-xl); font-size: var(--text-lg); color: var(--color-text-muted); font-family: var(--font-heading); font-weight: 700; border: var(--border-thick); border-style: dashed;';
+            emptyMsg.textContent = 'No posts in this category yet — stay tuned!';
+            blogGrid.appendChild(emptyMsg);
+          }
+          emptyMsg.style.display = '';
+        } else if (emptyMsg) {
+          emptyMsg.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // =============================================
   // READING PROGRESS BAR
   // =============================================
   var progressBar = document.querySelector('.progress-bar');
