@@ -346,8 +346,14 @@ python -m pybirdai --help</code></pre>
   <!-- Theme Toggle -->
   <button class="theme-toggle" aria-label="Toggle dark mode"></button>
 
-  <!-- Back to Top -->
-  <button class="back-to-top" aria-label="Back to top">2191</button>
+  <!-- Back to Top with Scroll Progress Ring -->
+  <div class="back-to-top-wrap" aria-label="Back to top">
+    <svg class="back-to-top-progress" viewBox="0 0 56 56" aria-hidden="true">
+      <circle class="back-to-top-progress__track" cx="28" cy="28" r="24"/>
+      <circle class="back-to-top-progress__fill" cx="28" cy="28" r="24"/>
+    </svg>
+    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  </div>
 
   <!-- Cookie Consent Banner -->
   <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-text">

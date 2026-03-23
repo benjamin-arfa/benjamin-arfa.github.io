@@ -1287,10 +1287,9 @@ body.menu-open {
 }
 
 /* Back-to-top: bounce press */
-.back-to-top:active {
+.back-to-top-wrap:active {
   transform: translate(0, 0) scale(0.9);
-  box-shadow: 2px 2px 0 var(--color-border);
-  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  transition: transform 0.08s ease;
 }
 
 /* Form inputs: subtle scale on focus */
@@ -1788,13 +1787,62 @@ code {
   background: var(--color-primary);
 }
 
-/* ----- BACK TO TOP ----- */
-.back-to-top {
+/* ----- BACK TO TOP WITH SCROLL PROGRESS ----- */
+.back-to-top-wrap {
   position: fixed;
   bottom: var(--space-xl);
   right: var(--space-xl);
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-base);
+}
+
+.back-to-top-wrap.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top-wrap:hover {
+  transform: translate(-3px, -3px);
+}
+
+.back-to-top-wrap:hover .back-to-top {
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+.back-to-top-progress {
+  position: absolute;
+  inset: 0;
+  width: 56px;
+  height: 56px;
+  transform: rotate(-90deg);
+}
+
+.back-to-top-progress__track {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 3;
+}
+
+.back-to-top-progress__fill {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 3.5;
+  stroke-linecap: square;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  transition: stroke-dashoffset 0.15s ease;
+}
+
+.back-to-top {
+  position: absolute;
+  inset: 4px;
+  width: 48px;
+  height: 48px;
   background: var(--color-accent);
   border: var(--border-thick);
   box-shadow: var(--shadow-md);
@@ -1804,22 +1852,8 @@ code {
   justify-content: center;
   font-size: var(--text-xl);
   color: var(--color-surface);
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
   transition: var(--transition-base);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.back-to-top:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--shadow-lg);
-  background: var(--color-primary);
-  color: var(--color-text);
+  padding: 0;
 }
 
 /* ----- SCROLL REVEAL ----- */
@@ -2064,7 +2098,7 @@ code {
   .nav__backdrop,
   .progress-bar,
   .theme-toggle,
-  .back-to-top,
+  .back-to-top-wrap,
   .keyboard-hint,
   .marquee,
   .scroll-indicator,

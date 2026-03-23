@@ -307,19 +307,33 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
-  // BACK TO TOP BUTTON
+  // BACK TO TOP BUTTON WITH SCROLL PROGRESS RING
   // =============================================
-  var backToTop = document.querySelector('.back-to-top');
-  if (backToTop) {
+  var backToTopWrap = document.querySelector('.back-to-top-wrap');
+  var backToTopBtn = document.querySelector('.back-to-top');
+  var progressFill = document.querySelector('.back-to-top-progress__fill');
+  if (backToTopWrap && backToTopBtn) {
+    // The SVG circle circumference (r=24, C=2*PI*24 ≈ 150.8)
+    var circumference = 150;
+
     window.addEventListener('scroll', function() {
       if (window.scrollY > 400) {
-        backToTop.classList.add('visible');
+        backToTopWrap.classList.add('visible');
       } else {
-        backToTop.classList.remove('visible');
+        backToTopWrap.classList.remove('visible');
+      }
+
+      // Update scroll progress ring
+      if (progressFill) {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        var offset = circumference - (progress * circumference);
+        progressFill.style.strokeDashoffset = offset;
       }
     });
 
-    backToTop.addEventListener('click', function() {
+    backToTopBtn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
