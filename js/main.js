@@ -740,6 +740,60 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // ANIMATED STATS COUNTER
+  // =============================================
+  var statCards = document.querySelectorAll('.stat-card');
+  if (statCards.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var card = entry.target;
+          var numberEl = card.querySelector('.stat-card__number');
+          if (!numberEl || card.classList.contains('counted')) return;
+
+          card.classList.add('counted');
+          var target = parseInt(numberEl.getAttribute('data-count'), 10);
+          var suffix = numberEl.getAttribute('data-suffix') || '';
+          var duration = 1200;
+          var startTime = null;
+
+          function animateCount(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            // Ease-out cubic for satisfying deceleration
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * target);
+            numberEl.textContent = current + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(animateCount);
+            }
+          }
+
+          requestAnimationFrame(animateCount);
+          statsObserver.unobserve(card);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    statCards.forEach(function(card) {
+      statsObserver.observe(card);
+    });
+  } else if (statCards.length) {
+    // Fallback: just show final numbers immediately
+    statCards.forEach(function(card) {
+      var numberEl = card.querySelector('.stat-card__number');
+      if (numberEl) {
+        var target = numberEl.getAttribute('data-count') || '0';
+        var suffix = numberEl.getAttribute('data-suffix') || '';
+        numberEl.textContent = target + suffix;
+        card.classList.add('counted');
+      }
+    });
+  }
+
+  // =============================================
   // ARTICLE SHARE BUTTONS
   // =============================================
   var shareButtons = document.querySelectorAll('[data-share]');
