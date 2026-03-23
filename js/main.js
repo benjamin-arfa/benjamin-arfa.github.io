@@ -1513,6 +1513,83 @@ document.addEventListener('DOMContentLoaded', function() {
   })();
 
   // =============================================
+  // SCROLL-TRIGGERED REVEAL ANIMATIONS
+  // =============================================
+  (function() {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Auto-detect elements to reveal
+    var main = document.getElementById('main-content');
+    if (!main) return;
+
+    // Cards get staggered reveals within their grid parent
+    var grids = main.querySelectorAll('.grid');
+    grids.forEach(function(grid) {
+      var children = grid.children;
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (!child.classList.contains('reveal')) {
+          child.classList.add('reveal');
+          child.setAttribute('data-reveal-delay', String(Math.min(i, 5)));
+        }
+      }
+    });
+
+    // Section headers get left-slide reveal
+    var sectionHeaders = main.querySelectorAll('.section-header, .page__header');
+    sectionHeaders.forEach(function(header) {
+      if (!header.classList.contains('reveal') && !header.classList.contains('reveal--header')) {
+        header.classList.add('reveal--header');
+      }
+    });
+
+    // CTA sections and text-center blocks at section level
+    var ctas = main.querySelectorAll('.text-center.mt-xl, .section > .container > .text-center');
+    ctas.forEach(function(cta) {
+      if (!cta.classList.contains('reveal') && !cta.classList.contains('reveal--cta')) {
+        cta.classList.add('reveal--cta');
+      }
+    });
+
+    // Standalone cards not inside grids
+    var standaloneCards = main.querySelectorAll('.card');
+    standaloneCards.forEach(function(card) {
+      if (card.closest('.grid')) return; // Skip cards already handled in grids
+      if (!card.classList.contains('reveal')) {
+        card.classList.add('reveal');
+      }
+    });
+
+    // Testimonial cards
+    var testimonials = main.querySelectorAll('.testimonial-card');
+    testimonials.forEach(function(card) {
+      if (!card.classList.contains('reveal')) {
+        card.classList.add('reveal');
+      }
+    });
+
+    // Collect all revealable elements
+    var allRevealEls = main.querySelectorAll('.reveal, .reveal--header, .reveal--cta');
+
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.1
+    });
+
+    allRevealEls.forEach(function(el) {
+      revealObserver.observe(el);
+    });
+  })();
+
+  // =============================================
   // FAQ ACCORDION
   // =============================================
   document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
