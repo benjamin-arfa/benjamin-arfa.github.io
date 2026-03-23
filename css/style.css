@@ -3010,6 +3010,96 @@ body.page-transitioning .page-transition-overlay__stripe:nth-child(4) { animatio
   flex-shrink: 0;
 }
 
+/* ----- FONT SIZE ADJUSTER (Blog Articles) ----- */
+.font-size-adjuster {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.font-size-adjuster__label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: var(--space-xs);
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.font-size-adjuster__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  box-shadow: 2px 2px 0 var(--color-text);
+  line-height: 1;
+}
+
+.font-size-adjuster__btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--color-text);
+}
+
+.font-size-adjuster__btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.font-size-adjuster__btn--active {
+  background: var(--color-primary);
+}
+
+.font-size-adjuster__btn[aria-pressed="true"] {
+  background: var(--color-primary);
+  box-shadow: inset 2px 2px 0 var(--color-text);
+  transform: translate(1px, 1px);
+}
+
+/* Article body font size scaling via data attribute */
+.article__body[data-font-size="small"] {
+  font-size: 0.9em;
+}
+
+.article__body[data-font-size="normal"] {
+  font-size: 1em;
+}
+
+.article__body[data-font-size="large"] {
+  font-size: 1.15em;
+}
+
+.article__body[data-font-size="xlarge"] {
+  font-size: 1.3em;
+}
+
+/* Wrapper to hold meta + adjuster in one row */
+.article__toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+@media print {
+  .font-size-adjuster {
+    display: none;
+  }
+}
+
 /* ----- TABLE OF CONTENTS (Blog Articles) ----- */
 .article-toc {
   margin-bottom: var(--space-2xl);

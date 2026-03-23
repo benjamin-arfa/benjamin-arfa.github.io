@@ -1151,6 +1151,64 @@ document.addEventListener('DOMContentLoaded', function() {
   })();
 
   // =============================================
+  // FONT SIZE ADJUSTER (Blog Articles)
+  // =============================================
+  (function() {
+    var articleBody = document.querySelector('.article__body');
+    var articleMeta = document.querySelector('.article__meta');
+    if (!articleBody || !articleMeta) return;
+
+    var sizes = ['small', 'normal', 'large', 'xlarge'];
+    var labels = ['A−', 'A', 'A+', 'A++'];
+    var stored = localStorage.getItem('article-font-size');
+    var currentSize = sizes.indexOf(stored) !== -1 ? stored : 'normal';
+
+    // Apply stored preference immediately
+    articleBody.setAttribute('data-font-size', currentSize);
+
+    // Create toolbar wrapper
+    var toolbar = document.createElement('div');
+    toolbar.className = 'article__toolbar';
+
+    // Move existing meta content into toolbar
+    var metaParent = articleMeta.parentNode;
+    metaParent.insertBefore(toolbar, articleMeta.nextSibling);
+
+    // Build the adjuster
+    var adjuster = document.createElement('div');
+    adjuster.className = 'font-size-adjuster';
+    adjuster.setAttribute('role', 'group');
+    adjuster.setAttribute('aria-label', 'Adjust font size');
+
+    var adjLabel = document.createElement('span');
+    adjLabel.className = 'font-size-adjuster__label';
+    adjLabel.textContent = 'Size';
+    adjuster.appendChild(adjLabel);
+
+    var buttons = [];
+    sizes.forEach(function(size, i) {
+      var btn = document.createElement('button');
+      btn.className = 'font-size-adjuster__btn';
+      btn.textContent = labels[i];
+      btn.setAttribute('aria-label', 'Font size: ' + size);
+      btn.setAttribute('aria-pressed', size === currentSize ? 'true' : 'false');
+      btn.setAttribute('type', 'button');
+      btn.addEventListener('click', function() {
+        currentSize = size;
+        articleBody.setAttribute('data-font-size', size);
+        localStorage.setItem('article-font-size', size);
+        buttons.forEach(function(b, j) {
+          b.setAttribute('aria-pressed', sizes[j] === size ? 'true' : 'false');
+        });
+      });
+      buttons.push(btn);
+      adjuster.appendChild(btn);
+    });
+
+    toolbar.appendChild(adjuster);
+  })();
+
+  // =============================================
   // AUTO-UPDATE COPYRIGHT YEAR
   // =============================================
   document.querySelectorAll('.copyright-year').forEach(function(el) {
