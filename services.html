@@ -66,6 +66,56 @@
   }
   </script>
 
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of projects do you typically work on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I work across data engineering, healthcare interoperability, and regulatory technology. Projects range from building HL7 FHIR integration pipelines and BIRD regulatory reporting toolkits to designing metadata architectures and master data management solutions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with clients outside of Switzerland?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. While I'm based in Basel, I regularly collaborate with teams across Europe and work remotely with international clients. My multilingual background (French, German, English, Spanish) helps bridge communication across diverse teams."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your typical engagement model?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Engagements follow my four-step process: Discover, Design, Develop, Deliver. I offer both project-based consulting with clear deliverables and ongoing advisory retainers. Each engagement starts with a discovery call to understand your specific needs and constraints."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help with existing systems or only greenfield projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. A significant portion of my work involves modernizing legacy data systems, improving existing data pipelines, and integrating new standards into established infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle data privacy and compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data privacy is integral to every project. I design solutions with Swiss and EU data protection regulations in mind from the start, including GDPR compliance, healthcare data confidentiality requirements, and secure data handling practices for regulatory reporting."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Performance: preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -284,6 +334,73 @@
             <div style="font-size: var(--text-4xl); margin-bottom: var(--space-md);">04</div>
             <h3 style="margin-bottom: var(--space-sm);">Deliver</h3>
             <p style="font-size: var(--text-sm);">Deploying and supporting your solution</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section">
+        <h2 class="mb-xl"><span class="hero__title-highlight">Frequently Asked</span></h2>
+
+        <div class="faq-list">
+          <div class="faq-item" role="region">
+            <button class="faq-toggle" aria-expanded="false">
+              <span>What types of projects do you typically work on?</span>
+              <span class="faq-toggle__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" role="region">
+              <div class="faq-panel__inner">
+                <p>I work across data engineering, healthcare interoperability, and regulatory technology. Projects range from building HL7 FHIR integration pipelines and BIRD regulatory reporting toolkits to designing metadata architectures and master data management solutions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="region">
+            <button class="faq-toggle" aria-expanded="false">
+              <span>Do you work with clients outside of Switzerland?</span>
+              <span class="faq-toggle__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" role="region">
+              <div class="faq-panel__inner">
+                <p>Yes. While I'm based in Basel, I regularly collaborate with teams across Europe and work remotely with international clients. My multilingual background (French, German, English, Spanish) helps bridge communication across diverse teams.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="region">
+            <button class="faq-toggle" aria-expanded="false">
+              <span>What is your typical engagement model?</span>
+              <span class="faq-toggle__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" role="region">
+              <div class="faq-panel__inner">
+                <p>Engagements follow my four-step process: Discover, Design, Develop, Deliver. I offer both project-based consulting with clear deliverables and ongoing advisory retainers. Each engagement starts with a discovery call to understand your specific needs and constraints.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="region">
+            <button class="faq-toggle" aria-expanded="false">
+              <span>Can you help with existing systems or only greenfield projects?</span>
+              <span class="faq-toggle__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" role="region">
+              <div class="faq-panel__inner">
+                <p>Both. A significant portion of my work involves modernizing legacy data systems, improving existing data pipelines, and integrating new standards into established infrastructure. I have extensive experience working with legacy HL7 v2, proprietary EHR exports, and existing reporting frameworks.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="region">
+            <button class="faq-toggle" aria-expanded="false">
+              <span>How do you handle data privacy and compliance?</span>
+              <span class="faq-toggle__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" role="region">
+              <div class="faq-panel__inner">
+                <p>Data privacy is integral to every project. I design solutions with Swiss and EU data protection regulations in mind from the start, including GDPR compliance, healthcare data confidentiality requirements, and secure data handling practices for regulatory reporting.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

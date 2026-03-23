@@ -1271,4 +1271,49 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.copyright-year').forEach(function(el) {
     el.textContent = new Date().getFullYear();
   });
+
+  // =============================================
+  // FAQ ACCORDION
+  // =============================================
+  document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
+    var item = toggle.closest('.faq-item');
+    var panel = item.querySelector('.faq-panel');
+    if (!panel) return;
+
+    // Generate unique ID for ARIA relationship
+    var id = 'faq-panel-' + Math.random().toString(36).substr(2, 6);
+    panel.id = id;
+    toggle.setAttribute('aria-controls', id);
+
+    toggle.addEventListener('click', function() {
+      var isOpen = item.hasAttribute('open');
+
+      if (isOpen) {
+        // Collapse: animate max-height to 0, then remove open
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        // Force reflow
+        panel.offsetHeight;
+        panel.style.maxHeight = '0';
+        toggle.setAttribute('aria-expanded', 'false');
+
+        var onTransitionEnd = function() {
+          item.removeAttribute('open');
+          panel.removeEventListener('transitionend', onTransitionEnd);
+        };
+        panel.addEventListener('transitionend', onTransitionEnd);
+      } else {
+        // Expand: set open, then animate max-height
+        item.setAttribute('open', '');
+        toggle.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+
+        // After animation, remove inline max-height so content can reflow
+        var onOpen = function() {
+          panel.style.maxHeight = 'none';
+          panel.removeEventListener('transitionend', onOpen);
+        };
+        panel.addEventListener('transitionend', onOpen);
+      }
+    });
+  });
 });
