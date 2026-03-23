@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Benjamin Arfa - Blog &amp; Insights</title>
+    <link>https://benjamin-arfa.github.io/blog.html</link>
+    <description>Insights on healthcare interoperability, data engineering, regulatory technology, and digital consulting by Moadh Benjamin Arfa.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0100</lastBuildDate>
+    <atom:link href="https://benjamin-arfa.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <managingEditor>benjamin.arfa.pro@gmail.com (Moadh Benjamin Arfa)</managingEditor>
+    <webMaster>benjamin.arfa.pro@gmail.com (Moadh Benjamin Arfa)</webMaster>
+    <copyright>&copy; 2026 Arfa Digital Consulting. All rights reserved.</copyright>
+    <image>
+      <url>https://benjamin-arfa.github.io/favicon.svg</url>
+      <title>Benjamin Arfa - Blog &amp; Insights</title>
+      <link>https://benjamin-arfa.github.io/blog.html</link>
+    </image>
+
+    <item>
+      <title>Building Healthcare Data Pipelines with FHIR</title>
+      <link>https://benjamin-arfa.github.io/blog/healthcare-data-pipelines.html</link>
+      <guid isPermaLink="true">https://benjamin-arfa.github.io/blog/healthcare-data-pipelines.html</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Moadh Benjamin Arfa</dc:creator>
+      <description>How HL7 FHIR transforms healthcare data pipelines, enabling true interoperability while respecting the complexity of clinical data models.</description>
+      <category>Healthcare</category>
+      <category>HL7 FHIR</category>
+      <category>Data Engineering</category>
+    </item>
+
+    <item>
+      <title>Why Open Standards Matter in RegTech</title>
+      <link>https://benjamin-arfa.github.io/blog/open-standards-regtech.html</link>
+      <guid isPermaLink="true">https://benjamin-arfa.github.io/blog/open-standards-regtech.html</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Moadh Benjamin Arfa</dc:creator>
+      <description>Why open standards like BIRD and SDMX are reshaping regulatory reporting and reducing the compliance burden for financial institutions.</description>
+      <category>RegTech</category>
+      <category>Open Standards</category>
+      <category>BIRD</category>
+      <category>SDMX</category>
+    </item>
+
+    <item>
+      <title>From Data Engineering to Digital Consulting</title>
+      <link>https://benjamin-arfa.github.io/blog/data-engineering-to-consulting.html</link>
+      <guid isPermaLink="true">https://benjamin-arfa.github.io/blog/data-engineering-to-consulting.html</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Moadh Benjamin Arfa</dc:creator>
+      <description>Reflections on transitioning from hands-on data engineering to digital consulting, and the skills that bridge both worlds.</description>
+      <category>Career</category>
+      <category>Consulting</category>
+      <category>Data Engineering</category>
+    </item>
+
+  </channel>
+</rss>
