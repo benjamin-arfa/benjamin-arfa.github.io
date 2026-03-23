@@ -703,6 +703,57 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // ARTICLE SHARE BUTTONS
+  // =============================================
+  var shareButtons = document.querySelectorAll('[data-share]');
+  if (shareButtons.length) {
+    var pageUrl = encodeURIComponent(window.location.href);
+    var pageTitle = encodeURIComponent(document.title);
+
+    shareButtons.forEach(function(btn) {
+      var type = btn.getAttribute('data-share');
+
+      if (type === 'x') {
+        btn.href = 'https://x.com/intent/tweet?url=' + pageUrl + '&text=' + pageTitle;
+      } else if (type === 'linkedin') {
+        btn.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl;
+      } else if (type === 'copy') {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var url = window.location.href;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function() {
+              btn.classList.add('copied');
+              btn.querySelector('svg').nextSibling.textContent = ' Copied!';
+              setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.querySelector('svg').nextSibling.textContent = ' Copy Link';
+              }, 2000);
+            });
+          } else {
+            var textarea = document.createElement('textarea');
+            textarea.value = url;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+              document.execCommand('copy');
+              btn.classList.add('copied');
+              btn.querySelector('svg').nextSibling.textContent = ' Copied!';
+              setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.querySelector('svg').nextSibling.textContent = ' Copy Link';
+              }, 2000);
+            } catch (err) {}
+            document.body.removeChild(textarea);
+          }
+        });
+      }
+    });
+  }
+
+  // =============================================
   // SMOOTH PAGE TRANSITIONS
   // =============================================
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
