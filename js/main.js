@@ -1438,6 +1438,81 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =============================================
+  // KONAMI CODE EASTER EGG
+  // =============================================
+  (function() {
+    var konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+    var konamiIndex = 0;
+    var konamiTriggered = false;
+
+    document.addEventListener('keydown', function(e) {
+      if (konamiTriggered) return;
+
+      if (e.keyCode === konamiSequence[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiSequence.length) {
+          konamiTriggered = true;
+          launchKonamiEasterEgg();
+        }
+      } else {
+        konamiIndex = e.keyCode === konamiSequence[0] ? 1 : 0;
+      }
+    });
+
+    function launchKonamiEasterEgg() {
+      var colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#A78BFA', '#FF8C42', '#45B7D1', '#F472B6', '#34D399'];
+      var shapes = ['square', 'circle', 'triangle'];
+
+      // Create confetti container
+      var container = document.createElement('div');
+      container.className = 'konami-confetti';
+      document.body.appendChild(container);
+
+      // Spawn confetti pieces
+      for (var i = 0; i < 80; i++) {
+        var piece = document.createElement('div');
+        var shape = shapes[Math.floor(Math.random() * shapes.length)];
+        piece.className = 'konami-confetti__piece konami-confetti__piece--' + shape;
+
+        var color = colors[Math.floor(Math.random() * colors.length)];
+        if (shape === 'triangle') {
+          piece.style.borderBottomColor = color;
+        } else {
+          piece.style.background = color;
+        }
+
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+        piece.style.animationDelay = Math.random() * 0.8 + 's';
+        piece.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+
+        container.appendChild(piece);
+      }
+
+      // Show banner
+      var banner = document.createElement('div');
+      banner.className = 'konami-banner';
+      banner.innerHTML = '&#x1F3AE; You found it! <span>↑↑↓↓←→←→BA</span>';
+      document.body.appendChild(banner);
+
+      // Clean up after animation
+      setTimeout(function() {
+        banner.style.transition = 'opacity 0.5s, transform 0.5s';
+        banner.style.opacity = '0';
+        banner.style.transform = 'translate(-50%, -50%) rotate(-3deg) scale(0.8)';
+      }, 3000);
+
+      setTimeout(function() {
+        if (container.parentNode) container.parentNode.removeChild(container);
+        if (banner.parentNode) banner.parentNode.removeChild(banner);
+        // Allow re-triggering after cleanup
+        konamiTriggered = false;
+        konamiIndex = 0;
+      }, 4000);
+    }
+  })();
+
+  // =============================================
   // FAQ ACCORDION
   // =============================================
   document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
