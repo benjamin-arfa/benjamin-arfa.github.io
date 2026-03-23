@@ -886,6 +886,27 @@ body.menu-open {
   box-shadow: var(--shadow-sm);
 }
 
+/* RSS subscribe button on blog page */
+.rss-subscribe-btn {
+  margin-top: var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-thick);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rss-subscribe-btn:hover {
+  background: #FF6600;
+  color: #fff;
+  border-color: var(--color-text);
+}
+
 .footer__bottom {
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
