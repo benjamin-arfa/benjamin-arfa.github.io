@@ -7,22 +7,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.querySelector('.nav__toggle');
   const mobileMenu = document.querySelector('.nav__mobile-menu');
 
+  // Create backdrop overlay
+  var backdrop = document.createElement('div');
+  backdrop.className = 'nav__backdrop';
+  backdrop.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(backdrop);
+
+  function openMobileMenu() {
+    navToggle.classList.add('active');
+    navToggle.setAttribute('aria-expanded', 'true');
+    mobileMenu.classList.add('active');
+    backdrop.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMobileMenu() {
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('active');
+    backdrop.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
   if (navToggle && mobileMenu) {
     navToggle.addEventListener('click', function() {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
-      mobileMenu.classList.toggle('active');
-
-      // Animate hamburger to X
-      const spans = navToggle.querySelectorAll('span');
-      if (mobileMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      var isOpen = mobileMenu.classList.contains('active');
+      if (isOpen) {
+        closeMobileMenu();
       } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        openMobileMenu();
       }
     });
 
@@ -30,24 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileLinks = mobileMenu.querySelectorAll('.nav__link');
     mobileLinks.forEach(function(link) {
       link.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        closeMobileMenu();
       });
     });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!navToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
-        mobileMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+    // Close mobile menu when clicking backdrop
+    backdrop.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+        navToggle.focus();
       }
     });
   }
