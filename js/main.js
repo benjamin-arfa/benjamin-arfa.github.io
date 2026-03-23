@@ -556,6 +556,61 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // =============================================
+  // LAZY LOADING IMAGES WITH BLUR-UP
+  // =============================================
+  var lazyImages = document.querySelectorAll('.lazy-image__img[data-src]');
+  if (lazyImages.length && 'IntersectionObserver' in window) {
+    var lazyObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var img = entry.target;
+          var src = img.getAttribute('data-src');
+          var srcset = img.getAttribute('data-srcset');
+
+          if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
+          }
+          if (srcset) {
+            img.srcset = srcset;
+            img.removeAttribute('data-srcset');
+          }
+
+          img.addEventListener('load', function() {
+            img.classList.add('loaded');
+          });
+
+          // If image is already cached
+          if (img.complete && img.naturalWidth > 0) {
+            img.classList.add('loaded');
+          }
+
+          lazyObserver.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '200px 0px',
+      threshold: 0.01
+    });
+
+    lazyImages.forEach(function(img) {
+      lazyObserver.observe(img);
+    });
+  } else {
+    // Fallback: load all images immediately
+    lazyImages.forEach(function(img) {
+      var src = img.getAttribute('data-src');
+      if (src) {
+        img.src = src;
+        img.removeAttribute('data-src');
+        img.addEventListener('load', function() {
+          img.classList.add('loaded');
+        });
+      }
+    });
+  }
+
+  // =============================================
   // SMOOTH PAGE TRANSITIONS
   // =============================================
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
