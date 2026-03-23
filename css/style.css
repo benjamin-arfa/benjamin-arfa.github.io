@@ -155,6 +155,61 @@ p, h1, h2, h3, h4, h5, h6 {
   --transition-base: 0.25s ease;
 }
 
+/* ----- TEXT SELECTION ----- */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+/* ----- CUSTOM SCROLLBAR ----- */
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+  border-left: 3px solid var(--color-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: 3px solid var(--color-border);
+  min-height: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-accent);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-border);
+}
+
+/* Horizontal scrollbar track */
+::-webkit-scrollbar-track:horizontal {
+  border-left: none;
+  border-top: 3px solid var(--color-border);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
 /* ----- TYPOGRAPHY ----- */
 /* Google Fonts loaded via <link> in HTML <head> for better performance (no render-blocking @import) */
 
@@ -1586,6 +1641,48 @@ code {
   --color-secondary: #FF6B6B;
   --color-accent: #4D8FFF;
   --color-accent-alt: #00D4AA;
+}
+
+/* Dark mode: scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #1A1A1A;
+  border-left-color: #F5F5F5;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-color: #F5F5F5;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:active {
+  background: var(--color-accent);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-corner {
+  background: #F5F5F5;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track:horizontal {
+  border-top-color: #F5F5F5;
+}
+
+[data-theme="dark"] {
+  scrollbar-color: var(--color-primary) #1A1A1A;
+}
+
+/* Dark mode: text selection */
+[data-theme="dark"] ::selection {
+  background: var(--color-accent);
+  color: #F5F5F5;
+}
+
+[data-theme="dark"] ::-moz-selection {
+  background: var(--color-accent);
+  color: #F5F5F5;
 }
 
 [data-theme="dark"] .nav {
