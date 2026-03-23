@@ -460,6 +460,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // =============================================
   // KEYBOARD NAVIGATION
   // =============================================
+
+  // Resolve base path so shortcuts work from any subdirectory (e.g. /blog/)
+  function getBasePath() {
+    var path = window.location.pathname;
+    // If we're in a subdirectory (e.g. /blog/some-article.html), go up
+    var depth = (path.match(/\//g) || []).length - 1;
+    if (depth <= 0) return '';
+    var prefix = '';
+    for (var d = 0; d < depth; d++) prefix += '../';
+    return prefix;
+  }
+
   var keyboardHint = document.getElementById('keyboard-hint');
   var shortcutsVisible = false;
   var hintTimeout;
@@ -530,13 +542,13 @@ document.addEventListener('DOMContentLoaded', function() {
           keyboardHint.classList.remove('visible', 'shortcuts-expanded');
         }
         break;
-      case 'h': window.location.href = 'index.html'; break;
-      case 'a': window.location.href = 'about.html'; break;
-      case 's': window.location.href = 'services.html'; break;
-      case 'p': window.location.href = 'projects.html'; break;
-      case 'b': window.location.href = 'blog.html'; break;
-      case 'i': window.location.href = 'involvement.html'; break;
-      case 'c': window.location.href = 'contact.html'; break;
+      case 'h': window.location.href = getBasePath() + 'index.html'; break;
+      case 'a': window.location.href = getBasePath() + 'about.html'; break;
+      case 's': window.location.href = getBasePath() + 'services.html'; break;
+      case 'p': window.location.href = getBasePath() + 'projects.html'; break;
+      case 'b': window.location.href = getBasePath() + 'blog.html'; break;
+      case 'i': window.location.href = getBasePath() + 'involvement.html'; break;
+      case 'c': window.location.href = getBasePath() + 'contact.html'; break;
       case 'd':
         var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         var newTheme = isDark ? 'light' : 'dark';
