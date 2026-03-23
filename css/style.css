@@ -1387,29 +1387,43 @@ body.menu-open {
   transition: transform 0.08s ease;
 }
 
-/* Link hover: animated underline */
-a:not(.btn):not(.nav__link):not(.nav__logo):not(.footer__social a):not(.card) {
+/* Link hover: neobrutalist marker/highlighter effect */
+a:not(.btn):not(.nav__link):not(.nav__logo):not(.footer__social a):not(.card):not(.share-btn):not(.article-toc__link):not(.breadcrumb__link) {
   position: relative;
   text-decoration: none;
 }
 
-main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card):hover {
+main .article__body a:not(.btn):not(.card),
+main .content a:not(.btn):not(.card),
+main p a:not(.btn):not(.card) {
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  background-repeat: no-repeat;
+  background-position: 0 85%;
+  background-size: 0% 40%;
+  transition: background-size 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s ease;
+  padding: 0 2px;
+  margin: 0 -2px;
+  border-bottom: 2px solid currentColor;
+}
+
+main .article__body a:not(.btn):not(.card):hover,
+main .content a:not(.btn):not(.card):hover,
+main p a:not(.btn):not(.card):hover {
+  background-size: 100% 40%;
   text-decoration: none;
 }
 
-main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card)::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width 0.25s ease;
-}
-
-main a:not(.btn):not(.nav__link):not(.nav__logo):not(.card):hover::after {
-  width: 100%;
+/* Exclude marker effect from specific link types that have their own hover styles */
+.related-post-card__title a,
+.article-toc__link,
+.breadcrumb__link,
+.share-btn,
+.footer__links a {
+  background-image: none !important;
+  border-bottom: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Marquee items: scale on hover */
