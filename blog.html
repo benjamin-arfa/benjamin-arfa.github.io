@@ -127,8 +127,18 @@
         </a>
       </header>
 
-      <!-- Filter Tabs -->
+      <!-- Blog Search -->
       <section class="section" style="padding-top: 0;">
+        <div class="blog-search" role="search" aria-label="Search blog posts">
+          <div class="blog-search__input-wrap">
+            <svg class="blog-search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" class="blog-search__input" id="blog-search" placeholder="Search articles..." aria-label="Search blog posts" autocomplete="off">
+            <button class="blog-search__clear" id="blog-search-clear" aria-label="Clear search" hidden>&times;</button>
+          </div>
+          <p class="blog-search__count" id="blog-search-count" aria-live="polite"></p>
+        </div>
+
+        <!-- Filter Tabs -->
         <div class="blog-filter mb-xl" style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
           <button class="btn btn--primary btn--sm blog-filter__btn active" data-filter="all">All</button>
           <button class="btn btn--outline btn--sm blog-filter__btn" data-filter="tech">Tech</button>

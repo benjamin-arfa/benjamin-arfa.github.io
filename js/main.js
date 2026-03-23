@@ -580,6 +580,171 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // =============================================
+  // BLOG SEARCH
+  // =============================================
+  var blogSearchInput = document.getElementById('blog-search');
+  var blogSearchClear = document.getElementById('blog-search-clear');
+  var blogSearchCount = document.getElementById('blog-search-count');
+
+  if (blogSearchInput && blogGrid) {
+    // Store original HTML for each card so we can restore after highlight
+    var blogCards = blogGrid.querySelectorAll('.blog-card');
+    var cardData = [];
+    blogCards.forEach(function(card) {
+      var titleEl = card.querySelector('.blog-card__title');
+      var excerptEl = card.querySelector('.blog-card__excerpt');
+      cardData.push({
+        el: card,
+        titleEl: titleEl,
+        excerptEl: excerptEl,
+        titleText: titleEl ? titleEl.textContent : '',
+        excerptText: excerptEl ? excerptEl.textContent : '',
+        titleHTML: titleEl ? titleEl.innerHTML : '',
+        excerptHTML: excerptEl ? excerptEl.innerHTML : ''
+      });
+    });
+
+    var searchNoResults = null;
+    var searchDebounce = null;
+
+    function highlightText(text, query) {
+      if (!query) return text;
+      var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var re = new RegExp('(' + escaped + ')', 'gi');
+      return text.replace(re, '<span class="blog-search-highlight">$1</span>');
+    }
+
+    function performBlogSearch(query) {
+      query = query.trim().toLowerCase();
+
+      // Show/hide clear button
+      if (blogSearchClear) {
+        blogSearchClear.hidden = !query;
+      }
+
+      // Reset highlights if no query
+      if (!query) {
+        cardData.forEach(function(d) {
+          d.el.style.display = '';
+          d.el.style.opacity = '1';
+          d.el.style.transform = '';
+          if (d.titleEl) d.titleEl.innerHTML = d.titleHTML;
+          if (d.excerptEl) d.excerptEl.innerHTML = d.excerptHTML;
+        });
+        if (searchNoResults) {
+          searchNoResults.style.display = 'none';
+        }
+        if (blogSearchCount) blogSearchCount.textContent = '';
+        return;
+      }
+
+      var visibleCount = 0;
+      // Also check active category filter
+      var activeFilter = 'all';
+      var activeBtn = document.querySelector('.blog-filter__btn.active');
+      if (activeBtn) {
+        activeFilter = activeBtn.getAttribute('data-filter') || 'all';
+      }
+
+      cardData.forEach(function(d, index) {
+        var categories = (d.el.getAttribute('data-categories') || '').split(/\s+/);
+        var categoryMatch = activeFilter === 'all' || categories.indexOf(activeFilter) !== -1;
+        var titleMatch = d.titleText.toLowerCase().indexOf(query) !== -1;
+        var excerptMatch = d.excerptText.toLowerCase().indexOf(query) !== -1;
+        var textMatch = titleMatch || excerptMatch;
+
+        if (categoryMatch && textMatch) {
+          d.el.style.display = '';
+          d.el.style.opacity = '0';
+          d.el.style.transform = 'translateY(10px)';
+          setTimeout((function(el) {
+            return function() {
+              el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              el.style.opacity = '1';
+              el.style.transform = 'translateY(0)';
+            };
+          })(d.el), 50 + (visibleCount * 80));
+          visibleCount++;
+
+          // Highlight matches
+          if (d.titleEl && titleMatch) {
+            // Preserve the link inside title
+            var titleLink = d.titleEl.querySelector('a');
+            if (titleLink) {
+              titleLink.innerHTML = highlightText(d.titleText, query);
+            }
+          } else if (d.titleEl) {
+            var tLink = d.titleEl.querySelector('a');
+            if (tLink) tLink.innerHTML = d.titleText;
+          }
+          if (d.excerptEl) {
+            d.excerptEl.innerHTML = excerptMatch
+              ? highlightText(d.excerptText, query)
+              : d.excerptHTML;
+          }
+        } else {
+          d.el.style.display = 'none';
+          // Reset highlights on hidden cards
+          if (d.titleEl) {
+            var tl = d.titleEl.querySelector('a');
+            if (tl) tl.textContent = d.titleText;
+          }
+          if (d.excerptEl) d.excerptEl.innerHTML = d.excerptHTML;
+        }
+      });
+
+      // Update count
+      if (blogSearchCount) {
+        var total = cardData.length;
+        blogSearchCount.textContent = visibleCount + ' of ' + total + ' article' + (total !== 1 ? 's' : '') + ' match' + (visibleCount !== 1 ? '' : 'es');
+      }
+
+      // No results message
+      if (visibleCount === 0) {
+        if (!searchNoResults) {
+          searchNoResults = document.createElement('div');
+          searchNoResults.className = 'blog-search__no-results';
+          searchNoResults.innerHTML = '<span>🔍</span>No articles found for "<strong></strong>"<br><small>Try a different search term</small>';
+          blogGrid.appendChild(searchNoResults);
+        }
+        searchNoResults.querySelector('strong').textContent = query;
+        searchNoResults.style.display = '';
+        // Hide the category empty msg if present
+        var catEmpty = blogGrid.querySelector('.blog-grid__empty');
+        if (catEmpty) catEmpty.style.display = 'none';
+      } else if (searchNoResults) {
+        searchNoResults.style.display = 'none';
+      }
+    }
+
+    blogSearchInput.addEventListener('input', function() {
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(function() {
+        performBlogSearch(blogSearchInput.value);
+      }, 200);
+    });
+
+    if (blogSearchClear) {
+      blogSearchClear.addEventListener('click', function() {
+        blogSearchInput.value = '';
+        performBlogSearch('');
+        blogSearchInput.focus();
+      });
+    }
+
+    // Re-run search when category filter changes
+    blogFilterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (blogSearchInput.value.trim()) {
+          setTimeout(function() {
+            performBlogSearch(blogSearchInput.value);
+          }, 50);
+        }
+      });
+    });
+  }
+
+  // =============================================
   // READING PROGRESS BAR
   // =============================================
   var progressBar = document.querySelector('.progress-bar');

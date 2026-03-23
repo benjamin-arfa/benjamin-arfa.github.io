@@ -3783,3 +3783,145 @@ a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):
     transition: none;
   }
 }
+
+/* ===========================================
+   BLOG SEARCH BAR
+   Neobrutalist search with bold borders
+   =========================================== */
+.blog-search {
+  margin-bottom: var(--space-lg);
+}
+
+.blog-search__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 480px;
+}
+
+.blog-search__icon {
+  position: absolute;
+  left: var(--space-md);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.blog-search__input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-lg) var(--space-sm) calc(var(--space-md) + 28px);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.blog-search__input::placeholder {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.blog-search__input:focus {
+  outline: none;
+  box-shadow: 8px 8px 0 var(--color-primary);
+  transform: translate(-2px, -2px);
+}
+
+.blog-search__input:focus ~ .blog-search__icon,
+.blog-search__input:not(:placeholder-shown) ~ .blog-search__icon {
+  color: var(--color-text);
+}
+
+/* Hack: icon is before input in DOM, use adjacent sibling from input-wrap */
+.blog-search__input-wrap:focus-within .blog-search__icon {
+  color: var(--color-text);
+}
+
+.blog-search__clear {
+  position: absolute;
+  right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.blog-search__clear:hover {
+  transform: scale(1.15) rotate(90deg);
+  background: var(--color-accent);
+}
+
+.blog-search__clear:active {
+  transform: scale(0.95);
+}
+
+.blog-search__clear[hidden] {
+  display: none;
+}
+
+.blog-search__count {
+  margin-top: var(--space-xs);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  min-height: 1.4em;
+}
+
+.blog-search__count:empty {
+  display: none;
+}
+
+/* Highlight matched text in search results */
+.blog-search-highlight {
+  background: var(--color-primary);
+  color: var(--color-text);
+  padding: 0 2px;
+  border-bottom: 2px solid var(--color-border);
+  font-weight: 700;
+}
+
+/* No results state */
+.blog-search__no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-xxl) var(--space-xl);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  border: var(--border-thick);
+  border-style: dashed;
+}
+
+.blog-search__no-results span {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Print: hide search */
+@media print {
+  .blog-search {
+    display: none;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .blog-search-highlight {
+  background: var(--color-primary);
+  color: #1A1A1A;
+}
