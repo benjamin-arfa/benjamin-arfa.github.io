@@ -890,33 +890,6 @@ document.addEventListener('DOMContentLoaded', function() {
     footerYear.innerHTML = footerYear.innerHTML.replace(/\u00a9\s*\d{4}/, '\u00a9 ' + currentYear);
   }
 
-  // =============================================
-  // COOKIE CONSENT BANNER (GDPR)
-  // =============================================
-  var cookieBanner = document.getElementById('cookie-banner');
-  if (cookieBanner && !localStorage.getItem('cookie-consent')) {
-    // Show banner after a short delay
-    setTimeout(function() {
-      cookieBanner.classList.add('visible');
-    }, 1000);
-
-    var acceptBtn = document.getElementById('cookie-accept');
-    var declineBtn = document.getElementById('cookie-decline');
-
-    if (acceptBtn) {
-      acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookie-consent', 'accepted');
-        cookieBanner.classList.remove('visible');
-      });
-    }
-
-    if (declineBtn) {
-      declineBtn.addEventListener('click', function() {
-        localStorage.setItem('cookie-consent', 'declined');
-        cookieBanner.classList.remove('visible');
-      });
-    }
-  }
 
   // =============================================
   // GITHUB STARS BADGES

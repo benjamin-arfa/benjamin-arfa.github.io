@@ -3,27 +3,6 @@
    Benjamin Arfa - Personal & Business Website
    =========================================== */
 
-/* ----- ACCESSIBILITY ----- */
-.skip-to-content {
-  position: absolute;
-  top: -100%;
-  left: var(--space-md);
-  z-index: 10000;
-  padding: var(--space-sm) var(--space-lg);
-  background: var(--color-primary);
-  color: var(--color-text);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: var(--text-base);
-  text-decoration: none;
-  border: var(--border-thick);
-  box-shadow: var(--shadow-md);
-  transition: top var(--transition-fast);
-}
-
-.skip-to-content:focus {
-  top: var(--space-md);
-}
 
 /* Focus-visible styles for all interactive elements */
 a:focus-visible,
@@ -2440,11 +2419,9 @@ code {
   .deco-square,
   .deco-circle,
   .status-dot,
-  .cookie-banner,
   .local-time,
   .code-copy-btn,
-  .page-transition-overlay,
-  .skip-to-content {
+  .page-transition-overlay {
     display: none !important;
   }
 
@@ -2809,83 +2786,6 @@ body.page-transitioning .page-transition-overlay__stripe:nth-child(4) { animatio
   }
 }
 
-/* ===========================================
-   COOKIE CONSENT BANNER (GDPR)
-   =========================================== */
-.cookie-banner {
-  position: fixed;
-  bottom: var(--space-lg);
-  left: var(--space-lg);
-  right: var(--space-lg);
-  max-width: 540px;
-  z-index: 9999;
-  background: var(--color-surface);
-  border: var(--border-extra);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-lg);
-  transform: translateY(calc(100% + 60px));
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.cookie-banner.visible {
-  transform: translateY(0);
-}
-
-.cookie-banner__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: 800;
-  margin-bottom: var(--space-sm);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.cookie-banner__text {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  line-height: 1.5;
-  margin-bottom: var(--space-lg);
-}
-
-.cookie-banner__text a {
-  color: var(--color-accent);
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-.cookie-banner__actions {
-  display: flex;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
-}
-
-.cookie-banner__actions .btn {
-  flex: 1;
-  min-width: 120px;
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  .cookie-banner {
-    left: var(--space-sm);
-    right: var(--space-sm);
-    bottom: var(--space-sm);
-    padding: var(--space-md);
-  }
-  .cookie-banner__actions {
-    flex-direction: column;
-  }
-  .cookie-banner__actions .btn {
-    width: 100%;
-  }
-}
-
-/* Dark mode adjustments */
-[data-theme="dark"] .cookie-banner {
-  background: var(--color-surface);
-  border-color: var(--color-border);
-}
 
 /* ----- TESTIMONIAL CARDS ----- */
 .testimonial-card {
@@ -3658,10 +3558,6 @@ h3:hover .heading-anchor,
     font-weight: 600;
   }
 
-  /* Cookie banner: stronger border */
-  .cookie-banner {
-    border-width: 4px;
-  }
 
   /* Progress bar: thicker */
   .progress-bar {
