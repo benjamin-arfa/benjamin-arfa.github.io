@@ -303,6 +303,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     logo.addEventListener('mouseenter', scrambleLogo);
     logo.addEventListener('focus', scrambleLogo);
+
+    // Scroll to top when clicking logo on the same page
+    logo.addEventListener('click', function(e) {
+      var currentPage = window.location.pathname.replace(/^\//, '').replace(/\/$/, '') || 'index.html';
+      var logoHref = logo.getAttribute('href').replace(/^\.\.\//, '').replace(/^\//, '');
+      if (currentPage === logoHref || currentPage === '' || currentPage === 'index.html') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
   }
 
   // =============================================

@@ -337,6 +337,8 @@ strong {
   background: transparent;
   border: none;
   box-shadow: none;
+  outline: none;
+  cursor: pointer;
   transition: var(--transition-fast);
 }
 
