@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeColorMeta.name = 'theme-color';
         document.head.appendChild(themeColorMeta);
       }
-      themeColorMeta.setAttribute('content', newTheme === 'dark' ? '#1A1A1A' : '#FFE500');
+      themeColorMeta.setAttribute('content', newTheme === 'dark' ? '#002b36' : '#fdf6e3');
 
       setTimeout(function() {
         document.documentElement.classList.remove('theme-transitioning');
@@ -1433,7 +1433,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function launchKonamiEasterEgg() {
-      var colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#A78BFA', '#FF8C42', '#45B7D1', '#F472B6', '#34D399'];
+      var colors = ['#268bd2', '#d33682', '#2aa198', '#6c71c4', '#cb4b16', '#859900', '#b58900', '#dc322f'];
       var shapes = ['square', 'circle', 'triangle'];
 
       // Create confetti container

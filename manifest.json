@@ -4,8 +4,8 @@
   "description": "Data & Software Engineer specializing in data integration, governance, and healthcare interoperability.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F5F0E8",
-  "theme_color": "#FFE500",
+  "background_color": "#fdf6e3",
+  "theme_color": "#268bd2",
   "icons": [
     {
       "src": "/favicon.svg",

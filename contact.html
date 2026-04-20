@@ -23,8 +23,8 @@
   <link rel="canonical" href="https://benjamin-arfa.github.io/contact.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#FFE500" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#002b36" media="(prefers-color-scheme: dark)">
 
   <!-- Breadcrumb Structured Data -->
   <script type="application/ld+json">
@@ -135,18 +135,18 @@
             <div class="card card--primary mb-lg">
               <h3 class="card__title">Email</h3>
               <p style="font-size: var(--text-lg);">
-                <a href="mailto:benjamin.arfa.pro@gmail.com" style="color: var(--color-text);">benjamin.arfa.pro@gmail.com</a>
+                <a href="mailto:benjamin.arfa.pro@gmail.com">benjamin.arfa.pro@gmail.com</a>
               </p>
             </div>
 
             <div class="card card--secondary mb-lg">
               <h3 class="card__title">Phone</h3>
               <p style="font-size: var(--text-lg);">
-                <a href="tel:+41792697632" style="color: var(--color-text);">+41 79 269 76 32</a>
+                <a href="tel:+41792697632">+41 79 269 76 32</a>
               </p>
             </div>
 
-            <div class="card mb-lg" style="background: var(--color-accent-alt);">
+            <div class="card card--accent-alt mb-lg">
               <h3 class="card__title">Location</h3>
               <p style="font-size: var(--text-lg);">
                 Basel, Switzerland
@@ -179,13 +179,13 @@
 
             <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
               <div class="form-group">
-                <label class="form-label" for="name">Name <span style="color: var(--color-secondary);">*</span></label>
+                <label class="form-label" for="name">Name <span class="text-secondary">*</span></label>
                 <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
                 <span class="form-error" aria-live="polite"></span>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="email">Email <span style="color: var(--color-secondary);">*</span></label>
+                <label class="form-label" for="email">Email <span class="text-secondary">*</span></label>
                 <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
                 <span class="form-error" aria-live="polite"></span>
               </div>
@@ -196,7 +196,7 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="message">Message <span style="color: var(--color-secondary);">*</span></label>
+                <label class="form-label" for="message">Message <span class="text-secondary">*</span></label>
                 <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or inquiry..." required></textarea>
                 <span class="form-error" aria-live="polite"></span>
                 <span class="form-charcount"><span id="charcount">0</span> characters</span>
@@ -214,10 +214,10 @@
       </section>
 
       <!-- Company Info -->
-      <section class="section" style="background: var(--color-text); color: var(--color-surface); margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
+      <section class="section section--dark-bg" style="margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
         <div class="grid grid--2" style="align-items: center;">
           <div>
-            <h2 style="color: var(--color-primary); margin-bottom: var(--space-lg);">Arfa Digital Consulting</h2>
+            <h2 class="text-primary" style="margin-bottom: var(--space-lg);">Arfa Digital Consulting</h2>
             <p style="font-size: var(--text-lg); margin-bottom: var(--space-md);">
               Promoting digital transformation through IT and AI solutions, software development, data analysis, and strategic consulting.
             </p>

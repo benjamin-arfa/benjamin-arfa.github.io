@@ -24,8 +24,8 @@
   <link rel="canonical" href="https://benjamin-arfa.github.io/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#FFE500" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#002b36" media="(prefers-color-scheme: dark)">
   <link rel="alternate" type="application/rss+xml" title="Benjamin Arfa's Blog" href="/feed.xml">
 
   <!-- WebSite Structured Data (enables sitelinks in Google) -->
@@ -179,11 +179,11 @@
     </div>
 
     <!-- About Preview Section -->
-    <section class="section" style="background: var(--color-primary);">
+    <section class="section section--dark-bg">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Who I Am</p>
-          <h2 class="section-header__title" style="background: var(--color-surface);">About Me</h2>
+          <h2 class="section-header__title">About Me</h2>
         </div>
 
         <div class="grid grid--2" style="align-items: center;">
@@ -200,7 +200,7 @@
                   >
                   <img
                     class="lazy-image__placeholder"
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect fill='%23FFE500' width='40' height='40'/%3E%3Ccircle cx='20' cy='15' r='8' fill='%23333'/%3E%3Cellipse cx='20' cy='35' rx='14' ry='10' fill='%23333'/%3E%3C/svg%3E"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect fill='%23268bd2' width='40' height='40'/%3E%3Ccircle cx='20' cy='15' r='8' fill='%23073642'/%3E%3Cellipse cx='20' cy='35' rx='14' ry='10' fill='%23073642'/%3E%3C/svg%3E"
                     alt=""
                     aria-hidden="true"
                   >
@@ -275,7 +275,7 @@
             </div>
           </div>
 
-          <div class="card" style="background: var(--color-accent-alt);">
+          <div class="card card--accent-alt">
             <h3 class="card__title">Healthcare Interoperability</h3>
             <p class="card__content">
               Active member of HL7 FHIR-CH, contributing to healthcare data standardization efforts. Specializing in semantic data integration and master data management.
@@ -307,10 +307,10 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="section" style="background: var(--color-text); color: var(--color-surface);">
+    <section class="section section--dark-bg">
       <div class="container">
         <div class="section-header">
-          <p style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; color: #FFE500; margin-bottom: var(--space-sm);">What I've Built</p>
+          <p style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; color: #2aa198; margin-bottom: var(--space-sm);">What I've Built</p>
           <h2 class="section-header__title">Featured Project</h2>
         </div>
 
@@ -361,7 +361,7 @@
             </p>
           </div>
 
-          <div class="card" style="background: var(--color-accent-alt);">
+          <div class="card card--accent-alt">
             <h3 class="card__title">Coming Soon</h3>
             <p class="card__content">
               Involved in upcoming community initiatives. More details to be announced.
@@ -375,62 +375,8 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section" style="background: var(--color-primary);">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">What People Say</p>
-          <h2 class="section-header__title" style="background: var(--color-surface);">Endorsements</h2>
-        </div>
-
-        <div class="grid grid--3">
-          <div class="card testimonial-card">
-            <div class="testimonial-card__quote">
-              <svg class="testimonial-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-              <p class="testimonial-card__text">Benjamin brings a rare combination of deep technical expertise and clear communication. His work on data integration was instrumental in modernizing our reporting infrastructure.</p>
-            </div>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">PM</div>
-              <div>
-                <p class="testimonial-card__name">Project Manager</p>
-                <p class="testimonial-card__role">Financial Services Client</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card testimonial-card" style="background: var(--color-accent-alt);">
-            <div class="testimonial-card__quote">
-              <svg class="testimonial-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="var(--color-text)" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-              <p class="testimonial-card__text">His contributions to HL7 FHIR-CH have been invaluable. Benjamin understands the nuances of healthcare data standardization and consistently delivers quality work.</p>
-            </div>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">HL</div>
-              <div>
-                <p class="testimonial-card__name">Fellow Member</p>
-                <p class="testimonial-card__role">HL7 Switzerland</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card testimonial-card card--secondary">
-            <div class="testimonial-card__quote">
-              <svg class="testimonial-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="var(--color-text)" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-              <p class="testimonial-card__text">Working with Benjamin on the BIRD standard toolkit was a great experience. He has a strong grasp of regulatory technology and turns complex requirements into elegant solutions.</p>
-            </div>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">EC</div>
-              <div>
-                <p class="testimonial-card__name">Collaborator</p>
-                <p class="testimonial-card__role">Eclipse EFBT Project</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="section" style="background: var(--color-secondary);">
+    <section class="section section--secondary-bg">
       <div class="container text-center">
         <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-lg);">Let's Work Together</h2>
         <p style="font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-xl);">
