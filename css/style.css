@@ -3809,6 +3809,15 @@ a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):
 
 .faq-item:nth-child(even) {
   background: var(--color-accent-alt);
+  color: #fdf6e3;
+}
+
+.faq-item:nth-child(even) .faq-toggle {
+  color: #fdf6e3;
+}
+
+.faq-item:nth-child(even) .faq-panel__inner {
+  color: #eee8d5;
 }
 
 .faq-toggle {
@@ -3900,6 +3909,14 @@ a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):
 
 [data-theme="dark"] .faq-toggle__icon {
   border-color: var(--color-border);
+}
+
+[data-theme="dark"] .faq-item:nth-child(even) .faq-toggle {
+  color: #eee8d5;
+}
+
+[data-theme="dark"] .faq-item:nth-child(even) .faq-panel__inner {
+  color: #eee8d5;
 }
 
 /* Print: show all FAQ answers */
