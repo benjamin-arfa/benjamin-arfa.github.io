@@ -333,9 +333,13 @@ strong {
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--space-sm) var(--space-md);
   background: transparent;
-  border: none;
+  border: 2px solid transparent;
+  border-radius: 6px;
   box-shadow: none;
   outline: none;
   cursor: pointer;
@@ -343,9 +347,9 @@ strong {
 }
 
 .nav__logo:hover {
-  transform: translate(-2px, -2px);
+  border-color: var(--color-text);
   text-decoration: none;
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 /* Text scramble effect on logo */
@@ -1449,10 +1453,7 @@ body.menu-open {
   box-shadow: 2px 2px 0 var(--color-border);
 }
 
-/* Nav logo: playful wiggle on hover */
-.nav__logo:hover {
-  animation: wiggle 0.4s ease;
-}
+/* Nav logo: simple border on hover */
 
 @keyframes wiggle {
   0% { transform: translate(-2px, -2px) rotate(0deg); }
@@ -1968,6 +1969,12 @@ code {
 
 [data-theme="dark"] .nav__logo {
   background: transparent;
+  color: #eee8d5;
+  border-color: transparent;
+}
+
+[data-theme="dark"] .nav__logo:hover {
+  border-color: #eee8d5;
   color: #eee8d5;
 }
 
