@@ -1907,7 +1907,7 @@ code {
   --color-primary: #268bd2;
   --color-secondary: #d33682;
   --color-accent: #2aa198;
-  --color-accent-alt: #859900;
+  --color-accent-alt: #4a5700;
 }
 
 /* Dark mode: scrollbar */
@@ -2033,6 +2033,13 @@ code {
 [data-theme="dark"] .tag--secondary { background: #d33682; color: #fdf6e3; }
 [data-theme="dark"] .tag--accent { background: #2aa198; color: #002b36; }
 
+/* Dark mode: tags using card color classes */
+[data-theme="dark"] .tag.card--accent-alt {
+  background: #073642 !important;
+  color: #859900 !important;
+  border-color: #586e75;
+}
+
 /* Dark mode: colored card backgrounds — muted for readability */
 [data-theme="dark"] .card--primary {
   background: #1a6091 !important;
@@ -2053,6 +2060,28 @@ code {
 [data-theme="dark"] .card--secondary .card__title,
 [data-theme="dark"] .card--secondary .card__content {
   color: #eee8d5;
+}
+
+/* Dark mode: ensure ALL text inside colored cards is readable */
+[data-theme="dark"] .card--accent-alt p,
+[data-theme="dark"] .card--accent-alt h3,
+[data-theme="dark"] .card--accent-alt h4,
+[data-theme="dark"] .card--accent-alt li,
+[data-theme="dark"] .card--accent-alt span,
+[data-theme="dark"] .card--accent-alt .card__subtitle,
+[data-theme="dark"] .card--primary p,
+[data-theme="dark"] .card--primary h3,
+[data-theme="dark"] .card--primary h4,
+[data-theme="dark"] .card--primary li,
+[data-theme="dark"] .card--primary span,
+[data-theme="dark"] .card--primary .card__subtitle,
+[data-theme="dark"] .card--secondary p,
+[data-theme="dark"] .card--secondary h3,
+[data-theme="dark"] .card--secondary h4,
+[data-theme="dark"] .card--secondary li,
+[data-theme="dark"] .card--secondary span,
+[data-theme="dark"] .card--secondary .card__subtitle {
+  color: #eee8d5 !important;
 }
 
 /* Dark mode: section backgrounds */
@@ -2156,7 +2185,11 @@ code {
 
 /* Dark mode: btn on colored backgrounds */
 [data-theme="dark"] .section--secondary-bg .btn--primary,
-[data-theme="dark"] .section--primary-bg .btn--outline {
+[data-theme="dark"] .section--primary-bg .btn--outline,
+[data-theme="dark"] .card--accent-alt .btn--primary,
+[data-theme="dark"] .card--accent-alt .btn--outline,
+[data-theme="dark"] .card--primary .btn--outline,
+[data-theme="dark"] .card--secondary .btn--outline {
   background: #002b36;
   color: #eee8d5;
   border-color: #586e75;
