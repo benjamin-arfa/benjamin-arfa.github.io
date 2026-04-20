@@ -621,10 +621,18 @@ body.menu-open {
   background: #268bd2;
   color: #fdf6e3;
 }
+.card--primary a:not(.btn) {
+  color: #fdf6e3 !important;
+  border-bottom-color: rgba(253,246,227,0.5);
+}
 
 .card--secondary {
   background: #d33682;
   color: #fdf6e3;
+}
+.card--secondary a:not(.btn) {
+  color: #fdf6e3 !important;
+  border-bottom-color: rgba(253,246,227,0.5);
 }
 
 .card--accent {
@@ -2083,6 +2091,13 @@ code {
 [data-theme="dark"] .card--secondary .card__subtitle {
   color: #eee8d5 !important;
 }
+/* Dark mode: links inside colored cards */
+[data-theme="dark"] .card--primary a:not(.btn),
+[data-theme="dark"] .card--secondary a:not(.btn),
+[data-theme="dark"] .card--accent-alt a:not(.btn) {
+  color: #eee8d5 !important;
+  border-bottom-color: rgba(238,232,213,0.5);
+}
 
 /* Dark mode: stat cards — ensure light text on colored backgrounds */
 [data-theme="dark"] .stat-card--primary {
@@ -2140,6 +2155,10 @@ code {
 .card--accent-alt {
   background: var(--color-accent-alt);
   color: #073642;
+}
+.card--accent-alt a:not(.btn) {
+  color: #073642 !important;
+  border-bottom-color: rgba(7,54,66,0.4);
 }
 .section--dark-bg {
   background: var(--color-text);
