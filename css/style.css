@@ -331,19 +331,19 @@ strong {
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: #2aa198;
+  color: var(--color-text);
   text-decoration: none;
   padding: var(--space-sm) var(--space-md);
-  background: #073642;
-  border: var(--border-thick);
-  box-shadow: var(--shadow-sm);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   transition: var(--transition-fast);
 }
 
 .nav__logo:hover {
   transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-md);
   text-decoration: none;
+  color: var(--color-accent);
 }
 
 /* Text scramble effect on logo */
@@ -1965,8 +1965,8 @@ code {
 }
 
 [data-theme="dark"] .nav__logo {
-  background: #002b36;
-  color: #2aa198;
+  background: transparent;
+  color: #eee8d5;
 }
 
 [data-theme="dark"] .nav__link {
