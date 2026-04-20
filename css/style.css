@@ -2136,6 +2136,21 @@ code {
   color: #073642;
 }
 
+/* Light mode: ensure heading highlights inside colored sections are readable */
+.section--primary-bg h2 > span,
+.section--secondary-bg h2 > span,
+.section--dark-bg h2 > span {
+  color: var(--color-text);
+}
+
+/* Light mode: ensure all text inherits section color (not overridden by variables) */
+.section--primary-bg p,
+.section--primary-bg li,
+.section--secondary-bg p,
+.section--secondary-bg li {
+  color: inherit;
+}
+
 /* Dark mode: section header adjustments */
 [data-theme="dark"] .section--dark-bg .section-header__eyebrow,
 [data-theme="dark"] .section--primary-bg .section-header__eyebrow,
