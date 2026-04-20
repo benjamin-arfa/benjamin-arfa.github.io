@@ -2084,6 +2084,28 @@ code {
   color: #eee8d5 !important;
 }
 
+/* Dark mode: stat cards — ensure light text on colored backgrounds */
+[data-theme="dark"] .stat-card--primary {
+  background: #1a6091;
+  color: #eee8d5;
+}
+[data-theme="dark"] .stat-card--secondary {
+  background: #8c2257;
+  color: #eee8d5;
+}
+[data-theme="dark"] .stat-card--accent {
+  background: #4a5700;
+  color: #eee8d5;
+}
+[data-theme="dark"] .stat-card--dark {
+  background: #073642;
+  color: #eee8d5;
+}
+[data-theme="dark"] .stat-card__number,
+[data-theme="dark"] .stat-card__label {
+  color: #eee8d5;
+}
+
 /* Dark mode: section backgrounds */
 [data-theme="dark"] .section--dark-bg {
   background: #002b36 !important;
