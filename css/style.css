@@ -4326,3 +4326,449 @@ a[target="_blank"]:not(.btn):not(.social-link):not(.card__link):not(.nav__link):
     color: #000;
   }
 }
+
+/* ===========================================
+   PIXEL ART ELEMENTS
+   =========================================== */
+
+/* ----- PIXEL FONT VARIABLE ----- */
+:root {
+  --font-pixel: 'Press Start 2P', monospace;
+}
+
+/* ----- PIXEL SCENE (Hero floating elements) ----- */
+.pixel-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- PIXEL CLOUDS ----- */
+.pixel-cloud {
+  position: absolute;
+  width: 13px;
+  height: 9px;
+  image-rendering: pixelated;
+  opacity: 0.18;
+}
+
+/* Cloud shape using box-shadow pixel art (each 1px = 1 pixel) scaled up */
+.pixel-cloud::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  box-shadow:
+    /* Row 1: top bumps */
+    4px 0 0 var(--color-primary),
+    8px 0 0 var(--color-primary),
+    12px 0 0 var(--color-primary),
+    16px 0 0 var(--color-primary),
+    28px 0 0 var(--color-primary),
+    32px 0 0 var(--color-primary),
+    /* Row 2 */
+    -4px 4px 0 var(--color-primary),
+    0px 4px 0 var(--color-primary),
+    4px 4px 0 var(--color-primary),
+    8px 4px 0 var(--color-primary),
+    12px 4px 0 var(--color-primary),
+    16px 4px 0 var(--color-primary),
+    20px 4px 0 var(--color-primary),
+    24px 4px 0 var(--color-primary),
+    28px 4px 0 var(--color-primary),
+    32px 4px 0 var(--color-primary),
+    36px 4px 0 var(--color-primary),
+    /* Row 3: full base */
+    -8px 8px 0 var(--color-primary),
+    -4px 8px 0 var(--color-primary),
+    0px 8px 0 var(--color-primary),
+    4px 8px 0 var(--color-primary),
+    8px 8px 0 var(--color-primary),
+    12px 8px 0 var(--color-primary),
+    16px 8px 0 var(--color-primary),
+    20px 8px 0 var(--color-primary),
+    24px 8px 0 var(--color-primary),
+    28px 8px 0 var(--color-primary),
+    32px 8px 0 var(--color-primary),
+    36px 8px 0 var(--color-primary),
+    40px 8px 0 var(--color-primary);
+  transform: scale(2);
+  transform-origin: top left;
+}
+
+.pixel-cloud--1 {
+  top: 18%;
+  right: 8%;
+  animation: pixel-float 18s ease-in-out infinite;
+}
+
+.pixel-cloud--2 {
+  top: 35%;
+  right: 22%;
+  animation: pixel-float 22s ease-in-out infinite 3s;
+  opacity: 0.12;
+}
+
+.pixel-cloud--3 {
+  top: 12%;
+  right: 38%;
+  animation: pixel-float 25s ease-in-out infinite 7s;
+  opacity: 0.08;
+  transform: scale(0.7);
+}
+
+@keyframes pixel-float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-12px) translateX(8px); }
+  50% { transform: translateY(-6px) translateX(-5px); }
+  75% { transform: translateY(-16px) translateX(3px); }
+}
+
+.pixel-cloud--3 {
+  animation-name: pixel-float-sm;
+}
+
+@keyframes pixel-float-sm {
+  0%, 100% { transform: scale(0.7) translateY(0) translateX(0); }
+  25% { transform: scale(0.7) translateY(-10px) translateX(6px); }
+  50% { transform: scale(0.7) translateY(-4px) translateX(-4px); }
+  75% { transform: scale(0.7) translateY(-14px) translateX(2px); }
+}
+
+/* ----- PIXEL STARS ----- */
+.pixel-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  image-rendering: pixelated;
+}
+
+.pixel-star::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  box-shadow:
+    /* Cross shape */
+    4px 0 0 var(--color-accent),
+    -4px 0 0 var(--color-accent),
+    0 4px 0 var(--color-accent),
+    0 -4px 0 var(--color-accent),
+    /* Diagonals */
+    4px 4px 0 var(--color-accent),
+    -4px -4px 0 var(--color-accent),
+    4px -4px 0 var(--color-accent),
+    -4px 4px 0 var(--color-accent);
+  transform: scale(1.5);
+  transform-origin: center;
+}
+
+.pixel-star--1 { top: 15%; right: 12%; animation: pixel-twinkle 3s ease-in-out infinite; }
+.pixel-star--2 { top: 40%; right: 5%; animation: pixel-twinkle 4s ease-in-out infinite 1s; }
+.pixel-star--3 { top: 25%; right: 30%; animation: pixel-twinkle 3.5s ease-in-out infinite 0.5s; }
+.pixel-star--4 { top: 55%; right: 15%; animation: pixel-twinkle 5s ease-in-out infinite 2s; }
+.pixel-star--5 { top: 8%; right: 45%; animation: pixel-twinkle 4.5s ease-in-out infinite 1.5s; }
+
+@keyframes pixel-twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+/* ----- PIXEL DIVIDERS ----- */
+.pixel-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  background: var(--color-background);
+  overflow: hidden;
+}
+
+.pixel-divider__pattern {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Diamond pattern using box-shadow */
+.pixel-divider__pattern::before,
+.pixel-divider__pattern::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  image-rendering: pixelated;
+}
+
+.pixel-divider__pattern::before {
+  background: var(--color-accent);
+  box-shadow:
+    /* Left side diamonds */
+    -16px 0 0 var(--color-primary),
+    -32px 0 0 var(--color-secondary),
+    -48px 0 0 var(--color-accent),
+    -64px 0 0 var(--color-primary),
+    -80px 0 0 var(--color-secondary),
+    -96px 0 0 var(--color-accent),
+    -112px 0 0 var(--color-primary),
+    -128px 0 0 var(--color-secondary),
+    -144px 0 0 var(--color-accent),
+    -160px 0 0 var(--color-primary),
+    -176px 0 0 var(--color-secondary),
+    -192px 0 0 var(--color-accent),
+    /* Diamond shape: top/bottom pixels */
+    0 -4px 0 var(--color-accent),
+    0 4px 0 var(--color-accent),
+    -16px -4px 0 var(--color-primary),
+    -16px 4px 0 var(--color-primary),
+    -32px -4px 0 var(--color-secondary),
+    -32px 4px 0 var(--color-secondary),
+    -48px -4px 0 var(--color-accent),
+    -48px 4px 0 var(--color-accent),
+    -64px -4px 0 var(--color-primary),
+    -64px 4px 0 var(--color-primary),
+    -80px -4px 0 var(--color-secondary),
+    -80px 4px 0 var(--color-secondary),
+    -96px -4px 0 var(--color-accent),
+    -96px 4px 0 var(--color-accent),
+    -112px -4px 0 var(--color-primary),
+    -112px 4px 0 var(--color-primary),
+    -128px -4px 0 var(--color-secondary),
+    -128px 4px 0 var(--color-secondary),
+    -144px -4px 0 var(--color-accent),
+    -144px 4px 0 var(--color-accent),
+    -160px -4px 0 var(--color-primary),
+    -160px 4px 0 var(--color-primary),
+    -176px -4px 0 var(--color-secondary),
+    -176px 4px 0 var(--color-secondary),
+    -192px -4px 0 var(--color-accent),
+    -192px 4px 0 var(--color-accent);
+  transform: scale(1.5);
+}
+
+.pixel-divider__pattern::after {
+  background: var(--color-accent);
+  box-shadow:
+    /* Right side diamonds */
+    16px 0 0 var(--color-primary),
+    32px 0 0 var(--color-secondary),
+    48px 0 0 var(--color-accent),
+    64px 0 0 var(--color-primary),
+    80px 0 0 var(--color-secondary),
+    96px 0 0 var(--color-accent),
+    112px 0 0 var(--color-primary),
+    128px 0 0 var(--color-secondary),
+    144px 0 0 var(--color-accent),
+    160px 0 0 var(--color-primary),
+    176px 0 0 var(--color-secondary),
+    192px 0 0 var(--color-accent),
+    /* Diamond shape */
+    0 -4px 0 var(--color-accent),
+    0 4px 0 var(--color-accent),
+    16px -4px 0 var(--color-primary),
+    16px 4px 0 var(--color-primary),
+    32px -4px 0 var(--color-secondary),
+    32px 4px 0 var(--color-secondary),
+    48px -4px 0 var(--color-accent),
+    48px 4px 0 var(--color-accent),
+    64px -4px 0 var(--color-primary),
+    64px 4px 0 var(--color-primary),
+    80px -4px 0 var(--color-secondary),
+    80px 4px 0 var(--color-secondary),
+    96px -4px 0 var(--color-accent),
+    96px 4px 0 var(--color-accent),
+    112px -4px 0 var(--color-primary),
+    112px 4px 0 var(--color-primary),
+    128px -4px 0 var(--color-secondary),
+    128px 4px 0 var(--color-secondary),
+    144px -4px 0 var(--color-accent),
+    144px 4px 0 var(--color-accent),
+    160px -4px 0 var(--color-primary),
+    160px 4px 0 var(--color-primary),
+    176px -4px 0 var(--color-secondary),
+    176px 4px 0 var(--color-secondary),
+    192px -4px 0 var(--color-accent),
+    192px 4px 0 var(--color-accent);
+  transform: scale(1.5);
+}
+
+.pixel-divider--alt {
+  background: var(--color-background);
+}
+
+/* ----- PIXEL CARD CORNERS ----- */
+.pixel-card {
+  position: relative;
+}
+
+.pixel-card::before,
+.pixel-card::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  image-rendering: pixelated;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Top-left corner bracket */
+.pixel-card::before {
+  top: -2px;
+  left: -2px;
+  background: var(--color-accent);
+  box-shadow:
+    4px 0 0 var(--color-accent),
+    8px 0 0 var(--color-accent),
+    12px 0 0 var(--color-accent),
+    0 4px 0 var(--color-accent),
+    0 8px 0 var(--color-accent),
+    0 12px 0 var(--color-accent);
+}
+
+/* Bottom-right corner bracket */
+.pixel-card::after {
+  bottom: -2px;
+  right: -2px;
+  background: var(--color-secondary);
+  box-shadow:
+    -4px 0 0 var(--color-secondary),
+    -8px 0 0 var(--color-secondary),
+    -12px 0 0 var(--color-secondary),
+    0 -4px 0 var(--color-secondary),
+    0 -8px 0 var(--color-secondary),
+    0 -12px 0 var(--color-secondary);
+}
+
+.pixel-card:hover::before {
+  background: var(--color-primary);
+  box-shadow:
+    4px 0 0 var(--color-primary),
+    8px 0 0 var(--color-primary),
+    12px 0 0 var(--color-primary),
+    0 4px 0 var(--color-primary),
+    0 8px 0 var(--color-primary),
+    0 12px 0 var(--color-primary);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.pixel-card:hover::after {
+  background: var(--color-accent);
+  box-shadow:
+    -4px 0 0 var(--color-accent),
+    -8px 0 0 var(--color-accent),
+    -12px 0 0 var(--color-accent),
+    0 -4px 0 var(--color-accent),
+    0 -8px 0 var(--color-accent),
+    0 -12px 0 var(--color-accent);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+/* ----- PIXEL MARQUEE ----- */
+.pixel-marquee .marquee__item {
+  font-family: var(--font-pixel);
+  font-size: var(--text-xs);
+  letter-spacing: 0;
+}
+
+/* ----- PIXEL ART — DARK MODE ----- */
+[data-theme="dark"] .pixel-cloud::before {
+  background: #268bd2;
+  box-shadow:
+    4px 0 0 #268bd2,
+    8px 0 0 #268bd2,
+    12px 0 0 #268bd2,
+    16px 0 0 #268bd2,
+    28px 0 0 #268bd2,
+    32px 0 0 #268bd2,
+    -4px 4px 0 #268bd2,
+    0px 4px 0 #268bd2,
+    4px 4px 0 #268bd2,
+    8px 4px 0 #268bd2,
+    12px 4px 0 #268bd2,
+    16px 4px 0 #268bd2,
+    20px 4px 0 #268bd2,
+    24px 4px 0 #268bd2,
+    28px 4px 0 #268bd2,
+    32px 4px 0 #268bd2,
+    36px 4px 0 #268bd2,
+    -8px 8px 0 #268bd2,
+    -4px 8px 0 #268bd2,
+    0px 8px 0 #268bd2,
+    4px 8px 0 #268bd2,
+    8px 8px 0 #268bd2,
+    12px 8px 0 #268bd2,
+    16px 8px 0 #268bd2,
+    20px 8px 0 #268bd2,
+    24px 8px 0 #268bd2,
+    28px 8px 0 #268bd2,
+    32px 8px 0 #268bd2,
+    36px 8px 0 #268bd2,
+    40px 8px 0 #268bd2;
+}
+
+[data-theme="dark"] .pixel-cloud {
+  opacity: 0.12;
+}
+
+[data-theme="dark"] .pixel-star::before {
+  background: #2aa198;
+  box-shadow:
+    4px 0 0 #2aa198,
+    -4px 0 0 #2aa198,
+    0 4px 0 #2aa198,
+    0 -4px 0 #2aa198,
+    4px 4px 0 #2aa198,
+    -4px -4px 0 #2aa198,
+    4px -4px 0 #2aa198,
+    -4px 4px 0 #2aa198;
+}
+
+[data-theme="dark"] .pixel-divider {
+  background: #002b36;
+}
+
+[data-theme="dark"] .pixel-divider--alt {
+  background: #002b36;
+}
+
+/* ----- PIXEL ART — REDUCED MOTION ----- */
+@media (prefers-reduced-motion: reduce) {
+  .pixel-cloud,
+  .pixel-star {
+    animation: none !important;
+  }
+  .pixel-star {
+    opacity: 0.25;
+  }
+}
+
+/* ----- PIXEL ART — MOBILE ----- */
+@media (max-width: 768px) {
+  .pixel-cloud--2,
+  .pixel-cloud--3,
+  .pixel-star--4,
+  .pixel-star--5 {
+    display: none;
+  }
+  .pixel-divider__pattern::before,
+  .pixel-divider__pattern::after {
+    transform: scale(1);
+  }
+  .pixel-marquee .marquee__item {
+    font-size: 0.625rem;
+  }
+}

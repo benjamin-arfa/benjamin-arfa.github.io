@@ -70,7 +70,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Load fonts via link instead of CSS @import for faster rendering -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <!-- Prefetch key pages for instant navigation -->
   <link rel="dns-prefetch" href="https://github.com">
@@ -120,6 +120,17 @@
   <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
+      <!-- Pixel art floating decorations -->
+      <div class="pixel-scene" aria-hidden="true">
+        <div class="pixel-cloud pixel-cloud--1"></div>
+        <div class="pixel-cloud pixel-cloud--2"></div>
+        <div class="pixel-cloud pixel-cloud--3"></div>
+        <div class="pixel-star pixel-star--1"></div>
+        <div class="pixel-star pixel-star--2"></div>
+        <div class="pixel-star pixel-star--3"></div>
+        <div class="pixel-star pixel-star--4"></div>
+        <div class="pixel-star pixel-star--5"></div>
+      </div>
       <div class="container">
         <div class="hero__content">
           <p class="hero__eyebrow"><span class="typewriter" data-texts='["Data &amp; Software Engineer","Healthcare Interoperability","Metadata Architecture","Basel, Switzerland"]'></span></p>
@@ -149,7 +160,7 @@
     </section>
 
     <!-- Skills Marquee -->
-    <div class="marquee" aria-hidden="true">
+    <div class="marquee pixel-marquee" aria-hidden="true">
       <div class="marquee__inner">
         <span class="marquee__item">Python</span>
         <span class="marquee__item">Go</span>
@@ -176,6 +187,11 @@
         <span class="marquee__item">Data Governance</span>
         <span class="marquee__item">Healthcare</span>
       </div>
+    </div>
+
+    <!-- Pixel Divider -->
+    <div class="pixel-divider" aria-hidden="true">
+      <div class="pixel-divider__pattern"></div>
     </div>
 
     <!-- About Preview Section -->
@@ -231,6 +247,11 @@
     </section>
 
 
+    <!-- Pixel Divider -->
+    <div class="pixel-divider pixel-divider--alt" aria-hidden="true">
+      <div class="pixel-divider__pattern"></div>
+    </div>
+
     <!-- Services Section -->
     <section class="section">
       <div class="container">
@@ -240,7 +261,7 @@
         </div>
 
         <div class="grid grid--3">
-          <div class="card card--secondary">
+          <div class="card card--secondary pixel-card">
             <h3 class="card__title">Software Engineering</h3>
             <p class="card__content">
               Scalable data applications and system integration solutions. From requirements engineering to deployment, bridging communication between business and technical teams.
@@ -252,7 +273,7 @@
             </div>
           </div>
 
-          <div class="card card--accent-alt">
+          <div class="card card--accent-alt pixel-card">
             <h3 class="card__title">Healthcare Interoperability</h3>
             <p class="card__content">
               Active member of HL7 FHIR-CH, contributing to healthcare data standardization efforts. Specializing in semantic data integration and master data management.
@@ -264,7 +285,7 @@
             </div>
           </div>
 
-          <div class="card card--primary">
+          <div class="card card--primary pixel-card">
             <h3 class="card__title">Metadata Architecture</h3>
             <p class="card__content">
               Comprehensive metadata management and data architecture design. Building robust, business-aligned systems with effective governance frameworks.
@@ -282,6 +303,11 @@
         </div>
       </div>
     </section>
+
+    <!-- Pixel Divider -->
+    <div class="pixel-divider" aria-hidden="true">
+      <div class="pixel-divider__pattern"></div>
+    </div>
 
     <!-- Projects Section -->
     <section class="section section--dark-bg">
@@ -314,6 +340,11 @@
         </div>
       </div>
     </section>
+
+    <!-- Pixel Divider -->
+    <div class="pixel-divider pixel-divider--alt" aria-hidden="true">
+      <div class="pixel-divider__pattern"></div>
+    </div>
 
     <!-- Involvement Section -->
     <section class="section">
