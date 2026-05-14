@@ -1,493 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hire Benjamin Arfa for data strategy consulting, HL7 FHIR integration, metadata architecture, and custom software engineering. Basel-based, globally available.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Services | Benjamin Arfa">
-  <meta property="og:description" content="Data strategy consulting, HL7 FHIR integration, metadata architecture, and custom software engineering. Basel-based, globally available.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://benjamin-arfa.github.io/services.html">
-  <meta property="og:image" content="https://benjamin-arfa.github.io/og-image.svg">
-  <meta property="og:site_name" content="Benjamin Arfa">
-  <meta property="og:locale" content="en_US">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Services | Benjamin Arfa">
-  <meta name="twitter:description" content="Data strategy consulting, HL7 FHIR integration, metadata architecture, and custom software engineering. Basel-based, globally available.">
-  <meta name="twitter:image" content="https://benjamin-arfa.github.io/og-image.svg">
-
-  <title>Services | Benjamin Arfa</title>
-  <link rel="canonical" href="https://benjamin-arfa.github.io/services.html">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#002b36" media="(prefers-color-scheme: dark)">
-
-  <!-- Breadcrumb Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://benjamin-arfa.github.io" },
-      { "@type": "ListItem", "position": 2, "name": "Services" }
-    ]
-  }
-  </script>
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Benjamin Arfa - Data & Software Engineering Services",
-    "description": "Professional services including software engineering, healthcare interoperability, metadata architecture, IT consulting, and data modelling.",
-    "url": "https://benjamin-arfa.github.io/services.html",
-    "provider": {
-      "@type": "Person",
-      "name": "Benjamin Arfa"
-    },
-    "areaServed": "CH",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Engineering Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Engineering" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Healthcare Interoperability" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Metadata Architecture" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Consulting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Modelling" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ML Consulting" } }
-      ]
-    }
-  }
-  </script>
-
-  <!-- FAQ Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What types of projects do you typically work on?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "I work across data engineering, healthcare interoperability, and regulatory technology. Projects range from building HL7 FHIR integration pipelines and BIRD regulatory reporting toolkits to designing metadata architectures and master data management solutions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you work with clients outside of Switzerland?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. While I'm based in Basel, I regularly collaborate with teams across Europe and work remotely with international clients. My multilingual background (French, German, English, Spanish) helps bridge communication across diverse teams."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is your typical engagement model?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engagements follow my four-step process: Discover, Design, Develop, Deliver. I offer both project-based consulting with clear deliverables and ongoing advisory retainers. Each engagement starts with a discovery call to understand your specific needs and constraints."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you help with existing systems or only greenfield projects?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Both. A significant portion of my work involves modernizing legacy data systems, improving existing data pipelines, and integrating new standards into established infrastructure."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you handle data privacy and compliance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Data privacy is integral to every project. I design solutions with Swiss and EU data protection regulations in mind from the start, including GDPR compliance, healthcare data confidentiality requirements, and secure data handling practices for regulatory reporting."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Performance: preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Load fonts via link instead of CSS @import for faster rendering -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Prefetch key pages for instant navigation -->
-  <link rel="dns-prefetch" href="https://github.com">
-  <link rel="prefetch" href="/projects.html">
-  <link rel="prefetch" href="/contact.html">
-  <!-- Preload main JS for faster interactivity -->
-  <link rel="preload" href="/js/main.js" as="script">
-  <script>var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");</script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hire Benjamin Arfa for data strategy consulting, HL7 FHIR integration, metadata architecture, and custom software engineering. Basel-based, globally available.">
+<title>Services | Benjamin Arfa</title>
+<link rel="canonical" href="https://benjamin-arfa.github.io/services.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="progress-bar" aria-hidden="true"></div>
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__container">
-      <a href="index.html" class="nav__logo">B.ARFA</a>
 
-      <ul class="nav__menu">
-        <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="services.html" class="nav__link nav__link--active">Services</a></li>
-        <li><a href="projects.html" class="nav__link">Projects</a></li>
-        <li><a href="blog.html" class="nav__link">Blog</a></li>
-        <li><a href="involvement.html" class="nav__link">Involvement</a></li>
-        <li><a href="contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
-      </ul>
+<div class="topbar"><div class="wrap topbar-inner">
+  <span class="pill-dot"><span class="dot"></span> <span class="alt">AVAILABLE</span> &nbsp;FOR Q3'26 ENGAGEMENTS</span>
+  <nav><a href="index.html#now">▸ Now</a><a href="/feed.xml">▸ /feed.xml</a><a href="mailto:benjamin.arfa.pro@gmail.com">▸ benjamin.arfa.pro@gmail.com</a></nav>
+</div></div>
 
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <div class="nav__mobile-menu">
-      <a href="about.html" class="nav__link">About</a>
-      <a href="services.html" class="nav__link">Services</a>
-      <a href="projects.html" class="nav__link">Projects</a>
-      <a href="blog.html" class="nav__link">Blog</a>
-      <a href="involvement.html" class="nav__link">Involvement</a>
-      <a href="contact.html" class="nav__link btn btn--primary">Contact</a>
-    </div>
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="index.html"><span class="logo-mark"></span><span>B.ARFA</span></a>
+  <nav class="nav-links">
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="involvement.html">Involvement</a>
+    <a href="contact.html" class="cta">Contact →</a>
   </nav>
+</div></header>
 
-  <main id="main-content" class="page">
-    <div class="container">
-      <!-- Breadcrumb -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html" class="breadcrumb__link">Home</a>
-        <span class="breadcrumb__separator" aria-hidden="true">/</span>
-        <span class="breadcrumb__current" aria-current="page">Services</span>
-      </nav>
+<main id="top">
 
-      <!-- Page Header -->
-      <header class="page__header">
-        <p class="section-header__eyebrow">What I Offer</p>
-        <h1 class="page__title"><span class="hero__title-highlight">Services</span></h1>
-        <p class="page__subtitle" style="max-width: 700px;">
-          Arfa Digital Consulting aims to promote digital transformation by providing IT and AI solutions, software development, data analysis, and strategic consulting.
-        </p>
-      </header>
+<section class="page-head">
+  <div class="pixel-bg" aria-hidden="true">
+    <svg class="c1" width="180" height="60"></svg>
+    <svg class="c2" width="120" height="40"></svg>
+    <svg class="c4" width="140" height="50"></svg>
+  </div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <span>Services</span></nav>
+    <p class="page-eyebrow">What I Offer</p>
+    <h1 class="page-title"><mark>Services</mark></h1>
+    <p class="page-sub">Arfa Digital Consulting promotes digital transformation through IT &amp; AI solutions, software development, data analysis, and strategic consulting — tuned for Swiss and European regulatory contexts.</p>
+  </div>
+</section>
 
-      <!-- Main Services - 3 Pillars -->
-      <section class="section" style="padding-top: 0;">
-        <div class="grid grid--3" style="gap: var(--space-xl);">
-
-          <!-- Software Engineering -->
-          <div class="card card--secondary" style="padding: var(--space-xl);">
-            <h2 class="card__title" style="font-size: var(--text-2xl); margin-bottom: var(--space-lg);">Software Engineering</h2>
-            <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-              Scalable data applications and system integration solutions. From requirements engineering to deployment, bridging communication between business and technical teams.
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-md);">
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Custom application development</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>API design & implementation</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Docker containerization</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Requirements engineering</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Cloud application lifecycle management</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Healthcare Interoperability -->
-          <div class="card card--accent-alt" style="padding: var(--space-xl);">
-            <h2 class="card__title" style="font-size: var(--text-2xl); margin-bottom: var(--space-lg);">Healthcare Interoperability</h2>
-            <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-              Active member of HL7 FHIR-CH, contributing to healthcare data standardization efforts. Specializing in semantic data integration and master data management.
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-md);">
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>HL7 FHIR implementation</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Semantic data integration</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Master data management (MDM)</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Healthcare data standardization</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>System integration consulting</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Metadata Architecture -->
-          <div class="card card--primary" style="padding: var(--space-xl);">
-            <h2 class="card__title" style="font-size: var(--text-2xl); margin-bottom: var(--space-lg);">Metadata Architecture</h2>
-            <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-              Comprehensive metadata management and data architecture design. Building robust, business-aligned systems with effective governance frameworks.
-            </p>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-md);">
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Metadata management & standards</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Data governance frameworks</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>SDMX & BIRD implementation</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Lifecycle management strategies</span>
-              </li>
-              <li style="display: flex; gap: var(--space-sm);">
-                <span style="color: var(--color-accent);">&#10003;</span>
-                <span>Business-aligned data solutions</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Additional Services -->
-      <section class="section section--dark-bg" style="margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
-        <h2 class="text-primary" style="margin-bottom: var(--space-xl);">Additional Services</h2>
-
-        <div class="grid grid--4">
-          <div class="card">
-            <h3 class="card__title">IT Consulting</h3>
-            <p class="card__content">Strategic guidance on technology decisions, infrastructure optimization, and digital transformation initiatives.</p>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">Polyglot Communication</h3>
-            <p class="card__content">Multi-cultural and multilingual communication bridging diverse teams across French, German, English, and Spanish contexts.</p>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">Data Modelling</h3>
-            <p class="card__content">Conceptual, logical, and physical data modeling for robust database design and data warehouse architecture.</p>
-          </div>
-
-          <div class="card">
-            <h3 class="card__title">ML Consulting</h3>
-            <p class="card__content">Machine learning strategy, model development guidance, and AI solution architecture for business applications.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Process -->
-      <section class="section">
-        <h2 class="mb-xl"><span class="hero__title-highlight">How I Work</span></h2>
-
-        <div class="grid grid--4">
-          <div class="card" style="text-align: center;">
-            <div class="text-primary" style="font-size: var(--text-4xl); margin-bottom: var(--space-md);">01</div>
-            <h3 style="margin-bottom: var(--space-sm);">Discover</h3>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted);">Understanding your challenges and business context</p>
-          </div>
-
-          <div class="card card--primary" style="text-align: center;">
-            <div style="font-size: var(--text-4xl); margin-bottom: var(--space-md);">02</div>
-            <h3 style="margin-bottom: var(--space-sm);">Design</h3>
-            <p style="font-size: var(--text-sm);">Architecting solutions aligned with your goals</p>
-          </div>
-
-          <div class="card card--secondary" style="text-align: center;">
-            <div style="font-size: var(--text-4xl); margin-bottom: var(--space-md);">03</div>
-            <h3 style="margin-bottom: var(--space-sm);">Develop</h3>
-            <p style="font-size: var(--text-sm);">Building robust, scalable implementations</p>
-          </div>
-
-          <div class="card card--accent-alt" style="text-align: center;">
-            <div style="font-size: var(--text-4xl); margin-bottom: var(--space-md);">04</div>
-            <h3 style="margin-bottom: var(--space-sm);">Deliver</h3>
-            <p style="font-size: var(--text-sm);">Deploying and supporting your solution</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="section">
-        <h2 class="mb-xl"><span class="hero__title-highlight">Frequently Asked</span></h2>
-
-        <div class="faq-list">
-          <div class="faq-item" role="region">
-            <button class="faq-toggle" aria-expanded="false">
-              <span>What types of projects do you typically work on?</span>
-              <span class="faq-toggle__icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-panel" role="region">
-              <div class="faq-panel__inner">
-                <p>I work across data engineering, healthcare interoperability, and regulatory technology. Projects range from building HL7 FHIR integration pipelines and BIRD regulatory reporting toolkits to designing metadata architectures and master data management solutions.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item" role="region">
-            <button class="faq-toggle" aria-expanded="false">
-              <span>Do you work with clients outside of Switzerland?</span>
-              <span class="faq-toggle__icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-panel" role="region">
-              <div class="faq-panel__inner">
-                <p>Yes. While I'm based in Basel, I regularly collaborate with teams across Europe and work remotely with international clients. My multilingual background (French, German, English, Spanish) helps bridge communication across diverse teams.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item" role="region">
-            <button class="faq-toggle" aria-expanded="false">
-              <span>What is your typical engagement model?</span>
-              <span class="faq-toggle__icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-panel" role="region">
-              <div class="faq-panel__inner">
-                <p>Engagements follow my four-step process: Discover, Design, Develop, Deliver. I offer both project-based consulting with clear deliverables and ongoing advisory retainers. Each engagement starts with a discovery call to understand your specific needs and constraints.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item" role="region">
-            <button class="faq-toggle" aria-expanded="false">
-              <span>Can you help with existing systems or only greenfield projects?</span>
-              <span class="faq-toggle__icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-panel" role="region">
-              <div class="faq-panel__inner">
-                <p>Both. A significant portion of my work involves modernizing legacy data systems, improving existing data pipelines, and integrating new standards into established infrastructure. I have extensive experience working with legacy HL7 v2, proprietary EHR exports, and existing reporting frameworks.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item" role="region">
-            <button class="faq-toggle" aria-expanded="false">
-              <span>How do you handle data privacy and compliance?</span>
-              <span class="faq-toggle__icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-panel" role="region">
-              <div class="faq-panel__inner">
-                <p>Data privacy is integral to every project. I design solutions with Swiss and EU data protection regulations in mind from the start, including GDPR compliance, healthcare data confidentiality requirements, and secure data handling practices for regulatory reporting.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="section text-center section--secondary-bg" style="margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
-        <h2 style="margin-bottom: var(--space-lg);">Ready to Start a Project?</h2>
-        <p style="font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-xl);">
-          Let's discuss how I can help you achieve your data and technology goals.
-        </p>
-        <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
-      </section>
+<!-- 3 PILLARS -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Three pillars</h2>
+      <div class="index"><b>01</b> · Specialist services</div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__section">
-          <h4>Benjamin Arfa</h4>
-          <p style="opacity: 0.8;">Data & Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p>
-        </div>
+    <div class="svc-grid">
+      <article class="svc-card">
+        <div class="ico">◐</div>
+        <div class="num">PILLAR / 01</div>
+        <h3>Software Engineering</h3>
+        <p>Scalable data applications and system integration solutions. From requirements engineering to deployment, bridging business and technical teams.</p>
+        <ul>
+          <li>Custom application development</li>
+          <li>API design &amp; implementation</li>
+          <li>Docker containerization</li>
+          <li>Requirements engineering</li>
+          <li>Cloud lifecycle management</li>
+        </ul>
+      </article>
 
-        <div class="footer__section">
-          <h4>Navigation</h4>
-          <ul class="footer__links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="involvement.html">Involvement</a></li>
-          </ul>
-        </div>
+      <article class="svc-card feat">
+        <div class="ico">◇</div>
+        <div class="num">PILLAR / 02 · SIGNATURE</div>
+        <h3>Healthcare Interoperability</h3>
+        <p>Active member of <strong>HL7 FHIR-CH</strong>, contributing to healthcare data standardization. Specializing in semantic data integration and master data management.</p>
+        <ul>
+          <li>HL7 FHIR implementation</li>
+          <li>Semantic data integration</li>
+          <li>Master data management (MDM)</li>
+          <li>Healthcare data standardization</li>
+          <li>System integration consulting</li>
+        </ul>
+      </article>
 
-        <div class="footer__section">
-          <h4>Legal</h4>
-          <ul class="footer__links">
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+      <article class="svc-card">
+        <div class="ico">▦</div>
+        <div class="num">PILLAR / 03</div>
+        <h3>Metadata Architecture</h3>
+        <p>Comprehensive metadata management and data architecture design. Building robust, business-aligned systems with effective governance frameworks.</p>
+        <ul>
+          <li>Metadata management &amp; standards</li>
+          <li>Data governance frameworks</li>
+          <li>SDMX &amp; BIRD implementation</li>
+          <li>Lifecycle management strategies</li>
+          <li>Business-aligned data solutions</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <div class="footer__section">
-          <h4>Connect</h4>
-          <div class="footer__social">
-            <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a href="https://x.com/benjaminarfa" target="_blank" rel="noopener" aria-label="X (Twitter)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="mailto:benjamin.arfa.pro@gmail.com" aria-label="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </a>
-            <a href="/feed.xml" target="_blank" rel="noopener" aria-label="RSS Feed">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-            </a>
-          </div>
-        </div>
+<!-- ADDITIONAL -->
+<section class="block" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:48px;padding-bottom:48px">
+  <div class="wrap">
+    <h3 class="label-sm">Additional services</h3>
+    <div class="extras">
+      <div class="extra"><div class="k">+ EXTRA</div><h4>IT Consulting</h4><p>Strategic guidance on technology decisions, infrastructure optimization, and digital transformation.</p></div>
+      <div class="extra"><div class="k">+ EXTRA</div><h4>Polyglot Comms</h4><p>Multilingual bridging across French, German, English, and Spanish contexts.</p></div>
+      <div class="extra"><div class="k">+ EXTRA</div><h4>Data Modelling</h4><p>Conceptual, logical and physical modelling for databases and warehouses.</p></div>
+      <div class="extra"><div class="k">+ EXTRA</div><h4>ML Consulting</h4><p>ML strategy, model development guidance, and AI solution architecture.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How I work</h2>
+      <div class="index"><b>02</b> · Four-step engagement</div>
+    </div>
+    <div class="proc">
+      <div class="proc-step"><div class="n">01</div><h4>Discover</h4><p>Understanding your challenges and business context — discovery call, stakeholder mapping.</p></div>
+      <div class="proc-step"><div class="n">02</div><h4>Design</h4><p>Architecting solutions aligned with your goals — data models, integration topology, governance.</p></div>
+      <div class="proc-step"><div class="n">03</div><h4>Develop</h4><p>Building robust, scalable implementations — Python, Go, FHIR, Docker, CI.</p></div>
+      <div class="proc-step"><div class="n">04</div><h4>Deliver</h4><p>Deploying and supporting your solution — handover, documentation, advisory retainer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Frequently asked</h2>
+      <div class="index"><b>03</b> · Click to expand</div>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q"><span>What types of projects do you typically work on?</span><span class="ic">+</span></button>
+        <div class="faq-a"><p>I work across data engineering, healthcare interoperability, and regulatory technology. Projects range from building HL7 FHIR integration pipelines and BIRD regulatory reporting toolkits to designing metadata architectures and master data management solutions.</p></div>
       </div>
-
-      <div class="footer__bottom">
-        <p>&copy; <span class="copyright-year">2026</span> Arfa Digital Consulting. All rights reserved. | CHE-294.585.543</p>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you work with clients outside of Switzerland?</span><span class="ic">+</span></button>
+        <div class="faq-a"><p>Yes. While I'm based in Basel, I regularly collaborate with teams across Europe and work remotely with international clients. My multilingual background (FR / DE / EN / ES) helps bridge communication across diverse teams.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What is your typical engagement model?</span><span class="ic">+</span></button>
+        <div class="faq-a"><p>Engagements follow my four-step process: Discover, Design, Develop, Deliver. I offer both project-based consulting with clear deliverables and ongoing advisory retainers. Each engagement starts with a discovery call to understand your specific needs and constraints.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Can you help with existing systems or only greenfield projects?</span><span class="ic">+</span></button>
+        <div class="faq-a"><p>Both. A significant portion of my work involves modernizing legacy data systems, improving existing data pipelines, and integrating new standards into established infrastructure. I have extensive experience with legacy HL7 v2, proprietary EHR exports, and existing reporting frameworks.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How do you handle data privacy and compliance?</span><span class="ic">+</span></button>
+        <div class="faq-a"><p>Data privacy is integral to every project. I design solutions with Swiss and EU data protection regulations in mind from the start, including GDPR compliance, healthcare data confidentiality requirements, and secure data handling practices for regulatory reporting.</p></div>
       </div>
     </div>
-  </footer>
-
-  <!-- Keyboard Hint -->
-  <div class="keyboard-hint" id="keyboard-hint">
-    Press <kbd>?</kbd> for shortcuts
   </div>
+</section>
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" aria-label="Toggle dark mode"></button>
-
-  <!-- Back to Top with Scroll Progress Ring -->
-  <div class="back-to-top-wrap" aria-label="Back to top">
-    <svg class="back-to-top-progress" viewBox="0 0 56 56" aria-hidden="true">
-      <circle class="back-to-top-progress__track" cx="28" cy="28" r="24"/>
-      <circle class="back-to-top-progress__fill" cx="28" cy="28" r="24"/>
-    </svg>
-    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+<!-- CTA -->
+<section class="block">
+  <div class="wrap">
+    <div class="contact-block">
+      <div>
+        <h2>Ready to start a project?</h2>
+        <p>Let's discuss how I can help you achieve your data and technology goals. Briefs, weird ideas and cold introductions all welcome.</p>
+        <div class="row">
+          <a class="btn primary" href="contact.html">Get in Touch <span class="arrow">→</span></a>
+          <a class="btn ghost" href="mailto:benjamin.arfa.pro@gmail.com">benjamin.arfa.pro@gmail.com <span class="arrow">↗</span></a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <a class="contact-row" href="mailto:benjamin.arfa.pro@gmail.com"><span class="lbl">Email</span><span class="val">benjamin.arfa.pro</span></a>
+        <a class="contact-row" href="https://github.com/benjamin-arfa" target="_blank" rel="noopener"><span class="lbl">GitHub</span><span class="val">@benjamin-arfa</span></a>
+        <a class="contact-row" href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener"><span class="lbl">LinkedIn</span><span class="val">moadhbenjaminarfa</span></a>
+        <a class="contact-row" href="/feed.xml" target="_blank" rel="noopener"><span class="lbl">RSS</span><span class="val">/feed.xml</span></a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <script src="js/main.js" defer></script>
+</main>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><h4>Benjamin Arfa</h4><p>Data &amp; Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p></div>
+    <div><h4>Navigate</h4><ul>
+      <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li>
+      <li><a href="involvement.html">Involvement</a></li>
+    </ul></div>
+    <div><h4>Legal</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Connect</h4><div class="foot-social">
+      <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GH</a>
+      <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LI</a>
+      <a href="https://x.com/benjaminarfa" target="_blank" rel="noopener">X</a>
+      <a href="mailto:benjamin.arfa.pro@gmail.com">@</a>
+      <a href="/feed.xml" target="_blank" rel="noopener">RSS</a>
+    </div></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Arfa Digital Consulting · CHE-294.585.543</span>
+    <span>Hand-built in Basel · <a href="#top" style="color:var(--cream)">back to top ↑</a></span>
+  </div>
+</div></footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
