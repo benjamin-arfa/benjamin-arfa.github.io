@@ -1,393 +1,248 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meet Benjamin Arfa — a French-German-Arab engineer in Basel building data solutions across healthcare, regulatory tech, and enterprise governance for 9+ years.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="About | Benjamin Arfa">
-  <meta property="og:description" content="A French-German-Arab engineer in Basel building data solutions across healthcare, regulatory tech, and enterprise governance for 9+ years.">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://benjamin-arfa.github.io/about.html">
-  <meta property="og:image" content="https://benjamin-arfa.github.io/og-image.svg">
-  <meta property="og:site_name" content="Benjamin Arfa">
-  <meta property="og:locale" content="en_US">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About | Benjamin Arfa">
-  <meta name="twitter:description" content="A French-German-Arab engineer in Basel building data solutions across healthcare, regulatory tech, and enterprise governance for 9+ years.">
-  <meta name="twitter:image" content="https://benjamin-arfa.github.io/og-image.svg">
-
-  <title>About | Benjamin Arfa</title>
-  <link rel="canonical" href="https://benjamin-arfa.github.io/about.html">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#002b36" media="(prefers-color-scheme: dark)">
-
-  <!-- Breadcrumb Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://benjamin-arfa.github.io" },
-      { "@type": "ListItem", "position": 2, "name": "About" }
-    ]
-  }
-  </script>
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Benjamin Arfa",
-    "description": "About Benjamin Arfa - Data & Software Engineer with 9+ years of experience in data integration, governance, and healthcare interoperability.",
-    "url": "https://benjamin-arfa.github.io/about.html",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Benjamin Arfa",
-      "jobTitle": "Data & Software Engineer",
-      "knowsAbout": ["Data Integration", "Data Governance", "Healthcare Interoperability", "Software Engineering", "Metadata Architecture"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Basel",
-        "addressCountry": "CH"
-      }
-    }
-  }
-  </script>
-
-  <!-- Performance: preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Load fonts via link instead of CSS @import for faster rendering -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Prefetch key pages for instant navigation -->
-  <link rel="dns-prefetch" href="https://github.com">
-  <link rel="prefetch" href="/projects.html">
-  <link rel="prefetch" href="/services.html">
-  <link rel="prefetch" href="/contact.html">
-  <!-- Preload main JS for faster interactivity -->
-  <link rel="preload" href="/js/main.js" as="script">
-  <script>var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");</script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Meet Benjamin Arfa — a French-German-Arab engineer in Basel building data solutions across healthcare, regulatory tech, and enterprise governance for 9+ years.">
+<title>About | Benjamin Arfa</title>
+<link rel="canonical" href="https://benjamin-arfa.github.io/about.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="progress-bar" aria-hidden="true"></div>
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__container">
-      <a href="index.html" class="nav__logo">B.ARFA</a>
 
-      <ul class="nav__menu">
-        <li><a href="about.html" class="nav__link nav__link--active">About</a></li>
-        <li><a href="services.html" class="nav__link">Services</a></li>
-        <li><a href="projects.html" class="nav__link">Projects</a></li>
-        <li><a href="blog.html" class="nav__link">Blog</a></li>
-        <li><a href="involvement.html" class="nav__link">Involvement</a></li>
-        <li><a href="contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
-      </ul>
+<div class="topbar"><div class="wrap topbar-inner">
+  <span class="pill-dot"><span class="dot"></span> <span class="alt">AVAILABLE</span> &nbsp;FOR Q3'26 ENGAGEMENTS</span>
+  <nav><a href="index.html#now">▸ Now</a><a href="/feed.xml">▸ /feed.xml</a><a href="mailto:benjamin.arfa.pro@gmail.com">▸ benjamin.arfa.pro@gmail.com</a></nav>
+</div></div>
 
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <div class="nav__mobile-menu">
-      <a href="about.html" class="nav__link">About</a>
-      <a href="services.html" class="nav__link">Services</a>
-      <a href="projects.html" class="nav__link">Projects</a>
-      <a href="blog.html" class="nav__link">Blog</a>
-      <a href="involvement.html" class="nav__link">Involvement</a>
-      <a href="contact.html" class="nav__link btn btn--primary">Contact</a>
-    </div>
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="index.html"><span class="logo-mark"></span><span>B.ARFA</span></a>
+  <nav class="nav-links">
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="involvement.html">Involvement</a>
+    <a href="contact.html" class="cta">Contact →</a>
   </nav>
+</div></header>
 
-  <main id="main-content" class="page">
-    <div class="container">
-      <!-- Breadcrumb -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html" class="breadcrumb__link">Home</a>
-        <span class="breadcrumb__separator" aria-hidden="true">/</span>
-        <span class="breadcrumb__current" aria-current="page">About</span>
-      </nav>
+<main id="top">
 
-      <!-- Page Header -->
-      <header class="page__header">
-        <p class="section-header__eyebrow">Get to Know Me</p>
-        <h1 class="page__title"><span class="hero__title-highlight">About Me</span></h1>
-      </header>
+<section class="page-head">
+  <div class="pixel-bg" aria-hidden="true">
+    <svg class="c1" width="160" height="50"></svg>
+    <svg class="c3" width="200" height="64"></svg>
+    <svg class="c5" width="110" height="36"></svg>
+    <svg class="c6" width="140" height="46"></svg>
+  </div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <span>About</span></nav>
+    <p class="page-eyebrow">Get to Know Me</p>
+    <h1 class="page-title"><mark>About Me</mark></h1>
+    <p class="page-sub">A French-German-Arab engineer in Basel building data solutions across healthcare, regtech and enterprise governance — for nine-plus years, soon ten.</p>
+  </div>
+</section>
 
-      <!-- Personal Section -->
-      <section class="section" style="padding-top: 0;">
-        <div style="text-align: center; margin-bottom: var(--space-xl);">
-          <div class="profile-photo-frame" style="display: inline-block;">
-            <div class="lazy-image lazy-image--profile">
-              <img
-                class="lazy-image__img"
-                data-src="https://avatars.githubusercontent.com/benjamin-arfa"
-                alt="Benjamin Arfa — Data & Software Engineer"
-                width="280"
-                height="280"
-              >
-              <img
-                class="lazy-image__placeholder"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect fill='%23FFE500' width='40' height='40'/%3E%3Ccircle cx='20' cy='15' r='8' fill='%23333'/%3E%3Cellipse cx='20' cy='35' rx='14' ry='10' fill='%23333'/%3E%3C/svg%3E"
-                alt=""
-                aria-hidden="true"
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid--2" style="align-items: start;">
-          <div>
-            <h2 class="mb-lg">Personal</h2>
-            <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-              It's Benni, over 9&times;10<sup>8</sup> seconds old French-German-Arab soul based somewhere in the real world.
-            </p>
-            <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-              Music is my jam, software my bread and butter, and writing a way of expression which has been accompanying me since my 5th year of high school. I was using different media first (drawing, painting, calligraphy, the good old ones) and then moved on to writing poetry. Nowadays I feel the need (for both mental health and interest) to write prosody and to dial in once in a while.
-            </p>
-            <p style="font-size: var(--text-lg);">
-              I like to comment on topics related to sovereignty, technology, and solidarity. Let's see what I will be writing about.
-            </p>
-          </div>
-
-          <div class="card card--secondary">
-            <h3 class="card__title">Interests</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-md); margin-top: var(--space-md);">
-              <li style="display: flex; align-items: center; gap: var(--space-sm);">
-                <span style="font-size: var(--text-2xl);">🎵</span>
-                <span>Music</span>
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-sm);">
-                <span style="font-size: var(--text-2xl);">💻</span>
-                <span>Software Development</span>
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-sm);">
-                <span style="font-size: var(--text-2xl);">✍️</span>
-                <span>Writing & Poetry</span>
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-sm);">
-                <span style="font-size: var(--text-2xl);">🌍</span>
-                <span>Sovereignty & Solidarity</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- Professional Section -->
-      <section class="section section--primary-bg" style="margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
-        <h2 class="mb-xl"><span style="background: var(--color-surface); padding: 0 var(--space-sm); color: var(--color-text);">Professional Background</span></h2>
-
-        <div style="max-width: 800px;">
-          <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-            I specialize in <strong>data integration</strong>, <strong>governance</strong>, and <strong>lifecycle management</strong> across regulatory technologies and healthcare, delivering sustainable <strong>data solutions</strong>. With over 9 years of experience, I've developed deep expertise in implementing <strong>data strategies</strong> and <strong>technical solutions</strong> that drive business value.
-          </p>
-
-          <p style="font-size: var(--text-lg); margin-bottom: var(--space-lg);">
-            In <strong>data strategy</strong> and <strong>architecture</strong>, I focus on comprehensive <strong>lifecycle management</strong> through effective <strong>data modeling</strong> and <strong>technical implementation</strong>. I design robust, business-aligned systems while building <strong>data-driven</strong> organizational capabilities.
-          </p>
-
-          <p style="font-size: var(--text-lg);">
-            My technical excellence spans <strong>requirements engineering</strong>, where I bridge communication between business and technical teams, and <strong>software engineering</strong> for scalable data applications. As an active member of <strong>HL7 FHIR-CH</strong>, I contribute to healthcare data standardization efforts.
-          </p>
-        </div>
-      </section>
-
-      <!-- Career Timeline -->
-      <section class="section">
-        <h2 class="mb-xl"><span class="hero__title-highlight">Career Journey</span></h2>
-
-        <div class="grid timeline-connector" style="gap: var(--space-xl);">
-          <div class="card" style="border-left: 6px solid var(--color-accent);">
-            <p class="card__subtitle" style="font-family: var(--font-mono); color: var(--color-accent);">Oct 2025 - Present</p>
-            <h3 class="card__title">Business Analyst</h3>
-            <p class="card__subtitle" style="margin-top: calc(-1 * var(--space-sm));">Bachem</p>
-            <p class="card__content">
-              Business analysis and requirements engineering for pharmaceutical and biotech data solutions in a Life Sciences manufacturing context, supporting system integration, data lifecycle management, and operational reporting across R&amp;D and production workflows.
-            </p>
-          </div>
-
-          <div class="card" style="border-left: 6px solid var(--color-secondary);">
-            <p class="card__subtitle" style="font-family: var(--font-mono); color: var(--color-secondary);">Feb 2025 - Present</p>
-            <h3 class="card__title">Head of Development</h3>
-            <p class="card__subtitle" style="margin-top: calc(-1 * var(--space-sm));">BirdSoftwareSolutions</p>
-            <p class="card__content">
-              Leading software development initiatives and technical strategy for regulatory technology solutions, including open-source data infrastructure aligned with the BIRD standard and regulatory reporting frameworks for financial institutions.
-            </p>
-          </div>
-
-          <div class="card" style="border-left: 6px solid var(--color-primary);">
-            <p class="card__subtitle" style="font-family: var(--font-mono); color: var(--color-text-muted);">Dec 2022 - Apr 2024</p>
-            <h3 class="card__title">Product Owner - Data & Integration</h3>
-            <p class="card__subtitle" style="margin-top: calc(-1 * var(--space-sm));">Bluespace Ventures</p>
-            <p class="card__content">
-              Led semantic data integration initiatives, FHIR data modelling, and master data management frameworks while contributing to HL7 Switzerland and SNOMED French Translation Group.
-            </p>
-          </div>
-
-          <div class="card" style="border-left: 6px solid var(--color-accent-alt);">
-            <p class="card__subtitle" style="font-family: var(--font-mono); color: var(--color-text-muted);">Mar 2020 - Nov 2022</p>
-            <h3 class="card__title">Research Analyst - Metadata Management</h3>
-            <p class="card__subtitle" style="margin-top: calc(-1 * var(--space-sm));">European Central Bank & Swiss Federal Statistical Office</p>
-            <p class="card__content">
-              Metadata modeling for banking supervision in the BIRD/SDD Team, SDMX methodology, data-driven process automation, and API integration for metadata repositories.
-            </p>
-          </div>
-
-          <div class="card" style="border-left: 6px solid var(--color-text-muted);">
-            <p class="card__subtitle" style="font-family: var(--font-mono); color: var(--color-text-muted);">2017 - 2020</p>
-            <h3 class="card__title">Data Scientist / ML Researcher</h3>
-            <p class="card__subtitle" style="margin-top: calc(-1 * var(--space-sm));">RWTH Aachen, rheindata, Center for Wind Power Drives, Boralex</p>
-            <p class="card__content">
-              Machine learning research, exploratory data analysis, and development of data-driven applications across wind energy and industrial sectors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section class="section section--dark-bg" style="margin: 0 calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
-        <h2 class="mb-xl text-primary">Core Competencies</h2>
-
-        <!-- Filter Buttons -->
-        <div class="skills-filter mb-xl" style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
-          <button class="btn btn--primary btn--sm skills-filter__btn active" data-filter="all">All</button>
-          <button class="btn btn--outline btn--sm skills-filter__btn" data-filter="data">Data & Analytics</button>
-          <button class="btn btn--outline btn--sm skills-filter__btn" data-filter="dev">Development</button>
-          <button class="btn btn--outline btn--sm skills-filter__btn" data-filter="health">Healthcare & Standards</button>
-        </div>
-
-        <div class="grid grid--3" id="skills-grid">
-          <div data-category="data">
-            <h3 class="text-primary" style="margin-bottom: var(--space-md);">Data & Analytics</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
-              <li><span class="tag tag--primary">Data Integration</span></li>
-              <li><span class="tag tag--primary">Data Governance</span></li>
-              <li><span class="tag tag--primary">Data Modeling</span></li>
-              <li><span class="tag tag--primary">Machine Learning</span></li>
-              <li><span class="tag tag--primary">ETL/ELT</span></li>
-            </ul>
-          </div>
-
-          <div data-category="dev">
-            <h3 class="text-secondary" style="margin-bottom: var(--space-md);">Development</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
-              <li><span class="tag tag--secondary">Python</span></li>
-              <li><span class="tag tag--secondary">Go</span></li>
-              <li><span class="tag tag--secondary">Docker</span></li>
-              <li><span class="tag tag--secondary">REST APIs</span></li>
-              <li><span class="tag tag--secondary">Cloud Platforms</span></li>
-            </ul>
-          </div>
-
-          <div data-category="health">
-            <h3 class="text-accent-alt" style="margin-bottom: var(--space-md);">Healthcare & Standards</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
-              <li><span class="tag card--accent-alt">HL7 FHIR</span></li>
-              <li><span class="tag card--accent-alt">SDMX</span></li>
-              <li><span class="tag card--accent-alt">MDM</span></li>
-              <li><span class="tag card--accent-alt">Interoperability</span></li>
-              <li><span class="tag card--accent-alt">BIRD</span></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="section text-center">
-        <h2 style="margin-bottom: var(--space-lg);">Want to Collaborate?</h2>
-        <p style="font-size: var(--text-lg); max-width: 600px; margin: 0 auto var(--space-xl); color: var(--color-text-muted);">
-          I'm always interested in connecting with fellow professionals to discuss data challenges and opportunities.
-        </p>
-        <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
-      </section>
+<!-- PERSONAL -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Personal</h2>
+      <div class="index"><b>01</b> · Hello there</div>
     </div>
-  </main>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>It's <strong>Benni</strong>, over 9×10<sup>8</sup> seconds old French-German-Arab soul based somewhere in the real world — currently <strong>Basel, Switzerland</strong>.</p>
+        <p>Music is my jam, software my bread and butter, and writing a way of expression which has been accompanying me since my 5th year of high school. I was using different media first (drawing, painting, calligraphy — the good old ones) and then moved on to writing poetry. Nowadays I feel the need (for both mental health and interest) to write prosody and to dial in once in a while.</p>
+        <p>I like to comment on topics related to <strong>sovereignty, technology, and solidarity</strong>. Let's see what I will be writing about.</p>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__section">
-          <h4>Benjamin Arfa</h4>
-          <p style="opacity: 0.8;">Data & Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p>
-        </div>
-
-        <div class="footer__section">
-          <h4>Navigation</h4>
-          <ul class="footer__links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="involvement.html">Involvement</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__section">
-          <h4>Legal</h4>
-          <ul class="footer__links">
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__section">
-          <h4>Connect</h4>
-          <div class="footer__social">
-            <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a href="https://x.com/benjaminarfa" target="_blank" rel="noopener" aria-label="X (Twitter)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="mailto:benjamin.arfa.pro@gmail.com" aria-label="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </a>
-            <a href="/feed.xml" target="_blank" rel="noopener" aria-label="RSS Feed">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-            </a>
-          </div>
+        <h3>// Interests</h3>
+        <div class="interests">
+          <div class="interest"><span class="ic">♪</span><div><b>Music</b><div class="d">jam · listen · play</div></div></div>
+          <div class="interest"><span class="ic">▣</span><div><b>Software</b><div class="d">bread &amp; butter</div></div></div>
+          <div class="interest"><span class="ic">✎</span><div><b>Writing</b><div class="d">poetry · prosody</div></div></div>
+          <div class="interest"><span class="ic">◐</span><div><b>Sovereignty</b><div class="d">tech · solidarity</div></div></div>
         </div>
       </div>
 
-      <div class="footer__bottom">
-        <p>&copy; <span class="copyright-year">2026</span> Arfa Digital Consulting. All rights reserved. | CHE-294.585.543</p>
+      <aside class="scene-frame">
+        <div class="tag"><span>▸ matterhorn.png</span><span>36×22 · 7 colors</span></div>
+        <div class="scene-box" data-art="matterhorn"></div>
+        <div class="scene-foot"><span>by <b>benjamin-arfa</b></span><span>2026 · CHE</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL BACKGROUND -->
+<section class="block" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Professional Background</h2>
+      <div class="index"><b>02</b> · 9+ years</div>
+    </div>
+
+    <div style="max-width:780px;display:flex;flex-direction:column;gap:18px">
+      <p style="font-size:16px;line-height:1.75">
+        I specialize in <strong style="color:var(--cream)">data integration</strong>, <strong style="color:var(--cream)">governance</strong>, and <strong style="color:var(--cream)">lifecycle management</strong> across regulatory technologies and healthcare — delivering sustainable data solutions. With over 9 years of experience, I've developed deep expertise in implementing data strategies and technical solutions that drive business value.
+      </p>
+      <p style="font-size:16px;line-height:1.75">
+        In <strong style="color:var(--cream)">data strategy</strong> and <strong style="color:var(--cream)">architecture</strong>, I focus on comprehensive lifecycle management through effective data modeling and technical implementation. I design robust, business-aligned systems while building data-driven organizational capabilities.
+      </p>
+      <p style="font-size:16px;line-height:1.75">
+        My technical excellence spans <strong style="color:var(--cream)">requirements engineering</strong>, where I bridge communication between business and technical teams, and <strong style="color:var(--cream)">software engineering</strong> for scalable data applications. As an active member of <strong style="color:var(--cream)">HL7 FHIR-CH</strong>, I contribute to healthcare data standardization efforts.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Career Journey</h2>
+      <div class="index"><b>03</b> · 5 chapters</div>
+    </div>
+    <div class="timeline">
+      <article class="tl-step">
+        <div class="now">▸ NOW · OCT 2025—</div>
+        <h3>Business Analyst</h3>
+        <div class="where">Bachem</div>
+        <p>Business analysis &amp; requirements engineering for pharmaceutical and biotech data solutions in a Life Sciences manufacturing context — system integration, data lifecycle management, operational reporting across R&amp;D and production.</p>
+      </article>
+      <article class="tl-step">
+        <div class="now">▸ NOW · FEB 2025—</div>
+        <h3>Head of Development</h3>
+        <div class="where">BirdSoftwareSolutions</div>
+        <p>Leading software development initiatives &amp; technical strategy for regulatory technology — open-source data infrastructure aligned with the BIRD standard and reporting frameworks for financial institutions.</p>
+      </article>
+      <article class="tl-step">
+        <div class="when">Dec 2022 — Apr 2024</div>
+        <h3>Product Owner · Data &amp; Integration</h3>
+        <div class="where">Bluespace Ventures</div>
+        <p>Semantic data integration initiatives, FHIR data modelling, master data management frameworks. Contributing to HL7 Switzerland and the SNOMED French Translation Group.</p>
+      </article>
+      <article class="tl-step">
+        <div class="when">Mar 2020 — Nov 2022</div>
+        <h3>Research Analyst · Metadata</h3>
+        <div class="where">ECB &amp; Swiss FSO</div>
+        <p>Metadata modeling for banking supervision in the BIRD/SDD Team, SDMX methodology, data-driven process automation, and API integration for metadata repositories.</p>
+      </article>
+      <article class="tl-step">
+        <div class="when">2017 — 2020</div>
+        <h3>Data Scientist · ML Researcher</h3>
+        <div class="where">RWTH Aachen · rheindata · CWD · Boralex</div>
+        <p>Machine learning research, exploratory data analysis, and data-driven applications across wind energy and industrial sectors. Where the journey began.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CORE COMPETENCIES -->
+<section class="block" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Core Competencies</h2>
+      <div class="index"><b>04</b> · Tools &amp; methods</div>
+    </div>
+
+    <div class="filter-row skills-filter">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="data">Data &amp; Analytics</button>
+      <button data-filter="dev">Development</button>
+      <button data-filter="health">Healthcare &amp; Standards</button>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc-card skill-col" data-category="data">
+        <div class="num">/ DATA</div>
+        <h3>Data &amp; Analytics</h3>
+        <div class="pill-row">
+          <span class="pill on">Data Integration</span>
+          <span class="pill on">Data Governance</span>
+          <span class="pill on">Data Modeling</span>
+          <span class="pill on">Machine Learning</span>
+          <span class="pill on">ETL / ELT</span>
+        </div>
+      </article>
+      <article class="svc-card skill-col" data-category="dev">
+        <div class="num">/ DEV</div>
+        <h3>Development</h3>
+        <div class="pill-row">
+          <span class="pill blue">Python</span>
+          <span class="pill blue">Go</span>
+          <span class="pill blue">Docker</span>
+          <span class="pill blue">REST APIs</span>
+          <span class="pill blue">Cloud Platforms</span>
+        </div>
+      </article>
+      <article class="svc-card skill-col" data-category="health">
+        <div class="num">/ HEALTH &amp; STANDARDS</div>
+        <h3>Healthcare &amp; Standards</h3>
+        <div class="pill-row">
+          <span class="pill yellow">HL7 FHIR</span>
+          <span class="pill yellow">SDMX</span>
+          <span class="pill yellow">MDM</span>
+          <span class="pill yellow">Interoperability</span>
+          <span class="pill yellow">BIRD</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block">
+  <div class="wrap">
+    <div class="contact-block">
+      <div>
+        <h2>Want to collaborate?</h2>
+        <p>Always interested in connecting with fellow professionals to discuss data challenges and opportunities. Discovery call, weird idea, or just a hello — all welcome.</p>
+        <div class="row">
+          <a class="btn primary" href="contact.html">Get in Touch <span class="arrow">→</span></a>
+          <a class="btn ghost" href="projects.html">See projects <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <a class="contact-row" href="mailto:benjamin.arfa.pro@gmail.com"><span class="lbl">Email</span><span class="val">benjamin.arfa.pro</span></a>
+        <a class="contact-row" href="https://github.com/benjamin-arfa" target="_blank" rel="noopener"><span class="lbl">GitHub</span><span class="val">@benjamin-arfa</span></a>
+        <a class="contact-row" href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener"><span class="lbl">LinkedIn</span><span class="val">moadhbenjaminarfa</span></a>
+        <a class="contact-row" href="https://x.com/benjaminarfa" target="_blank" rel="noopener"><span class="lbl">X</span><span class="val">@benjaminarfa</span></a>
       </div>
     </div>
-  </footer>
-
-  <!-- Keyboard Hint -->
-  <div class="keyboard-hint" id="keyboard-hint">
-    Press <kbd>?</kbd> for shortcuts
   </div>
+</section>
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+</main>
 
-  <!-- Back to Top with Scroll Progress Ring -->
-  <div class="back-to-top-wrap" aria-label="Back to top">
-    <svg class="back-to-top-progress" viewBox="0 0 56 56" aria-hidden="true">
-      <circle class="back-to-top-progress__track" cx="28" cy="28" r="24"/>
-      <circle class="back-to-top-progress__fill" cx="28" cy="28" r="24"/>
-    </svg>
-    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><h4>Benjamin Arfa</h4><p>Data &amp; Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p></div>
+    <div><h4>Navigate</h4><ul>
+      <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li>
+      <li><a href="involvement.html">Involvement</a></li>
+    </ul></div>
+    <div><h4>Legal</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Connect</h4><div class="foot-social">
+      <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GH</a>
+      <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LI</a>
+      <a href="https://x.com/benjaminarfa" target="_blank" rel="noopener">X</a>
+      <a href="mailto:benjamin.arfa.pro@gmail.com">@</a>
+      <a href="/feed.xml" target="_blank" rel="noopener">RSS</a>
+    </div></div>
   </div>
+  <div class="foot-bottom">
+    <span>© 2026 Arfa Digital Consulting · CHE-294.585.543</span>
+    <span>Hand-built in Basel · <a href="#top" style="color:var(--cream)">back to top ↑</a></span>
+  </div>
+</div></footer>
 
-  <script src="js/main.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>
