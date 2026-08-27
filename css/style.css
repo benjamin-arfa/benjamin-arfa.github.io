@@ -193,6 +193,7 @@ section.block.tint{background:var(--bg-soft);border-top:1px solid var(--line);bo
 .tl-step{padding:22px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);
   position:relative;display:flex;flex-direction:column;gap:8px;min-height:180px}
 .tl-step:nth-child(3n){border-right:0}
+.tl-step:last-child{border-right:0}
 .tl-step:nth-last-child(-n+3){border-bottom:0}
 .tl-step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border)}
 .tl-step.now::before{background:var(--accent)}
