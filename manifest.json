@@ -1,10 +1,10 @@
 {
-  "name": "Benjamin Arfa - Data & Software Engineering",
-  "short_name": "B.ARFA",
-  "description": "Data & Software Engineer specializing in data integration, governance, and healthcare interoperability.",
+  "name": "Arfa Digital Consulting - Data & Software Engineering",
+  "short_name": "ADC",
+  "description": "Specialist consulting in data integration, governance, and lifecycle management across regulatory technologies and healthcare. Basel, Switzerland.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fdf6e3",
+  "background_color": "#0a1418",
   "theme_color": "#268bd2",
   "icons": [
     {

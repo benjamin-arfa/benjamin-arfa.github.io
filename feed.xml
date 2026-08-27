@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Benjamin Arfa - Blog &amp; Insights</title>
+    <title>Arfa Digital Consulting - Blog &amp; Insights</title>
     <link>https://benjamin-arfa.github.io/blog.html</link>
-    <description>Insights on healthcare interoperability, data engineering, regulatory technology, and digital consulting by Moadh Benjamin Arfa.</description>
+    <description>Insights on healthcare interoperability, data engineering, regulatory technology, and digital consulting from Arfa Digital Consulting, founded by Benjamin Arfa.</description>
     <language>en</language>
     <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0100</lastBuildDate>
     <atom:link href="https://benjamin-arfa.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <managingEditor>benjamin.arfa.pro@gmail.com (Moadh Benjamin Arfa)</managingEditor>
     <webMaster>benjamin.arfa.pro@gmail.com (Moadh Benjamin Arfa)</webMaster>
-    <copyright>&copy; 2026 Arfa Digital Consulting. All rights reserved.</copyright>
+    <copyright>&#169; 2026 Arfa Digital Consulting. All rights reserved.</copyright>
     <image>
       <url>https://benjamin-arfa.github.io/favicon.svg</url>
-      <title>Benjamin Arfa - Blog &amp; Insights</title>
+      <title>Arfa Digital Consulting - Blog &amp; Insights</title>
       <link>https://benjamin-arfa.github.io/blog.html</link>
     </image>
 

@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="8" fill="#073642" stroke="#268bd2" stroke-width="4"/>
-  <text x="32" y="46" font-family="'Courier New', monospace" font-size="38" font-weight="900" fill="#2aa198" text-anchor="middle">BA</text>
-  <rect x="6" y="52" width="52" height="6" rx="2" fill="#268bd2"/>
+  <rect width="64" height="64" fill="#0a1418"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#1d3640" stroke-width="2"/>
+  <text x="32" y="45" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="40" font-weight="600" fill="#f2ede1" text-anchor="middle">A</text>
+  <rect x="12" y="52" width="40" height="4" fill="#268bd2"/>
 </svg>

@@ -1,10 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#073642"/>
-  <rect x="20" y="20" width="1160" height="590" fill="#002b36" stroke="#268bd2" stroke-width="6"/>
-  <rect x="40" y="40" width="1120" height="550" fill="#073642" stroke="#586e75" stroke-width="4"/>
-  <text x="600" y="260" font-family="monospace, 'Courier New'" font-size="120" font-weight="bold" fill="#2aa198" text-anchor="middle">B.ARFA</text>
-  <rect x="200" y="300" width="800" height="6" fill="#586e75"/>
-  <text x="600" y="380" font-family="monospace, 'Courier New'" font-size="36" fill="#93a1a1" text-anchor="middle">Data &amp; Software Engineering</text>
-  <rect x="300" y="420" width="600" height="60" fill="#268bd2" stroke="#586e75" stroke-width="4"/>
-  <text x="600" y="462" font-family="monospace, 'Courier New'" font-size="24" font-weight="bold" fill="#fdf6e3" text-anchor="middle">benjamin-arfa.github.io</text>
+  <rect width="1200" height="630" fill="#0a1418"/>
+  <rect x="32" y="32" width="1136" height="566" fill="#0e1b21" stroke="#1d3640" stroke-width="2"/>
+  <rect x="80" y="96" width="36" height="36" fill="#f2ede1"/>
+  <rect x="88" y="104" width="20" height="20" fill="#0e1b21"/>
+  <rect x="94" y="104" width="7" height="21" fill="#268bd2"/>
+  <text x="136" y="124" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="700" letter-spacing="3" fill="#f2ede1">ARFA DIGITAL</text>
+  <text x="392" y="124" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="500" letter-spacing="4" fill="#5f7a80">· CONSULTING</text>
+  <text x="80" y="290" font-family="'JetBrains Mono', monospace" font-size="66" font-weight="600" letter-spacing="-2" fill="#5f7a80">Data solutions that</text>
+  <rect x="86" y="332" width="546" height="80" fill="#000000" opacity="0.85"/>
+  <rect x="80" y="326" width="546" height="80" fill="#268bd2"/>
+  <text x="100" y="384" font-family="'JetBrains Mono', monospace" font-size="60" font-weight="700" letter-spacing="-2" fill="#fdf6e3">drive business value</text>
+  <text x="646" y="384" font-family="'JetBrains Mono', monospace" font-size="60" font-weight="600" letter-spacing="-2" fill="#5f7a80">.</text>
+  <rect x="80" y="452" width="120" height="3" fill="#2aa198"/>
+  <text x="80" y="512" font-family="'JetBrains Mono', monospace" font-size="26" fill="#9fb3b6">Data integration · Governance · HL7 FHIR · BIRD</text>
+  <text x="80" y="556" font-family="'JetBrains Mono', monospace" font-size="22" letter-spacing="2" fill="#5f7a80">BASEL, SWITZERLAND · benjamin-arfa.github.io</text>
 </svg>

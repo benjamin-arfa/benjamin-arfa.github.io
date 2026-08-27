@@ -11,3 +11,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Design source archives
+*.zip

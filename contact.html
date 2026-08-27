@@ -4,43 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Contact Benjamin Arfa — data &amp; software engineering consulting from Basel. Strategic guidance on data initiatives, system integration, and interoperability.">
-<title>Contact | Benjamin Arfa</title>
+<title>Contact | Arfa Digital Consulting</title>
 <link rel="canonical" href="https://benjamin-arfa.github.io/contact.html">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>B</text></svg>">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>var t=localStorage.getItem("ada-theme");document.documentElement.setAttribute("data-theme",t||"dark");</script>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0a1418">
+<meta property="og:title" content="Contact | Arfa Digital Consulting">
+<meta property="og:description" content="Contact Benjamin Arfa — data &amp; software engineering consulting from Basel. Strategic guidance on data initiatives, system integration, and interoperability.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://benjamin-arfa.github.io/contact.html">
+<meta property="og:image" content="https://benjamin-arfa.github.io/og-image.svg">
+<meta property="og:site_name" content="Arfa Digital Consulting">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact | Arfa Digital Consulting">
+<meta name="twitter:description" content="Contact Benjamin Arfa — data &amp; software engineering consulting from Basel. Strategic guidance on data initiatives, system integration, and interoperability.">
+<meta name="twitter:image" content="https://benjamin-arfa.github.io/og-image.svg">
 </head>
 <body>
 
 <div class="topbar"><div class="wrap topbar-inner">
-  <span class="pill-dot"><span class="dot"></span> <span class="alt">AVAILABLE</span> &nbsp;FOR Q3'26 ENGAGEMENTS</span>
-  <nav><a href="index.html#now">▸ Now</a><a href="/feed.xml">▸ /feed.xml</a><a href="mailto:benjamin.arfa.pro@gmail.com">▸ benjamin.arfa.pro@gmail.com</a></nav>
+  <span class="pill-dot"><span class="dot"></span> <span class="alt">ARFA DIGITAL CONSULTING</span> · CHE-294.585.543</span>
+  <nav><a href="mailto:benjamin.arfa.pro@gmail.com">▸ benjamin.arfa.pro@gmail.com</a><a href="/feed.xml">▸ /feed.xml</a></nav>
 </div></div>
 
 <header class="nav"><div class="wrap nav-inner">
-  <a class="logo" href="index.html"><span class="logo-mark"></span><span>B.ARFA</span></a>
+  <a class="logo" href="index.html"><span class="logo-mark"></span><span>ARFA DIGITAL <small>· CONSULTING</small></span></a>
   <nav class="nav-links">
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="projects.html">Projects</a>
     <a href="blog.html">Blog</a>
     <a href="involvement.html">Involvement</a>
-    <a href="contact.html" class="cta active">Contact →</a>
+    <a href="contact.html" class="cta">Contact →</a>
+    <button class="theme-btn" aria-label="Toggle color mode">◐</button>
   </nav>
 </div></header>
 
 <main id="top">
 
 <section class="page-head">
-  <div class="pixel-bg" aria-hidden="true">
-    <svg class="c1" width="180" height="60"></svg>
-    <svg class="c3" width="200" height="64"></svg>
-    <svg class="c5" width="110" height="36"></svg>
-    <svg class="c6" width="140" height="46"></svg>
-  </div>
-  <div class="wrap">
+    <div class="wrap">
     <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <span>Contact</span></nav>
     <p class="page-eyebrow">The Door Is Open</p>
     <h1 class="page-title"><mark>Let's talk</mark></h1>
@@ -52,7 +61,7 @@
 <section class="block">
   <div class="wrap">
 
-    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start">
+    <div class="two-col" style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start">
 
       <!-- LEFT: FORM -->
       <div>
@@ -61,20 +70,24 @@
           <div class="index">Replies within 48h</div>
         </div>
 
-        <div class="scene-frame" style="padding:24px">
-          <div class="tag"><span>▸ POST /contact</span><span>encrypted · honest</span></div>
-          <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Sent ✓';">
+        <div class="form-frame">
+          <div class="tag"><span>▸ POST /contact</span><span>via Formspree</span></div>
+          <div data-fs-success class="fs-success">Message sent — thank you. I'll reply within 48h.</div>
+          <div data-fs-error class="fs-error"></div>
+          <form class="contact-form" id="contact-form">
             <div>
-              <label>Name</label>
-              <input type="text" placeholder="Your name" required>
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required data-fs-field>
+              <span data-fs-error="name" class="fs-field-error"></span>
             </div>
             <div>
-              <label>Email</label>
-              <input type="email" placeholder="you@example.com" required>
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com" required data-fs-field>
+              <span data-fs-error="email" class="fs-field-error"></span>
             </div>
             <div class="full">
-              <label>Subject</label>
-              <select>
+              <label for="cf-subject">Subject</label>
+              <select id="cf-subject" name="subject" data-fs-field>
                 <option>General inquiry</option>
                 <option>Project / consulting</option>
                 <option>HL7 / FHIR question</option>
@@ -84,12 +97,13 @@
               </select>
             </div>
             <div class="full">
-              <label>Message</label>
-              <textarea placeholder="Tell me about your project, problem, or idea..." required></textarea>
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="Tell me about your project, problem, or idea..." required data-fs-field></textarea>
+              <span data-fs-error="message" class="fs-field-error"></span>
             </div>
             <div class="full" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-              <span style="font-size:11px;color:var(--muted);letter-spacing:.1em">▸ DATA PRIVACY: messages encrypted at rest. GDPR-compliant.</span>
-              <button type="submit" class="btn primary">Send message <span class="arrow">→</span></button>
+              <span style="font-size:11px;color:var(--muted);letter-spacing:.1em">▸ Sent via Formspree to benjamin.arfa.pro@gmail.com</span>
+              <button type="submit" class="btn primary" data-fs-submit-btn>Send message <span class="arrow">→</span></button>
             </div>
           </form>
         </div>
@@ -130,20 +144,16 @@
   </div>
 </section>
 
-<!-- VISUAL CTA -->
-<section class="block" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:0;padding-bottom:0">
-  <div class="wrap" style="padding:64px 32px">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-      <aside class="scene-frame">
-        <div class="tag"><span>▸ inbox.png</span><span>36×22 · 5 colors</span></div>
-        <div class="scene-box" data-art="mail"></div>
-        <div class="scene-foot"><span>by <b>benjamin-arfa</b></span><span>postage paid</span></div>
-      </aside>
+<!-- CTA BAND -->
+<section class="block tint" style="padding:64px 0">
+  <div class="wrap">
+    <div class="contact-block">
       <div>
-        <h2 style="margin:0 0 16px;color:var(--cream);font-size:clamp(24px,3vw,36px);letter-spacing:-.01em;line-height:1.15">Mail is the highest-bandwidth way to reach me.</h2>
-        <p style="color:var(--text);max-width:48ch;margin:0 0 22px">No newsletters, no auto-responders. Just one person reading your message and writing back — usually within 48 hours, often the same day.</p>
+        <h2>Mail is the highest-bandwidth way to reach me.</h2>
+        <p>No newsletters, no auto-responders. One person reading your message and writing back — usually within 48 hours, often the same day.</p>
         <a class="btn primary" href="mailto:benjamin.arfa.pro@gmail.com">benjamin.arfa.pro@gmail.com <span class="arrow">→</span></a>
       </div>
+      <div class="cover" style="border:1px solid var(--line)"><span class="idx">48h</span><span class="tag-v">RESPONSE</span></div>
     </div>
   </div>
 </section>
@@ -152,7 +162,7 @@
 
 <footer><div class="wrap">
   <div class="foot-grid">
-    <div><h4>Benjamin Arfa</h4><p>Data &amp; Software Engineer based in Basel, Switzerland. Building sustainable data solutions.</p></div>
+    <div><h4>Arfa Digital Consulting</h4><p>Data &amp; software engineering from Basel, Switzerland. Building sustainable data solutions. Founded by Benjamin Arfa.</p></div>
     <div><h4>Navigate</h4><ul>
       <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
       <li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li>
@@ -168,11 +178,16 @@
     </div></div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 Arfa Digital Consulting · CHE-294.585.543</span>
-    <span>Hand-built in Basel · <a href="#top" style="color:var(--cream)">back to top ↑</a></span>
+    <span>© 2026 Arfa Digital Consulting. All rights reserved. · CHE-294.585.543</span>
+    <span>Basel, Switzerland · <a href="#top" style="color:var(--ink)">back to top ↑</a></span>
   </div>
 </div></footer>
 
 <script src="js/main.js"></script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xdeonbpe' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

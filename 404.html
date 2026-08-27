@@ -1,247 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Oops — this page doesn't exist! Head back to Benjamin Arfa's portfolio to explore data engineering projects, services, and insights.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="404 - Page Not Found | Benjamin Arfa">
-  <meta property="og:description" content="This page doesn't exist! Head back to explore data engineering projects, services, and insights.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://benjamin-arfa.github.io/404.html">
-  <meta property="og:site_name" content="Benjamin Arfa">
-  <meta property="og:locale" content="en_US">
-
-  <title>404 - Page Not Found | Benjamin Arfa</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#002b36" media="(prefers-color-scheme: dark)">
-
-  <!-- Performance: preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Load fonts via link instead of CSS @import for faster rendering -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Prefetch key pages for instant navigation -->
-  <link rel="dns-prefetch" href="https://github.com">
-  <link rel="prefetch" href="/">
-  <!-- Preload main JS for faster interactivity -->
-  <link rel="preload" href="/js/main.js" as="script">
-  <script>var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");</script>
-
-  <style>
-    .error-page {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-xl);
-      text-align: center;
-    }
-
-    .error-page__content {
-      max-width: 600px;
-    }
-
-    .error-page__code {
-      font-family: var(--font-heading);
-      font-size: clamp(6rem, 20vw, 12rem);
-      font-weight: 700;
-      line-height: 1;
-      color: var(--color-text);
-      position: relative;
-      display: inline-block;
-      margin-bottom: var(--space-lg);
-    }
-
-    .error-page__code span {
-      display: inline-block;
-      animation: bounce 0.6s ease infinite alternate;
-    }
-
-    .error-page__code span:nth-child(1) {
-      color: var(--color-secondary);
-      animation-delay: 0s;
-    }
-
-    .error-page__code span:nth-child(2) {
-      color: var(--color-primary);
-      animation-delay: 0.15s;
-    }
-
-    .error-page__code span:nth-child(3) {
-      color: var(--color-accent);
-      animation-delay: 0.3s;
-    }
-
-    @keyframes bounce {
-      from { transform: translateY(0); }
-      to { transform: translateY(-12px); }
-    }
-
-    .error-page__glitch {
-      font-family: var(--font-mono);
-      font-size: var(--text-sm);
-      background: var(--color-text);
-      color: var(--color-background);
-      display: inline-block;
-      padding: var(--space-xs) var(--space-md);
-      border: var(--border-thick);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: var(--space-xl);
-      transform: rotate(-2deg);
-    }
-
-    .error-page__title {
-      font-family: var(--font-heading);
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      margin-bottom: var(--space-md);
-    }
-
-    .error-page__description {
-      font-family: var(--font-body);
-      font-size: var(--text-lg);
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-2xl);
-      line-height: 1.6;
-    }
-
-    .error-page__actions {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .error-page__card {
-      background: var(--color-surface);
-      border: var(--border-thick);
-      box-shadow: var(--shadow-md);
-      padding: var(--space-xl);
-      margin-bottom: var(--space-2xl);
-      transform: rotate(1deg);
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
-    }
-
-    .error-page__card:hover {
-      transform: rotate(0deg) translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .error-page__ascii {
-      font-family: var(--font-mono);
-      font-size: var(--text-xs);
-      line-height: 1.2;
-      white-space: pre;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-lg);
-      display: none;
-    }
-
-    @media (min-width: 640px) {
-      .error-page__ascii {
-        display: block;
-      }
-    }
-
-    .error-page__suggestion {
-      font-family: var(--font-mono);
-      font-size: var(--text-sm);
-      background: var(--color-primary);
-      border: var(--border-thick);
-      box-shadow: var(--shadow-sm);
-      padding: var(--space-md);
-      text-align: left;
-      margin-top: var(--space-2xl);
-      transform: rotate(-1deg);
-    }
-
-    .error-page__suggestion code {
-      font-weight: 700;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="This page doesn't exist. Head back to Arfa Digital Consulting to explore data engineering projects, services, and insights.">
+<meta name="author" content="Benjamin Arfa">
+<meta name="robots" content="noindex">
+<title>404 — Page Not Found | Arfa Digital Consulting</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="Benjamin Arfa's Blog" href="/feed.xml">
+<script>var t=localStorage.getItem("ada-theme");document.documentElement.setAttribute("data-theme",t||"dark");</script>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0a1418">
+<meta property="og:title" content="404 — Page Not Found | Arfa Digital Consulting">
+<meta property="og:description" content="This page doesn't exist. Head back to Arfa Digital Consulting to explore data engineering projects, services, and insights.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://benjamin-arfa.github.io/404.html">
+<meta property="og:image" content="https://benjamin-arfa.github.io/og-image.svg">
+<meta property="og:site_name" content="Arfa Digital Consulting">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__container">
-      <a href="index.html" class="nav__logo">B.ARFA</a>
 
-      <ul class="nav__menu">
-        <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="services.html" class="nav__link">Services</a></li>
-        <li><a href="projects.html" class="nav__link">Projects</a></li>
-        <li><a href="blog.html" class="nav__link">Blog</a></li>
-        <li><a href="involvement.html" class="nav__link">Involvement</a></li>
-        <li><a href="contact.html" class="nav__link btn btn--primary btn--sm">Contact</a></li>
-      </ul>
+<div class="topbar"><div class="wrap topbar-inner">
+  <span class="pill-dot"><span class="dot"></span> <span class="alt">ARFA DIGITAL CONSULTING</span> · CHE-294.585.543</span>
+  <nav><a href="mailto:benjamin.arfa.pro@gmail.com">▸ benjamin.arfa.pro@gmail.com</a><a href="/feed.xml">▸ /feed.xml</a></nav>
+</div></div>
 
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="nav__mobile-menu">
-      <a href="about.html" class="nav__link">About</a>
-      <a href="services.html" class="nav__link">Services</a>
-      <a href="projects.html" class="nav__link">Projects</a>
-      <a href="blog.html" class="nav__link">Blog</a>
-      <a href="involvement.html" class="nav__link">Involvement</a>
-      <a href="contact.html" class="nav__link btn btn--primary">Contact</a>
-    </div>
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="/index.html"><span class="logo-mark"></span><span>ARFA DIGITAL <small>· CONSULTING</small></span></a>
+  <nav class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/services.html">Services</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/involvement.html">Involvement</a>
+    <a href="/contact.html" class="cta">Contact →</a>
+    <button class="theme-btn" aria-label="Toggle color mode">◐</button>
   </nav>
+</div></header>
 
-  <main id="main-content">
-    <section class="error-page">
-      <div class="error-page__content">
-        <div class="error-page__code">
-          <span>4</span><span>0</span><span>4</span>
-        </div>
+<main id="top">
 
-        <div class="error-page__card">
-          <div class="error-page__ascii">  ¯\_(ツ)_/¯</div>
-
-          <h1 class="error-page__title">This page got lost in the data pipeline.</h1>
-          <p class="error-page__description">
-            Looks like this route returned <code>null</code>. The page you're looking for doesn't exist, was moved, or maybe never existed in the first place.
-          </p>
-
-          <div class="error-page__glitch">ERROR: ENOENT — no such file or directory</div>
-        </div>
-
-        <div class="error-page__actions">
-          <a href="index.html" class="btn btn--primary btn--lg">← Back Home</a>
-          <a href="projects.html" class="btn btn--outline btn--lg">View Projects</a>
-          <a href="contact.html" class="btn btn--outline btn--lg">Contact Me</a>
-        </div>
-
-        <div class="error-page__suggestion">
-          <code>$ git log --oneline</code><br>
-          Maybe try one of these pages instead:<br>
-          → <a href="about.html">about.html</a><br>
-          → <a href="services.html">services.html</a><br>
-          → <a href="projects.html">projects.html</a><br>
-          → <a href="involvement.html">involvement.html</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Keyboard Hint -->
-  <div class="keyboard-hint" id="keyboard-hint">
-    Press <kbd>?</kbd> for shortcuts
+<section class="page-head">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> <span class="sep">/</span> <span aria-current="page">404</span></nav>
+    <p class="page-eyebrow">Error 404</p>
+    <h1 class="page-title">This page got lost in the <mark>data pipeline</mark>.</h1>
+    <p class="page-sub">Looks like this route returned <code style="color:var(--accent-2)">null</code>. The page you're looking for doesn't exist, was moved, or maybe never existed in the first place.</p>
   </div>
+</section>
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+<section class="block">
+  <div class="wrap">
 
-  <script src="js/main.js" defer></script>
+    <div class="cover" style="aspect-ratio:auto;height:240px;border:1.5px solid var(--border);box-shadow:5px 5px 0 0 var(--shadow)">
+      <span class="idx">404</span><span class="tag-v">NOT FOUND</span>
+    </div>
+
+    <div class="status-row" style="grid-template-columns:repeat(3,1fr);margin-top:0;border-top:0">
+      <div class="status-cell"><div class="k">Status</div><div class="v">404 Not Found</div></div>
+      <div class="status-cell"><div class="k">Error</div><div class="v">ENOENT</div></div>
+      <div class="status-cell"><div class="k">Message</div><div class="v">no such file or directory</div></div>
+    </div>
+
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:48px">
+      <a href="/index.html" class="btn primary">Back home <span class="arrow">→</span></a>
+      <a href="/projects.html" class="btn ghost">View projects <span class="arrow">→</span></a>
+      <a href="/contact.html" class="btn ghost">Get in touch <span class="arrow">→</span></a>
+    </div>
+
+    <div class="sec-head" style="margin-top:72px"><h2>Maybe try one of these</h2><div class="index">Popular pages</div></div>
+    <div class="svc-grid">
+      <article class="svc-card">
+        <div class="num">PAGE / 01</div>
+        <h3><a href="/about.html" style="color:inherit">About</a></h3>
+        <p>The founder, the track record, and the career journey behind the consultancy.</p>
+      </article>
+      <article class="svc-card">
+        <div class="num">PAGE / 02</div>
+        <h3><a href="/services.html" style="color:inherit">Services</a></h3>
+        <p>Software engineering, healthcare interoperability, and metadata architecture.</p>
+      </article>
+      <article class="svc-card">
+        <div class="num">PAGE / 03</div>
+        <h3><a href="/blog.html" style="color:inherit">Blog</a></h3>
+        <p>Writing on FHIR, open standards in RegTech, and data engineering practice.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div><h4>Arfa Digital Consulting</h4><p>Data &amp; software engineering from Basel, Switzerland. Building sustainable data solutions. Founded by Benjamin Arfa.</p></div>
+    <div><h4>Navigate</h4><ul>
+      <li><a href="/about.html">About</a></li><li><a href="/services.html">Services</a></li>
+      <li><a href="/projects.html">Projects</a></li><li><a href="/blog.html">Blog</a></li>
+      <li><a href="/involvement.html">Involvement</a></li>
+    </ul></div>
+    <div><h4>Legal</h4><ul><li><a href="/impressum.html">Impressum</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
+    <div><h4>Connect</h4><div class="foot-social">
+      <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GH</a>
+      <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LI</a>
+      <a href="https://x.com/benjaminarfa" target="_blank" rel="noopener">X</a>
+      <a href="mailto:benjamin.arfa.pro@gmail.com">@</a>
+      <a href="/feed.xml" target="_blank" rel="noopener">RSS</a>
+    </div></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Arfa Digital Consulting. All rights reserved. · CHE-294.585.543</span>
+    <span>Basel, Switzerland · <a href="#top" style="color:var(--ink)">back to top ↑</a></span>
+  </div>
+</div></footer>
+
+<script src="/js/main.js"></script>
 </body>
 </html>
