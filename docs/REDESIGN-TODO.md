@@ -34,20 +34,42 @@ Never pushed to `main` — promoting to production is the owner's call.
    org `github.com/BIRD-Software-Solutions`. Supply the real URL to swap in.
    Also confirm the legal name — the old timeline said `BirdSoftwareSolutions`,
    I normalised it to `BIRD Software Solutions`.
-2. **swiss-law-as-source copy.** Written from the repo name and the Open Legal
-   Lab context, **not** verified against its README (that research was stopped
-   at your request). Confirm the description is accurate, and whether it has a
-   public site URL rather than the GitHub link now used.
-3. **Live Formspree submission untested.** `unpkg.com` and `formspree.io` are
+2. **Live Formspree submission untested.** `unpkg.com` and `formspree.io` are
    both blocked by this environment's egress proxy, so the AJAX library cannot
    load here and no real message could be sent. Submit a test from a normal
    browser and confirm the mail arrives before promoting to `main`.
-4. **`action`/`method` fallback is untested** for the same reason. It should be
+3. **`action`/`method` fallback is untested** for the same reason. It should be
    inert whenever the AJAX script loads. If the live test misbehaves, removing
    those two attributes restores the exact previous behaviour.
-5. **External links unverified** — egress is blocked, so `fhir.ch`,
+4. **External links unverified** — egress is blocked, so `fhir.ch`,
    `consultaition.ch`, `cmda.world`, `eseha.ch` and the GitHub URLs were not
    fetched. `fhir.ch` in particular is asserted to be the Swiss FHIR IG home.
+5. **`consultaition` copy** was written from the previous site's own text, not
+   from its source. If it is similarly under-described, it is worth the same
+   pass the Swiss Law Collection entry just had.
+
+## Verified from source
+
+**Swiss Law Collection** (`swiss-law-as-source.github.io`). The rendered URL is
+egress-blocked, but it is a GitHub Pages repo, so the content was read from an
+anonymous clone of `swiss-law-as-source/swiss-law-as-source.github.io`.
+
+The first draft of this entry was guesswork and was wrong: it used the host name
+as the project name, described it as "version-controlled source data", and
+credited a law-as-code approach "developed through the Open Legal Lab" — an
+attribution that was invented and has been removed. Corrected to the facts in
+the repo:
+
+| | |
+|---|---|
+| Name | Swiss Law Collection |
+| Scale | 34,443 acts, 824,663 articles, Confederation + 26 cantons |
+| Formats | JSON, CSV, SDMX — static read-only API off GitHub Pages |
+| Sources | Fedlex (federal), LexFind (cantonal) |
+| Provenance | published verification report reconciling against BADAC and chstat |
+| Pipeline | `github.com/benjamin-arfa/swiss-law` |
+
+The site repo carries `© 2024-2026 Arfa Digital Consulting`.
 
 ## Optional polish
 
