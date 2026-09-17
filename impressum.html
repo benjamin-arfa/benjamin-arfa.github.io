@@ -3,20 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Legal notice and company details for Arfa Digital Consulting (CHE-294.585.543). Registered data &amp; software engineering consultancy in Basel, Switzerland.">
+<meta name="description" content="Legal notice and company details for Arfa Digital Consulting — a sole proprietorship registered in Basel-Stadt, Switzerland.">
 <meta name="author" content="Benjamin Arfa">
 <title>Impressum | Arfa Digital Consulting</title>
 <link rel="canonical" href="https://www.arfa.digital/impressum.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script>var t=localStorage.getItem("ada-theme");document.documentElement.setAttribute("data-theme",t||"dark");</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0a1418">
+<meta name="theme-color" content="#E9E7E1">
 <meta property="og:title" content="Impressum | Arfa Digital Consulting">
-<meta property="og:description" content="Legal notice and company details for Arfa Digital Consulting (CHE-294.585.543). Registered data &amp; software engineering consultancy in Basel, Switzerland.">
+<meta property="og:description" content="Legal notice and company details for Arfa Digital Consulting — a sole proprietorship registered in Basel-Stadt, Switzerland.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.arfa.digital/impressum.html">
 <meta property="og:image" content="https://www.arfa.digital/og-image.svg">
@@ -24,128 +26,173 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Impressum | Arfa Digital Consulting">
-<meta name="twitter:description" content="Legal notice and company details for Arfa Digital Consulting (CHE-294.585.543). Registered data &amp; software engineering consultancy in Basel, Switzerland.">
+<meta name="twitter:description" content="Legal notice and company details for Arfa Digital Consulting — a sole proprietorship registered in Basel-Stadt, Switzerland.">
 <meta name="twitter:image" content="https://www.arfa.digital/og-image.svg">
 </head>
 <body>
 
-<div class="topbar"><div class="wrap topbar-inner">
-  <span class="pill-dot"><span class="dot"></span> <span class="alt">ARFA DIGITAL CONSULTING</span> · CHE-294.585.543</span>
-  <nav><a href="mailto:benjamin@arfa.digital">▸ benjamin@arfa.digital</a></nav>
-</div></div>
+<div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="nav"><div class="wrap nav-inner">
-  <a class="logo" href="index.html"><span class="logo-mark"></span><span>ARFA DIGITAL <small>· CONSULTING</small></span></a>
-  <nav class="nav-links">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="blog.html">Blog</a>
-    <a href="involvement.html">Involvement</a>
-    <a href="contact.html" class="cta">Contact →</a>
-    <button class="theme-btn" aria-label="Toggle color mode">◐</button>
-  </nav>
-</div></header>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="pill-group pill-group--start">
+      <button class="pill" data-menu-open aria-expanded="false" aria-controls="menu-panel">Menu</button>
+      <a class="pill" href="services.html">Services</a>
+      <a class="pill" href="projects.html">Work</a>
+    </div>
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-name">Arfa Digital</span>
+      <span class="wordmark-sub">Consulting</span>
+    </a>
+    <div class="pill-group pill-group--end">
+      <a class="pill" href="about.html">About</a>
+      <a class="pill pill--solid" href="contact.html">Enquire</a>
+    </div>
+  </div>
+</header>
 
-<main id="top">
+<div class="menu-backdrop" id="menu-backdrop"></div>
+<aside class="menu-panel" id="menu-panel" aria-label="Site menu">
+  <div class="menu-head">
+    <span class="label label--faint">Menu</span>
+    <button class="menu-close" data-menu-close aria-label="Close menu">&times;</button>
+  </div>
+  <div class="menu-body">
+    <div class="menu-links"><a href="index.html">Home</a></div>
+    <div>
+      <p class="menu-group-label">The practice</p>
+      <div class="menu-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="involvement.html">Involvement</a>
+      </div>
+    </div>
+    <div>
+      <p class="menu-group-label">Work</p>
+      <div class="menu-links">
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Journal</a>
+        <p class="note">Open-source tooling for regulatory reporting, Swiss legal data and healthcare interoperability.</p>
+      </div>
+    </div>
+    <div>
+      <p class="menu-group-label">Elsewhere</p>
+      <div class="menu-links">
+        <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-foot">
+    <a class="btn btn--solid" href="contact.html">Enquire now</a>
+  </div>
+</aside>
 
-<section class="page-head">
-  <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <span aria-current="page">Impressum</span></nav>
-    <p class="page-eyebrow">Legal Information</p>
-    <h1 class="page-title"><mark>Impressum</mark></h1>
-    <p class="page-sub">Legal notice and company details for Arfa Digital Consulting — a sole proprietorship registered in Basel-Stadt, Switzerland.</p>
+<main id="main">
+
+<section class="section section--tight">
+  <div class="wrap grid">
+    <div class="col-1-7">
+      <p class="eyebrow" data-reveal>Legal information</p>
+      <h1 class="title" data-reveal>Impressum</h1>
+    </div>
+    <div class="col-4-7" style="margin-top:var(--s-6)">
+      <p class="lead" data-reveal>Legal notice and company details for Arfa Digital Consulting &mdash; a sole proprietorship registered in Basel-Stadt, Switzerland.</p>
+    </div>
   </div>
 </section>
+<hr class="rule">
 
-<section class="block">
-  <div class="wrap">
-    <div class="article">
+<section class="section">
+  <div class="wrap grid">
+    <div class="col-1-3"><p class="label label--faint" data-reveal>01 &mdash; Legal notice</p></div>
+    <div class="col-3-7"><h2 data-reveal>Company details</h2></div>
+    <div class="col-1-7" style="margin-top:var(--s-8)">
+      <div class="grid" style="--cols:6">
+        <div class="col-1-4">
+          <p class="label label--faint" data-reveal style="margin-bottom:var(--s-5)">The company</p>
+          <div class="detail-list" data-reveal>
+            <div class="detail-row"><span class="k">Owner</span><span class="v">Benjamin Arfa</span></div>
+            <div class="detail-row"><span class="k">Address</span><span class="v">Grellingerstrasse 44<br>4052 Basel<br>Switzerland</span></div>
+            <div class="detail-row"><span class="k">Type</span><span class="v">Sole proprietorship</span></div>
+            <div class="detail-row"><span class="k">Company ID</span><span class="v"><span class="mono">CHE-294.585.543</span></span></div>
+            <div class="detail-row"><span class="k">Registration</span><span class="v">Commercial Register Office of the Canton of Basel-Stadt</span></div>
+            <div class="detail-row"><span class="k">VAT</span><span class="v">Exempt under Art. 10 MWSTG</span></div>
+          </div>
 
-      <div class="sec-head"><h2>Arfa Digital Consulting</h2><div class="index"><b>01</b> · The company</div></div>
-      <div class="contact-list">
-        <div class="contact-row"><span class="lbl">Owner</span><span class="val">Benjamin Arfa</span></div>
-        <div class="contact-row"><span class="lbl">Address</span><span class="val">Grellingerstrasse 44<br>4052 Basel<br>Switzerland</span></div>
+          <p class="label label--faint" data-reveal style="margin:var(--s-7) 0 var(--s-5)">Contact</p>
+          <div class="detail-list" data-reveal>
+            <a class="detail-row" href="mailto:benjamin@arfa.digital"><span class="k">Email</span><span class="v">benjamin@arfa.digital</span></a>
+            <a class="detail-row" href="tel:+41792697632"><span class="k">Phone</span><span class="v">+41 79 269 76 32</span></a>
+            <a class="detail-row" href="https://www.arfa.digital"><span class="k">Website</span><span class="v">www.arfa.digital</span></a>
+          </div>
+        </div>
+        <div class="col-4-7">
+          <p class="label label--faint" data-reveal style="margin-bottom:var(--s-5)">Company purpose</p>
+          <div class="prose stack-4" data-reveal>
+            <p><strong>Arfa Digital Consulting</strong> aims to promote digital transformation by providing IT and AI solutions, optimisation of IT infrastructures, software and app development, cybersecurity, data protection and data analysis, IT consulting and support, and technical support.</p>
+          </div>
+
+          <p class="label label--faint" data-reveal style="margin:var(--s-7) 0 var(--s-5)">Authorised representative</p>
+          <div class="prose" data-reveal><p>Benjamin Arfa, French citizen, with sole signing authority.</p></div>
+
+          <p class="label label--faint" data-reveal style="margin:var(--s-7) 0 var(--s-5)">Liability disclaimer</p>
+          <div class="prose" data-reveal><p>The content of this website has been created with the utmost care. However, we cannot guarantee the accuracy, completeness or timeliness of the information provided, and assume no liability for damages resulting from the use of this website.</p></div>
+
+          <p class="label label--faint" data-reveal style="margin:var(--s-7) 0 var(--s-5)">Copyright</p>
+          <div class="prose" data-reveal><p>&copy; 2026 Arfa Digital Consulting. All rights reserved. Content and design of this website are subject to copyright protection.</p></div>
+        </div>
       </div>
-
-      <div class="sec-head" style="margin-top:52px"><h2>Contact Information</h2><div class="index"><b>02</b> · Reach us</div></div>
-      <div class="contact-list">
-        <a class="contact-row" href="mailto:benjamin@arfa.digital"><span class="lbl">Email</span><span class="val">benjamin@arfa.digital</span></a>
-        <a class="contact-row" href="tel:+41792697632"><span class="lbl">Phone</span><span class="val">+41 79 269 76 32</span></a>
-        <a class="contact-row" href="https://www.arfa.digital"><span class="lbl">Website</span><span class="val">www.arfa.digital</span></a>
-      </div>
-
-      <div class="sec-head" style="margin-top:52px"><h2>Company Details</h2><div class="index"><b>03</b> · Registration</div></div>
-      <div class="contact-list">
-        <div class="contact-row"><span class="lbl">Type</span><span class="val">Sole proprietorship</span></div>
-        <div class="contact-row"><span class="lbl">Company ID</span><span class="val">CHE-294.585.543</span></div>
-        <div class="contact-row"><span class="lbl">Registration</span><span class="val">Commercial Register Office of the Canton of Basel-Stadt</span></div>
-        <div class="contact-row"><span class="lbl">VAT Number</span><span class="val">Exempt under Art. 10 MWSTG</span></div>
-      </div>
-
-      <div class="sec-head" style="margin-top:52px"><h2>Company Purpose</h2><div class="index"><b>04</b> · What we do</div></div>
-      <div class="svc-card" style="border-color:var(--accent)">
-        <div class="num">PURPOSE</div>
-        <p><strong style="color:var(--ink)">Arfa Digital Consulting</strong> aims to promote digital transformation by providing:</p>
-        <ul>
-          <li>IT and AI solutions</li>
-          <li>Optimization of IT infrastructures</li>
-          <li>Software and app development</li>
-          <li>Cybersecurity, data protection, and data analysis</li>
-          <li>IT consulting and support</li>
-          <li>Technical support</li>
-        </ul>
-      </div>
-
-      <div class="sec-head" style="margin-top:52px"><h2>Authorized Representative</h2><div class="index"><b>05</b> · Authority</div></div>
-      <div class="svc-card">
-        <div class="num">REPRESENTATIVE</div>
-        <p>Benjamin Arfa, French citizen, with sole signing authority</p>
-      </div>
-
-      <div class="sec-head" style="margin-top:52px"><h2>Liability Disclaimer</h2><div class="index"><b>06</b> · Disclaimer</div></div>
-      <div class="svc-card">
-        <div class="num">LIABILITY</div>
-        <p>The content of this website has been created with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the information provided. We assume no liability for damages resulting from the use of this website.</p>
-      </div>
-
-      <div class="sec-head" style="margin-top:52px"><h2>Copyright Notice</h2><div class="index"><b>07</b> · Copyright</div></div>
-      <div class="svc-card">
-        <div class="num">COPYRIGHT</div>
-        <p>© 2026 Arfa Digital Consulting. All rights reserved. Content and design of this website are subject to copyright protection.</p>
-      </div>
-
-      <div style="text-align:center;margin-top:52px">
-        <a href="contact.html" class="btn ghost">Back to Contact <span class="arrow">→</span></a>
-      </div>
-
     </div>
   </div>
 </section>
 
 </main>
 
-<footer><div class="wrap">
-  <div class="foot-grid">
-    <div><h4>Arfa Digital Consulting</h4><p>Data &amp; software engineering from Basel, Switzerland. Building sustainable data solutions. Founded by Benjamin Arfa.</p></div>
-    <div><h4>Navigate</h4><ul>
-      <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li>
-      <li><a href="involvement.html">Involvement</a></li>
-    </ul></div>
-    <div><h4>Legal</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h4>Connect</h4><div class="foot-social">
-      <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GH</a>
-      <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LI</a>
-      <a href="mailto:benjamin@arfa.digital">@</a>
-    </div></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Arfa Digital Consulting</h4>
+        <p>Data integration, governance and lifecycle management for regulated industries. Basel, Switzerland.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="involvement.html">Involvement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Journal</a></li>
+          <li><a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:benjamin@arfa.digital">benjamin@arfa.digital</a></li>
+          <li><a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 Arfa Digital Consulting &middot; <span class="mono">CHE-294.585.543</span></span>
+      <span>Basel, Switzerland</span>
+    </div>
   </div>
-  <div class="foot-bottom">
-    <span>© 2026 Arfa Digital Consulting. All rights reserved. · CHE-294.585.543</span>
-    <span>Basel, Switzerland · <a href="#top" style="color:var(--ink)">back to top ↑</a></span>
-  </div>
-</div></footer>
+</footer>
 
+<script src="js/reveal.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/accordion.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

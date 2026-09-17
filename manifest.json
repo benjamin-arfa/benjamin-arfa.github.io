@@ -4,8 +4,8 @@
   "description": "Specialist consulting in data integration, governance, and lifecycle management across regulatory technologies and healthcare. Basel, Switzerland.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a1418",
-  "theme_color": "#268bd2",
+  "background_color": "#E9E7E1",
+  "theme_color": "#E9E7E1",
   "icons": [
     {
       "src": "/favicon.svg",
@@ -14,7 +14,10 @@
       "purpose": "any"
     }
   ],
-  "categories": ["business", "portfolio"],
+  "categories": [
+    "business",
+    "portfolio"
+  ],
   "lang": "en",
   "orientation": "any"
 }
