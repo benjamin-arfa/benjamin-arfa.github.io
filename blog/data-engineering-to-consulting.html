@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Reflections on moving from hands-on data engineering and ML research to leading digital consulting initiatives.">
+<meta name="author" content="Benjamin Arfa">
+<title>From data engineering to digital consulting | Arfa Digital Consulting</title>
+<link rel="canonical" href="https://www.arfa.digital/blog/data-engineering-to-consulting.html">
+<link rel="alternate" hreflang="en" href="https://www.arfa.digital/blog/data-engineering-to-consulting.html">
+<link rel="alternate" hreflang="x-default" href="https://www.arfa.digital/blog/data-engineering-to-consulting.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/site.css">
+<script>(function(){try{var t=localStorage.getItem('ada-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}document.documentElement.classList.add('js');})();</script>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#E9E7E1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151B2A" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="From data engineering to digital consulting | Arfa Digital Consulting">
+<meta property="og:description" content="Reflections on moving from hands-on data engineering and ML research to leading digital consulting initiatives.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.arfa.digital/blog/data-engineering-to-consulting.html">
+<meta property="og:image" content="https://www.arfa.digital/og-image.svg">
+<meta property="og:site_name" content="Arfa Digital Consulting">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From data engineering to digital consulting | Arfa Digital Consulting">
+<meta name="twitter:description" content="Reflections on moving from hands-on data engineering and ML research to leading digital consulting initiatives.">
+<meta name="twitter:image" content="https://www.arfa.digital/og-image.svg">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="pill-group pill-group--start">
+      <button class="pill" data-menu-open aria-expanded="false" aria-controls="menu-panel">Menu</button>
+      <a class="pill" href="/services.html">Services</a>
+      <a class="pill" href="/projects.html">Work</a>
+    </div>
+    <a class="wordmark" href="/">
+      <span class="wordmark-name">Arfa Digital</span>
+      <span class="wordmark-sub">Consulting</span>
+    </a>
+    <div class="pill-group pill-group--end">
+      <nav class="lang-switch" aria-label="Language"><a class="pill pill--lang" href="/blog/data-engineering-to-consulting.html" lang="en" aria-current="true">EN</a><a class="pill pill--lang" href="/de/" lang="de">DE</a><a class="pill pill--lang" href="/fr/" lang="fr">FR</a></nav>
+      <button class="pill pill--icon" data-theme-toggle aria-label="Switch colour theme">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path class="icon-sun" d="M12 4V2M12 22v-2M4 12H2M22 12h-2M6 6 4.5 4.5M19.5 19.5 18 18M18 6l1.5-1.5M4.5 19.5 6 18"/>
+          <circle class="icon-sun" cx="12" cy="12" r="4"/>
+          <path class="icon-moon" d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
+        </svg>
+      </button>
+      <a class="pill pill--solid" href="/contact.html">Enquire</a>
+    </div>
+  </div>
+</header>
+
+<div class="menu-backdrop" id="menu-backdrop"></div>
+<aside class="menu-panel" id="menu-panel" aria-label="Menu">
+  <div class="menu-head">
+    <span class="label label--faint">Menu</span>
+    <button class="menu-close" data-menu-close aria-label="Close menu">&times;</button>
+  </div>
+  <div class="menu-body">
+    <div class="menu-links"><a href="/">Home</a></div>
+    <div>
+      <p class="menu-group-label">The practice</p>
+      <div class="menu-links">
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/involvement.html">Involvement</a>
+      </div>
+    </div>
+    <div>
+      <p class="menu-group-label">Work</p>
+      <div class="menu-links">
+        <a href="/projects.html">Projects</a>
+        <a href="/blog.html">Journal</a>
+        <p class="note">Open-source tooling for regulatory reporting, Swiss legal data and healthcare interoperability.</p>
+      </div>
+    </div>
+    <div>
+      <p class="menu-group-label">Elsewhere</p>
+      <div class="menu-links">
+        <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/impressum.html">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-foot">
+    <div class="menu-lang"><nav class="lang-switch" aria-label="Language"><a class="pill pill--lang" href="/blog/data-engineering-to-consulting.html" lang="en" aria-current="true">EN</a><a class="pill pill--lang" href="/de/" lang="de">DE</a><a class="pill pill--lang" href="/fr/" lang="fr">FR</a></nav></div>
+    <a class="btn btn--solid" href="/contact.html">Enquire now</a>
+  </div>
+</aside>
+
+<main id="main">
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="article">
+      <p class="eyebrow" data-reveal>Career</p>
+      <h1 class="h2" data-reveal>From data engineering to digital consulting</h1>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+<section class="section">
+  <div class="wrap">
+    <div class="article article-body" data-reveal>
+<p>
+          Three years ago, I was deep in the weeds of Apache Spark clusters, debugging serialization errors at 2 AM and optimizing Parquet file partitioning strategies. Today, I spend most of my time in stakeholder workshops, architecture reviews, and strategic planning sessions. The transition from data engineering to digital consulting was not planned &mdash; it evolved. Here is what I have learned along the way.
+        </p>
+
+        <h2>The Accidental Consultant</h2>
+
+        <p>
+          It started with a simple observation: the hardest problems in data engineering are rarely technical. They are organizational. The best-designed pipeline is useless if the business does not trust the data, if teams cannot agree on definitions, or if the governance model creates more friction than clarity.
+        </p>
+
+        <blockquote>
+          The gap between what engineers build and what organizations need is not a technical gap. It is a communication gap.
+        </blockquote>
+
+        <p>
+          I found myself increasingly drawn to these organizational challenges. Why does this team define "customer" differently from that team? Why does the data warehouse have three conflicting versions of the same metric? Why does every data project take twice as long as estimated?
+        </p>
+
+        <p>
+          These questions led me from writing code to facilitating conversations, from building pipelines to designing governance frameworks, and eventually to founding my own consulting practice.
+        </p>
+
+        <h2>Skills That Transfer</h2>
+
+        <p>
+          The good news is that data engineering builds a remarkable foundation for consulting. Here are the skills that transferred directly:
+        </p>
+
+        <ul>
+          <li><strong>Systems thinking.</strong> Engineers naturally think about how components interact, where bottlenecks form, and how changes propagate through a system. This maps perfectly to organizational analysis.</li>
+          <li><strong>Debugging mindset.</strong> The ability to isolate root causes, form hypotheses, and test them systematically is exactly what consultants do &mdash; just with business processes instead of code.</li>
+          <li><strong>Data literacy.</strong> Understanding what data can and cannot tell you is surprisingly rare outside engineering. This gives you instant credibility in any data strategy discussion.</li>
+          <li><strong>Automation instinct.</strong> Engineers look at manual processes and see automation opportunities. This translates directly to identifying efficiency gains for clients.</li>
+        </ul>
+
+        <h2>Skills I Had to Learn</h2>
+
+        <p>
+          But consulting also demands capabilities that engineering does not typically develop:
+        </p>
+
+        <ol>
+          <li><strong>Stakeholder management.</strong> In engineering, the code either works or it does not. In consulting, success depends on alignment across diverse stakeholders with competing priorities. Learning to navigate organizational politics without losing technical integrity was my steepest learning curve.</li>
+          <li><strong>Storytelling with data.</strong> Engineers communicate in schemas and diagrams. Executives communicate in narratives and outcomes. Bridging this gap requires translating technical complexity into business impact stories.</li>
+          <li><strong>Scoping and pricing.</strong> Estimating engineering work is hard enough. Estimating consulting engagements &mdash; where the deliverable is often "clarity" or "strategy" &mdash; requires a completely different framework.</li>
+          <li><strong>Saying no gracefully.</strong> As an engineer, you can push back on bad requirements with technical arguments. As a consultant, you need to redirect clients toward better solutions without making them feel wrong.</li>
+        </ol>
+
+        <h2>The Best of Both Worlds</h2>
+
+        <p>
+          What I have discovered is that the most valuable position is at the intersection. A consultant who can speak both languages &mdash; who can whiteboard an architecture with engineers in the morning and present a transformation roadmap to the C-suite in the afternoon &mdash; fills a gap that most organizations desperately need filled.
+        </p>
+
+        <p>
+          In healthcare and regulatory technology especially, this dual perspective is critical. These domains are deeply technical but also heavily regulated and politically complex. You cannot design a FHIR implementation strategy without understanding both the technical constraints and the organizational dynamics.
+        </p>
+
+        <h2>Practical Advice for Engineers Considering the Shift</h2>
+
+        <p>
+          If you are an engineer thinking about moving toward consulting, here is what I would suggest:
+        </p>
+
+        <ul>
+          <li><strong>Start internal.</strong> Volunteer to lead cross-team initiatives, run architecture reviews, or facilitate planning sessions. This builds consulting skills within a safe environment.</li>
+          <li><strong>Write and speak.</strong> Start a blog, give conference talks, or write internal documentation that explains technical concepts to non-technical audiences. Communication is the core consulting skill.</li>
+          <li><strong>Keep coding.</strong> The moment you stop building, you lose the credibility that makes you valuable. I still write code every week, even if it is side projects or open-source contributions.</li>
+          <li><strong>Find a niche.</strong> General consulting is commoditized. Deep expertise in a specific domain (healthcare data, RegTech, ML ops) gives you a moat that generalist consultancies cannot easily replicate.</li>
+          <li><strong>Build relationships.</strong> Engineering rewards individual brilliance. Consulting rewards networks and trust. Invest in relationships long before you need them.</li>
+        </ul>
+
+        <h2>What I Miss (and What I Do Not)</h2>
+
+        <p>
+          I miss the dopamine hit of a passing test suite. I miss the clarity of a well-designed API. I miss pair programming sessions where two engineers solve a gnarly problem in real time.
+        </p>
+
+        <p>
+          I do not miss production incidents at 3 AM. I do not miss scope creep without compensation. I do not miss the feeling that the most important work &mdash; aligning people and strategy &mdash; was always someone else's job.
+        </p>
+
+        <p>
+          The truth is, the best version of my career includes both. And that is exactly what consulting lets me do: stay technical enough to be useful, strategic enough to be impactful, and independent enough to choose the problems worth solving.
+        </p>
+
+        <p>
+          If you are on a similar journey or thinking about making the leap, I would love to hear your story. <a href="../contact.html">Let us connect</a>.
+        </p>
+    </div>
+    <div class="article" style="margin-top:var(--s-9)">
+      <a class="link-arrow" href="/blog.html">All articles</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Arfa Digital Consulting</h4>
+        <p>Data integration, governance and lifecycle management for regulated industries. Basel, Switzerland.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/involvement.html">Involvement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <ul>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/blog.html">Journal</a></li>
+          <li><a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:benjamin@arfa.digital">benjamin@arfa.digital</a></li>
+          <li><a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="share-row">
+      <span class="label label--faint">Share</span>
+      <a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.arfa.digital%2Fblog%2Fdata-engineering-to-consulting.html"
+         target="_blank" rel="noopener">LinkedIn</a>
+      <a class="share-link" href="mailto:?subject=From%20data%20engineering%20to%20digital%20consulting%20%7C%20Arfa%20Digital%20Consulting&amp;body=From%20data%20engineering%20to%20digital%20consulting%20%7C%20Arfa%20Digital%20Consulting%0Ahttps%3A%2F%2Fwww.arfa.digital%2Fblog%2Fdata-engineering-to-consulting.html">Email</a>
+      <button class="share-link" data-copy-link data-copied="Copied">Copy link</button>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 Arfa Digital Consulting &middot; All rights reserved &middot; <span class="mono">CHE-294.585.543</span></span>
+      <span>Basel, Switzerland</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/theme.js"></script>
+<script src="/js/reveal.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/accordion.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -4,14 +4,15 @@ import { readFile, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, relative, dirname, resolve } from 'node:path';
 
-const DIST = new URL('../dist/', import.meta.url).pathname;
+const DIST = new URL('../', import.meta.url).pathname;
+const SKIP = new Set(['content', 'build', 'docs', 'node_modules', '.git', '.github']);
 const fails = [];
 const fail = (m) => fails.push(m);
 
 async function walk(dir, out = []) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const p = join(dir, e.name);
-    if (e.isDirectory()) await walk(p, out);
+    if (e.isDirectory()) { if (!SKIP.has(e.name)) await walk(p, out); }
     else if (e.name.endsWith('.html')) out.push(p);
   }
   return out;
@@ -75,6 +76,7 @@ for (const loc of ['', 'de/', 'fr/']) {
 }
 if (!existsSync(DIST + '404.html')) fail('missing 404.html');
 if (!existsSync(DIST + 'CNAME')) fail('missing CNAME — the custom domain would break');
+if (!existsSync(DIST + '.nojekyll')) fail('missing .nojekyll — the branch builder would run Jekyll over the output');
 
 if (fails.length) {
   console.error(`\nFAILED (${fails.length}):`);

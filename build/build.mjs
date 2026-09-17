@@ -6,7 +6,10 @@ import * as chrome from './chrome.mjs';
 import * as pages from './pages.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const DIST = ROOT + 'dist/';
+// GitHub Pages for this repo publishes the branch root via the legacy
+// builder (the Actions workflow is disabled), so the rendered pages must
+// live at the root and be committed. Sources are build/ content/ css/ js/.
+const DIST = ROOT;
 const { LOCALES, SITE, url } = chrome;
 
 const warnings = [];
@@ -47,9 +50,6 @@ const ARTICLES = [
     description: 'Reflections on moving from hands-on data engineering and ML research to leading digital consulting initiatives.' },
 ];
 
-const STATIC = ['css', 'js', 'favicon.svg', 'og-image.svg', 'manifest.json',
-                'robots.txt', 'feed.xml', 'CNAME'];
-
 async function main() {
   const en = (await import('../content/site.en.js')).default;
   const raw = {};
@@ -62,8 +62,11 @@ async function main() {
   // Locales with real content get hreflang; a missing file does not.
   const translated = LOCALES.filter(l => raw[l]);
 
-  await rm(DIST, { recursive: true, force: true });
-  await mkdir(DIST, { recursive: true });
+  // Remove only previously generated output — never the sources.
+  for (const d of ['de', 'fr', 'blog']) await rm(DIST + d, { recursive: true, force: true });
+  for (const f of [...Object.values(en.pages).map(p => p.file), 'sitemap.xml']) {
+    await rm(DIST + f, { force: true });
+  }
 
   const written = [];
 
@@ -115,13 +118,9 @@ async function main() {
     written.push(url('en', a.file));
   }
 
-  for (const s of STATIC) {
-    if (existsSync(ROOT + s)) await cp(ROOT + s, DIST + s, { recursive: true });
-  }
-
   await writeFile(DIST + 'sitemap.xml', sitemap(en, translated));
 
-  console.log(`built ${written.length} pages × locales [${translated.join(', ')}] → dist/`);
+  console.log(`built ${written.length} pages × locales [${translated.join(', ')}] → repo root`);
 }
 
 const FORMSPREE = `<script>
