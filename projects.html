@@ -3,19 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Explore Benjamin Arfa's projects — from Eclipse FreeBIRD tools (BIRD regulatory toolkit) to consultaition (Swiss federal report generator). Open-source contributions and production data applications.">
+<meta name="description" content="Open-source tools and data applications across regulatory technology, healthcare and government tech — by Benjamin Arfa.">
+<meta name="author" content="Benjamin Arfa">
 <title>Projects | Arfa Digital Consulting</title>
 <link rel="canonical" href="https://www.arfa.digital/projects.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script>var t=localStorage.getItem("ada-theme");document.documentElement.setAttribute("data-theme",t||"dark");</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0a1418">
+<meta name="theme-color" content="#E9E7E1">
 <meta property="og:title" content="Projects | Arfa Digital Consulting">
-<meta property="og:description" content="Explore Benjamin Arfa's projects — from Eclipse FreeBIRD tools (BIRD regulatory toolkit) to consultaition (Swiss federal report generator). Open-source contributions and production data applications.">
+<meta property="og:description" content="Open-source tools and data applications across regulatory technology, healthcare and government tech — by Benjamin Arfa.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.arfa.digital/projects.html">
 <meta property="og:image" content="https://www.arfa.digital/og-image.svg">
@@ -23,166 +26,204 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Projects | Arfa Digital Consulting">
-<meta name="twitter:description" content="Explore Benjamin Arfa's projects — from Eclipse FreeBIRD tools (BIRD regulatory toolkit) to consultaition (Swiss federal report generator). Open-source contributions and production data applications.">
+<meta name="twitter:description" content="Open-source tools and data applications across regulatory technology, healthcare and government tech — by Benjamin Arfa.">
 <meta name="twitter:image" content="https://www.arfa.digital/og-image.svg">
 </head>
 <body>
 
-<div class="topbar"><div class="wrap topbar-inner">
-  <span class="pill-dot"><span class="dot"></span> <span class="alt">ARFA DIGITAL CONSULTING</span> · CHE-294.585.543</span>
-  <nav><a href="mailto:benjamin@arfa.digital">▸ benjamin@arfa.digital</a></nav>
-</div></div>
+<div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="nav"><div class="wrap nav-inner">
-  <a class="logo" href="index.html"><span class="logo-mark"></span><span>ARFA DIGITAL <small>· CONSULTING</small></span></a>
-  <nav class="nav-links">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="blog.html">Blog</a>
-    <a href="involvement.html">Involvement</a>
-    <a href="contact.html" class="cta">Contact →</a>
-    <button class="theme-btn" aria-label="Toggle color mode">◐</button>
-  </nav>
-</div></header>
-
-<main id="top">
-
-<section class="page-head">
-    <div class="wrap">
-    <nav class="breadcrumb"><a href="index.html">Home</a> <span class="sep">/</span> <span>Projects</span></nav>
-    <p class="page-eyebrow">What I've Built</p>
-    <h1 class="page-title"><mark>Projects</mark></h1>
-    <p class="page-sub">Open-source tools, data applications, and software engineering work spanning regulatory technology, healthcare, government tech, and the odd weekend game.</p>
-  </div>
-</section>
-
-<!-- CURRENT -->
-<section class="block">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Current</h2>
-      <div class="index"><b>01</b> · Actively maintained</div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="pill-group pill-group--start">
+      <button class="pill" data-menu-open aria-expanded="false" aria-controls="menu-panel">Menu</button>
+      <a class="pill" href="services.html">Services</a>
+      <a class="pill" href="projects.html" aria-current="page">Work</a>
     </div>
-
-    <div class="work-grid">
-      <article class="project">
-        <div class="head"><span class="id"><b>Ch. I</b> RegTech · 2026</span><span class="role">CONTRIBUTOR</span></div>
-        <div class="cover"><span class="idx">01</span><span class="tag-v">FREEBIRD</span></div>
-        <div class="body">
-          <h3>Eclipse FreeBIRD tools</h3>
-          <p class="sub">Tooling to democratize the use of BIRD as an open standard</p>
-          <p class="lede">An open-source toolkit facilitating the Banks' Integrated Reporting Dictionary (BIRD) standard for regulatory reporting. BIRD defines standardized reporting rules and templates that European banks use for providing data to supervisory bodies.</p>
-          <h4>Key features</h4>
-          <ul class="feat-list">
-            <li>GUI toolkit for dictionaries &amp; mappings</li>
-            <li>Docker containerization</li>
-            <li>Validate &amp; transform BIRD models</li>
-            <li>APIs for seamless integration</li>
-          </ul>
-          <h4>Quick start</h4>
-          <pre><code>pip install pybirdai
-python -m pybirdai --help</code></pre>
-          <div class="meta">
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">NLP</span><span class="tag">RegTech</span>
-            </div>
-            <a class="more" href="https://github.com/eclipse-efbt/efbt" target="_blank" rel="noopener">View on GitHub <span class="arrow">↗</span></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="head"><span class="id"><b>Ch. II</b> GovTech · 2026</span><span class="role">MAINTAINER</span></div>
-        <div class="cover"><span class="idx">02</span><span class="tag-v">CONSULTAITION</span></div>
-        <div class="body">
-          <h3>consultaition</h3>
-          <p class="sub">Swiss federal consultation report generator</p>
-          <p class="lede">Automates the creation of professional Swiss federal consultation reports (Ergebnisbericht format) from structured Excel data. Vendor-agnostic LLM optimization tuned on authentic federal consultation data — no lock-in across providers.</p>
-          <h4>Key features</h4>
-          <ul class="feat-list">
-            <li>Interactive Canvas editor — paragraph-by-paragraph refinement</li>
-            <li>REST API for programmatic report generation</li>
-            <li>Multi-language: German, French, Italian</li>
-            <li>Footnote management &amp; export</li>
-          </ul>
-          <div class="meta">
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">GovTech</span>
-            </div>
-            <a class="more" href="https://consultaition.ch" target="_blank" rel="noopener">Visit site <span class="arrow">↗</span></a>
-          </div>
-        </div>
-      </article>
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-name">Arfa Digital</span>
+      <span class="wordmark-sub">Consulting</span>
+    </a>
+    <div class="pill-group pill-group--end">
+      <a class="pill" href="about.html">About</a>
+      <a class="pill pill--solid" href="contact.html">Enquire</a>
     </div>
   </div>
-</section>
+</header>
 
-<!-- ARCHIVE -->
-<section class="block tint">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Archive</h2>
-      <div class="index"><b>02</b> · Earlier work</div>
-    </div>
-
-    <div class="archive-grid">
-      <a class="arch" href="https://github.com/benjamin-arfa/px-reader" target="_blank" rel="noopener">
-        <div class="cover slim"><span class="idx">A1</span><span class="tag-v">RDF</span></div>
-        <div class="b">
-          <h4>px-reader</h4>
-          <div class="s">Statistical data parser · BFS</div>
-          <p>Python application parsing px-cubes from the Swiss Federal Statistical Office. Converts to linked data, importable to RDF triple stores.</p>
-          <div class="ts"><span>Python</span><span>RDF</span><span>Linked Data</span></div>
-        </div>
-      </a>
-      <a class="arch" href="https://github.com/benjamin-arfa/go-detective" target="_blank" rel="noopener">
-        <div class="cover slim"><span class="idx">A2</span><span class="tag-v">AML</span></div>
-        <div class="b">
-          <h4>go-detective</h4>
-          <div class="s">AML sanction-list checking</div>
-          <p>Native desktop app (Go + Wails) for KYC checks, AML screening, and PEP/sanctions verification. Supabase backend.</p>
-          <div class="ts"><span>Go</span><span>Wails</span><span>NLP</span><span>Native</span></div>
-        </div>
-      </a>
-      <a class="arch" href="https://github.com/benjamin-arfa/pyroids" target="_blank" rel="noopener">
-        <div class="cover slim"><span class="idx">A3</span><span class="tag-v">GAME</span></div>
-        <div class="b">
-          <h4>pyroids</h4>
-          <div class="s">Classic Asteroids in Python</div>
-          <p>Pygame implementation of the classic Asteroids: physics-based movement, asteroid-splitting mechanics, dynamic difficulty scaling.</p>
-          <div class="ts"><span>Python</span><span>Pygame</span><span>Game Dev</span></div>
-        </div>
-      </a>
-      <a class="arch" href="https://github.com/benjamin-arfa/static-gen" target="_blank" rel="noopener">
-        <div class="cover slim"><span class="idx">A4</span><span class="tag-v">SSG</span></div>
-        <div class="b">
-          <h4>static-gen</h4>
-          <div class="s">Python-based static site generator</div>
-          <p>Transforms content into static HTML websites. Custom templating &amp; build automation for content creators.</p>
-          <div class="ts"><span>Python</span><span>Static Site</span><span>HTML</span></div>
-        </div>
-      </a>
-    </div>
+<div class="menu-backdrop" id="menu-backdrop"></div>
+<aside class="menu-panel" id="menu-panel" aria-label="Site menu">
+  <div class="menu-head">
+    <span class="label label--faint">Menu</span>
+    <button class="menu-close" data-menu-close aria-label="Close menu">&times;</button>
   </div>
-</section>
-
-<!-- CTA -->
-<section class="block">
-  <div class="wrap">
-    <div class="contact-block">
-      <div>
-        <h2>Interested in collaborating?</h2>
-        <p>Always open to discussing new projects, contributions to open source, or opportunities to collaborate. The door is open.</p>
-        <div class="row">
-          <a class="btn primary" href="contact.html">Get in Touch <span class="arrow">→</span></a>
-          <a class="btn ghost" href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">View GitHub <span class="arrow">↗</span></a>
-        </div>
+  <div class="menu-body">
+    <div class="menu-links"><a href="index.html">Home</a></div>
+    <div>
+      <p class="menu-group-label">The practice</p>
+      <div class="menu-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="involvement.html">Involvement</a>
       </div>
-      <div class="contact-list">
-        <a class="contact-row" href="https://github.com/benjamin-arfa" target="_blank" rel="noopener"><span class="lbl">GitHub</span><span class="val">@benjamin-arfa</span></a>
-        <a class="contact-row" href="mailto:benjamin@arfa.digital"><span class="lbl">Email</span><span class="val">benjamin@arfa.digital</span></a>
-        <a class="contact-row" href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener"><span class="lbl">LinkedIn</span><span class="val">moadhbenjaminarfa</span></a>
+    </div>
+    <div>
+      <p class="menu-group-label">Work</p>
+      <div class="menu-links">
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Journal</a>
+        <p class="note">Open-source tooling for regulatory reporting, Swiss legal data and healthcare interoperability.</p>
+      </div>
+    </div>
+    <div>
+      <p class="menu-group-label">Elsewhere</p>
+      <div class="menu-links">
+        <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-foot">
+    <a class="btn btn--solid" href="contact.html">Enquire now</a>
+  </div>
+</aside>
+
+<main id="main">
+
+<section class="section section--tight">
+  <div class="wrap grid">
+    <div class="col-1-7">
+      <p class="eyebrow" data-reveal>What I've built</p>
+      <h1 class="title" data-reveal>Projects</h1>
+    </div>
+    <div class="col-4-7" style="margin-top:var(--s-6)">
+      <p class="lead" data-reveal>Open-source tools, data applications and software engineering work spanning regulatory technology, healthcare, government tech, and the odd weekend game.</p>
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<section class="section">
+  <div class="wrap grid">
+    <div class="col-1-3"><p class="label label--faint" data-reveal>01 &mdash; Current</p></div>
+    <div class="col-3-7"><h2 data-reveal>Open source and production</h2></div>
+    <div class="col-1-7" style="margin-top:var(--s-8)">
+      <div class="entry-list">
+        <article class="entry" data-reveal id="swiss-law">
+          <div class="entry-aside">
+            <p class="entry-num">01</p>
+            <p class="label label--faint entry-role">Maintainer &middot; GovTech</p>
+          </div>
+          <div class="entry-body">
+            <h3>swiss-law-as-source</h3>
+            <p class="kicker">Swiss federal law as machine-readable source</p>
+            <p>Publishes Swiss legal texts as structured, version-controlled source data, so that legislation can be queried, diffed and consumed by software the way code is. Built in the open, following the law-as-code approach developed through the Open Legal Lab.</p>
+            <p class="small">Treating statute as source rather than as a PDF means a change to the law becomes a reviewable diff &mdash; and downstream systems can be tested against it.</p>
+            <div class="entry-foot">
+              <div class="tags"><span class="tag">Legal data</span><span class="tag">Open data</span><span class="tag">Python</span><span class="tag">Git</span></div>
+              <a class="link-arrow" href="https://github.com/swiss-law-as-source/swiss-law-as-source.github.io" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="entry" data-reveal id="consultaition">
+          <div class="entry-aside">
+            <p class="entry-num">02</p>
+            <p class="label label--faint entry-role">Maintainer &middot; GovTech</p>
+          </div>
+          <div class="entry-body">
+            <h3>consultaition</h3>
+            <p class="kicker">Swiss federal consultation report generator</p>
+            <p>Automates the creation of Swiss federal <em>Ergebnisbericht</em> reports from structured Excel data. Vendor-agnostic LLM optimisation tuned on authentic federal consultation data &mdash; no provider lock-in.</p>
+            <div class="detail-list" style="margin-top:var(--s-5)">
+              <div class="detail-row"><span class="k">Editor</span><span class="v">Interactive canvas, paragraph-by-paragraph refinement</span></div>
+              <div class="detail-row"><span class="k">API</span><span class="v">REST endpoint for programmatic generation</span></div>
+              <div class="detail-row"><span class="k">Languages</span><span class="v">German &middot; French &middot; Italian</span></div>
+              <div class="detail-row"><span class="k">Output</span><span class="v">Footnote management and export</span></div>
+            </div>
+            <div class="entry-foot">
+              <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">GovTech</span></div>
+              <a class="link-arrow" href="https://consultaition.ch" target="_blank" rel="noopener">Visit consultaition.ch</a>
+            </div>
+          </div>
+        </article>
+        <article class="entry" data-reveal id="freebird">
+          <div class="entry-aside">
+            <p class="entry-num">03</p>
+            <p class="label label--faint entry-role">Contributor &middot; RegTech</p>
+          </div>
+          <div class="entry-body">
+            <h3>Eclipse FreeBIRD tools</h3>
+            <p class="kicker">Tooling to democratise BIRD as an open standard</p>
+            <p>An open-source toolkit for the Banks' Integrated Reporting Dictionary &mdash; the standard defining the reporting rules and templates European banks use to supply data to supervisory bodies.</p>
+            <div class="detail-list" style="margin-top:var(--s-5)">
+              <div class="detail-row"><span class="k">Toolkit</span><span class="v">GUI for dictionaries and mappings</span></div>
+              <div class="detail-row"><span class="k">Runtime</span><span class="v">Docker containerisation</span></div>
+              <div class="detail-row"><span class="k">Models</span><span class="v">Validate and transform BIRD models</span></div>
+              <div class="detail-row"><span class="k">Install</span><span class="v"><span class="mono">pip install pybirdai</span></span></div>
+            </div>
+            <div class="entry-foot">
+              <div class="tags"><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">NLP</span><span class="tag">RegTech</span></div>
+              <a class="link-arrow" href="https://github.com/eclipse-efbt/efbt" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <nav class="pill-nav" aria-label="Projects">
+        <a class="pill" href="#swiss-law">swiss-law-as-source</a>
+        <a class="pill" href="#consultaition">consultaition</a>
+        <a class="pill" href="#freebird">FreeBIRD</a>
+        <a class="pill" href="#archive">Archive</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="section section--invert">
+  <div class="grid-lines-local" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="wrap grid">
+    <div class="col-3-7">
+      <p class="pullquote" data-reveal>Regulatory reporting affects every bank, and through them everyone. Building that tooling in the open is the point.</p>
+      <p class="pullquote-attr label label--faint" data-reveal>On open standards</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--band">
+  <div class="wrap grid">
+    <div class="col-1-3"><p class="label label--faint" data-reveal>02 &mdash; Archive</p></div>
+    <div class="col-3-7"><h2 data-reveal>Earlier work</h2></div>
+    <div class="col-1-7" style="margin-top:var(--s-8)">
+      <div class="cards cards--2" id="archive">
+        <a class="card" href="https://github.com/benjamin-arfa/px-reader" target="_blank" rel="noopener" data-reveal>
+          <p class="label">Archive</p><h3>px-reader</h3>
+          <p>Python application parsing px-cubes from the Swiss Federal Statistical Office. Converts to linked data, importable to RDF triple stores.</p></a>
+        <a class="card" href="https://github.com/benjamin-arfa/go-detective" target="_blank" rel="noopener" data-reveal>
+          <p class="label">Archive</p><h3>go-detective</h3>
+          <p>Native desktop application (Go and Wails) for KYC checks, AML screening and PEP/sanctions verification. Supabase backend.</p></a>
+        <a class="card" href="https://github.com/benjamin-arfa/static-gen" target="_blank" rel="noopener" data-reveal>
+          <p class="label">Archive</p><h3>static-gen</h3>
+          <p>Transforms content into static HTML websites. Custom templating and build automation for content creators.</p></a>
+        <a class="card" href="https://github.com/benjamin-arfa/pyroids" target="_blank" rel="noopener" data-reveal>
+          <p class="label">Archive</p><h3>pyroids</h3>
+          <p>Pygame implementation of the classic Asteroids: physics-based movement, asteroid-splitting mechanics, dynamic difficulty scaling.</p></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid">
+    <div class="col-1-4">
+      <p class="label label--faint" data-reveal>Get in touch</p>
+      <h2 data-reveal style="margin-top:var(--s-4)">Interested in collaborating?</h2>
+    </div>
+    <div class="col-4-7">
+      <p data-reveal>Always open to discussing new projects, contributions to open source, or opportunities to collaborate.</p>
+      <div class="actions" data-reveal>
+        <a class="btn btn--solid" href="contact.html">Start a conversation</a>
+        <a class="btn btn--ghost" href="mailto:benjamin@arfa.digital">benjamin@arfa.digital</a>
       </div>
     </div>
   </div>
@@ -190,27 +231,48 @@ python -m pybirdai --help</code></pre>
 
 </main>
 
-<footer><div class="wrap">
-  <div class="foot-grid">
-    <div><h4>Arfa Digital Consulting</h4><p>Data &amp; software engineering from Basel, Switzerland. Building sustainable data solutions. Founded by Benjamin Arfa.</p></div>
-    <div><h4>Navigate</h4><ul>
-      <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li>
-      <li><a href="involvement.html">Involvement</a></li>
-    </ul></div>
-    <div><h4>Legal</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h4>Connect</h4><div class="foot-social">
-      <a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GH</a>
-      <a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LI</a>
-      <a href="mailto:benjamin@arfa.digital">@</a>
-    </div></div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Arfa Digital Consulting</h4>
+        <p>Data integration, governance and lifecycle management for regulated industries. Basel, Switzerland.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="involvement.html">Involvement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Journal</a></li>
+          <li><a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:benjamin@arfa.digital">benjamin@arfa.digital</a></li>
+          <li><a href="https://linkedin.com/in/moadhbenjaminarfa" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 Arfa Digital Consulting &middot; <span class="mono">CHE-294.585.543</span></span>
+      <span>Basel, Switzerland</span>
+    </div>
   </div>
-  <div class="foot-bottom">
-    <span>© 2026 Arfa Digital Consulting. All rights reserved. · CHE-294.585.543</span>
-    <span>Basel, Switzerland · <a href="#top" style="color:var(--ink)">back to top ↑</a></span>
-  </div>
-</div></footer>
+</footer>
 
+<script src="js/reveal.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/accordion.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
