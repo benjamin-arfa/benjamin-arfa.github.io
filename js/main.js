@@ -1,23 +1,4 @@
-/* ARFA DIGITAL — theme toggle + interactions (no pixel art) */
-
-const THEME_KEY = 'ada-theme';
-
-function applyTheme(t){
-  document.documentElement.setAttribute('data-theme', t);
-  const btn = document.querySelector('.theme-btn');
-  if(btn) btn.textContent = t === 'light' ? '◑' : '◐';
-}
-
-function initTheme(){
-  const saved = localStorage.getItem(THEME_KEY) || 'dark';
-  applyTheme(saved);
-  const btn = document.querySelector('.theme-btn');
-  if(btn) btn.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    localStorage.setItem(THEME_KEY, next);
-    applyTheme(next);
-  });
-}
+/* ARFA DIGITAL — page interactions */
 
 function initSmoothScroll(){
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -90,7 +71,6 @@ function initCopyLink(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
   initSmoothScroll();
   initBlogFilters();
   initBlogSearch();
