@@ -48,8 +48,14 @@
 .pill--solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .pill--solid:hover{background:transparent;color:var(--ink)}
 
+/* Below 760px only Menu + wordmark + Enquire fit; the other pills are
+   reachable from the panel, so they are dropped rather than crushed. */
+@media (max-width:760px){
+  .pill-group--start .pill:not([data-menu-open]),
+  .pill-group--end .pill:not(.pill--solid){display:none}
+}
 @media (max-width:640px){
-  .pill{padding:6px 10px;font-size:9px;letter-spacing:.1em}
+  .pill{padding:6px 12px;font-size:9px;letter-spacing:.1em}
   .wordmark-name{font-size:13px;letter-spacing:.2em}
 }
 
@@ -111,6 +117,7 @@
    ===================================================================== */
 .hero{position:relative;z-index:2;padding-block:clamp(72px,11vw,150px) clamp(56px,8vw,110px)}
 .hero .display{max-width:13ch}
+@media (max-width:560px){ .hero .display{max-width:none} }
 .hero-lead{margin-top:var(--s-7)}
 
 /* Facts strip — hairline separated, aligned to the grid */
@@ -158,7 +165,10 @@
 .accordion-trigger .icon::after{width:1px;height:13px}
 .accordion-trigger[aria-expanded="true"] .icon::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
 
-.accordion-panel{overflow:hidden;height:0;transition:height .4s var(--ease)}
+/* Open by default so the content is reachable without JavaScript; the
+   .js class (set in <head>) collapses them before first paint. */
+.accordion-panel{overflow:hidden;transition:height .4s var(--ease)}
+.js .accordion-panel{height:0}
 .accordion-panel > .inner{padding:0 0 var(--s-6)}
 .accordion-panel p{max-width:56ch}
 .accordion-panel .tags{margin-top:var(--s-4)}

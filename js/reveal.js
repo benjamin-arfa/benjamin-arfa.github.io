@@ -5,6 +5,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function init() {
+    // Normally already set by the inline snippet in <head>; harmless here.
     document.documentElement.classList.add('js');
 
     var items = document.querySelectorAll('[data-reveal]');

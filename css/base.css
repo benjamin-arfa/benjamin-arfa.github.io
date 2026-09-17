@@ -172,6 +172,13 @@ p{max-width:var(--measure)}
 }
 .pullquote-attr{margin-top:var(--s-5);color:var(--ink-faint)}
 
+/* Long uppercase words (INFRASTRUCTURE, INTEROPERABILITY) must not
+   outrun a narrow screen — release the ch cap and tighten tracking. */
+@media (max-width:560px){
+  .display,.title{letter-spacing:.03em}
+  .pullquote{max-width:none}
+}
+
 /* =====================================================================
    SECTION HEAD
    ===================================================================== */

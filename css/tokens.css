@@ -9,16 +9,16 @@
   --paper:       #E9E7E1;  /* page background                        */
   --paper-raise: #F2F0EB;  /* cards, fields, menu panel              */
   --paper-deep:  #DFDCD4;  /* quiet bands                            */
-  --ink:         #1F2A44;  /* headings, primary text     ~12.0:1     */
-  --ink-soft:    #4A5468;  /* body copy                  ~ 6.5:1     */
-  --ink-faint:   #6E7687;  /* labels, meta               ~ 4.9:1     */
+  --ink:         #1F2A44;  /* headings, primary text      11.53:1    */
+  --ink-soft:    #4A5468;  /* body copy                    6.15:1    */
+  --ink-faint:   #545C6C;  /* labels, meta       4.91:1 worst-case bg  */
   --rule:        #C9C5BB;  /* hairlines                              */
   --rule-strong: #A9A498;  /* hairlines, emphasised                  */
   --grid-line:   #D9D5CC;  /* the visible vertical column grid       */
 
   /* Reserved accent. Exactly three uses site-wide: link underline on
      hover, the availability dot, the active nav mark.
-     ~4.6:1 on --paper — must never carry body-size text.             */
+     4.04:1 on --paper — non-text use only, never type.               */
   --accent:      #8A6A3B;
 
   --danger:      #8C2F2A;  /* form validation only                   */
@@ -35,7 +35,7 @@
   --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --t-display: clamp(40px, 8vw, 92px);
+  --t-display: clamp(31px, 7.6vw, 92px);
   --t-title:   clamp(32px, 5vw, 64px);
   --t-section: clamp(26px, 3.2vw, 42px);
   --t-card:    21px;
