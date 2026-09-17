@@ -23,6 +23,7 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
+  transition:background-color .3s var(--ease),color .3s var(--ease);
 }
 
 a{color:inherit;text-decoration:none}
@@ -40,25 +41,6 @@ a{color:inherit;text-decoration:none}
 .skip-link:focus{top:14px}
 
 /* =====================================================================
-   THE VISIBLE COLUMN GRID
-   Fixed hairline overlay. Content grids use the same track count, so
-   text aligns to the lines — that alignment is what makes it read as
-   structure rather than decoration.
-   ===================================================================== */
-.grid-lines{
-  position:fixed;inset:0;z-index:1;pointer-events:none;
-  display:grid;grid-template-columns:repeat(var(--cols),1fr);
-  max-width:var(--wrap);margin-inline:auto;
-  padding-inline:var(--gutter);
-}
-.grid-lines span{border-right:1px solid var(--grid-line)}
-.grid-lines span:last-child{border-right:0}
-/* Six spans are authored; the extras are hidden so the count always
-   matches --cols and nothing wraps to a second row. */
-@media (max-width:820px){ .grid-lines span:nth-child(n+5){display:none} }
-@media (max-width:520px){ .grid-lines span:nth-child(n+4){display:none} }
-
-/* =====================================================================
    LAYOUT
    ===================================================================== */
 .wrap{
@@ -66,7 +48,8 @@ a{color:inherit;text-decoration:none}
   padding-inline:var(--gutter);
 }
 
-/* Content grid — same tracks as the overlay. */
+/* Content grid: sections place themselves asymmetrically on these
+   tracks. Invisible — the hairline overlay it used to mirror is gone. */
 .grid{
   display:grid;
   grid-template-columns:repeat(var(--cols),minmax(0,1fr));
@@ -80,27 +63,15 @@ a{color:inherit;text-decoration:none}
 .section--invert{
   background:var(--i-bg);
   color:var(--i-soft);
-  --grid-line:var(--i-rule);
   --rule:var(--i-rule);
-  --rule-strong:rgba(233,231,225,.4);
+  --rule-strong:var(--i-rule);
   --ink:var(--i-ink);
   --ink-soft:var(--i-soft);
   --ink-faint:var(--i-faint);
   --paper:var(--i-bg);
-  --paper-raise:rgba(233,231,225,.05);
+  --paper-raise:var(--i-raise);
+  --accent:var(--i-accent);
 }
-/* Inverted bands carry their own grid lines, since the fixed overlay
-   sits behind them and would be the wrong colour. */
-.section--invert .grid-lines-local{
-  position:absolute;inset:0;z-index:0;pointer-events:none;
-  display:grid;grid-template-columns:repeat(var(--cols),1fr);
-  max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter);
-  left:0;right:0;
-}
-.section--invert .grid-lines-local span{border-right:1px solid var(--i-rule)}
-.section--invert .grid-lines-local span:last-child{border-right:0}
-@media (max-width:820px){ .grid-lines-local span:nth-child(n+5){display:none} }
-@media (max-width:520px){ .grid-lines-local span:nth-child(n+4){display:none} }
 .section--invert > .wrap{position:relative;z-index:1}
 
 .rule{border:0;border-top:1px solid var(--rule);margin:0;position:relative;z-index:2}
@@ -172,8 +143,14 @@ p{max-width:var(--measure)}
 }
 .pullquote-attr{margin-top:var(--s-5);color:var(--ink-faint)}
 
-/* Long uppercase words (INFRASTRUCTURE, INTEROPERABILITY) must not
-   outrun a narrow screen — release the ch cap and tighten tracking. */
+/* Long uppercase words must not outrun a narrow column. German is the
+   real test here — DATENINFRASTRUKTUR and GESUNDHEITSWESEN are longer
+   than anything in the English copy. hyphens:auto uses the <html lang>
+   dictionary, so German breaks at proper syllables rather than anywhere;
+   overflow-wrap is the last resort for a language with no dictionary. */
+.display,.title,h2,.h2{
+  -webkit-hyphens:auto;hyphens:auto;
+}
 @media (max-width:560px){
   .display,.title{letter-spacing:.03em}
   .pullquote{max-width:none}

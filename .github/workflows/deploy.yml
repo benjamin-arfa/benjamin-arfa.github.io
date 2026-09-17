@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -17,23 +17,46 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # No dependencies: build/ is plain ESM with only the Node stdlib,
+      # so there is nothing to install and no lockfile to drift.
+      - name: Build
+        run: node build/build.mjs
+
+      # Fails the job — and therefore the deploy — if the Formspree
+      # contract, a locale, or an internal link has broken. A red build
+      # leaves the previous deploy serving rather than publishing a
+      # broken site.
+      - name: Check
+        run: node build/check.mjs
+
+      - name: Verify colour contrast
+        run: node build/contrast.mjs
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'dist'
 
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

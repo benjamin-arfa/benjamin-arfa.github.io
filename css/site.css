@@ -48,12 +48,6 @@
 .pill--solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .pill--solid:hover{background:transparent;color:var(--ink)}
 
-/* Below 760px only Menu + wordmark + Enquire fit; the other pills are
-   reachable from the panel, so they are dropped rather than crushed. */
-@media (max-width:760px){
-  .pill-group--start .pill:not([data-menu-open]),
-  .pill-group--end .pill:not(.pill--solid){display:none}
-}
 @media (max-width:640px){
   .pill{padding:6px 12px;font-size:9px;letter-spacing:.1em}
   .wordmark-name{font-size:13px;letter-spacing:.2em}
@@ -116,7 +110,13 @@
    HERO
    ===================================================================== */
 .hero{position:relative;z-index:2;padding-block:clamp(72px,11vw,150px) clamp(56px,8vw,110px)}
-.hero .display{max-width:13ch}
+/* 13ch suits English, but DATENINFRASTRUKTUR is 18 characters on its
+   own — the cap would force a mid-word break. min-content is the width
+   of the longest unbreakable word, so the line box grows to fit it and
+   the cap applies only when the copy actually allows it. Purely
+   declarative: no per-language override, and it holds for whatever the
+   next translation turns out to be. */
+.hero .display{max-width:13ch;min-width:min-content}
 @media (max-width:560px){ .hero .display{max-width:none} }
 .hero-lead{margin-top:var(--s-7)}
 
@@ -325,3 +325,65 @@ a.detail-row:hover .v{border-bottom:1px solid var(--accent)}
 }
 @media (max-width:980px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+
+/* =====================================================================
+   THEME TOGGLE · LANGUAGE SWITCH · SHARE ROW
+   ===================================================================== */
+
+.pill--icon{padding:6px 10px;line-height:0}
+.pill--icon svg{display:block}
+/* One icon per theme: sun while dark is available, moon while light is. */
+.icon-moon{display:none}
+:root[data-theme="dark"] .icon-sun{display:none}
+:root[data-theme="dark"] .icon-moon{display:inline}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .icon-sun{display:none}
+  :root:not([data-theme="light"]) .icon-moon{display:inline}
+}
+
+.lang-switch{display:flex;gap:4px}
+.pill--lang{padding:7px 9px;letter-spacing:.1em}
+.pill--lang[aria-current="true"]{
+  border-color:var(--ink);color:var(--ink);
+  box-shadow:inset 0 -2px 0 0 var(--accent);
+}
+
+.share-row{
+  display:flex;align-items:center;gap:var(--s-5);flex-wrap:wrap;
+  margin-top:clamp(40px,5vw,64px);padding-top:var(--s-5);
+  border-top:1px solid var(--rule);
+}
+.share-link{
+  font-size:var(--t-label);font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);
+  border-bottom:1px solid var(--rule);padding-bottom:3px;
+  transition:border-color .25s var(--ease);
+}
+.share-link:hover{border-bottom-color:var(--accent)}
+
+.blog-controls{
+  display:flex;flex-wrap:wrap;gap:var(--s-5);align-items:center;
+  justify-content:space-between;margin-bottom:var(--s-7);
+}
+.blog-controls .field{min-width:min(320px,100%)}
+
+/* Header is dense at desktop now: menu + 2 links | wordmark | 3 langs +
+   toggle + CTA. Shed the least important items first as it narrows. */
+@media (max-width:1180px){
+  .pill-group--start .pill:not([data-menu-open]){display:none}
+}
+@media (max-width:880px){
+  .lang-switch{gap:2px}
+  .pill--lang{padding:6px 7px}
+}
+@media (max-width:640px){
+  .pill-group--end .pill:not(.pill--solid):not(.pill--icon):not(.pill--lang){display:none}
+}
+
+/* The header cannot hold three language pills, a toggle and the CTA on a
+   phone; the panel carries the only copy below 560px. */
+.menu-lang{display:none;margin-bottom:var(--s-4);justify-content:center}
+@media (max-width:560px){
+  .site-header .lang-switch{display:none}
+  .menu-lang{display:flex}
+}

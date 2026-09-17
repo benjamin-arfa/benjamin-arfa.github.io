@@ -59,11 +59,13 @@ function initSkillsFilter(){
 function initCopyLink(){
   document.querySelectorAll('[data-copy-link]').forEach(el => {
     const label = el.textContent;
+    // The confirmation string is localised by the build via data-copied.
+    const done = el.dataset.copied || 'Copied';
     el.addEventListener('click', e => {
       e.preventDefault();
       if(!navigator.clipboard) return;
       navigator.clipboard.writeText(location.href).then(() => {
-        el.textContent = 'Copied \u2713';
+        el.textContent = done + ' \u2713';
         setTimeout(() => { el.textContent = label; }, 1600);
       }, () => {});
     });

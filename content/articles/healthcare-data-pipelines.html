@@ -1,0 +1,89 @@
+<p>
+          Healthcare data is messy. Between HL7 v2 messages, CDA documents, proprietary EHR exports, and CSV flat files from legacy systems, building a reliable data pipeline in healthcare feels like assembling furniture from five different stores with no shared instruction manual.
+        </p>
+
+        <p>
+          Enter <strong>FHIR</strong> (Fast Healthcare Interoperability Resources). Over the past two years, I have been building FHIR-native data pipelines for clinical and regulatory use cases in Switzerland, and it has fundamentally changed how I think about healthcare data engineering.
+        </p>
+
+        <h2>Why FHIR Changes the Game</h2>
+
+        <p>
+          Traditional healthcare data pipelines spend most of their complexity budget on <em>translation</em>: converting between formats, mapping terminologies, and reconciling schemas that were never designed to talk to each other. FHIR flips this by providing a universal resource model that both humans and machines can understand.
+        </p>
+
+        <blockquote>
+          The best data pipeline is one where you spend more time on business logic than on format translation.
+        </blockquote>
+
+        <p>
+          FHIR resources like <code>Patient</code>, <code>Observation</code>, <code>MedicationRequest</code>, and <code>Encounter</code> map directly to clinical concepts. This means your pipeline code reads like a description of the domain, not a maze of transformation rules.
+        </p>
+
+        <h2>Architecture: A FHIR-Native Pipeline</h2>
+
+        <p>
+          Here is the high-level architecture I have been using for FHIR-based pipelines:
+        </p>
+
+        <ol>
+          <li><strong>Ingestion Layer</strong> &mdash; Accept data in any format (HL7 v2, CSV, CDA) and convert to FHIR resources using HAPI FHIR or custom mappers.</li>
+          <li><strong>Validation Layer</strong> &mdash; Validate resources against FHIR profiles (StructureDefinitions) specific to the Swiss healthcare context.</li>
+          <li><strong>Transformation Layer</strong> &mdash; Apply business rules, enrich with terminology services (SNOMED CT, LOINC), and link related resources into Bundles.</li>
+          <li><strong>Storage Layer</strong> &mdash; Persist to a FHIR server (like HAPI JPA) or a data lake with Parquet files partitioned by resource type.</li>
+          <li><strong>Serving Layer</strong> &mdash; Expose data via FHIR REST API or feed downstream analytics systems.</li>
+        </ol>
+
+        <h2>The Validation Challenge</h2>
+
+        <p>
+          The hardest part is not building the pipeline &mdash; it is validation. Swiss healthcare has its own FHIR profiles maintained by <strong>FHIR CH</strong>, and ensuring every resource conforms to these profiles while remaining performant requires careful design.
+        </p>
+
+        <p>
+          We solved this by implementing a two-pass validation strategy:
+        </p>
+
+        <ul>
+          <li><strong>Fast pass:</strong> Structural validation using JSON Schema &mdash; catches 80% of issues in milliseconds.</li>
+          <li><strong>Deep pass:</strong> Full profile validation using the FHIR validator &mdash; catches terminology bindings, invariants, and cross-resource constraints.</li>
+        </ul>
+
+        <pre tabindex="0"><code>// Simplified two-pass validation
+async function validateResource(resource) {
+  // Fast structural check
+  const structuralErrors = jsonSchemaValidate(resource);
+  if (structuralErrors.length > 0) {
+    return { valid: false, errors: structuralErrors, pass: 'structural' };
+  }
+
+  // Deep profile validation (only if structural passes)
+  const profileErrors = await fhirValidator.validate(
+    resource,
+    getSwissProfile(resource.resourceType)
+  );
+  return { valid: profileErrors.length === 0, errors: profileErrors, pass: 'profile' };
+}</code></pre>
+
+        <h2>Lessons Learned</h2>
+
+        <p>
+          After two years of building FHIR pipelines, here are the key takeaways:
+        </p>
+
+        <ul>
+          <li><strong>Start with profiles, not code.</strong> Define your FHIR profiles first. They are your contract and your documentation.</li>
+          <li><strong>Invest in terminology services.</strong> A good terminology server (like Ontoserver) pays for itself in reduced mapping errors.</li>
+          <li><strong>Bundle wisely.</strong> FHIR Bundles are powerful but can become unwieldy. Keep them focused on a single clinical event or workflow.</li>
+          <li><strong>Monitor data quality continuously.</strong> Healthcare data quality degrades silently. Build dashboards that track validation pass rates, terminology coverage, and resource completeness.</li>
+        </ul>
+
+        <h2>What is Next</h2>
+
+        <p>
+          The Swiss healthcare ecosystem is moving rapidly toward FHIR adoption, driven by the <strong>EPD</strong> (Electronic Patient Dossier) mandate. I am excited about the convergence of FHIR with modern data engineering tools &mdash; imagine dbt models that speak FHIR, or Spark jobs that process Bundles natively.
+        </p>
+
+        <p>
+          If you are building healthcare data infrastructure and want to chat about FHIR pipelines, feel free to <a href="../contact.html">reach out</a>. I am always happy to exchange ideas with fellow data engineers navigating the healthcare interoperability landscape.
+        </p>

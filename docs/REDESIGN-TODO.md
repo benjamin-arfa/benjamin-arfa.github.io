@@ -1,5 +1,8 @@
 # arfa.digital — editorial redesign
 
+> The redesign shipped (PR #2). This file now tracks the follow-on work:
+> grid removal, dark mode, i18n and sharing. See TRANSLATION-REVIEW.md.
+
 Status as of 2026-09-17. Branch `claude/arfa-website-redesign-plan-bljh62`.
 Never pushed to `main` — promoting to production is the owner's call.
 
@@ -70,6 +73,22 @@ the repo:
 | Pipeline | `github.com/benjamin-arfa/swiss-law` |
 
 The site repo carries `© 2024-2026 Arfa Digital Consulting`.
+
+## Second pass — grid, dark mode, i18n, sharing
+
+- [x] Visible column-grid overlay removed (`.grid-lines`); the invisible
+      6-track layout grid stays
+- [x] Dark mode: follows `prefers-color-scheme`, toggle overrides and
+      persists, applied pre-paint so there is no white flash
+- [x] Inverted bands flip per theme — navy-on-bone in light, bone-on-navy
+      in dark — so the light/dark rhythm survives both
+- [x] English / German / French, rendered **at build time** to `/`, `/de/`,
+      `/fr/` so shared links preview correctly (crawlers do not run JS)
+- [x] Share row (LinkedIn · Email · Copy link) in the footer of every page,
+      with per-page per-locale URLs baked in at build time
+- [x] Content moved to `content/site.{en,de,fr}.js`
+- [x] `build/check.mjs` gates the deploy on the Formspree contract, locale
+      completeness, internal links and metadata
 
 ## Optional polish
 
