@@ -191,20 +191,40 @@ export default {
       eyebrow: 'Ce que j’ai construit',
       pageTitle: 'Projets',
       sub: 'Outils open source, applications de données et génie logiciel en technologie réglementaire, santé et GovTech.',
-      currentLabel: '01 &mdash; En cours',
-      currentHeading: 'Open source et production',
+      commercialLabel: '01 &mdash; Commercial',
+      commercialHeading: 'Solutions commerciales',
+      openLabel: '02 &mdash; Open source',
+      openHeading: 'Open source et bien public',
       quote: 'Le reporting réglementaire concerne chaque banque, et à travers elles tout le monde. C’est précisément pourquoi ces outils se construisent au grand jour.',
       quoteAttr: 'Sur les normes ouvertes',
-      archiveLabel: '02 &mdash; Archives',
+      archiveLabel: '03 &mdash; Travaux antérieurs',
       archiveHeading: 'Travaux antérieurs',
-      archiveTag: 'Archives',
+      archiveTag: 'Travaux antérieurs',
       ctaHeading: 'Envie de collaborer ?',
       ctaBody: 'Toujours ouvert à discuter de nouveaux projets, de contributions open source ou d’opportunités de collaboration.',
       visitDashboard: 'Voir le tableau de bord',
       visitSite: 'Visiter consultaition.ch',
       visitDemo: 'Ouvrir la démo',
       viewGitHub: 'Voir sur GitHub',
-      entries: [
+      commercial: [
+        {
+          anchor: 'consultaition', n: '01', role: 'Mainteneur &middot; GovTech',
+          h: 'consultaition',
+          kicker: 'Générateur de rapports de consultation fédérale suisse',
+          body: [
+            'Automatise la rédaction des <em>rapports de résultats</em> de consultation fédérale à partir de données Excel structurées. Optimisation LLM indépendante du fournisseur, calibrée sur de véritables données de consultation fédérale &mdash; sans enfermement propriétaire.',
+          ],
+          details: [
+            { k: 'Éditeur', v: 'Canvas interactif, paragraphe par paragraphe' },
+            { k: 'API', v: 'Point d’accès REST pour la génération programmatique' },
+            { k: 'Langues', v: 'Allemand &middot; Français &middot; Italien' },
+            { k: 'Sortie', v: 'Gestion des notes de bas de page et export' },
+          ],
+          tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
+          href: 'https://consultaition.ch', cta: 'visitSite',
+        },
+      ],
+      openSource: [
         {
           anchor: 'swiss-law', n: '01', role: 'Mainteneur &middot; GovTech',
           h: 'Swiss Law Collection',
@@ -224,24 +244,9 @@ export default {
           tags: ['Open data', 'SDMX', 'API JSON', 'Python'],
           href: 'https://swiss-law-as-source.github.io/', cta: 'visitDashboard',
         },
+
         {
-          anchor: 'consultaition', n: '02', role: 'Mainteneur &middot; GovTech',
-          h: 'consultaition',
-          kicker: 'Générateur de rapports de consultation fédérale suisse',
-          body: [
-            'Automatise la rédaction des <em>rapports de résultats</em> de consultation fédérale à partir de données Excel structurées. Optimisation LLM indépendante du fournisseur, calibrée sur de véritables données de consultation fédérale &mdash; sans enfermement propriétaire.',
-          ],
-          details: [
-            { k: 'Éditeur', v: 'Canvas interactif, paragraphe par paragraphe' },
-            { k: 'API', v: 'Point d’accès REST pour la génération programmatique' },
-            { k: 'Langues', v: 'Allemand &middot; Français &middot; Italien' },
-            { k: 'Sortie', v: 'Gestion des notes de bas de page et export' },
-          ],
-          tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
-          href: 'https://consultaition.ch', cta: 'visitSite',
-        },
-        {
-          anchor: 'freebird', n: '03', role: 'Contributeur &middot; RegTech',
+          anchor: 'freebird', n: '02', role: 'Contributeur &middot; RegTech',
           h: 'Eclipse FreeBIRD tools',
           kicker: 'Des outils pour rendre BIRD accessible comme norme ouverte',
           body: [
@@ -256,23 +261,18 @@ export default {
           tags: ['Python', 'Docker', 'NLP', 'RegTech'],
           href: 'https://github.com/eclipse-efbt/efbt', cta: 'viewGitHub',
         },
+
         {
-          anchor: 'law-as-code', n: '04', role: 'Contributeur &middot; GovTech',
+          anchor: 'law-as-code', n: '03', role: 'Contributeur &middot; Open Legal Lab 2026',
           h: 'Law as Code',
-          kicker: 'Les normes fiscales et sociales suisses en logique exécutable',
+          kicker: 'Le droit suisse transformé en règles exécutables',
           body: [
-            'Né à l’<strong>Open Legal Lab 2026</strong> à Macolin : un pipeline qui transforme le droit fédéral suisse en code exécutable. Les articles sont récupérés depuis Fedlex via SPARQL, transformés par un pipeline DSPy vers OpenFisca ou Catala, puis validés en exécutant le résultat sur des personas de test aux valeurs connues.',
-            'Une question en langage courant passe par un classificateur de cas, qui résout les variables pertinentes via un index juridique et les exécute sur un moteur OpenFisca portant à la fois le système socio-fiscal fédéral et le droit bernois des bourses d’études. L’écart comblé est celui entre une norme modifiée par votation et le logiciel administratif qui doit l’appliquer.',
+            'Né à l’<strong>Open Legal Lab 2026</strong>, le hackathon legal tech suisse de Macolin. Les articles du droit fiscal et des assurances sociales suisses sont récupérés depuis Fedlex et convertis en règles exécutables : une question sur les cotisations ou les droits se répond en exécutant la loi elle-même, plutôt qu’en la réimplémentant à la main dans chaque système administratif.',
           ],
           details: [
-            { k: 'Source', v: 'Point d’accès SPARQL Fedlex &middot; identifiants ELI' },
-            { k: 'Cibles', v: 'OpenFisca &middot; Catala' },
-            { k: 'Pipeline', v: 'DSPy chain-of-thought, optimisation BootstrapFewShot' },
-            { k: 'Domaines', v: 'Cotisations AVS &middot; impôt fédéral direct &middot; bourses bernoises' },
-            { k: 'Validation', v: 'Code généré exécuté sur des personas de test' },
             { k: 'Code', v: '<a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a>' },
           ],
-          tags: ['DSPy', 'OpenFisca', 'Catala', 'LLM', 'GovTech'],
+          tags: ['OpenFisca', 'DSPy', 'LLM', 'GovTech'],
           href: 'https://vps-13d3e726.vps.ovh.net/oll/', cta: 'visitDemo',
         },
       ],

@@ -192,6 +192,23 @@
     <div class="col-3-7"><h2 data-reveal>Open source and production</h2></div>
     <div class="col-1-7" style="margin-top:var(--s-8)">
       <div class="entry-list">
+        <article class="entry" data-reveal id="consultaition">
+          <div class="entry-aside">
+            <p class="entry-num">01</p>
+            <p class="label label--faint entry-role">Maintainer &middot; GovTech</p>
+          </div>
+          <div class="entry-body">
+            <h3>consultaition</h3>
+            <p class="kicker">Swiss federal consultation report generator</p>
+            <p>Automates the creation of Swiss federal <em>Ergebnisbericht</em> reports from structured Excel data. Vendor-agnostic LLM optimisation tuned on authentic federal consultation data &mdash; no provider lock-in.</p>
+            <div class="detail-list" style="margin-top:var(--s-5)"><div class="detail-row"><span class="k">Editor</span><span class="v">Interactive canvas, paragraph-by-paragraph refinement</span></div><div class="detail-row"><span class="k">API</span><span class="v">REST endpoint for programmatic generation</span></div><div class="detail-row"><span class="k">Languages</span><span class="v">German &middot; French &middot; Italian</span></div><div class="detail-row"><span class="k">Output</span><span class="v">Footnote management and export</span></div></div>
+            <div class="entry-foot">
+              <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">GovTech</span></div>
+              <a class="link-arrow" href="https://consultaition.ch" target="_blank" rel="noopener">Visit consultaition.ch</a>
+            </div>
+          </div>
+        </article>
+
         <article class="entry" data-reveal id="swiss-law">
           <div class="entry-aside">
             <p class="entry-num">01</p>
@@ -210,26 +227,9 @@
           </div>
         </article>
 
-        <article class="entry" data-reveal id="consultaition">
-          <div class="entry-aside">
-            <p class="entry-num">02</p>
-            <p class="label label--faint entry-role">Maintainer &middot; GovTech</p>
-          </div>
-          <div class="entry-body">
-            <h3>consultaition</h3>
-            <p class="kicker">Swiss federal consultation report generator</p>
-            <p>Automates the creation of Swiss federal <em>Ergebnisbericht</em> reports from structured Excel data. Vendor-agnostic LLM optimisation tuned on authentic federal consultation data &mdash; no provider lock-in.</p>
-            <div class="detail-list" style="margin-top:var(--s-5)"><div class="detail-row"><span class="k">Editor</span><span class="v">Interactive canvas, paragraph-by-paragraph refinement</span></div><div class="detail-row"><span class="k">API</span><span class="v">REST endpoint for programmatic generation</span></div><div class="detail-row"><span class="k">Languages</span><span class="v">German &middot; French &middot; Italian</span></div><div class="detail-row"><span class="k">Output</span><span class="v">Footnote management and export</span></div></div>
-            <div class="entry-foot">
-              <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">GovTech</span></div>
-              <a class="link-arrow" href="https://consultaition.ch" target="_blank" rel="noopener">Visit consultaition.ch</a>
-            </div>
-          </div>
-        </article>
-
         <article class="entry" data-reveal id="freebird">
           <div class="entry-aside">
-            <p class="entry-num">03</p>
+            <p class="entry-num">02</p>
             <p class="label label--faint entry-role">Contributor &middot; RegTech</p>
           </div>
           <div class="entry-body">
@@ -246,17 +246,16 @@
 
         <article class="entry" data-reveal id="law-as-code">
           <div class="entry-aside">
-            <p class="entry-num">04</p>
-            <p class="label label--faint entry-role">Contributor &middot; GovTech</p>
+            <p class="entry-num">03</p>
+            <p class="label label--faint entry-role">Contributor &middot; Open Legal Lab 2026</p>
           </div>
           <div class="entry-body">
             <h3>Law as Code</h3>
-            <p class="kicker">Swiss fiscal and social norms as executable logic</p>
-            <p>Built at <strong>Open Legal Lab 2026</strong> in Magglingen: a pipeline that turns Swiss federal legal text into machine-executable code. Articles are fetched from Fedlex over SPARQL, transformed by a DSPy pipeline into OpenFisca or Catala, and validated by executing the result against test personas with known outcomes.</p>
-            <p>A plain-language question goes to a case classifier, which resolves the relevant variables against a law index and runs them on an OpenFisca engine carrying both the Swiss federal tax-benefit system and the Bern cantonal scholarship rules. The gap it closes is the one between a norm changed by popular vote and the administrative software that has to implement it.</p>
-            <div class="detail-list" style="margin-top:var(--s-5)"><div class="detail-row"><span class="k">Source</span><span class="v">Fedlex SPARQL endpoint &middot; ELI identifiers</span></div><div class="detail-row"><span class="k">Targets</span><span class="v">OpenFisca &middot; Catala</span></div><div class="detail-row"><span class="k">Pipeline</span><span class="v">DSPy chain-of-thought, BootstrapFewShot optimisation</span></div><div class="detail-row"><span class="k">Domains</span><span class="v">AHV contributions &middot; direct federal tax &middot; Bern scholarships</span></div><div class="detail-row"><span class="k">Validation</span><span class="v">Generated code executed against test personas</span></div><div class="detail-row"><span class="k">Code</span><span class="v"><a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a></span></div></div>
+            <p class="kicker">Swiss law turned into rules a computer can execute</p>
+            <p>Built at <strong>Open Legal Lab 2026</strong>, the Swiss legal-tech hackathon in Magglingen. Articles of Swiss tax and social-insurance law are pulled from Fedlex and turned into executable rules, so a question about contributions or entitlement can be answered by running the law itself instead of re-implementing it by hand in every administrative system.</p>
+            <div class="detail-list" style="margin-top:var(--s-5)"><div class="detail-row"><span class="k">Code</span><span class="v"><a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a></span></div></div>
             <div class="entry-foot">
-              <div class="tags"><span class="tag">DSPy</span><span class="tag">OpenFisca</span><span class="tag">Catala</span><span class="tag">LLM</span><span class="tag">GovTech</span></div>
+              <div class="tags"><span class="tag">OpenFisca</span><span class="tag">DSPy</span><span class="tag">LLM</span><span class="tag">GovTech</span></div>
               <a class="link-arrow" href="https://vps-13d3e726.vps.ovh.net/oll/" target="_blank" rel="noopener">Open the demo</a>
             </div>
           </div>

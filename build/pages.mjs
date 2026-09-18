@@ -98,7 +98,7 @@ ${sec('', p.servicesLabel, p.servicesHeading,
   + `\n      <div style="margin-top:var(--s-7)" data-reveal><a class="link-arrow" href="${L('services.html')}">${t.ui.allServices}</a></div>`)}
 <hr class="rule">
 ${sec('', p.workLabel, p.workHeading,
-  `      <div class="entry-list">\n${t.pages.projects.entries.map(e => entry(e, t.pages.projects[e.cta] || e.cta)).join('\n\n')}\n      </div>`
+  `      <div class="entry-list">\n${[...t.pages.projects.commercial, ...t.pages.projects.openSource].map(e => entry(e, t.pages.projects[e.cta] || e.cta)).join('\n\n')}\n      </div>`
   + `\n      <div style="margin-top:var(--s-7)" data-reveal><a class="link-arrow" href="${L('projects.html')}">${t.ui.allProjects}</a></div>`)}
 ${sec('', p.involvementLabel, p.involvementHeading,
   cards('cards--2', t.shared.involvementCards.map(c => card({
@@ -171,18 +171,22 @@ export function services(t, locale) {
 // ================================================================== PROJECTS
 export function projects(t, locale) {
   const p = t.pages.projects;
+  // Two working groups — what is sold and what is given away — then the
+  // past-work cards. The jump nav spans both groups plus the archive.
   const pillNav = `      <nav class="pill-nav" aria-label="${p.pageTitle}">
-${p.entries.map(e => `        <a class="pill" href="#${e.anchor}">${e.h}</a>`).join('\n')}
+${[...p.commercial, ...p.openSource].map(e => `        <a class="pill" href="#${e.anchor}">${e.h}</a>`).join('\n')}
         <a class="pill" href="#archive">${p.archiveTag}</a>
       </nav>`;
+  const list = items =>
+    `      <div class="entry-list">\n${items.map(e => entry(e, p[e.cta] || e.cta)).join('\n\n')}\n      </div>`;
   return pageHead(p)
-    + sec('', p.currentLabel, p.currentHeading,
-        `      <div class="entry-list">\n${p.entries.map(e => entry(e, p[e.cta] || e.cta)).join('\n\n')}\n      </div>\n` + pillNav)
+    + sec('', p.commercialLabel, p.commercialHeading, list(p.commercial))
+    + sec('', p.openLabel, p.openHeading, list(p.openSource) + '\n' + pillNav, true)
     + invertBand(p.quote, p.quoteAttr)
     + sec('', p.archiveLabel, p.archiveHeading,
         `      <div class="cards cards--2" id="archive">
 ${p.archive.map(a => card({ label: p.archiveTag, h: a.h, p: a.p, href: a.href })).join('\n')}
-      </div>`, true)
+      </div>`)
     + cta(t, locale, p.ctaHeading, p.ctaBody);
 }
 

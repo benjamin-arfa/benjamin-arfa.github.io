@@ -217,20 +217,40 @@ export default {
       eyebrow: "What I've built",
       pageTitle: 'Projects',
       sub: 'Open-source tools, data applications and software engineering work spanning regulatory technology, healthcare and government tech.',
-      currentLabel: '01 &mdash; Current',
-      currentHeading: 'Open source and production',
+      commercialLabel: '01 &mdash; Commercial',
+      commercialHeading: 'Commercial solutions',
+      openLabel: '02 &mdash; Open source',
+      openHeading: 'Open source and public good',
       quote: 'Regulatory reporting affects every bank, and through them everyone. Building that tooling in the open is the point.',
       quoteAttr: 'On open standards',
-      archiveLabel: '02 &mdash; Archive',
-      archiveHeading: 'Earlier work',
-      archiveTag: 'Archive',
+      archiveLabel: '03 &mdash; Past work',
+      archiveHeading: 'Past work',
+      archiveTag: 'Past work',
       ctaHeading: 'Interested in collaborating?',
       ctaBody: 'Always open to discussing new projects, contributions to open source, or opportunities to collaborate.',
       visitDashboard: 'Visit the dashboard',
       visitSite: 'Visit consultaition.ch',
       visitDemo: 'Open the demo',
       viewGitHub: 'View on GitHub',
-      entries: [
+      commercial: [
+        {
+          anchor: 'consultaition', n: '01', role: 'Maintainer &middot; GovTech',
+          h: 'consultaition',
+          kicker: 'Swiss federal consultation report generator',
+          body: [
+            'Automates the creation of Swiss federal <em>Ergebnisbericht</em> reports from structured Excel data. Vendor-agnostic LLM optimisation tuned on authentic federal consultation data &mdash; no provider lock-in.',
+          ],
+          details: [
+            { k: 'Editor', v: 'Interactive canvas, paragraph-by-paragraph refinement' },
+            { k: 'API', v: 'REST endpoint for programmatic generation' },
+            { k: 'Languages', v: 'German &middot; French &middot; Italian' },
+            { k: 'Output', v: 'Footnote management and export' },
+          ],
+          tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
+          href: 'https://consultaition.ch', cta: 'visitSite',
+        },
+      ],
+      openSource: [
         {
           anchor: 'swiss-law', n: '01', role: 'Maintainer &middot; GovTech',
           h: 'Swiss Law Collection',
@@ -250,24 +270,9 @@ export default {
           tags: ['Open data', 'SDMX', 'JSON API', 'Python'],
           href: 'https://swiss-law-as-source.github.io/', cta: 'visitDashboard',
         },
+
         {
-          anchor: 'consultaition', n: '02', role: 'Maintainer &middot; GovTech',
-          h: 'consultaition',
-          kicker: 'Swiss federal consultation report generator',
-          body: [
-            'Automates the creation of Swiss federal <em>Ergebnisbericht</em> reports from structured Excel data. Vendor-agnostic LLM optimisation tuned on authentic federal consultation data &mdash; no provider lock-in.',
-          ],
-          details: [
-            { k: 'Editor', v: 'Interactive canvas, paragraph-by-paragraph refinement' },
-            { k: 'API', v: 'REST endpoint for programmatic generation' },
-            { k: 'Languages', v: 'German &middot; French &middot; Italian' },
-            { k: 'Output', v: 'Footnote management and export' },
-          ],
-          tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
-          href: 'https://consultaition.ch', cta: 'visitSite',
-        },
-        {
-          anchor: 'freebird', n: '03', role: 'Contributor &middot; RegTech',
+          anchor: 'freebird', n: '02', role: 'Contributor &middot; RegTech',
           h: 'Eclipse FreeBIRD tools',
           kicker: 'Tooling to democratise BIRD as an open standard',
           body: [
@@ -282,23 +287,18 @@ export default {
           tags: ['Python', 'Docker', 'NLP', 'RegTech'],
           href: 'https://github.com/eclipse-efbt/efbt', cta: 'viewGitHub',
         },
+
         {
-          anchor: 'law-as-code', n: '04', role: 'Contributor &middot; GovTech',
+          anchor: 'law-as-code', n: '03', role: 'Contributor &middot; Open Legal Lab 2026',
           h: 'Law as Code',
-          kicker: 'Swiss fiscal and social norms as executable logic',
+          kicker: 'Swiss law turned into rules a computer can execute',
           body: [
-            'Built at <strong>Open Legal Lab 2026</strong> in Magglingen: a pipeline that turns Swiss federal legal text into machine-executable code. Articles are fetched from Fedlex over SPARQL, transformed by a DSPy pipeline into OpenFisca or Catala, and validated by executing the result against test personas with known outcomes.',
-            'A plain-language question goes to a case classifier, which resolves the relevant variables against a law index and runs them on an OpenFisca engine carrying both the Swiss federal tax-benefit system and the Bern cantonal scholarship rules. The gap it closes is the one between a norm changed by popular vote and the administrative software that has to implement it.',
+            'Built at <strong>Open Legal Lab 2026</strong>, the Swiss legal-tech hackathon in Magglingen. Articles of Swiss tax and social-insurance law are pulled from Fedlex and turned into executable rules, so a question about contributions or entitlement can be answered by running the law itself instead of re-implementing it by hand in every administrative system.',
           ],
           details: [
-            { k: 'Source', v: 'Fedlex SPARQL endpoint &middot; ELI identifiers' },
-            { k: 'Targets', v: 'OpenFisca &middot; Catala' },
-            { k: 'Pipeline', v: 'DSPy chain-of-thought, BootstrapFewShot optimisation' },
-            { k: 'Domains', v: 'AHV contributions &middot; direct federal tax &middot; Bern scholarships' },
-            { k: 'Validation', v: 'Generated code executed against test personas' },
             { k: 'Code', v: '<a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a>' },
           ],
-          tags: ['DSPy', 'OpenFisca', 'Catala', 'LLM', 'GovTech'],
+          tags: ['OpenFisca', 'DSPy', 'LLM', 'GovTech'],
           href: 'https://vps-13d3e726.vps.ovh.net/oll/', cta: 'visitDemo',
         },
       ],
