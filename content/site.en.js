@@ -235,7 +235,7 @@ export default {
       viewGitHub: 'View on GitHub',
       commercial: [
         {
-          anchor: 'consultaition', n: '01', role: 'Maintainer &middot; GovTech',
+          anchor: 'consultaition', n: '01', role: 'Co-founder &middot; GovTech',
           h: 'consultaition',
           kicker: 'Swiss federal consultation report generator',
           body: [

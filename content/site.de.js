@@ -215,7 +215,7 @@ export default {
       viewGitHub: 'Auf GitHub ansehen',
       commercial: [
         {
-          anchor: 'consultaition', n: '01', role: 'Maintainer &middot; GovTech',
+          anchor: 'consultaition', n: '01', role: 'Mitgründer &middot; GovTech',
           h: 'consultaition',
           kicker: 'Generator für Schweizer Vernehmlassungsberichte',
           body: [
