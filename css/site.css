@@ -208,6 +208,14 @@
   justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
 }
 .tags{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+
+/* An entry with nothing to link to yet. Sits in the same slot as
+   .link-arrow and matches its baseline, but the dashed rule and the
+   absent arrow say it is a status, not somewhere to click. */
+.entry-status{
+  padding-bottom:8px;border-bottom:1px dashed var(--rule-strong);
+  white-space:nowrap;
+}
 .tag{
   font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
   color:var(--ink-faint);border:1px solid var(--rule);padding:5px 10px;

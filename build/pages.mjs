@@ -31,7 +31,9 @@ const entry = (e, ctaLabel) => `        <article class="entry" data-reveal id="$
             ${details(e.details)}
             <div class="entry-foot">
               <div class="tags">${tags(e.tags)}</div>
-              <a class="link-arrow" href="${e.href}" target="_blank" rel="noopener">${ctaLabel}</a>
+              ${e.href
+                ? `<a class="link-arrow" href="${e.href}" target="_blank" rel="noopener">${ctaLabel}</a>`
+                : `<span class="label label--faint entry-status">${ctaLabel}</span>`}
             </div>
           </div>
         </article>`;

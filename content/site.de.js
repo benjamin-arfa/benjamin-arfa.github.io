@@ -78,7 +78,7 @@ export default {
       servicesLabel: '02 &mdash; Leistungen',
       servicesHeading: 'Drei Säulen',
       workLabel: '03 &mdash; Ausgewählte Referenzen',
-      workHeading: 'Open Source und Produktion',
+      workHeading: 'Ausgewählte Projekte',
       involvementLabel: '04 &mdash; Engagement',
       involvementHeading: 'Standards und Community',
       ctaHeading: 'Arbeiten wir zusammen',
@@ -195,7 +195,7 @@ export default {
       title: 'Projekte | Arfa Digital Consulting',
       description: 'Open-Source-Werkzeuge und Datenanwendungen in Regulatory Technology, Gesundheitswesen und GovTech — von Benjamin Arfa.',
       eyebrow: 'Was ich gebaut habe',
-      pageTitle: 'Projekte',
+      pageTitle: 'Ausgewählte Projekte',
       sub: 'Open-Source-Werkzeuge, Datenanwendungen und Software Engineering in Regulatory Technology, Gesundheitswesen und GovTech.',
       commercialLabel: '01 &mdash; Kommerziell',
       commercialHeading: 'Kommerzielle Lösungen',
@@ -211,6 +211,7 @@ export default {
       visitDashboard: 'Zum Dashboard',
       visitSite: 'consultaition.ch besuchen',
       visitDemo: 'Demo öffnen',
+      comingSoon: 'Demnächst',
       viewGitHub: 'Auf GitHub ansehen',
       commercial: [
         {
@@ -228,6 +229,20 @@ export default {
           ],
           tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
           href: 'https://consultaition.ch', cta: 'visitSite',
+        },
+
+        {
+          anchor: 'birdbench', n: '02', role: 'Mitgründer &middot; RegTech',
+          h: 'BIRDBench',
+          kicker: 'Eine Werkbank interoperabler Werkzeuge, erweiterbar mit KI-Coding-Assistenten',
+          body: [
+            'BIRD Software Solutions stellt <strong>BIRDBench</strong> bereit &mdash; eine Werkzeug-Werkbank, die offene und kommerzielle interoperable Erweiterungen der FreeBIRD-Anwendung zusammenführt.',
+            'Da die FreeBIRD-Anwendung auf dem weit verbreiteten, KI-freundlichen Django-Framework aufbaut, lässt sich die Entwicklung eigener Erweiterungen mit KI-Coding-Assistenten beschleunigen.',
+            'Sie entwickeln ein Werkzeug für genau das Problem, das Sie lösen wollen, und fügen es der Werkbank hinzu &mdash; wo es mit anderen Werkzeugen zusammenarbeitet, die orthogonale Probleme lösen.',
+          ],
+          details: [],
+          tags: ['BIRD', 'Django', 'RegTech', 'Extensions'],
+          href: '', cta: 'comingSoon',
         },
       ],
       openSource: [

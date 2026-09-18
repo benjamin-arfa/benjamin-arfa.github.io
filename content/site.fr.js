@@ -72,7 +72,7 @@ export default {
       servicesLabel: '02 &mdash; Prestations',
       servicesHeading: 'Trois piliers',
       workLabel: '03 &mdash; Travaux choisis',
-      workHeading: 'Open source et production',
+      workHeading: 'Projets choisis',
       involvementLabel: '04 &mdash; Engagement',
       involvementHeading: 'Normes et communauté',
       ctaHeading: 'Travaillons ensemble',
@@ -189,7 +189,7 @@ export default {
       title: 'Projets | Arfa Digital Consulting',
       description: 'Outils open source et applications de données en technologie réglementaire, santé et GovTech — par Benjamin Arfa.',
       eyebrow: 'Ce que j’ai construit',
-      pageTitle: 'Projets',
+      pageTitle: 'Projets choisis',
       sub: 'Outils open source, applications de données et génie logiciel en technologie réglementaire, santé et GovTech.',
       commercialLabel: '01 &mdash; Commercial',
       commercialHeading: 'Solutions commerciales',
@@ -205,6 +205,7 @@ export default {
       visitDashboard: 'Voir le tableau de bord',
       visitSite: 'Visiter consultaition.ch',
       visitDemo: 'Ouvrir la démo',
+      comingSoon: 'Bientôt disponible',
       viewGitHub: 'Voir sur GitHub',
       commercial: [
         {
@@ -222,6 +223,20 @@ export default {
           ],
           tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
           href: 'https://consultaition.ch', cta: 'visitSite',
+        },
+
+        {
+          anchor: 'birdbench', n: '02', role: 'Cofondateur &middot; RegTech',
+          h: 'BIRDBench',
+          kicker: 'Un atelier d’outils interopérables, extensible par les assistants de code IA',
+          body: [
+            'BIRD Software Solutions propose <strong>BIRDBench</strong>, un atelier d’outils qui réunit des extensions interopérables, ouvertes et commerciales, de l’application FreeBIRD.',
+            'Comme l’application FreeBIRD repose sur Django, framework omniprésent et propice à l’IA, le développement de vos propres extensions peut être accéléré par des assistants de code IA.',
+            'Vous développez un outil pour exactement le problème que vous voulez résoudre et vous l’ajoutez à l’atelier, où il interopère avec d’autres outils traitant des problèmes orthogonaux.',
+          ],
+          details: [],
+          tags: ['BIRD', 'Django', 'RegTech', 'Extensions'],
+          href: '', cta: 'comingSoon',
         },
       ],
       openSource: [

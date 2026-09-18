@@ -98,7 +98,7 @@ export default {
       servicesLabel: '02 &mdash; Services',
       servicesHeading: 'Three pillars',
       workLabel: '03 &mdash; Selected work',
-      workHeading: 'Open source and production',
+      workHeading: 'Selected projects',
       involvementLabel: '04 &mdash; Involvement',
       involvementHeading: 'Standards and community',
       ctaHeading: "Let's work together",
@@ -215,7 +215,7 @@ export default {
       title: 'Projects | Arfa Digital Consulting',
       description: 'Open-source tools and data applications across regulatory technology, healthcare and government tech — by Benjamin Arfa.',
       eyebrow: "What I've built",
-      pageTitle: 'Projects',
+      pageTitle: 'Selected projects',
       sub: 'Open-source tools, data applications and software engineering work spanning regulatory technology, healthcare and government tech.',
       commercialLabel: '01 &mdash; Commercial',
       commercialHeading: 'Commercial solutions',
@@ -231,6 +231,7 @@ export default {
       visitDashboard: 'Visit the dashboard',
       visitSite: 'Visit consultaition.ch',
       visitDemo: 'Open the demo',
+      comingSoon: 'Coming soon',
       viewGitHub: 'View on GitHub',
       commercial: [
         {
@@ -248,6 +249,20 @@ export default {
           ],
           tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
           href: 'https://consultaition.ch', cta: 'visitSite',
+        },
+
+        {
+          anchor: 'birdbench', n: '02', role: 'Co-founder &middot; RegTech',
+          h: 'BIRDBench',
+          kicker: 'A workbench of interoperable tools, extendable by AI coding assistants',
+          body: [
+            'BIRD Software Solutions provides <strong>BIRDBench</strong>, a tools workbench that brings together open and commercial interoperable extensions to the FreeBIRD application.',
+            'Because the FreeBIRD application is built on the ubiquitous, AI-friendly Django framework, developing your own custom extensions can be accelerated with AI coding assistants.',
+            'You can develop a tool that solves just the precise problem you want to solve and add it to the workbench, where it interoperates with other tools solving orthogonal problems.',
+          ],
+          details: [],
+          tags: ['BIRD', 'Django', 'RegTech', 'Extensions'],
+          href: '', cta: 'comingSoon',
         },
       ],
       openSource: [
