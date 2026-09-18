@@ -112,7 +112,7 @@
       <h1 class="title" data-reveal>Projekte</h1>
     </div>
     <div class="col-4-7" style="margin-top:var(--s-6)">
-      <p class="lead" data-reveal>Open-Source-Werkzeuge, Datenanwendungen und Software Engineering in Regulatory Technology, Gesundheitswesen, GovTech &mdash; und gelegentlich ein Wochenendspiel.</p>
+      <p class="lead" data-reveal>Open-Source-Werkzeuge, Datenanwendungen und Software Engineering in Regulatory Technology, Gesundheitswesen und GovTech.</p>
     </div>
   </div>
 </section>
@@ -175,11 +175,30 @@
             </div>
           </div>
         </article>
+
+        <article class="entry" data-reveal id="law-as-code">
+          <div class="entry-aside">
+            <p class="entry-num">04</p>
+            <p class="label label--faint entry-role">Contributor &middot; GovTech</p>
+          </div>
+          <div class="entry-body">
+            <h3>Law as Code</h3>
+            <p class="kicker">Schweizer Steuer- und Sozialnormen als ausführbare Logik</p>
+            <p>Entstanden am <strong>Open Legal Lab 2026</strong> in Magglingen: eine Pipeline, die schweizerisches Bundesrecht in maschinell ausführbaren Code überführt. Die Artikel werden über SPARQL aus Fedlex geholt, von einer DSPy-Pipeline nach OpenFisca oder Catala transformiert und validiert, indem das Ergebnis gegen Testpersonen mit bekannten Werten ausgeführt wird.</p>
+            <p>Eine Frage in Alltagssprache geht an einen Fallklassifikator, der die einschlägigen Variablen über einen Rechtsindex auflöst und auf einer OpenFisca-Engine ausführt &mdash; mit dem eidgenössischen Steuer- und Sozialsystem ebenso wie mit dem Berner Stipendienrecht. Geschlossen wird die Lücke zwischen einer per Volksabstimmung geänderten Norm und der Verwaltungssoftware, die sie umsetzen muss.</p>
+            <div class="detail-list" style="margin-top:var(--s-5)"><div class="detail-row"><span class="k">Quelle</span><span class="v">Fedlex-SPARQL-Endpunkt &middot; ELI-Bezeichner</span></div><div class="detail-row"><span class="k">Zielsprachen</span><span class="v">OpenFisca &middot; Catala</span></div><div class="detail-row"><span class="k">Pipeline</span><span class="v">DSPy-Chain-of-Thought, BootstrapFewShot-Optimierung</span></div><div class="detail-row"><span class="k">Bereiche</span><span class="v">AHV-Beiträge &middot; direkte Bundessteuer &middot; Berner Stipendien</span></div><div class="detail-row"><span class="k">Validierung</span><span class="v">Erzeugter Code gegen Testpersonen ausgeführt</span></div><div class="detail-row"><span class="k">Code</span><span class="v"><a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a></span></div></div>
+            <div class="entry-foot">
+              <div class="tags"><span class="tag">DSPy</span><span class="tag">OpenFisca</span><span class="tag">Catala</span><span class="tag">LLM</span><span class="tag">GovTech</span></div>
+              <a class="link-arrow" href="https://vps-13d3e726.vps.ovh.net/oll/" target="_blank" rel="noopener">Demo öffnen</a>
+            </div>
+          </div>
+        </article>
       </div>
       <nav class="pill-nav" aria-label="Projekte">
         <a class="pill" href="#swiss-law">Swiss Law Collection</a>
         <a class="pill" href="#consultaition">consultaition</a>
         <a class="pill" href="#freebird">Eclipse FreeBIRD tools</a>
+        <a class="pill" href="#law-as-code">Law as Code</a>
         <a class="pill" href="#archive">Archiv</a>
       </nav>
     </div>
@@ -201,28 +220,16 @@
     <div class="col-3-7"><h2 data-reveal>Frühere Arbeiten</h2></div>
     <div class="col-1-7" style="margin-top:var(--s-8)">
       <div class="cards cards--2" id="archive">
-        <a class="card" href="https://github.com/benjamin-arfa/px-reader" target="_blank" rel="noopener" data-reveal>
+        <a class="card" href="https://fhir.ch" target="_blank" rel="noopener" data-reveal>
           <p class="label">Archiv</p>
-          <h3>px-reader</h3>
-          <p>Python-Anwendung zum Parsen von px-Cubes des Bundesamts für Statistik. Wandelt sie in Linked Data um, importierbar in RDF-Triple-Stores.</p>
+          <h3>fhir.ch</h3>
+          <p>Die Publikationsplattform der Schweizer FHIR-Implementierungsleitfäden, betreut über HL7 Schweiz, wo ich Technical Manager für FHIR-CH bin.</p>
           
         </a>
         <a class="card" href="https://github.com/benjamin-arfa/go-detective" target="_blank" rel="noopener" data-reveal>
           <p class="label">Archiv</p>
           <h3>go-detective</h3>
           <p>Native Desktop-Anwendung (Go und Wails) für KYC-Prüfungen, AML-Screening und PEP-/Sanktionsabgleich. Supabase-Backend.</p>
-          
-        </a>
-        <a class="card" href="https://github.com/benjamin-arfa/static-gen" target="_blank" rel="noopener" data-reveal>
-          <p class="label">Archiv</p>
-          <h3>static-gen</h3>
-          <p>Verwandelt Inhalte in statische HTML-Websites. Eigenes Templating und Build-Automatisierung.</p>
-          
-        </a>
-        <a class="card" href="https://github.com/benjamin-arfa/pyroids" target="_blank" rel="noopener" data-reveal>
-          <p class="label">Archiv</p>
-          <h3>pyroids</h3>
-          <p>Pygame-Umsetzung des Klassikers Asteroids: physikbasierte Bewegung, Asteroidenteilung, dynamische Schwierigkeitsanpassung.</p>
           
         </a>
       </div>

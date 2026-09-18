@@ -216,7 +216,7 @@ export default {
       description: 'Open-source tools and data applications across regulatory technology, healthcare and government tech — by Benjamin Arfa.',
       eyebrow: "What I've built",
       pageTitle: 'Projects',
-      sub: 'Open-source tools, data applications and software engineering work spanning regulatory technology, healthcare, government tech, and the odd weekend game.',
+      sub: 'Open-source tools, data applications and software engineering work spanning regulatory technology, healthcare and government tech.',
       currentLabel: '01 &mdash; Current',
       currentHeading: 'Open source and production',
       quote: 'Regulatory reporting affects every bank, and through them everyone. Building that tooling in the open is the point.',
@@ -228,6 +228,7 @@ export default {
       ctaBody: 'Always open to discussing new projects, contributions to open source, or opportunities to collaborate.',
       visitDashboard: 'Visit the dashboard',
       visitSite: 'Visit consultaition.ch',
+      visitDemo: 'Open the demo',
       viewGitHub: 'View on GitHub',
       entries: [
         {
@@ -281,12 +282,29 @@ export default {
           tags: ['Python', 'Docker', 'NLP', 'RegTech'],
           href: 'https://github.com/eclipse-efbt/efbt', cta: 'viewGitHub',
         },
+        {
+          anchor: 'law-as-code', n: '04', role: 'Contributor &middot; GovTech',
+          h: 'Law as Code',
+          kicker: 'Swiss fiscal and social norms as executable logic',
+          body: [
+            'Built at <strong>Open Legal Lab 2026</strong> in Magglingen: a pipeline that turns Swiss federal legal text into machine-executable code. Articles are fetched from Fedlex over SPARQL, transformed by a DSPy pipeline into OpenFisca or Catala, and validated by executing the result against test personas with known outcomes.',
+            'A plain-language question goes to a case classifier, which resolves the relevant variables against a law index and runs them on an OpenFisca engine carrying both the Swiss federal tax-benefit system and the Bern cantonal scholarship rules. The gap it closes is the one between a norm changed by popular vote and the administrative software that has to implement it.',
+          ],
+          details: [
+            { k: 'Source', v: 'Fedlex SPARQL endpoint &middot; ELI identifiers' },
+            { k: 'Targets', v: 'OpenFisca &middot; Catala' },
+            { k: 'Pipeline', v: 'DSPy chain-of-thought, BootstrapFewShot optimisation' },
+            { k: 'Domains', v: 'AHV contributions &middot; direct federal tax &middot; Bern scholarships' },
+            { k: 'Validation', v: 'Generated code executed against test personas' },
+            { k: 'Code', v: '<a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a>' },
+          ],
+          tags: ['DSPy', 'OpenFisca', 'Catala', 'LLM', 'GovTech'],
+          href: 'https://vps-13d3e726.vps.ovh.net/oll/', cta: 'visitDemo',
+        },
       ],
       archive: [
-        { h: 'px-reader', p: 'Python application parsing px-cubes from the Swiss Federal Statistical Office. Converts to linked data, importable to RDF triple stores.', href: 'https://github.com/benjamin-arfa/px-reader' },
+        { h: 'fhir.ch', p: 'The publication site for the Swiss FHIR implementation guides, maintained through HL7 Switzerland, where I am Technical Manager for FHIR-CH.', href: 'https://fhir.ch' },
         { h: 'go-detective', p: 'Native desktop application (Go and Wails) for KYC checks, AML screening and PEP/sanctions verification. Supabase backend.', href: 'https://github.com/benjamin-arfa/go-detective' },
-        { h: 'static-gen', p: 'Transforms content into static HTML websites. Custom templating and build automation for content creators.', href: 'https://github.com/benjamin-arfa/static-gen' },
-        { h: 'pyroids', p: 'Pygame implementation of the classic Asteroids: physics-based movement, asteroid-splitting mechanics, dynamic difficulty scaling.', href: 'https://github.com/benjamin-arfa/pyroids' },
       ],
     },
 

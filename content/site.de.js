@@ -196,7 +196,7 @@ export default {
       description: 'Open-Source-Werkzeuge und Datenanwendungen in Regulatory Technology, Gesundheitswesen und GovTech — von Benjamin Arfa.',
       eyebrow: 'Was ich gebaut habe',
       pageTitle: 'Projekte',
-      sub: 'Open-Source-Werkzeuge, Datenanwendungen und Software Engineering in Regulatory Technology, Gesundheitswesen, GovTech &mdash; und gelegentlich ein Wochenendspiel.',
+      sub: 'Open-Source-Werkzeuge, Datenanwendungen und Software Engineering in Regulatory Technology, Gesundheitswesen und GovTech.',
       currentLabel: '01 &mdash; Aktuell',
       currentHeading: 'Open Source und Produktion',
       quote: 'Regulatorisches Reporting betrifft jede Bank &mdash; und über die Banken am Ende alle. Genau deshalb entsteht dieses Werkzeug offen.',
@@ -208,6 +208,7 @@ export default {
       ctaBody: 'Ich spreche jederzeit gerne über neue Projekte, Beiträge zu Open Source oder Kooperationsmöglichkeiten.',
       visitDashboard: 'Zum Dashboard',
       visitSite: 'consultaition.ch besuchen',
+      visitDemo: 'Demo öffnen',
       viewGitHub: 'Auf GitHub ansehen',
       entries: [
         {
@@ -261,12 +262,29 @@ export default {
           tags: ['Python', 'Docker', 'NLP', 'RegTech'],
           href: 'https://github.com/eclipse-efbt/efbt', cta: 'viewGitHub',
         },
+        {
+          anchor: 'law-as-code', n: '04', role: 'Contributor &middot; GovTech',
+          h: 'Law as Code',
+          kicker: 'Schweizer Steuer- und Sozialnormen als ausführbare Logik',
+          body: [
+            'Entstanden am <strong>Open Legal Lab 2026</strong> in Magglingen: eine Pipeline, die schweizerisches Bundesrecht in maschinell ausführbaren Code überführt. Die Artikel werden über SPARQL aus Fedlex geholt, von einer DSPy-Pipeline nach OpenFisca oder Catala transformiert und validiert, indem das Ergebnis gegen Testpersonen mit bekannten Werten ausgeführt wird.',
+            'Eine Frage in Alltagssprache geht an einen Fallklassifikator, der die einschlägigen Variablen über einen Rechtsindex auflöst und auf einer OpenFisca-Engine ausführt &mdash; mit dem eidgenössischen Steuer- und Sozialsystem ebenso wie mit dem Berner Stipendienrecht. Geschlossen wird die Lücke zwischen einer per Volksabstimmung geänderten Norm und der Verwaltungssoftware, die sie umsetzen muss.',
+          ],
+          details: [
+            { k: 'Quelle', v: 'Fedlex-SPARQL-Endpunkt &middot; ELI-Bezeichner' },
+            { k: 'Zielsprachen', v: 'OpenFisca &middot; Catala' },
+            { k: 'Pipeline', v: 'DSPy-Chain-of-Thought, BootstrapFewShot-Optimierung' },
+            { k: 'Bereiche', v: 'AHV-Beiträge &middot; direkte Bundessteuer &middot; Berner Stipendien' },
+            { k: 'Validierung', v: 'Erzeugter Code gegen Testpersonen ausgeführt' },
+            { k: 'Code', v: '<a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a>' },
+          ],
+          tags: ['DSPy', 'OpenFisca', 'Catala', 'LLM', 'GovTech'],
+          href: 'https://vps-13d3e726.vps.ovh.net/oll/', cta: 'visitDemo',
+        },
       ],
       archive: [
-        { h: 'px-reader', p: 'Python-Anwendung zum Parsen von px-Cubes des Bundesamts für Statistik. Wandelt sie in Linked Data um, importierbar in RDF-Triple-Stores.', href: 'https://github.com/benjamin-arfa/px-reader' },
+        { h: 'fhir.ch', p: 'Die Publikationsplattform der Schweizer FHIR-Implementierungsleitfäden, betreut über HL7 Schweiz, wo ich Technical Manager für FHIR-CH bin.', href: 'https://fhir.ch' },
         { h: 'go-detective', p: 'Native Desktop-Anwendung (Go und Wails) für KYC-Prüfungen, AML-Screening und PEP-/Sanktionsabgleich. Supabase-Backend.', href: 'https://github.com/benjamin-arfa/go-detective' },
-        { h: 'static-gen', p: 'Verwandelt Inhalte in statische HTML-Websites. Eigenes Templating und Build-Automatisierung.', href: 'https://github.com/benjamin-arfa/static-gen' },
-        { h: 'pyroids', p: 'Pygame-Umsetzung des Klassikers Asteroids: physikbasierte Bewegung, Asteroidenteilung, dynamische Schwierigkeitsanpassung.', href: 'https://github.com/benjamin-arfa/pyroids' },
       ],
     },
 
