@@ -56,6 +56,12 @@ for (const f of files) {
   // 5. Share row present.
   if (!s.includes('class="share-row"')) fail(`${rel}: missing share row`);
 
+  // 6. The pointer ships as a pair. The stylesheet alone hides nothing —
+  //    cursor.js is what adds `cursor-on` — but shipping the script
+  //    without the stylesheet would leave two undrawn divs on the page.
+  if (!s.includes('/css/cursor.css')) fail(`${rel}: missing cursor stylesheet`);
+  if (!s.includes('/js/cursor.js')) fail(`${rel}: missing cursor script`);
+
   // 6. Internal links resolve within the built output.
   for (const href of s.match(/href="\/[^"#]*"/g) || []) {
     const p = href.slice(6, -1);

@@ -1,0 +1,101 @@
+/* =====================================================================
+   ARFA DIGITAL — pointer
+
+   Two parts: a dot that tracks the pointer exactly, and a ring that
+   trails it and reacts to whatever is underneath. js/cursor.js writes
+   only the outer elements' transforms; every visual state is a class on
+   <html>, so JS owns position and CSS owns the inner span's transform
+   and they never fight over one property.
+
+   Nothing here applies until cursor.js adds `cursor-on`, and it only
+   does that on the first real mouse movement. That ordering matters: a
+   stylesheet that loads while the script fails must never be able to
+   leave a page with no cursor at all, and a keyboard visitor who never
+   touches the mouse keeps the native one.
+
+   The whole block is gated on a fine pointer with hover. Touch devices
+   get nothing — a trailing ring on a touchscreen is a cursor chasing a
+   finger that was never there.
+   ===================================================================== */
+
+@media (hover: hover) and (pointer: fine){
+
+  html.cursor-on,
+  html.cursor-on *{ cursor:none }
+
+  /* Text fields keep the native caret: typing without one is worse than
+     any amount of polish. The custom cursor hides over them instead. */
+  html.cursor-on input,
+  html.cursor-on textarea,
+  html.cursor-on select{ cursor:auto }
+
+  .cursor{
+    position:fixed;left:0;top:0;z-index:400;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .25s var(--ease);
+    will-change:transform;
+  }
+  html.cursor-ready .cursor{opacity:1}
+  html.cursor-text .cursor{opacity:0}
+
+  .cursor--dot { width:6px; height:6px;  margin:-3px  0 0 -3px }
+  .cursor--ring{ width:36px;height:36px; margin:-18px 0 0 -18px }
+
+  .cursor span{
+    display:block;width:100%;height:100%;border-radius:50%;
+    transition:transform .28s var(--ease),background-color .28s var(--ease),
+               border-color .28s var(--ease),opacity .28s var(--ease);
+  }
+  .cursor--dot  span{background:var(--ink)}
+  .cursor--ring span{border:1px solid var(--rule-strong);position:relative}
+
+  /* ---- Over something clickable ---------------------------------- */
+  html.cursor-hover .cursor--dot span{transform:scale(0);opacity:0}
+  html.cursor-hover .cursor--ring span{
+    transform:scale(1.5);
+    border-color:var(--accent);
+    background:color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+
+  /* ---- Pressed ---------------------------------------------------- */
+  html.cursor-down .cursor--dot span{transform:scale(1.5)}
+  html.cursor-down .cursor--ring span{transform:scale(.8)}
+  /* Both states at once needs its own rule: the two above have equal
+     specificity, so source order alone would decide it. */
+  html.cursor-down.cursor-hover .cursor--dot span{transform:scale(0)}
+  html.cursor-down.cursor-hover .cursor--ring span{transform:scale(1.25)}
+
+  /* ---- Leaving the site ------------------------------------------- */
+  /* The glyph sits inside the ring's inner span, so it inherits that
+     span's 1.5 hover scale — 8px renders at ~12px, which is why it
+     looks small here. It only ever shows while .cursor-hover is set. */
+  .cursor--ring span::after{
+    content:"\2197";
+    position:absolute;inset:0;
+    display:grid;place-items:center;
+    font-family:var(--font-body);font-size:8px;line-height:1;
+    color:var(--accent);
+    opacity:0;transition:opacity .2s var(--ease);
+  }
+  html.cursor-ext .cursor--ring span::after{opacity:1}
+
+  /* ---- Inverted bands --------------------------------------------- */
+  /* .cursor is fixed and lives outside the band's cascade, so the band
+     tokens have to be applied explicitly. They already flip per theme. */
+  html.cursor-invert .cursor--dot  span{background:var(--i-ink)}
+  html.cursor-invert .cursor--ring span{border-color:var(--i-rule)}
+  html.cursor-invert.cursor-hover .cursor--ring span{
+    border-color:var(--i-accent);
+    background:color-mix(in srgb, var(--i-accent) 10%, transparent);
+  }
+  html.cursor-invert .cursor--ring span::after{color:var(--i-accent)}
+
+  /* Reduced motion keeps the cursor and drops the movement. Two halves:
+     cursor.js sets the trail's easing to 1 so the ring snaps to the
+     pointer, and the state transitions above are already zeroed by the
+     global reduced-motion rule in base.css, which carries !important.
+     Repeating them here would be dead code. */
+}
+
+@media print{ .cursor{display:none} }

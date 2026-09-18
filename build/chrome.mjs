@@ -47,6 +47,7 @@ ${alts}
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/cursor.css">
 ${THEME_BOOT}
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#E9E7E1" media="(prefers-color-scheme: light)">
@@ -207,6 +208,7 @@ ${shareRow(t, page, locale)}
 
 export const scripts = (extra = '') => `
 <script src="/js/theme.js"></script>
+<script src="/js/cursor.js"></script>
 <script src="/js/reveal.js"></script>
 <script src="/js/menu.js"></script>
 <script src="/js/accordion.js"></script>
