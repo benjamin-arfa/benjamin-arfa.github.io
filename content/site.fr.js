@@ -19,8 +19,7 @@ export default {
     closeMenu: 'Fermer le menu',
     toggleTheme: 'Changer de thème',
     language: 'Langue',
-    share: 'Partager',
-    shareLinkedIn: 'LinkedIn',
+    share: 'Partager cette page',
     shareEmail: 'E-mail',
     copyLink: 'Copier le lien',
     copied: 'Copié',
@@ -40,7 +39,7 @@ export default {
     home: 'Accueil', practice: 'Le cabinet', workGroup: 'Travaux', elsewhere: 'Ailleurs',
     projects: 'Projets', journal: 'Journal', involvement: 'Engagement',
     note: 'Outils open source pour le reporting réglementaire, les données juridiques suisses et l’interopérabilité en santé.',
-    enquireNow: 'Nous contacter', impressum: 'Mentions légales',
+    enquireNow: 'Me contacter', impressum: 'Mentions légales',
   },
 
   footer: {
@@ -86,17 +85,17 @@ export default {
       description: 'Benjamin Arfa — ingénieur données et logiciel à Bâle. Neuf ans en santé, technologie réglementaire et gouvernance des données.',
       eyebrow: 'Le fondateur',
       pageTitle: 'Benjamin Arfa',
-      sub: 'Ingénieur données et logiciel à Bâle. Neuf ans en santé, technologie réglementaire et gouvernance d’entreprise &mdash; fondateur d’Arfa Digital Consulting, cofondateur de BIRDBench Ltd.',
+      sub: 'Ingénieur données et logiciel à Bâle. Neuf ans en santé, technologie réglementaire et gouvernance des données en entreprise &mdash; fondateur d’Arfa Digital Consulting, cofondateur de BIRDBench Ltd.',
       bgLabel: '01 &mdash; Parcours',
       bgHeading: 'Parcours professionnel',
       bgBody: [
         'Je suis spécialisé en <strong>intégration de données</strong>, <strong>gouvernance</strong> et <strong>gestion du cycle de vie</strong> dans la technologie réglementaire et la santé. En plus de neuf ans, j’ai développé une expertise approfondie dans la mise en œuvre de stratégies de données et de solutions techniques qui résistent à l’examen.',
         'En <strong>stratégie et architecture de données</strong>, je me concentre sur une gestion complète du cycle de vie par une modélisation efficace et une mise en œuvre technique rigoureuse &mdash; des systèmes robustes, alignés sur le métier, et des organisations réellement pilotées par la donnée.',
-        'Mon travail technique couvre l’<strong>ingénierie des exigences</strong>, en pont entre les équipes métier et techniques, et le <strong>génie logiciel</strong> pour des applications de données évolutives. Comme <strong>Technical Manager chez HL7 Suisse</strong> (FHIR-CH), je contribue à la normalisation des données de santé. Cofondateur de <strong>BIRDBench Ltd</strong>, j’apporte de l’innovation à la RegTech ; comme <strong>contributeur Eclipse</strong>, je développe des outils réglementaires en public.',
+        'Mon travail technique couvre l’<strong>ingénierie des exigences</strong>, en pont entre les équipes métier et techniques, et le <strong>génie logiciel</strong> pour des applications de données évolutives. Comme <strong>Technical Manager chez HL7 Suisse</strong> (FHIR-CH), je contribue à la normalisation des données de santé. Cofondateur de <strong>BIRDBench Ltd</strong>, j’apporte de l’innovation à la RegTech ; comme <strong>contributeur Eclipse</strong>, je développe des outils réglementaires au grand jour.',
       ],
       glanceLabel: 'En bref',
       glance: [
-        { k: 'Base', v: 'Bâle, Suisse' },
+        { k: 'Basé à', v: 'Bâle, Suisse' },
         { k: 'Langues', v: 'Français &middot; Allemand &middot; Anglais &middot; Espagnol' },
         { k: 'Normes', v: 'HL7 FHIR &middot; SDMX &middot; BIRD' },
         { k: 'Cofondateur', v: 'BIRDBench Ltd' },
@@ -136,7 +135,7 @@ export default {
         { k: 'Intérêts', v: 'souveraineté &middot; technologie &middot; solidarité' },
       ],
       ctaHeading: 'Envie de collaborer ?',
-      ctaBody: 'Toujours heureux d’échanger avec des consœurs et confrères sur les enjeux de données et les opportunités.',
+      ctaBody: 'Toujours heureux d’échanger avec des pairs sur les enjeux de données et les opportunités.',
     },
 
     services: {
@@ -170,7 +169,7 @@ export default {
         { h: 'Modélisation de données', p: 'Modélisation conceptuelle, logique et physique pour bases de données et entrepôts.' },
         { h: 'Conseil en ML', p: 'Stratégie d’apprentissage automatique, accompagnement du développement de modèles et architecture de solutions d’IA.' },
       ],
-      quote: 'Chaque mandat commence par un entretien exploratoire &mdash; et une réponse honnête sur ma légitimité à le mener.',
+      quote: 'Chaque mandat commence par un entretien exploratoire &mdash; et une réponse honnête sur le fait que je sois, ou non, la bonne personne.',
       quoteAttr: 'Comment débutent les mandats',
       faqLabel: '04 &mdash; Questions',
       faqHeading: 'Questions fréquentes',
@@ -214,8 +213,8 @@ export default {
             'Publier la loi comme donnée plutôt qu’en PDF permet de tester les systèmes en aval, et les flux Atom et RSS font d’une modification législative quelque chose auquel un logiciel peut s’abonner.',
           ],
           details: [
-            { k: 'Couverture', v: '34 443 actes &mdash; Confédération et 26 cantons' },
-            { k: 'Articles', v: '824 663 indexés' },
+            { k: 'Couverture', v: '34&#8239;443 actes &mdash; Confédération et 26 cantons' },
+            { k: 'Articles', v: '824&#8239;663 indexés' },
             { k: 'Formats', v: 'JSON &middot; CSV &middot; SDMX' },
             { k: 'Sources', v: 'Fedlex (fédéral) &middot; LexFind (cantonal)' },
             { k: 'Vérification', v: 'Rapprochement publié avec BADAC et chstat' },
@@ -318,9 +317,9 @@ export default {
         {
           anchor: 'birdbench', n: '04', role: 'Cofondateur', h: 'BIRDBench Ltd',
           kicker: 'Apporter de l’innovation à la RegTech',
-          body: ['Cofondateur de BIRDBench Ltd &mdash; des approches ouvertes et fondées sur des références pour la technologie réglementaire, au sein de l’écosystème BIRD.'],
+          body: ['Cofondateur de BIRDBench Ltd &mdash; des approches ouvertes et pilotées par le benchmarking pour la technologie réglementaire, au sein de l’écosystème BIRD.'],
           details: [],
-          tags: ['RegTech', 'Étalonnage'],
+          tags: ['RegTech', 'Benchmarking'],
           href: 'https://github.com/BIRD-Software-Solutions', cta: 'Travaux liés',
         },
         {
@@ -366,7 +365,7 @@ export default {
       ],
       hoursLabel: 'Horaires',
       hours: [
-        { k: 'Lun &ndash; ven', v: '09:00 &ndash; 18:00 CET' },
+        { k: 'Lun &ndash; ven', v: '09:00 &ndash; 18:00 HEC' },
         { k: 'Réponse', v: 'sous 48 heures' },
         { k: 'Appels', v: 'sur rendez-vous' },
       ],
@@ -456,7 +455,7 @@ export default {
     involvementCards: [
       { label: 'Technical Manager', h: 'HL7 Suisse', p: 'Normalisation des données de santé pour FHIR-CH &mdash; guides de mise en œuvre, groupes de travail sur l’interopérabilité et normes suisses d’échange de données de santé.', links: [{ t: 'hl7.ch', href: 'https://www.hl7.ch/de/' }, { t: 'fhir.ch', href: 'https://fhir.ch' }] },
       { label: 'Head of Development', h: 'BIRD Software Solutions', p: 'Direction du développement logiciel et de la stratégie technique en technologie réglementaire &mdash; infrastructure open source alignée sur la norme BIRD.', links: [{ t: 'GitHub', href: 'https://github.com/BIRD-Software-Solutions' }] },
-      { label: 'Cofondateur', h: 'BIRDBench Ltd', p: 'Des approches ouvertes et fondées sur des références pour la technologie réglementaire, au sein de l’écosystème BIRD.', links: [] },
+      { label: 'Cofondateur', h: 'BIRDBench Ltd', p: 'Des approches ouvertes et pilotées par le benchmarking pour la technologie réglementaire, au sein de l’écosystème BIRD.', links: [] },
       { label: 'Contributeur', h: 'Eclipse Foundation', p: 'Contributions open source via Eclipse EFBT &mdash; des outils de reporting réglementaire construits au grand jour, sous gouvernance indépendante.', links: [{ t: 'eclipse.org', href: 'https://www.eclipse.org' }] },
     ],
   },

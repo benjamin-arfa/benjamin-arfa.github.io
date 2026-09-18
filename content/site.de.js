@@ -18,15 +18,14 @@ export default {
 
   brand: { sub: 'Beratung', location: 'Basel, Schweiz' },
 
-  nav: { menu: 'Menü', services: 'Leistungen', work: 'Arbeiten', about: 'Über mich', enquire: 'Anfragen' },
+  nav: { menu: 'Menü', services: 'Leistungen', work: 'Referenzen', about: 'Über mich', enquire: 'Anfragen' },
 
   ui: {
     skip: 'Zum Inhalt springen',
     closeMenu: 'Menü schliessen',
     toggleTheme: 'Farbschema wechseln',
     language: 'Sprache',
-    share: 'Teilen',
-    shareLinkedIn: 'LinkedIn',
+    share: 'Diese Seite teilen',
     shareEmail: 'E-Mail',
     copyLink: 'Link kopieren',
     copied: 'Kopiert',
@@ -43,7 +42,7 @@ export default {
   },
 
   menu: {
-    home: 'Startseite', practice: 'Die Praxis', workGroup: 'Arbeiten', elsewhere: 'Anderswo',
+    home: 'Startseite', practice: 'Die Praxis', workGroup: 'Referenzen', elsewhere: 'Anderswo',
     projects: 'Projekte', journal: 'Journal', involvement: 'Engagement',
     note: 'Open-Source-Werkzeuge für regulatorisches Reporting, Schweizer Rechtsdaten und Interoperabilität im Gesundheitswesen.',
     enquireNow: 'Jetzt anfragen', impressum: 'Impressum',
@@ -51,7 +50,7 @@ export default {
 
   footer: {
     blurb: 'Datenintegration, Governance und Lifecycle-Management für regulierte Branchen. Basel, Schweiz.',
-    colPractice: 'Praxis', colWork: 'Arbeiten', colContact: 'Kontakt',
+    colPractice: 'Praxis', colWork: 'Referenzen', colContact: 'Kontakt',
     rights: 'Alle Rechte vorbehalten',
   },
 
@@ -78,7 +77,7 @@ export default {
       quoteAttr: 'Über den Aufbau offener Regulierungswerkzeuge',
       servicesLabel: '02 &mdash; Leistungen',
       servicesHeading: 'Drei Säulen',
-      workLabel: '03 &mdash; Ausgewählte Arbeiten',
+      workLabel: '03 &mdash; Ausgewählte Referenzen',
       workHeading: 'Open Source und Produktion',
       involvementLabel: '04 &mdash; Engagement',
       involvementHeading: 'Standards und Community',
@@ -97,7 +96,7 @@ export default {
       bgHeading: 'Beruflicher Hintergrund',
       bgBody: [
         'Ich bin spezialisiert auf <strong>Datenintegration</strong>, <strong>Governance</strong> und <strong>Lifecycle-Management</strong> in Regulatory Technology und im Gesundheitswesen. In über neun Jahren habe ich tiefe Expertise darin aufgebaut, Datenstrategien und technische Lösungen umzusetzen, die einer Prüfung standhalten.',
-        'In <strong>Datenstrategie und Architektur</strong> liegt mein Fokus auf umfassendem Lifecycle-Management durch wirksame Datenmodellierung und technische Umsetzung &mdash; robuste, geschäftsorientierte Systeme und datengetriebene Organisationsfähigkeit.',
+        'In <strong>Datenstrategie und Architektur</strong> liegt mein Fokus auf umfassendem Lifecycle-Management durch wirksame Datenmodellierung und technische Umsetzung &mdash; robuste, geschäftsorientierte Systeme und Organisationen, die wirklich datengetrieben arbeiten.',
         'Meine technische Arbeit umfasst <strong>Requirements Engineering</strong> als Brücke zwischen Fach- und Technikteams sowie <strong>Software Engineering</strong> für skalierbare Datenanwendungen. Als <strong>Technical Manager bei HL7 Schweiz</strong> (FHIR-CH) treibe ich die Standardisierung von Gesundheitsdaten voran. Als Mitgründer von <strong>BIRDBench Ltd</strong> bringe ich Innovation in die RegTech, und als <strong>Eclipse-Contributor</strong> entwickle ich Regulierungswerkzeuge offen.',
       ],
       glanceLabel: 'Auf einen Blick',
@@ -132,7 +131,7 @@ export default {
       personalHeading: 'Der Mensch dahinter',
       personalBody: [
         'Ich bin <strong>Benni</strong> &mdash; eine französisch-deutsch-arabische Seele, derzeit in Basel.',
-        'Musik ist meine Leidenschaft, Software mein Handwerk, und das Schreiben begleitet mich seit dem fünften Gymnasialjahr. Angefangen habe ich mit Zeichnen, Malerei und Kalligrafie, später kam die Poesie dazu. Heute schreibe ich Prosodie und schalte mich hin und wieder ein.',
+        'Musik ist meine Leidenschaft, Software mein Handwerk, und das Schreiben begleitet mich seit dem fünften Gymnasialjahr. Angefangen habe ich mit Zeichnen, Malerei und Kalligrafie, später kam die Poesie dazu. Heute schreibe ich Prosodie und melde mich hin und wieder zu Wort.',
         'Ich äussere mich gerne zu <strong>Souveränität, Technologie und Solidarität</strong>.',
       ],
       personal: [
@@ -200,7 +199,7 @@ export default {
       sub: 'Open-Source-Werkzeuge, Datenanwendungen und Software Engineering in Regulatory Technology, Gesundheitswesen, GovTech &mdash; und gelegentlich ein Wochenendspiel.',
       currentLabel: '01 &mdash; Aktuell',
       currentHeading: 'Open Source und Produktion',
-      quote: 'Regulatorisches Reporting betrifft jede Bank und über sie alle. Genau deshalb entsteht dieses Werkzeug offen.',
+      quote: 'Regulatorisches Reporting betrifft jede Bank &mdash; und über die Banken am Ende alle. Genau deshalb entsteht dieses Werkzeug offen.',
       quoteAttr: 'Über offene Standards',
       archiveLabel: '02 &mdash; Archiv',
       archiveHeading: 'Frühere Arbeiten',
@@ -280,7 +279,7 @@ export default {
       sub: 'Beiträge zu Fach-Communities und Standardisierungsorganisationen &mdash; in Zusammenarbeit mit <a class="link" href="https://www.eseha.ch" target="_blank" rel="noopener">ESEHA</a>, HL7 Schweiz, der Eclipse Foundation und dem BIRD-Ökosystem.',
       orgsLabel: '01 &mdash; Organisationen',
       orgsHeading: 'Wo ich mitwirke',
-      quote: 'Standardisierung ist langsam, unglamourös &mdash; und das Einzige, was Systeme ein Jahrzehnt später noch miteinander sprechen lässt.',
+      quote: 'Standardisierung ist langsam und undankbar &mdash; und das Einzige, was Systeme ein Jahrzehnt später noch miteinander sprechen lässt.',
       quoteAttr: 'Warum Standards',
       whyLabel: '02 &mdash; Beweggründe',
       whyHeading: 'Warum Community zählt',
@@ -316,7 +315,7 @@ export default {
         {
           anchor: 'eclipse', n: '03', role: 'Contributor', h: 'Eclipse Foundation',
           kicker: 'Open Source als öffentliches Gut',
-          body: ['Contributor der Eclipse Foundation über <strong>Eclipse EFBT</strong>, die Heimat der FreeBIRD-Werkzeuge. Regulatorisches Reporting betrifft jede Bank und über sie alle. Diese Werkzeuge offen und unter herstellerneutraler Governance zu bauen bedeutet gemeinsame Infrastruktur statt lizenzierter Silos und transparente Regeln statt Blackboxes.'],
+          body: ['Contributor der Eclipse Foundation über <strong>Eclipse EFBT</strong>, die Heimat der FreeBIRD-Werkzeuge. Regulatorisches Reporting betrifft jede Bank &mdash; und über die Banken am Ende alle. Diese Werkzeuge offen und unter herstellerneutraler Governance zu bauen bedeutet gemeinsame Infrastruktur statt lizenzierter Silos und transparente Regeln statt Blackboxes.'],
           details: [],
           tags: ['Eclipse EFBT', 'Offene Governance', 'Dokumentation'],
           href: 'https://www.eclipse.org', cta: 'eclipse.org besuchen',
@@ -377,7 +376,7 @@ export default {
         { k: 'Telefonate', v: 'nach Vereinbarung' },
       ],
       quote: 'Ein Mensch liest Ihre Nachricht und antwortet &mdash; meist innert 48 Stunden, oft am selben Tag.',
-      quoteAttr: 'Kein Newsletter, keine Autoresponder',
+      quoteAttr: 'Kein Newsletter, keine Autoantworten',
     },
 
     blog: {

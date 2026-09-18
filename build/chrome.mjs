@@ -150,14 +150,11 @@ export function header(t, page, locale, pageLocales, allLocales = pageLocales) {
  *  rendering would have had to compute at runtime. */
 export function shareRow(t, page, locale) {
   const u = abs(locale, page.file);
-  const enc = encodeURIComponent(u);
   const subject = encodeURIComponent(page.title);
   const body = encodeURIComponent(`${page.title}\n${u}`);
   return `
     <div class="share-row">
       <span class="label label--faint">${t.ui.share}</span>
-      <a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/?url=${enc}"
-         target="_blank" rel="noopener">${t.ui.shareLinkedIn}</a>
       <a class="share-link" href="mailto:?subject=${subject}&amp;body=${body}">${t.ui.shareEmail}</a>
       <button class="share-link" data-copy-link data-copied="${t.ui.copied}">${t.ui.copyLink}</button>
     </div>`;

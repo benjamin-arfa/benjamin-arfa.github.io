@@ -53,13 +53,57 @@ the natural break.
 ## Editing
 
 ```bash
-node build/build.mjs   # renders dist/
+node build/build.mjs   # renders to the repo root (Pages publishes the branch)
 node build/check.mjs   # fails on a broken contract, link or locale
 node build/contrast.mjs
-cd dist && python3 -m http.server 8080
+python3 -m http.server 8080
 ```
 
 **Never translate**: `file` values, URLs, or the form field `name` attributes
 (`name`, `email`, `subject`, `message`). Translating a field name leaves the
 contact form looking perfect while silently dropping every message.
 `build/check.mjs` fails the build if that happens.
+
+
+## Revision pass — 2026-09-18
+
+A correction pass over the machine-produced copy. These were defects, not
+preferences; the rest of the body still wants a native reader.
+
+**German**
+
+- `Arbeiten` as a bare navigation label (nav, menu group, footer column) read
+  as the verb *to work* rather than a noun. Now `Referenzen`, the standard
+  German heading for a portfolio section. `Frühere Arbeiten` is kept — with an
+  adjective the plural noun is unambiguous.
+- *"betrifft jede Bank und über sie alle"* had no parseable object. Now
+  *"betrifft jede Bank — und über die Banken am Ende alle."*
+- `datengetriebene Organisationsfähigkeit` was an invented compound. Now
+  *"Organisationen, die wirklich datengetrieben arbeiten."*
+- *"schalte mich hin und wieder ein"* means to butt in. Now *"melde mich hin
+  und wieder zu Wort."*
+- `unglamourös` is not a German word. Now `undankbar`, which matches the
+  register of the English *unglamorous*.
+- `Autoresponder` → `Autoantworten`.
+
+**French**
+
+- `gouvernance d'entreprise` is a false friend: in French it denotes
+  board-level *corporate* governance, not the data governance meant here. Now
+  `gouvernance des données en entreprise`.
+- `Nous contacter` contradicted the first-person singular voice used
+  everywhere else. Now `Me contacter`.
+- *"je développe des outils réglementaires en public"* was a calque of *in the
+  open*; the same idea is rendered `au grand jour` elsewhere in the file. Now
+  consistent.
+- `Étalonnage` is instrument calibration, not benchmarking. Now `Benchmarking`,
+  and *"fondées sur des références"* → *"pilotées par le benchmarking."*
+- `consœurs et confrères` implies a regulated profession (law, medicine). Now
+  `des pairs`.
+- *"ma légitimité à le mener"* was far heavier than the English *whether I'm
+  the right person*. Reworded.
+- `Base` → `Basé à`, matching the label used on the home page.
+- Thousands separators were plain spaces and could break across lines. Now
+  `&#8239;` (narrow no-break space), the French typographic standard. The
+  German side already used the Swiss apostrophe correctly.
+- `CET` → `HEC`, matching the German `MEZ`.
