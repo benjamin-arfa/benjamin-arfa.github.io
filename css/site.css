@@ -110,14 +110,11 @@
    HERO
    ===================================================================== */
 .hero{position:relative;z-index:2;padding-block:clamp(72px,11vw,150px) clamp(56px,8vw,110px)}
-/* 13ch suits English, but DATENINFRASTRUKTUR is 18 characters on its
-   own — the cap would force a mid-word break. min-content is the width
-   of the longest unbreakable word, so the line box grows to fit it and
-   the cap applies only when the copy actually allows it. Purely
-   declarative: no per-language override, and it holds for whatever the
-   next translation turns out to be. */
-.hero .display{max-width:13ch;min-width:min-content}
-@media (max-width:560px){ .hero .display{max-width:none} }
+/* The headline spans the full width of the page. Automatic hyphenation
+   is off here: in a browser with a hyphenation dictionary it would split
+   INFRASTRUCTURE mid-word whenever the line runs short. Words break only
+   at an explicit &shy;, e.g. Daten&shy;infrastruktur in German. */
+.hero .display{-webkit-hyphens:manual;hyphens:manual}
 .hero-lead{margin-top:var(--s-7)}
 
 /* Facts strip — hairline separated, aligned to the grid */
@@ -369,11 +366,9 @@ a.detail-row:hover .v{border-bottom:1px solid var(--accent)}
 }
 .share-link:hover{border-bottom-color:var(--accent)}
 
-.blog-controls{
-  display:flex;flex-wrap:wrap;gap:var(--s-5);align-items:center;
-  justify-content:space-between;margin-bottom:var(--s-7);
-}
-.blog-controls .field{min-width:min(320px,100%)}
+/* One-page anchors land just below the sticky header, matching the 70px
+   offset main.js uses for in-page clicks. */
+section[id],.entry[id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 
 /* Header is dense at desktop now: menu + 2 links | wordmark | 3 langs +
    toggle + CTA. Shed the least important items first as it narrows. */

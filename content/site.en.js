@@ -5,6 +5,9 @@
 // content/site.fr.js mirror its shape; any key they omit falls back to
 // the value here and the build prints a warning.
 //
+// The site is one page per locale (pages.index). Old page URLs are
+// redirect stubs written by build/build.mjs, not content.
+//
 // DO NOT translate: form field `name` attributes, URLs, or anything
 // under `formspree`. Translating a field name silently stops mail
 // delivery. build/check.mjs fails the build if that happens.
@@ -41,16 +44,7 @@ export default {
     shareEmail: 'Email',
     copyLink: 'Copy link',
     copied: 'Copied',
-    allArticles: 'All articles',
-    allServices: 'All services',
-    allProjects: 'All projects',
-    allInvolvement: 'All involvement',
-    aboutFounder: 'About the founder',
-    getInTouch: 'Get in touch',
     startConversation: 'Start a conversation',
-    read: 'Read',
-    searchArticles: 'Search articles',
-    filterAll: 'All',
   },
 
   menu: {
@@ -59,9 +53,8 @@ export default {
     workGroup: 'Work',
     elsewhere: 'Elsewhere',
     projects: 'Projects',
-    journal: 'Journal',
     involvement: 'Involvement',
-    note: 'Open-source tooling for regulatory reporting, Swiss legal data and healthcare interoperability.',
+    note: 'Open-source tooling for regulatory reporting and Swiss legal data.',
     enquireNow: 'Enquire now',
     impressum: 'Impressum',
   },
@@ -77,384 +70,164 @@ export default {
   pages: {
     index: {
       file: 'index.html',
-      title: 'Arfa Digital Consulting | Data Infrastructure for Regulated Industries',
-      description: 'Arfa Digital Consulting — data integration, governance and healthcare interoperability from Basel, Switzerland. Founded by Benjamin Arfa.',
+      title: 'Arfa Digital Consulting | Data infrastructure for regulated industries',
+      description: 'Software engineering, healthcare interoperability, metadata architecture and business analysis for regulated industries. Arfa Digital Consulting, Basel.',
       eyebrow: 'Consulting from Basel, Switzerland',
       display: 'Data infrastructure for regulated industries',
-      lead: 'Specialist consulting in data integration, governance and lifecycle management across regulatory technology and healthcare &mdash; where correctness is not optional.',
+      lead: 'Data integration, governance and interoperability for regulatory technology and healthcare &mdash; from business need to production, where correctness is not optional.',
       facts: [
         { k: 'Based in', v: 'Basel, Switzerland' },
         { k: 'Languages', v: 'French &middot; German &middot; English &middot; Spanish' },
         { k: 'Status', v: 'Open to advisory', dot: true },
       ],
-      practiceLabel: '01 &mdash; The practice',
-      practiceHeading: 'Engineering that survives the audit',
-      practiceBody: [
-        'Arfa Digital Consulting promotes digital transformation through <strong>IT and AI solutions, software development, data analysis and strategic consulting</strong> &mdash; tuned for Swiss and European regulatory contexts.',
-        'Behind it is <strong>Benjamin Arfa</strong>: engineer, Technical Manager at HL7 Switzerland, and co-founder of <strong>BIRDBench Ltd</strong>. Nine years across ECB and Swiss FSO metadata modelling, FHIR data modelling for Swiss healthcare, BIRD open-source tooling, and Life Sciences manufacturing data.',
-      ],
+
+      // 01 — what the practice does, who is behind it; the rest is folded.
+      about: {
+        label: '01 &mdash; The practice',
+        heading: 'Engineering that survives the audit',
+        body: [
+          'Arfa Digital Consulting turns data problems in regulated settings into working systems. It combines software development, data analysis and strategic consulting, tuned for Swiss and European rules.',
+          'Behind it is <strong>Benjamin Arfa</strong>: nine years across regulatory technology, healthcare and Life Sciences manufacturing, including metadata modelling for the ECB and the Swiss FSO. Today he is Technical Manager at HL7 Switzerland and co-founder of <strong>BIRDBench Ltd</strong>.',
+        ],
+        careerLabel: 'Career journey',
+        career: [
+          { when: 'May 2026 &mdash;', role: 'Co-Founder', where: 'BIRDBench Ltd', desc: 'Bringing innovation into RegTech.' },
+          { when: 'Apr 2026 &mdash;', role: 'Technical Manager', where: 'HL7 Switzerland', desc: 'Driving healthcare data standardisation for FHIR-CH &mdash; implementation guidance, interoperability working groups, and Swiss healthcare data exchange standards.' },
+          { when: 'Oct 2025 &mdash;', role: 'Business Analyst', where: 'Bachem', desc: 'Requirements engineering for pharmaceutical and biotech data in Life Sciences manufacturing &mdash; system integration, lifecycle management, operational reporting across R&amp;D and production.' },
+          { when: 'Feb 2025 &mdash;', role: 'Head of Development', where: 'BIRD Software Solutions', desc: 'Leading software development and technical strategy for regulatory technology &mdash; open-source data infrastructure aligned with the BIRD standard.' },
+          { when: '2022 &ndash; 2024', role: 'Product Owner, Data &amp; Integration', where: 'Bluespace Ventures', desc: 'Semantic data integration, FHIR data modelling, MDM frameworks. Contributing to HL7 Switzerland and the SNOMED French Translation Group.' },
+          { when: '2020 &ndash; 2022', role: 'Research Analyst, Metadata', where: 'ECB &amp; Swiss FSO', desc: 'Metadata modelling for banking supervision in the BIRD/SDD team, SDMX methodology, process automation, API integration for metadata repositories.' },
+          { when: '2017 &ndash; 2020', role: 'Data Scientist &amp; ML Researcher', where: 'RWTH Aachen &middot; rheindata &middot; CWD &middot; Boralex', desc: 'Machine learning research, exploratory data analysis, and data-driven applications across wind energy and industrial sectors.' },
+        ],
+        glanceLabel: 'At a glance',
+        glance: [
+          { k: 'Standards', v: 'HL7 FHIR &middot; SDMX &middot; BIRD' },
+          { k: 'Competencies', v: 'Data integration &middot; Governance &middot; Data modelling &middot; Machine learning' },
+          { k: 'Open source', v: 'Eclipse Foundation contributor' },
+        ],
+        personalLabel: 'Off the clock',
+        personalBody: [
+          "It's <strong>Benni</strong> &mdash; a French-German-Arab soul, currently in Basel.",
+          'Music is my jam, software my bread and butter, and writing a way of expression that has kept me company since my fifth year of high school. I started with drawing, painting and calligraphy, then moved on to poetry. Nowadays I write prosody and dial in once in a while.',
+          'I like to comment on topics related to <strong>sovereignty, technology and solidarity</strong>.',
+          'I am a member of <a class="link" href="https://cmda.world" target="_blank" rel="noopener">CMDA</a>, the World Council of the Algerian Diaspora.',
+        ],
+      },
+
       quote: 'Shared infrastructure instead of licensed silos. Transparent rules instead of black boxes.',
       quoteAttr: 'On building regulatory tooling in the open',
-      servicesLabel: '02 &mdash; Services',
-      servicesHeading: 'Three pillars',
-      workLabel: '03 &mdash; Selected work',
-      workHeading: 'Selected projects',
-      involvementLabel: '04 &mdash; Involvement',
-      involvementHeading: 'Standards and community',
-      ctaHeading: "Let's work together",
-      ctaBody: 'Looking for guidance on data initiatives, system integration or interoperability? Every engagement starts with a discovery call.',
-    },
 
-    about: {
-      file: 'about.html',
-      title: 'About | Benjamin Arfa, Arfa Digital Consulting',
-      description: 'Benjamin Arfa — data and software engineer in Basel. Nine years across healthcare, regulatory technology and enterprise governance.',
-      eyebrow: 'The founder',
-      pageTitle: 'Benjamin Arfa',
-      sub: 'Data and software engineer in Basel. Nine years across healthcare, regulatory technology and enterprise governance &mdash; founder of Arfa Digital Consulting, co-founder of BIRDBench Ltd.',
-      bgLabel: '01 &mdash; Background',
-      bgHeading: 'Professional background',
-      bgBody: [
-        'I specialise in <strong>data integration</strong>, <strong>governance</strong> and <strong>lifecycle management</strong> across regulatory technology and healthcare. Over nine years I have built deep expertise in implementing data strategies and technical solutions that hold up under scrutiny.',
-        'In <strong>data strategy and architecture</strong> I focus on comprehensive lifecycle management through effective data modelling and technical implementation &mdash; designing robust, business-aligned systems while building data-driven organisational capability.',
-        'My technical work spans <strong>requirements engineering</strong>, bridging business and technical teams, and <strong>software engineering</strong> for scalable data applications. As <strong>Technical Manager at HL7 Switzerland</strong> (FHIR-CH) I help drive healthcare data standardisation. As co-founder of <strong>BIRDBench Ltd</strong> I bring innovation into RegTech, and as an <strong>Eclipse contributor</strong> I build regulatory tooling in the open.',
-      ],
-      glanceLabel: 'At a glance',
-      glance: [
-        { k: 'Base', v: 'Basel, Switzerland' },
-        { k: 'Languages', v: 'French &middot; German &middot; English &middot; Spanish' },
-        { k: 'Standards', v: 'HL7 FHIR &middot; SDMX &middot; BIRD' },
-        { k: 'Co-Founder', v: 'BIRDBench Ltd' },
-        { k: 'Open source', v: 'Eclipse Foundation contributor' },
-      ],
-      quote: 'Shared infrastructure beats licensed silos &mdash; transparent rules beat black boxes.',
-      quoteAttr: 'Why the tooling is open source',
-      careerLabel: '02 &mdash; Career',
-      careerHeading: 'Career journey',
-      career: [
-        { when: 'May 2026 &mdash;', role: 'Co-Founder', where: 'BIRDBench Ltd', desc: 'Bringing innovation into RegTech.' },
-        { when: 'Apr 2026 &mdash;', role: 'Technical Manager', where: 'HL7 Switzerland', desc: 'Driving healthcare data standardisation for FHIR-CH &mdash; implementation guidance, interoperability working groups, and Swiss healthcare data exchange standards.' },
-        { when: 'Oct 2025 &mdash;', role: 'Business Analyst', where: 'Bachem', desc: 'Requirements engineering for pharmaceutical and biotech data in Life Sciences manufacturing &mdash; system integration, lifecycle management, operational reporting across R&amp;D and production.' },
-        { when: 'Feb 2025 &mdash;', role: 'Head of Development', where: 'BIRD Software Solutions', desc: 'Leading software development and technical strategy for regulatory technology &mdash; open-source data infrastructure aligned with the BIRD standard.' },
-        { when: '2022 &ndash; 2024', role: 'Product Owner, Data &amp; Integration', where: 'Bluespace Ventures', desc: 'Semantic data integration, FHIR data modelling, MDM frameworks. Contributing to HL7 Switzerland and the SNOMED French Translation Group.' },
-        { when: '2020 &ndash; 2022', role: 'Research Analyst, Metadata', where: 'ECB &amp; Swiss FSO', desc: 'Metadata modelling for banking supervision in the BIRD/SDD team, SDMX methodology, process automation, API integration for metadata repositories.' },
-        { when: '2017 &ndash; 2020', role: 'Data Scientist &amp; ML Researcher', where: 'RWTH Aachen &middot; rheindata &middot; CWD &middot; Boralex', desc: 'Machine learning research, exploratory data analysis, and data-driven applications across wind energy and industrial sectors.' },
-      ],
-      skillsLabel: '03 &mdash; Competencies',
-      skillsHeading: 'Core competencies',
-      skills: [
-        { label: 'Data', h: 'Data &amp; Analytics', tags: ['Data integration', 'Governance', 'Data modelling', 'Machine learning', 'ETL / ELT'] },
-        { label: 'Development', h: 'Engineering', tags: ['Python', 'Go', 'Docker', 'REST APIs', 'Cloud'] },
-        { label: 'Standards', h: 'Healthcare &amp; Standards', tags: ['HL7 FHIR', 'SDMX', 'MDM', 'Interoperability', 'BIRD'] },
-      ],
-      personalLabel: '04 &mdash; Off the clock',
-      personalHeading: 'The person behind it',
-      personalBody: [
-        "It's <strong>Benni</strong> &mdash; a French-German-Arab soul, currently in Basel.",
-        'Music is my jam, software my bread and butter, and writing a way of expression that has kept me company since my fifth year of high school. I started with drawing, painting and calligraphy, then moved on to poetry. Nowadays I write prosody and dial in once in a while.',
-        'I like to comment on topics related to <strong>sovereignty, technology and solidarity</strong>.',
-      ],
-      personal: [
-        { k: 'Music', v: 'jam &middot; listen &middot; play' },
-        { k: 'Software', v: 'bread &amp; butter' },
-        { k: 'Writing', v: 'poetry &middot; prosody' },
-        { k: 'Interests', v: 'sovereignty &middot; technology &middot; solidarity' },
-      ],
-      ctaHeading: 'Want to collaborate?',
-      ctaBody: 'Always interested in connecting with fellow professionals to discuss data challenges and opportunities.',
-    },
-
-    services: {
-      file: 'services.html',
-      title: 'Services | Arfa Digital Consulting',
-      description: 'Software engineering, healthcare interoperability and metadata architecture — specialist consulting for Swiss and European regulatory contexts.',
-      eyebrow: 'What I offer',
-      pageTitle: 'Services',
-      sub: 'Arfa Digital Consulting promotes digital transformation through IT and AI solutions, software development, data analysis and strategic consulting &mdash; tuned for Swiss and European regulatory contexts.',
-      pillarsLabel: '01 &mdash; Specialist services',
-      pillarsHeading: 'Three pillars',
-      pillars: [
-        { label: 'Pillar 01 &mdash; Software Engineering', body: 'Scalable data applications and system integration. From requirements engineering through to deployment, bridging business and technical teams.', tags: ['Custom application development', 'API design', 'Docker containerisation', 'Requirements engineering', 'Cloud lifecycle management'] },
-        { label: 'Pillar 02 &mdash; Healthcare Interoperability', body: 'Technical Manager at <strong>HL7 Switzerland</strong> (FHIR-CH), driving healthcare data standardisation. Specialising in semantic data integration and master data management.', tags: ['HL7 FHIR implementation', 'Semantic data integration', 'Master data management', 'Healthcare standardisation', 'System integration'] },
-        { label: 'Pillar 03 &mdash; Metadata Architecture', body: 'Comprehensive metadata management and data architecture design. Building robust, business-aligned systems with effective governance frameworks.', tags: ['Metadata management', 'Data governance', 'SDMX &amp; BIRD', 'Lifecycle strategy', 'Business-aligned solutions'] },
-      ],
-      processLabel: '02 &mdash; Engagement',
-      processHeading: 'How I work',
-      process: [
-        { label: 'Step 01', h: 'Discover', p: 'Understanding your challenges and business context &mdash; discovery call, stakeholder mapping.' },
-        { label: 'Step 02', h: 'Design', p: 'Architecting solutions aligned with your goals &mdash; data models, integration topology, governance.' },
-        { label: 'Step 03', h: 'Develop', p: 'Building robust, scalable implementations &mdash; Python, Go, FHIR, Docker, CI.' },
-        { label: 'Step 04', h: 'Deliver', p: 'Deploying and supporting your solution &mdash; handover, documentation, advisory retainer.' },
-      ],
-      extrasLabel: '03 &mdash; Also available',
-      extrasHeading: 'Additional services',
-      extrasTag: 'Additional',
-      extras: [
-        { h: 'IT consulting', p: 'Strategic guidance on technology decisions, infrastructure optimisation and digital transformation.' },
-        { h: 'Polyglot communication', p: 'Multilingual bridging across French, German, English and Spanish contexts.' },
-        { h: 'Data modelling', p: 'Conceptual, logical and physical modelling for databases and warehouses.' },
-        { h: 'ML consulting', p: 'Machine-learning strategy, model development guidance and AI solution architecture.' },
-      ],
-      quote: 'Every engagement starts with a discovery call &mdash; and an honest answer about whether I am the right person for it.',
-      quoteAttr: 'How engagements begin',
-      faqLabel: '04 &mdash; Questions',
-      faqHeading: 'Frequently asked',
-      faq: [
-        { q: 'What types of projects do you typically work on?', a: 'Data engineering, healthcare interoperability and regulatory technology. Projects range from HL7 FHIR integration pipelines and BIRD regulatory reporting toolkits to metadata architectures and master data management solutions.' },
-        { q: 'Do you work with clients outside Switzerland?', a: 'Yes. I am based in Basel but collaborate regularly with teams across Europe and work remotely with international clients. A multilingual background (French, German, English, Spanish) helps bridge communication across diverse teams.' },
-        { q: 'What is your typical engagement model?', a: 'Engagements follow a four-step process: discover, design, develop, deliver. I offer project-based consulting with clear deliverables as well as ongoing advisory retainers. Every engagement starts with a discovery call.' },
-        { q: 'Can you help with existing systems, or only greenfield projects?', a: 'Both. A significant portion of my work involves modernising legacy data systems, improving existing pipelines and integrating new standards into established infrastructure &mdash; including legacy HL7 v2, proprietary EHR exports and existing reporting frameworks.' },
-        { q: 'How do you handle data privacy and compliance?', a: 'Privacy is designed in from the start: Swiss and EU data protection requirements, GDPR compliance, healthcare data confidentiality and secure handling practices for regulatory reporting.' },
-      ],
-      ctaHeading: 'Ready to start a project?',
-      ctaBody: "Let's discuss how I can help you reach your data and technology goals. Briefs, half-formed ideas and cold introductions are all welcome.",
-    },
-
-    projects: {
-      file: 'projects.html',
-      title: 'Projects | Arfa Digital Consulting',
-      description: 'Open-source tools and data applications across regulatory technology, healthcare and government tech — by Benjamin Arfa.',
-      eyebrow: "What I've built",
-      pageTitle: 'Selected projects',
-      sub: 'Open-source tools, data applications and software engineering work spanning regulatory technology, healthcare and government tech.',
-      commercialLabel: '01 &mdash; Commercial',
-      commercialHeading: 'Commercial solutions',
-      openLabel: '02 &mdash; Open source',
-      openHeading: 'Open source and public good',
-      quote: 'Regulatory reporting affects every bank, and through them everyone. Building that tooling in the open is the point.',
-      quoteAttr: 'On open standards',
-      archiveLabel: '03 &mdash; Past work',
-      archiveHeading: 'Past work',
-      archiveTag: 'Past work',
-      ctaHeading: 'Interested in collaborating?',
-      ctaBody: 'Always open to discussing new projects, contributions to open source, or opportunities to collaborate.',
-      visitDashboard: 'Visit the dashboard',
-      visitSite: 'Visit consultaition.ch',
-      visitDemo: 'Open the demo',
-      comingSoon: 'Coming soon',
-      viewGitHub: 'View on GitHub',
-      commercial: [
-        {
-          anchor: 'consultaition', n: '01', role: 'Co-founder &middot; GovTech',
-          h: 'consultaition',
-          kicker: 'Swiss federal consultation report generator',
-          body: [
-            'Automates the creation of Swiss federal <em>Ergebnisbericht</em> reports from structured Excel data. Vendor-agnostic LLM optimisation tuned on authentic federal consultation data &mdash; no provider lock-in.',
-          ],
-          details: [
-            { k: 'Editor', v: 'Interactive canvas, paragraph-by-paragraph refinement' },
-            { k: 'API', v: 'REST endpoint for programmatic generation' },
-            { k: 'Languages', v: 'German &middot; French &middot; Italian' },
-            { k: 'Output', v: 'Footnote management and export' },
-          ],
-          tags: ['Python', 'FastAPI', 'LLM', 'GovTech'],
-          href: 'https://consultaition.ch', cta: 'visitSite',
-        },
-
-        {
-          anchor: 'birdbench', n: '02', role: 'Co-founder &middot; RegTech',
-          h: 'BIRDBench',
-          kicker: 'A workbench of interoperable tools, extendable by AI coding assistants',
-          body: [
-            'BIRD Software Solutions provides <strong>BIRDBench</strong>, a tools workbench that brings together open and commercial interoperable extensions to the FreeBIRD application.',
-            'Because the FreeBIRD application is built on the ubiquitous, AI-friendly Django framework, developing your own custom extensions can be accelerated with AI coding assistants.',
-            'You can develop a tool that solves just the precise problem you want to solve and add it to the workbench, where it interoperates with other tools solving orthogonal problems.',
-          ],
-          details: [],
-          tags: ['BIRD', 'Django', 'RegTech', 'Extensions'],
-          href: '', cta: 'comingSoon',
-        },
-      ],
-      openSource: [
-        {
-          anchor: 'swiss-law', n: '01', role: 'Maintainer &middot; GovTech',
-          h: 'Swiss Law Collection',
-          kicker: 'Swiss federal and cantonal law as a queryable dataset',
-          body: [
-            'A dashboard over Swiss federal and cantonal legislation, plus a static read-only JSON, CSV and SDMX API served straight from GitHub Pages. Legal domains are harmonised across the Confederation and all 26 cantons, so federal and cantonal acts can be compared on the same axis.',
-            'Statute published as data rather than as PDFs means downstream systems can be tested against it, and Atom and RSS feeds make a change to the law something software can subscribe to.',
-          ],
-          details: [
-            { k: 'Coverage', v: '34,443 acts &mdash; Confederation and 26 cantons' },
-            { k: 'Articles', v: '824,663 indexed' },
-            { k: 'Formats', v: 'JSON &middot; CSV &middot; SDMX' },
-            { k: 'Sources', v: 'Fedlex (federal) &middot; LexFind (cantonal)' },
-            { k: 'Verification', v: 'Published reconciliation against BADAC and chstat' },
-            { k: 'Pipeline', v: '<a class="link" href="https://github.com/benjamin-arfa/swiss-law" target="_blank" rel="noopener">github.com/benjamin-arfa/swiss-law</a>' },
-          ],
-          tags: ['Open data', 'SDMX', 'JSON API', 'Python'],
-          href: 'https://swiss-law-as-source.github.io/', cta: 'visitDashboard',
-        },
-
-        {
-          anchor: 'freebird', n: '02', role: 'Contributor &middot; RegTech',
-          h: 'Eclipse FreeBIRD tools',
-          kicker: 'Tooling to democratise BIRD as an open standard',
-          body: [
-            "An open-source toolkit for the Banks' Integrated Reporting Dictionary &mdash; the standard defining the reporting rules and templates European banks use to supply data to supervisory bodies.",
-          ],
-          details: [
-            { k: 'Toolkit', v: 'GUI for dictionaries and mappings' },
-            { k: 'Runtime', v: 'Docker containerisation' },
-            { k: 'Models', v: 'Validate and transform BIRD models' },
-            { k: 'Install', v: '<span class="mono">pip install pybirdai</span>' },
-          ],
-          tags: ['Python', 'Docker', 'NLP', 'RegTech'],
-          href: 'https://github.com/eclipse-efbt/efbt', cta: 'viewGitHub',
-        },
-
-        {
-          anchor: 'law-as-code', n: '03', role: 'Contributor &middot; Open Legal Lab 2026',
-          h: 'Law as Code',
-          kicker: 'Swiss law turned into rules a computer can execute',
-          body: [
-            'Built at <strong>Open Legal Lab 2026</strong>, the Swiss legal-tech hackathon in Magglingen. Articles of Swiss tax and social-insurance law are pulled from Fedlex and turned into executable rules, so a question about contributions or entitlement can be answered by running the law itself instead of re-implementing it by hand in every administrative system.',
-          ],
-          details: [
-            { k: 'Code', v: '<a class="link" href="https://github.com/OpenLegalLab/law_as_code" target="_blank" rel="noopener">github.com/OpenLegalLab/law_as_code</a>' },
-          ],
-          tags: ['OpenFisca', 'DSPy', 'LLM', 'GovTech'],
-          href: 'https://vps-13d3e726.vps.ovh.net/oll/', cta: 'visitDemo',
-        },
-      ],
-      archive: [
-        { h: 'fhir.ch', p: 'The publication site for the Swiss FHIR implementation guides, maintained through HL7 Switzerland, where I am Technical Manager for FHIR-CH.', href: 'https://fhir.ch' },
-        { h: 'go-detective', p: 'Native desktop application (Go and Wails) for KYC checks, AML screening and PEP/sanctions verification. Supabase backend.', href: 'https://github.com/benjamin-arfa/go-detective' },
-      ],
-    },
-
-    involvement: {
-      file: 'involvement.html',
-      title: 'Involvement | Arfa Digital Consulting',
-      description: 'Standards and community work — HL7 Switzerland, fhir.ch, BIRD Software Solutions, the Eclipse Foundation and BIRDBench Ltd.',
-      eyebrow: 'Community &amp; contributions',
-      pageTitle: 'Involvement',
-      sub: 'Contributing to professional communities and standards organisations &mdash; in cooperation with <a class="link" href="https://www.eseha.ch" target="_blank" rel="noopener">ESEHA</a>, HL7 Switzerland, the Eclipse Foundation and the BIRD ecosystem.',
-      orgsLabel: '01 &mdash; Organisations',
-      orgsHeading: 'Where I contribute',
-      quote: 'Standards work is slow, unglamorous, and the only thing that makes systems talk to each other a decade later.',
-      quoteAttr: 'Why standards',
-      whyLabel: '02 &mdash; Rationale',
-      whyHeading: 'Why community matters',
-      whyTag: 'Why',
-      why: [
-        { h: 'Knowledge exchange', p: 'Sharing experience and learning from fellow professionals accelerates innovation and helps solve complex problems together.' },
-        { h: 'Standards development', p: 'Contributing to standards ensures interoperability, reduces fragmentation and creates a foundation for sustainable solutions.' },
-        { h: 'Industry impact', p: 'Active participation in professional communities helps shape the future of healthcare data management and technology adoption.' },
-      ],
-      ctaHeading: 'Want to connect?',
-      ctaBody: 'Always interested in connecting with fellow professionals &mdash; discussing data challenges, sharing knowledge, or exploring collaboration.',
-      entries: [
-        {
-          anchor: 'hl7', n: '01', role: 'Technical Manager', h: 'HL7 Switzerland',
-          kicker: 'Health Level Seven &mdash; the global authority on health interoperability',
-          body: ['Technical Manager at HL7 Switzerland (FHIR-CH), driving healthcare data standardisation in Switzerland. HL7 sets the global standards for interoperability of health information technology; <strong>hl7.ch</strong> is the Swiss affiliate, and <strong>fhir.ch</strong> is where the Swiss FHIR implementation guides are published.'],
-          details: [
-            { k: 'Association', v: '<a class="link" href="https://www.hl7.ch/de/" target="_blank" rel="noopener">hl7.ch</a>' },
-            { k: 'Impl. guides', v: '<a class="link" href="https://fhir.ch" target="_blank" rel="noopener">fhir.ch</a>' },
-            { k: 'Focus', v: 'FHIR implementation guidance, interoperability working groups, Swiss health data exchange standards' },
-          ],
-          tags: ['HL7 FHIR', 'Interoperability', 'Standards'],
-          href: 'https://fhir.ch', cta: 'Visit fhir.ch',
-        },
-        {
-          anchor: 'bird-software', n: '02', role: 'Head of Development', h: 'BIRD Software Solutions',
-          kicker: 'Regulatory data infrastructure, built on an open standard',
-          body: ["Leading software development and technical strategy for regulatory technology &mdash; open-source data infrastructure aligned with the BIRD standard, the Banks' Integrated Reporting Dictionary used across European supervisory reporting."],
-          details: [],
-          tags: ['RegTech', 'BIRD', 'Open source'],
-          href: 'https://github.com/BIRD-Software-Solutions', cta: 'View on GitHub',
-        },
-        {
-          anchor: 'eclipse', n: '03', role: 'Contributor', h: 'Eclipse Foundation',
-          kicker: 'Open source as a public good',
-          body: ['Contributor to the Eclipse Foundation through <strong>Eclipse EFBT</strong>, the home of the FreeBIRD tools. Regulatory reporting affects every bank and, through them, everyone. Building that tooling in the open, under vendor-neutral governance, means shared infrastructure instead of licensed silos and transparent rules instead of black boxes.'],
-          details: [],
-          tags: ['Eclipse EFBT', 'Open governance', 'Documentation'],
-          href: 'https://www.eclipse.org', cta: 'Visit eclipse.org',
-        },
-        {
-          anchor: 'birdbench', n: '04', role: 'Co-Founder', h: 'BIRDBench Ltd',
-          kicker: 'Bringing innovation into RegTech',
-          body: ['Co-founder of BIRDBench Ltd &mdash; advancing open, benchmark-driven approaches to regulatory technology alongside the BIRD open-standard ecosystem.'],
-          details: [],
-          tags: ['RegTech', 'Benchmarking'],
-          href: 'https://github.com/BIRD-Software-Solutions', cta: 'Related work',
-        },
-        {
-          anchor: 'cmda', n: '05', role: 'Member', h: 'CMDA',
-          kicker: 'Conseil Mondial de la Diaspora Alg&eacute;rienne',
-          body: ['Member of the World Council of the Algerian Diaspora &mdash; diaspora community representation, cultural exchange, international collaboration and community initiatives.'],
-          details: [],
-          tags: ['Community', 'Cultural exchange'],
-          href: 'https://cmda.world', cta: 'Visit cmda.world',
-        },
-      ],
-    },
-
-    contact: {
-      file: 'contact.html',
-      title: 'Contact | Arfa Digital Consulting',
-      description: 'Contact Benjamin Arfa — data and software engineering consulting from Basel. Strategic guidance on data initiatives, system integration and interoperability.',
-      eyebrow: 'The door is open',
-      pageTitle: "Let's talk",
-      sub: 'Looking for strategic guidance on data initiatives, system integration or interoperability? Briefs, half-formed ideas and cold introductions are all welcome.',
-      sectionLabel: '01 &mdash; Enquiries',
-      sectionHeading: 'Send a message',
-      formLabel: 'Send a message &middot; reply within 48h',
-      successMessage: "Message sent &mdash; thank you. I'll reply within 48h.",
-      submit: 'Send message',
-      fields: {
-        // `name` attributes are fixed in the template and are NOT translatable.
-        name: { label: 'Name', placeholder: 'Your name' },
-        email: { label: 'Email', placeholder: 'you@example.com' },
-        subject: { label: 'Subject' },
-        message: { label: 'Message', placeholder: 'Tell me about your project, problem or idea.' },
+      // 02 — four non-overlapping offers; process and FAQ are folded.
+      services: {
+        label: '02 &mdash; Services',
+        heading: 'Four pillars',
+        pillars: [
+          { label: 'Pillar 01', h: 'Software Engineering', p: 'Scalable data applications and system integration. New builds, or modernising the systems you already run.', tags: ['Custom applications', 'System integration', 'Legacy modernisation'] },
+          { label: 'Pillar 02', h: 'Healthcare Interoperability', p: 'Healthcare data that systems can exchange. Semantic integration and master data management, built on HL7 FHIR.', tags: ['HL7 FHIR', 'Semantic integration', 'Master data management'] },
+          { label: 'Pillar 03', h: 'Metadata Architecture', p: 'Metadata and data architecture for statistical and supervisory reporting. Governance that holds across the whole data lifecycle.', tags: ['SDMX', 'BIRD', 'Data governance'] },
+          { label: 'Pillar 04', h: 'Business Analysis &amp; Architecture', p: 'Business needs translated into technical requirements, then carried through to production operations. One person between business and technical teams, so nothing is lost in translation.', tags: ['Requirements engineering', 'Stakeholder mapping', 'Production operations'] },
+        ],
+        processLabel: 'How I work',
+        process: [
+          { k: 'Discover', v: 'Discovery call, stakeholder mapping' },
+          { k: 'Design', v: 'Data models, integration topology, governance' },
+          { k: 'Develop', v: 'Robust, scalable implementation' },
+          { k: 'Deliver', v: 'Handover, documentation, advisory retainer' },
+        ],
+        processNote: 'Project-based work with clear deliverables, or an ongoing advisory retainer.',
+        extrasLabel: 'Also available',
+        extras: [
+          { k: 'IT consulting', v: 'Technology decisions, infrastructure optimisation, digital transformation' },
+          { k: 'Data modelling', v: 'Conceptual, logical and physical models' },
+          { k: 'ML consulting', v: 'Machine-learning strategy and AI solution architecture' },
+        ],
+        faq: [
+          { q: 'Do you work with clients outside Switzerland?', a: 'Yes. I am based in Basel, work regularly with teams across Europe, and work remotely with international clients.' },
+          { q: 'Can you help with existing systems, or only greenfield projects?', a: 'Both. Much of my work is modernising legacy data systems and bringing new standards into established infrastructure, from legacy HL7 v2 to existing reporting frameworks.' },
+          { q: 'How do you handle data privacy and compliance?', a: 'Privacy is designed in from the start: Swiss and EU data protection, GDPR, healthcare confidentiality and secure handling of regulatory data.' },
+        ],
       },
-      subjectOptions: [
-        'General inquiry', 'Project / consulting', 'HL7 / FHIR question',
-        'BIRD / RegTech question', 'Speaking / interview', 'Other',
-      ],
-      channelsLabel: 'Direct channels',
-      officeLabel: 'Office',
-      office: [
-        { k: 'Location', v: 'Basel, Switzerland' },
-        { k: 'Languages', v: 'French &middot; German &middot; English &middot; Spanish' },
-        { k: 'Company', v: 'Arfa Digital Consulting' },
-        { k: 'UID', v: '<span class="mono">CHE-294.585.543</span>' },
-      ],
-      hoursLabel: 'Working hours',
-      hours: [
-        { k: 'Mon &ndash; Fri', v: '09:00 &ndash; 18:00 CET' },
-        { k: 'Response', v: 'within 48 hours' },
-        { k: 'Calls', v: 'by appointment' },
-      ],
-      quote: 'One person reading your message and writing back &mdash; usually within 48 hours, often the same day.',
-      quoteAttr: 'No newsletters, no auto-responders',
-    },
 
-    blog: {
-      file: 'blog.html',
-      title: 'Journal | Arfa Digital Consulting',
-      description: 'Writing on healthcare interoperability, data engineering, regulatory technology, and the move from technical roles to consulting.',
-      eyebrow: 'Thoughts &amp; perspectives',
-      pageTitle: 'Journal',
-      sub: 'Writing about healthcare interoperability, data engineering, regulatory technology, and the journey from technical roles to digital consulting.',
-      sectionLabel: '01 &mdash; Articles',
-      sectionHeading: 'Recent writing',
-      tag: 'Journal',
-      filters: [
-        { key: 'all', label: 'All' }, { key: 'tech', label: 'Tech' },
-        { key: 'healthcare', label: 'Healthcare' }, { key: 'career', label: 'Career' },
-      ],
-      englishOnlyNote: 'Journal articles are published in English.',
-      ctaHeading: 'Have something to discuss?',
-      ctaBody: 'If an article raised a question, or you disagree with one, I would genuinely like to hear it.',
-      posts: [
-        { file: 'blog/healthcare-data-pipelines.html', cats: 'tech healthcare', h: 'Building healthcare data pipelines with FHIR', p: 'How HL7 FHIR transforms the way we build data pipelines in healthcare &mdash; enabling true interoperability while respecting the complexity of clinical data models.' },
-        { file: 'blog/open-standards-regtech.html', cats: 'tech', h: 'Why open standards matter in RegTech', p: 'Open standards like BIRD and SDMX are reshaping regulatory reporting. Why they matter, and how they reduce the compliance burden for financial institutions.' },
-        { file: 'blog/data-engineering-to-consulting.html', cats: 'career', h: 'From data engineering to digital consulting', p: 'Reflections on moving from hands-on data engineering and ML research to leading digital consulting initiatives &mdash; and the skills that bridge both worlds.' },
-      ],
+      // 03 — current projects only. No stack, no tags.
+      work: {
+        label: '03 &mdash; Work',
+        heading: 'Current projects',
+        comingSoon: 'Coming soon',
+        visitDashboard: 'Visit the dashboard',
+        viewGitHub: 'View on GitHub',
+        entries: [
+          {
+            anchor: 'birdbench', n: '01', role: 'Co-founder &middot; RegTech',
+            h: 'BIRDBench',
+            kicker: 'Interoperable tools for regulatory reporting, in one workbench',
+            body: 'BIRDBench brings together open and commercial extensions to the FreeBIRD application. Build a tool for the exact problem you have, and it works alongside the others.',
+            href: '', cta: 'comingSoon',
+          },
+          {
+            anchor: 'swiss-law', n: '02', role: 'Maintainer &middot; GovTech',
+            h: 'Swiss Law Collection',
+            kicker: 'Swiss federal and cantonal law as a queryable dataset',
+            body: '34,443 acts from the Confederation and all 26 cantons, harmonised so they can be compared side by side. Published as open data, so software can test against the law and follow its changes.',
+            href: 'https://swiss-law-as-source.github.io/', cta: 'visitDashboard',
+          },
+          {
+            anchor: 'freebird', n: '03', role: 'Contributor &middot; RegTech',
+            h: 'Eclipse FreeBIRD Tools',
+            kicker: 'Tooling to democratise BIRD as an open standard',
+            body: "An open-source toolkit for the Banks' Integrated Reporting Dictionary, the standard that defines the rules and templates European banks use to report to supervisors. It manages dictionaries and mappings, and validates and transforms BIRD models.",
+            href: 'https://github.com/eclipse-efbt/efbt', cta: 'viewGitHub',
+          },
+        ],
+      },
+
+      // 04 — standards bodies and open governance.
+      involvement: {
+        label: '04 &mdash; Involvement',
+        heading: 'Standards and community',
+        cards: [
+          { label: 'Technical Manager', h: 'HL7 Switzerland', p: 'Interoperability working groups and implementation guidance for FHIR-CH, the Swiss healthcare data exchange standards.', links: [{ t: 'hl7.ch', href: 'https://www.hl7.ch/de/' }, { t: 'fhir.ch', href: 'https://fhir.ch' }] },
+          { label: 'Head of Development', h: 'BIRD Software Solutions', p: 'Open-source regulatory data infrastructure on the BIRD standard.', links: [{ t: 'GitHub', href: 'https://github.com/BIRD-Software-Solutions' }] },
+          { label: 'Co-Founder', h: 'BIRDBench Ltd', p: 'Open, benchmark-driven approaches in the BIRD ecosystem.', links: [] },
+          { label: 'Contributor', h: 'Eclipse Foundation', p: 'Contributing through Eclipse EFBT, the home of the FreeBIRD tools, under vendor-neutral governance.', links: [{ t: 'eclipse.org', href: 'https://www.eclipse.org' }] },
+        ],
+      },
+
+      quote2: 'Every engagement starts with a discovery call &mdash; and an honest answer about whether I am the right person for it.',
+      quote2Attr: 'How engagements begin',
+
+      // 05 — the form lives here. Its markup and field names are fixed in
+      // build/pages.mjs; only the labels below are translatable.
+      contact: {
+        label: '05 &mdash; Contact',
+        heading: "Let's work together",
+        intro: 'Looking for guidance on data initiatives, system integration or interoperability? Briefs, half-formed ideas and cold introductions are all welcome.',
+        formLabel: 'Send a message &middot; reply within 48h',
+        successMessage: "Message sent &mdash; thank you. I'll reply within 48h.",
+        submit: 'Send message',
+        fields: {
+          // `name` attributes are fixed in the template and are NOT translatable.
+          name: { label: 'Name', placeholder: 'Your name' },
+          email: { label: 'Email', placeholder: 'you@example.com' },
+          subject: { label: 'Subject' },
+          message: { label: 'Message', placeholder: 'Tell me about your project, problem or idea.' },
+        },
+        subjectOptions: [
+          'General inquiry', 'Project / consulting', 'HL7 / FHIR question',
+          'BIRD / RegTech question', 'Speaking / interview', 'Other',
+        ],
+        channelsLabel: 'Direct channels',
+        officeLabel: 'Office',
+        office: [
+          { k: 'Location', v: 'Basel, Switzerland' },
+          { k: 'Company', v: 'Arfa Digital Consulting' },
+          { k: 'UID', v: '<span class="mono">CHE-294.585.543</span>' },
+        ],
+        hoursLabel: 'Working hours',
+        hours: [
+          { k: 'Mon &ndash; Fri', v: '09:00 &ndash; 18:00 CET' },
+          { k: 'Calls', v: 'by appointment' },
+        ],
+      },
     },
 
     impressum: {
@@ -498,26 +271,12 @@ export default {
       sectionLabel: '01 &mdash; Elsewhere',
       sectionHeading: 'Maybe try one of these',
       tag: 'Page',
+      // `id` is a section anchor on the home page.
       cards: [
-        { h: 'About', p: 'The founder, the track record and the career journey behind the consultancy.', file: 'about.html' },
-        { h: 'Projects', p: 'Open-source tooling for regulatory reporting, Swiss legal data and healthcare interoperability.', file: 'projects.html' },
-        { h: 'Contact', p: 'Briefs, half-formed ideas and cold introductions are all welcome.', file: 'contact.html' },
+        { h: 'About', p: 'The founder, the track record and the career journey behind the consultancy.', id: 'about' },
+        { h: 'Projects', p: 'BIRDBench, Swiss Law Collection and Eclipse FreeBIRD Tools.', id: 'work' },
+        { h: 'Contact', p: 'Briefs, half-formed ideas and cold introductions are all welcome.', id: 'contact' },
       ],
     },
-  },
-
-  // Shared card sets referenced from more than one page.
-  shared: {
-    pillars: [
-      { label: 'Pillar 01', h: 'Software Engineering', p: 'Scalable data applications and system integration. From requirements engineering through to deployment.', tags: ['Python', 'Docker', 'APIs'] },
-      { label: 'Pillar 02', h: 'Healthcare Interoperability', p: 'Technical Manager at HL7 Switzerland (FHIR-CH), driving healthcare data standardisation. Semantic integration and master data management.', tags: ['HL7 FHIR', 'MDM', 'Integration'] },
-      { label: 'Pillar 03', h: 'Metadata Architecture', p: 'Metadata management and data architecture design. Robust, business-aligned systems with effective governance.', tags: ['SDMX', 'BIRD', 'Governance'] },
-    ],
-    involvementCards: [
-      { label: 'Technical Manager', h: 'HL7 Switzerland', p: 'Driving healthcare data standardisation for FHIR-CH &mdash; implementation guidance, interoperability working groups and Swiss healthcare data exchange standards.', links: [{ t: 'hl7.ch', href: 'https://www.hl7.ch/de/' }, { t: 'fhir.ch', href: 'https://fhir.ch' }] },
-      { label: 'Head of Development', h: 'BIRD Software Solutions', p: 'Leading software development and technical strategy for regulatory technology &mdash; open-source data infrastructure aligned with the BIRD standard.', links: [{ t: 'GitHub', href: 'https://github.com/BIRD-Software-Solutions' }] },
-      { label: 'Co-Founder', h: 'BIRDBench Ltd', p: 'Advancing open, benchmark-driven approaches to regulatory technology alongside the BIRD open-standard ecosystem.', links: [] },
-      { label: 'Contributor', h: 'Eclipse Foundation', p: 'Open-source contributor via Eclipse EFBT &mdash; regulatory-reporting tooling built in the open, under vendor-neutral governance.', links: [{ t: 'eclipse.org', href: 'https://www.eclipse.org' }] },
-    ],
   },
 };

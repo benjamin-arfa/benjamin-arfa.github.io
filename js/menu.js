@@ -1,4 +1,5 @@
-/* Slide-in menu panel: toggle, focus trap, Esc to close. */
+/* Slide-in menu panel: toggle, focus trap, Esc to close, and close on any
+   link inside it (the links are section anchors on the one-page home). */
 (function () {
   var FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
@@ -28,12 +29,17 @@
       panel.setAttribute('inert', '');
       openers.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
       document.body.style.overflow = '';
-      if (lastFocused && lastFocused.focus) lastFocused.focus();
+      if (lastFocused && lastFocused.focus) lastFocused.focus({ preventScroll: true });
     }
 
     openers.forEach(function (b) { b.addEventListener('click', open); });
     closers.forEach(function (b) { b.addEventListener('click', close); });
     backdrop.addEventListener('click', close);
+    // Capture phase, so the panel is closed and page scrolling restored
+    // before the smooth-scroll handler on the link runs.
+    panel.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a[href]')) close();
+    }, true);
 
     document.addEventListener('keydown', function (e) {
       if (!panel.classList.contains('is-open')) return;

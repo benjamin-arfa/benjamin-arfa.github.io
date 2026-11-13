@@ -11,9 +11,9 @@ register costs credibility. This file lists what to check, in priority order.
 |---|---|---|
 | **1** | `content/site.de.js` → `pages.impressum` | Legal text. A mistranslated liability or VAT clause is worse than an English-only page. Consider a professional translation, or keeping the Impressum German-only as the legally authoritative version. |
 | **1** | `content/site.fr.js` → `pages.impressum` | Same. `Art. 10 LTVA` is the French counterpart of `Art. 10 MWSTG` — confirm. |
-| **2** | `pages.index.display` / `lead` / `practiceBody` | The first screen. Register matters most here. |
-| **2** | `pages.services.pillars` and `faq` | Sales copy; the FAQ answers are the longest prose in either language. |
-| **3** | `pages.about.bgBody`, `career[].desc` | Job titles were left in English where they are used in English in Switzerland (`Head of Development`, `Technical Manager`, `Business Analyst`). Change if you prefer German/French equivalents. |
+| **2** | `pages.index.display` / `lead` / `about.body` | The first screen. Register matters most here. |
+| **2** | `pages.index.services.pillars` and `faq`, `pages.index.work.entries` | Sales copy: the four pillars, the FAQ answers and the three project blurbs. |
+| **3** | `pages.index.about.career[].desc` | Job titles were left in English where they are used in English in Switzerland (`Head of Development`, `Technical Manager`, `Business Analyst`). Change if you prefer German/French equivalents. |
 | **4** | Everything else | Labels, nav, buttons — short and low-risk. |
 
 ## Conventions applied
@@ -22,17 +22,17 @@ register costs credibility. This file lists what to check, in priority order.
 - `htmlLang` is `de-CH` / `fr-CH`, so browsers apply Swiss conventions.
 - Currency, UID and address formats left as-is.
 - Product and org names untranslated: BIRD, FHIR, SDMX, Eclipse EFBT,
-  BIRDBench, consultaition, Swiss Law Collection.
+  BIRDBench, Swiss Law Collection, Eclipse FreeBIRD Tools.
 - French uses typographic apostrophes (’) and non-breaking spaces are *not*
   used before `?`/`:` — add them if you want strict French typography.
 
-## Journal articles are English-only
+## One page, no journal
 
-The three articles (~4,500 words) are deliberately **not** translated. The
-journal page carries a one-line note in DE/FR (`pages.blog.englishOnlyNote`),
-and `hreflang` is emitted only for locales that genuinely have the page — so
-the site never claims coverage it lacks. Translating them is a separate
-decision; if you want it, the articles live in `content/articles/*.html`.
+The site is a single page per locale (`pages.index`), plus the Impressum and
+the 404. The journal was retired with the one-page redesign. The 404 is the
+only English-only page left, because GitHub Pages serves a single `/404.html`
+for every path; everything else exists in all three locales. The old page URLs are redirect stubs to the matching section and
+carry no translatable copy beyond the page title.
 
 ## How the fallback works
 
