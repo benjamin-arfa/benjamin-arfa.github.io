@@ -369,11 +369,9 @@ a.detail-row:hover .v{border-bottom:1px solid var(--accent)}
 }
 .share-link:hover{border-bottom-color:var(--accent)}
 
-.blog-controls{
-  display:flex;flex-wrap:wrap;gap:var(--s-5);align-items:center;
-  justify-content:space-between;margin-bottom:var(--s-7);
-}
-.blog-controls .field{min-width:min(320px,100%)}
+/* One-page anchors land just below the sticky header, matching the 70px
+   offset main.js uses for in-page clicks. */
+section[id],.entry[id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 
 /* Header is dense at desktop now: menu + 2 links | wordmark | 3 langs +
    toggle + CTA. Shed the least important items first as it narrows. */

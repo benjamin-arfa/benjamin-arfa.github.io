@@ -1,5 +1,5 @@
 // Shared page chrome: head, header, menu panel, footer, share row.
-// Every URL is root-relative, which keeps /de/ and /blog/ depth-agnostic.
+// Every URL is root-relative, which keeps /de/ depth-agnostic.
 
 export const SITE = 'https://www.arfa.digital';
 export const LOCALES = ['en', 'de', 'fr'];
@@ -15,6 +15,12 @@ export const url = (locale, file) =>
   (locale === 'en' ? '/' : `/${locale}/`) + (file === 'index.html' ? '' : file);
 
 export const abs = (locale, file) => SITE + url(locale, file);
+
+/** Link to a section of the one-page home. On the home page itself it is a
+ *  bare `#id`, so the visitor never leaves the page; elsewhere (impressum,
+ *  404) it is `/{locale}/#id`. */
+export const anchor = (locale, page, id) =>
+  (page.file === 'index.html' ? '' : url(locale, 'index.html')) + '#' + id;
 
 /** Theme bootstrap. Runs before first paint so a dark-mode phone never
  *  flashes white. Wrapped in try/catch: localStorage throws in some
@@ -72,6 +78,7 @@ ${THEME_BOOT}
 
 export function header(t, page, locale, pageLocales, allLocales = pageLocales) {
   const L = f => url(locale, f);
+  const A = id => anchor(locale, page, id);
   const langPills = allLocales.map(l => {
     const has = pageLocales.includes(l);
     const target = has ? url(l, page.file) : url(l, 'index.html');
@@ -85,8 +92,8 @@ export function header(t, page, locale, pageLocales, allLocales = pageLocales) {
   <div class="wrap header-inner">
     <div class="pill-group pill-group--start">
       <button class="pill" data-menu-open aria-expanded="false" aria-controls="menu-panel">${t.nav.menu}</button>
-      <a class="pill" href="${L('services.html')}">${t.nav.services}</a>
-      <a class="pill" href="${L('projects.html')}">${t.nav.work}</a>
+      <a class="pill" href="${A('services')}">${t.nav.services}</a>
+      <a class="pill" href="${A('work')}">${t.nav.work}</a>
     </div>
     <a class="wordmark" href="${L('index.html')}">
       <span class="wordmark-name">${t.brand.name}</span>
@@ -101,7 +108,7 @@ export function header(t, page, locale, pageLocales, allLocales = pageLocales) {
           <path class="icon-moon" d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
         </svg>
       </button>
-      <a class="pill pill--solid" href="${L('contact.html')}">${t.nav.enquire}</a>
+      <a class="pill pill--solid" href="${A('contact')}">${t.nav.enquire}</a>
     </div>
   </div>
 </header>
@@ -113,20 +120,19 @@ export function header(t, page, locale, pageLocales, allLocales = pageLocales) {
     <button class="menu-close" data-menu-close aria-label="${t.ui.closeMenu}">&times;</button>
   </div>
   <div class="menu-body">
-    <div class="menu-links"><a href="${L('index.html')}">${t.menu.home}</a></div>
+    <div class="menu-links"><a href="${A('top')}">${t.menu.home}</a></div>
     <div>
       <p class="menu-group-label">${t.menu.practice}</p>
       <div class="menu-links">
-        <a href="${L('about.html')}">${t.nav.about}</a>
-        <a href="${L('services.html')}">${t.nav.services}</a>
-        <a href="${L('involvement.html')}">${t.menu.involvement}</a>
+        <a href="${A('about')}">${t.nav.about}</a>
+        <a href="${A('services')}">${t.nav.services}</a>
+        <a href="${A('involvement')}">${t.menu.involvement}</a>
       </div>
     </div>
     <div>
       <p class="menu-group-label">${t.menu.workGroup}</p>
       <div class="menu-links">
-        <a href="${L('projects.html')}">${t.menu.projects}</a>
-        <a href="${L('blog.html')}">${t.menu.journal}</a>
+        <a href="${A('work')}">${t.menu.projects}</a>
         <p class="note">${t.menu.note}</p>
       </div>
     </div>
@@ -141,7 +147,7 @@ export function header(t, page, locale, pageLocales, allLocales = pageLocales) {
   </div>
   <div class="menu-foot">
     <div class="menu-lang">${langNav}</div>
-    <a class="btn btn--solid" href="${L('contact.html')}">${t.menu.enquireNow}</a>
+    <a class="btn btn--solid" href="${A('contact')}">${t.menu.enquireNow}</a>
   </div>
 </aside>
 `;
@@ -163,6 +169,7 @@ export function shareRow(t, page, locale) {
 
 export function footer(t, page, locale) {
   const L = f => url(locale, f);
+  const A = id => anchor(locale, page, id);
   return `
 <footer class="site-footer">
   <div class="wrap">
@@ -174,16 +181,15 @@ export function footer(t, page, locale) {
       <div>
         <h4>${t.footer.colPractice}</h4>
         <ul>
-          <li><a href="${L('about.html')}">${t.nav.about}</a></li>
-          <li><a href="${L('services.html')}">${t.nav.services}</a></li>
-          <li><a href="${L('involvement.html')}">${t.menu.involvement}</a></li>
+          <li><a href="${A('about')}">${t.nav.about}</a></li>
+          <li><a href="${A('services')}">${t.nav.services}</a></li>
+          <li><a href="${A('involvement')}">${t.menu.involvement}</a></li>
         </ul>
       </div>
       <div>
         <h4>${t.footer.colWork}</h4>
         <ul>
-          <li><a href="${L('projects.html')}">${t.menu.projects}</a></li>
-          <li><a href="${L('blog.html')}">${t.menu.journal}</a></li>
+          <li><a href="${A('work')}">${t.menu.projects}</a></li>
           <li><a href="https://github.com/benjamin-arfa" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
@@ -245,26 +251,8 @@ export const invertBand = (quote, attr) => `
 </section>
 `;
 
-export const cta = (t, locale, heading, body) => `
-<section class="section">
-  <div class="wrap grid">
-    <div class="col-1-4">
-      <p class="label label--faint" data-reveal>${t.ui.getInTouch}</p>
-      <h2 data-reveal style="margin-top:var(--s-4)">${heading}</h2>
-    </div>
-    <div class="col-4-7">
-      <p data-reveal>${body}</p>
-      <div class="actions" data-reveal>
-        <a class="btn btn--solid" href="${url(locale, 'contact.html')}">${t.ui.startConversation}</a>
-        <a class="btn btn--ghost" href="mailto:${t.brand.email}">${t.brand.email}</a>
-      </div>
-    </div>
-  </div>
-</section>
-`;
-
-export const sec = (num, label, heading, inner, band = false) => `
-<section class="section${band ? ' section--band' : ''}">
+export const sec = (num, label, heading, inner, band = false, id = '') => `
+<section class="section${band ? ' section--band' : ''}"${id ? ` id="${id}"` : ''}>
   <div class="wrap grid">
     <div class="col-1-3"><p class="label label--faint" data-reveal>${num ? num + ' &mdash; ' : ''}${label}</p></div>
     <div class="col-3-7"><h2 data-reveal>${heading}</h2></div>

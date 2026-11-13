@@ -8,52 +8,11 @@ function initSmoothScroll(){
       const el = document.getElementById(id);
       if(!el) return;
       e.preventDefault();
-      window.scrollTo({top: el.offsetTop - 70, behavior:'smooth'});
+      // Page coordinates, not offsetTop: sections are positioned, so a
+      // nested target's offsetTop would be relative to its section.
+      window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
     });
   });
-}
-
-function initBlogFilters(){
-  const buttons = document.querySelectorAll('.blog-filter button');
-  if(!buttons.length) return;
-  buttons.forEach(b => b.addEventListener('click', () => {
-    const filter = b.dataset.filter;
-    buttons.forEach(x => x.classList.toggle('active', x === b));
-    document.querySelectorAll('.post[data-categories]').forEach(post => {
-      const cats = (post.dataset.categories || '').split(' ');
-      post.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
-    });
-  }));
-}
-
-function initBlogSearch(){
-  const input = document.getElementById('blog-search');
-  if(!input) return;
-  input.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    document.querySelectorAll('.post').forEach(post => {
-      post.style.display = (q === '' || post.innerText.toLowerCase().includes(q)) ? '' : 'none';
-    });
-  });
-}
-
-function initFAQ(){
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    if(q) q.addEventListener('click', () => item.classList.toggle('open'));
-  });
-}
-
-function initSkillsFilter(){
-  const buttons = document.querySelectorAll('.skills-filter button');
-  if(!buttons.length) return;
-  buttons.forEach(b => b.addEventListener('click', () => {
-    const filter = b.dataset.filter;
-    buttons.forEach(x => x.classList.toggle('active', x === b));
-    document.querySelectorAll('.skill-col').forEach(col => {
-      col.style.display = (filter === 'all' || col.dataset.category === filter) ? '' : 'none';
-    });
-  }));
 }
 
 function initCopyLink(){
@@ -74,9 +33,5 @@ function initCopyLink(){
 
 document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
-  initBlogFilters();
-  initBlogSearch();
-  initFAQ();
-  initSkillsFilter();
   initCopyLink();
 });
