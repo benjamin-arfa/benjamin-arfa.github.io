@@ -11,7 +11,7 @@ Never pushed to `main` — promoting to production is the owner's call.
 - [x] A1–A5 foundation: tokens, base, components, reveal / menu / accordion JS
 - [x] B1–B2 chrome: column-grid overlay, centred-wordmark header, slide-in panel, footer
 - [x] C1–C8 all 12 pages rebuilt on the new system
-- [x] D1 swiss-law-as-source · D2 consultaition · D3 BIRD Software Solutions,
+- [x] D1 swiss-law-as-source · D3 BIRD Software Solutions,
       fhir.ch, hl7.ch · D4 homepage features
 - [x] E1 legacy `style.css` + theme toggle deleted · E2 favicon/OG redrawn ·
       E3 manifest, sitemap, metadata
@@ -45,11 +45,8 @@ Never pushed to `main` — promoting to production is the owner's call.
    inert whenever the AJAX script loads. If the live test misbehaves, removing
    those two attributes restores the exact previous behaviour.
 4. **External links unverified** — egress is blocked, so `fhir.ch`,
-   `consultaition.ch`, `cmda.world`, `eseha.ch` and the GitHub URLs were not
+   `cmda.world`, `eseha.ch` and the GitHub URLs were not
    fetched. `fhir.ch` in particular is asserted to be the Swiss FHIR IG home.
-5. **`consultaition` copy** was written from the previous site's own text, not
-   from its source. If it is similarly under-described, it is worth the same
-   pass the Swiss Law Collection entry just had.
 
 ## Verified from source
 

@@ -61,6 +61,8 @@ export default {
           'Derrière le cabinet : <strong>Benjamin Arfa</strong>, neuf ans en technologie réglementaire, en santé et en production dans les sciences de la vie, dont la modélisation de métadonnées pour la BCE et l’OFS. Il est aujourd’hui Technical Manager chez HL7 Suisse et cofondateur de <strong>BIRDBench Ltd</strong>.',
         ],
         careerLabel: 'Parcours',
+        cvLabel: 'Télécharger le CV (PDF, en anglais)',
+        cvHref: '/assets/Benjamin_Arfa_CV.pdf',
         career: [
           { when: 'Mai 2026 &mdash;', role: 'Cofondateur', where: 'BIRDBench Ltd', desc: 'Apporter de l’innovation à la RegTech.' },
           { when: 'Avr. 2026 &mdash;', role: 'Technical Manager', where: 'HL7 Suisse', desc: 'Normalisation des données de santé pour FHIR-CH &mdash; guides de mise en œuvre, groupes de travail sur l’interopérabilité et normes suisses d’échange de données de santé.' },

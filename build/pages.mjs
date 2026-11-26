@@ -103,6 +103,7 @@ ${accordion('career', a.career.map(r => ({
   label: `${r.role} &mdash; ${r.where}`,
   panel: `<div class="stack-3"><p class="label label--faint">${r.when}</p><p>${r.desc}</p></div>`,
 })))}
+      <p data-reveal style="margin-top:var(--s-6)"><a class="link-arrow" href="${a.cvHref}" download>${a.cvLabel}</a></p>
 ${accordion('more', [
   { label: a.glanceLabel, panel: details(a.glance) },
   { label: a.personalLabel, panel: `<div class="prose">${a.personalBody.map(x => `<p>${x}</p>`).join('')}</div>` },

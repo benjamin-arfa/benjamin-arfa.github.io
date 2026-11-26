@@ -90,6 +90,8 @@ export default {
           'Behind it is <strong>Benjamin Arfa</strong>: nine years across regulatory technology, healthcare and Life Sciences manufacturing, including metadata modelling for the ECB and the Swiss FSO. Today he is Technical Manager at HL7 Switzerland and co-founder of <strong>BIRDBench Ltd</strong>.',
         ],
         careerLabel: 'Career journey',
+        cvLabel: 'Download CV (PDF)',
+        cvHref: '/assets/Benjamin_Arfa_CV.pdf',
         career: [
           { when: 'May 2026 &mdash;', role: 'Co-Founder', where: 'BIRDBench Ltd', desc: 'Bringing innovation into RegTech.' },
           { when: 'Apr 2026 &mdash;', role: 'Technical Manager', where: 'HL7 Switzerland', desc: 'Driving healthcare data standardisation for FHIR-CH &mdash; implementation guidance, interoperability working groups, and Swiss healthcare data exchange standards.' },

@@ -67,6 +67,8 @@ export default {
           'Dahinter steht <strong>Benjamin Arfa</strong>: neun Jahre in Regulatory Technology, Gesundheitswesen und Life-Sciences-Fertigung, darunter Metadatenmodellierung für EZB und BFS. Heute ist er Technical Manager bei HL7 Schweiz und Mitgründer von <strong>BIRDBench Ltd</strong>.',
         ],
         careerLabel: 'Beruflicher Werdegang',
+        cvLabel: 'Lebenslauf herunterladen (PDF, Englisch)',
+        cvHref: '/assets/Benjamin_Arfa_CV.pdf',
         career: [
           { when: 'Mai 2026 &mdash;', role: 'Mitgründer', where: 'BIRDBench Ltd', desc: 'Innovation in die RegTech bringen.' },
           { when: 'Apr. 2026 &mdash;', role: 'Technical Manager', where: 'HL7 Schweiz', desc: 'Standardisierung von Gesundheitsdaten für FHIR-CH &mdash; Umsetzungsleitfäden, Arbeitsgruppen zur Interoperabilität und Schweizer Standards für den Gesundheitsdatenaustausch.' },
